@@ -54,7 +54,7 @@ dependencies {
     implementation("edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:$wpiLibVersion")
     implementation("org.photonvision:photonlib-java:v2025.1.1")
     implementation("org.photonvision:photontargeting-java:v2025.1.1")
-    implementation("com.pathplanner.lib:Pathplanner-Java:$wpiLibVersion")
+    implementation("com.pathplanner.lib:PathplannerLib-java:$wpiLibVersion")
     testImplementation(kotlin("test"))
 }
 
