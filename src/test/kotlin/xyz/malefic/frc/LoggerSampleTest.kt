@@ -1,4 +1,4 @@
-package xyz.malefic
+package xyz.malefic.frc
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

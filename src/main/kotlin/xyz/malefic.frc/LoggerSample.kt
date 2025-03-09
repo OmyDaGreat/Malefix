@@ -1,4 +1,4 @@
-package xyz.malefic
+package xyz.malefic.frc
 
 import co.touchlab.kermit.Logger
 
