@@ -18,6 +18,37 @@ $dokka.location:xyz.malefic.frc.emu/Button/checkPressed/#/PointingToDeclaration/
 $dokka.location:xyz.malefic.frc.emu/Button/entries/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.emu/-button/entries.html
 $dokka.location:xyz.malefic.frc.emu/Button/valueOf/#kotlin.String/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.emu/-button/value-of.html
 $dokka.location:xyz.malefic.frc.emu/Button/values/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.emu/-button/values.html
+$dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/index.html
+$dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.sub.PhotonModule]#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/get-decent-result-pairs.html
+$dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#edu.wpi.first.math.geometry.Pose2d?/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/get-estimated-pose.html
+$dokka.location:xyz.malefic.frc.extension//hasTargets/kotlin.collections.List[kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]]#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/has-targets.html
+$dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.NetworkPingu/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/set-pingu.html
+$dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.Pingu/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/set-pingu.html
+$dokka.location:xyz.malefic.frc.extension//updateStdDev/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/update-std-dev.html
+$dokka.location:xyz.malefic.frc.extension//updateStdDev3d/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/update-std-dev3d.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.ParallelBuilder///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-parallel-builder/index.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.ParallelBuilder/ParallelBuilder/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-parallel-builder/-parallel-builder.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.ParallelBuilder/build/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-parallel-builder/build.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.ParallelBuilder/unaryPlus/edu.wpi.first.wpilibj2.command.Command#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-parallel-builder/unary-plus.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.SequentialBuilder///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-sequential-builder/index.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.SequentialBuilder/SequentialBuilder/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-sequential-builder/-sequential-builder.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.SequentialBuilder/build/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-sequential-builder/build.html
+$dokka.location:xyz.malefic.frc.extension/Kommand.SequentialBuilder/unaryPlus/edu.wpi.first.wpilibj2.command.Command#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-sequential-builder/unary-plus.html
+$dokka.location:xyz.malefic.frc.extension/Kommand///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/index.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/cancel/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/cancel.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/cmd/#kotlin.Array[edu.wpi.first.wpilibj2.command.Subsystem]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/cmd.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/parallel/#kotlin.Function1[xyz.malefic.frc.extension.Kommand.ParallelBuilder,kotlin.Unit]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/parallel.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/sequential/#kotlin.Function1[xyz.malefic.frc.extension.Kommand.SequentialBuilder,kotlin.Unit]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/sequential.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/waitFor/#kotlin.Double/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/wait-for.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/waitUntil/#kotlin.Function0[kotlin.Boolean]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/wait-until.html
+$dokka.location:xyz.malefic.frc.path////PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/index.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/index.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK/LocalADStarAK/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/-local-a-d-star-a-k.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK/getCurrentPath/#com.pathplanner.lib.path.PathConstraints#com.pathplanner.lib.path.GoalEndState/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/get-current-path.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK/isNewPathAvailable/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/is-new-path-available.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK/setDynamicObstacles/#kotlin.collections.MutableList[edu.wpi.first.math.Pair[edu.wpi.first.math.geometry.Translation2d?,edu.wpi.first.math.geometry.Translation2d?]?]?#edu.wpi.first.math.geometry.Translation2d?/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/set-dynamic-obstacles.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK/setGoalPosition/#edu.wpi.first.math.geometry.Translation2d?/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/set-goal-position.html
+$dokka.location:xyz.malefic.frc.path/LocalADStarAK/setStartPosition/#edu.wpi.first.math.geometry.Translation2d?/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.path/-local-a-d-star-a-k/set-start-position.html
 $dokka.location:xyz.malefic.frc.pingu////PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu/AlertPingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-alert-pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu/AlertPingu/add/#com.ctre.phoenix6.hardware.CANcoder/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-alert-pingu/add.html
@@ -87,10 +118,21 @@ $dokka.location:xyz.malefic.frc.pingu/Pingu/setV/#org.littletonrobotics.junction
 $dokka.location:xyz.malefic.frc.pingu/Pingu/v/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/v.html
 $dokka.location:xyz.malefic.frc.pingu/VoltagePingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-voltage-pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu/VoltagePingu/setOutput/#kotlin.Double/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-voltage-pingu/set-output.html
-$dokka.location:xyz.malefic.frc////PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc/index.html
-$dokka.location:xyz.malefic.frc/LoggerSample///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc/-logger-sample/index.html
-$dokka.location:xyz.malefic.frc/LoggerSample/logMessage/#kotlin.String/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc/-logger-sample/log-message.html
-$dokka.location:xyz.malefic.frc/LoggerSample/logger/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc/-logger-sample/logger.html
-xyz.malefic.frc
+$dokka.location:xyz.malefic.frc.sub////PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/index.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule.Companion///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/-companion/index.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/index.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/PhotonModule/#kotlin.String#edu.wpi.first.math.geometry.Transform3d#edu.wpi.first.apriltag.AprilTagFieldLayout/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/-photon-module.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/allUnreadResults/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/all-unread-results.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/camera/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/camera.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/cameraName/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/camera-name.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/cameraPos/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/camera-pos.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/currentStdDevs/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/current-std-devs.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/currentStdDevs3d/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/current-std-devs3d.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/poseEstimator/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/pose-estimator.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/updateEstimatedStdDevs/#java.util.Optional[org.photonvision.EstimatedRobotPose]#kotlin.collections.List[org.photonvision.targeting.PhotonTrackedTarget]#edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1]#edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/update-estimated-std-devs.html
+$dokka.location:xyz.malefic.frc.sub/PhotonModule/updateEstimatedStdDevs3d/#java.util.Optional[org.photonvision.EstimatedRobotPose]#kotlin.collections.List[org.photonvision.targeting.PhotonTrackedTarget]#edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N4,edu.wpi.first.math.numbers.N1]#edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N4,edu.wpi.first.math.numbers.N1]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/-photon-module/update-estimated-std-devs3d.html
 xyz.malefic.frc.emu
+xyz.malefic.frc.extension
+xyz.malefic.frc.path
 xyz.malefic.frc.pingu
+xyz.malefic.frc.sub
