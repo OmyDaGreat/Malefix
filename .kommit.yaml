@@ -15,10 +15,12 @@ types:
   - update: Update a dependency or package
 
 scopes:
-  - index
-  - github
-  - gradle
-  - kommit
+  - emu
+  - extension
+  - path
+  - pingu
+  - sub
+  - project
 
 options:
   allowCustomScopes: true

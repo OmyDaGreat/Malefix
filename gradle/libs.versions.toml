@@ -4,12 +4,44 @@ kotlinter = "5.0.1"
 kermit = "2.0.5"
 central = "1.2.8"
 dokka = "2.0.0"
+wpilib = "2025.2.1"
+advantagekit = "4.0.0"
+ctre-phoenix = "25.3.1"
+revlib = "2025.0.0"
+photonlib = "v2025.2.1"
 
 [libraries]
-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
+
+# WPILib
+wpilib-apriltag = { group = "edu.wpi.first.apriltag", name = "apriltag-java", version.ref = "wpilib" }
+wpilib-hal = { group = "edu.wpi.first.hal", name = "hal-java", version.ref = "wpilib" }
+wpilib-wpilibj = { group = "edu.wpi.first.wpilibj", name = "wpilibj-java", version.ref = "wpilib" }
+wpilib-wpiutil = { group = "edu.wpi.first.wpiutil", name = "wpiutil-java", version.ref = "wpilib" }
+wpilib-wpiunits = { group = "edu.wpi.first.wpiunits", name = "wpiunits-java", version.ref = "wpilib" }
+wpilib-wpimath = { group = "edu.wpi.first.wpimath", name = "wpimath-java", version.ref = "wpilib" }
+wpilib-ntcore-jni = { group = "edu.wpi.first.ntcore", name = "ntcore-jni", version.ref = "wpilib" }
+wpilib-ntcore = { group = "edu.wpi.first.ntcore", name = "ntcore-java", version.ref = "wpilib" }
+wpilib-commands = { group = "edu.wpi.first.wpilibNewCommands", name = "wpilibNewCommands-java", version.ref = "wpilib" }
+
+# AdvantageKit
+advantagekit-java = { group = "org.littletonrobotics.akit", name = "akit-java", version.ref = "advantagekit" }
+advantagekit-wpilibio = { group = "org.littletonrobotics.akit", name = "akit-wpilibio", version.ref = "advantagekit" }
+
+# Vendor libraries
+ctre-phoenix = { group = "com.ctre.phoenix6", name = "wpiapi-java", version.ref = "ctre-phoenix" }
+revlib = { group = "com.revrobotics.frc", name = "REVLib-java", version.ref = "revlib" }
+photonlib = { group = "org.photonvision", name = "photonlib-java", version.ref = "photonlib" }
+photontargeting = { group = "org.photonvision", name = "photontargeting-java", version.ref = "photonlib" }
+pathplanner = { group = "com.pathplanner.lib", name = "PathplannerLib-java", version.ref = "wpilib" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
-central = { id = "cn.lalaki.central", version.ref = "central"}
+central = { id = "cn.lalaki.central", version.ref = "central" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+
+[bundles]
+wpilib = ["wpilib-apriltag", "wpilib-hal", "wpilib-wpilibj", "wpilib-wpiutil", "wpilib-wpiunits", "wpilib-wpimath", "wpilib-ntcore-jni", "wpilib-ntcore", "wpilib-commands"]
+advantagekit = ["advantagekit-java", "advantagekit-wpilibio"]
+vendor = ["ctre-phoenix", "revlib", "photonlib", "photontargeting", "pathplanner"]

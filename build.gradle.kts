@@ -23,39 +23,22 @@ version = v
 
 repositories {
     mavenCentral()
-    maven { setUrl("https://frcmaven.wpi.edu/artifactory/release/") }
-    maven { setUrl("https://plugins.gradle.org/m2/") }
-    maven { setUrl("https://maven.ctr-electronics.com/release/") }
-    maven { setUrl("https://maven.revrobotics.com/") }
-    maven { setUrl("https://maven.photonvision.org/repository/internal") }
-    maven { setUrl("https://frcmaven.wpi.edu/artifactory/littletonrobotics-mvn-release/") }
-    maven { setUrl("https://lib.choreo.autos/dep") }
-    maven { setUrl("https://shenzhen-robotics-alliance.github.io/maple-sim/vendordep/repos/releases") }
-    maven { setUrl("https://3015rangerrobotics.github.io/pathplannerlib/repo") }
+    maven { url = uri("https://frcmaven.wpi.edu/artifactory/release/") }
+    maven { url = uri("https://plugins.gradle.org/m2/") }
+    maven { url = uri("https://maven.ctr-electronics.com/release/") }
+    maven { url = uri("https://maven.revrobotics.com/") }
+    maven { url = uri("https://maven.photonvision.org/repository/internal") }
+    maven { url = uri("https://frcmaven.wpi.edu/artifactory/littletonrobotics-mvn-release/") }
+    maven { url = uri("https://lib.choreo.autos/dep") }
+    maven { url = uri("https://shenzhen-robotics-alliance.github.io/maple-sim/vendordep/repos/releases") }
+    maven { url = uri("https://3015rangerrobotics.github.io/pathplannerlib/repo") }
 }
 
-var wpiLibVersion = "2025.2.1"
-var advantageKitVersion = "4.1.1"
 dependencies {
     implementation(libs.kermit)
-    implementation("org.littletonrobotics.akit:akit-java:$advantageKitVersion")
-    implementation("org.littletonrobotics.akit:akit-wpilibio:$advantageKitVersion")
-    implementation("edu.wpi.first.apriltag:apriltag-java:$wpiLibVersion")
-    implementation("edu.wpi.first.hal:hal-java:$wpiLibVersion")
-    implementation("edu.wpi.first.wpilibj:wpilibj-java:$wpiLibVersion")
-    implementation("edu.wpi.first.wpiutil:wpiutil-java:$wpiLibVersion")
-    implementation("edu.wpi.first.wpiunits:wpiunits-java:$wpiLibVersion")
-    implementation("edu.wpi.first.wpimath:wpimath-java:$wpiLibVersion")
-    implementation("edu.wpi.first.ntcore:ntcore-jni:$wpiLibVersion")
-    implementation("edu.wpi.first.ntcore:ntcore-java:$wpiLibVersion")
-    implementation("edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:$wpiLibVersion")
-    implementation("com.ctre.phoenix6:wpiapi-java:25.1.0")
-    implementation("com.revrobotics.frc:REVLib-java:2025.0.3")
-    implementation("edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:$wpiLibVersion")
-    implementation("org.photonvision:photonlib-java:v2025.1.1")
-    implementation("org.photonvision:photontargeting-java:v2025.1.1")
-    implementation("com.pathplanner.lib:PathplannerLib-java:$wpiLibVersion")
-    testImplementation(kotlin("test"))
+    implementation(libs.bundles.wpilib)
+    implementation(libs.bundles.advantagekit)
+    implementation(libs.bundles.vendor)
 }
 
 tasks.apply {
