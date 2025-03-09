@@ -1,0 +1,15 @@
+[versions]
+kotlin = "2.1.10"
+kotlinter = "5.0.1"
+kermit = "2.0.5"
+central = "1.2.8"
+dokka = "2.0.0"
+
+[libraries]
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+central = { id = "cn.lalaki.central", version.ref = "central"}
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
