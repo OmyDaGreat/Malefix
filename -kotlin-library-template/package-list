@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:xyz.malefic////PointingToDeclaration/-kotlin-library-template/xyz.malefic/index.html
+$dokka.location:xyz.malefic/LoggerSample///PointingToDeclaration/-kotlin-library-template/xyz.malefic/-logger-sample/index.html
+$dokka.location:xyz.malefic/LoggerSample/logMessage/#kotlin.String/PointingToDeclaration/-kotlin-library-template/xyz.malefic/-logger-sample/log-message.html
+$dokka.location:xyz.malefic/LoggerSample/logger/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic/-logger-sample/logger.html
+xyz.malefic
