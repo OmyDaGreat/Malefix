@@ -35,7 +35,7 @@ repositories {
 }
 
 var wpiLibVersion = "2025.2.1"
-var advantageKitVersion = "4.0.0"
+var advantageKitVersion = "4.1.1"
 dependencies {
     implementation(libs.kermit)
     implementation("org.littletonrobotics.akit:akit-java:$advantageKitVersion")
