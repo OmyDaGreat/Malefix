@@ -22,8 +22,10 @@ $dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-kotlin-libr
 $dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.sub.PhotonModule]#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/get-decent-result-pairs.html
 $dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#edu.wpi.first.math.geometry.Pose2d?/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/get-estimated-pose.html
 $dokka.location:xyz.malefic.frc.extension//hasTargets/kotlin.collections.List[kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]]#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/has-targets.html
+$dokka.location:xyz.malefic.frc.extension//plus/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/plus.html
 $dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.NetworkPingu/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/set-pingu.html
 $dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.Pingu/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/set-pingu.html
+$dokka.location:xyz.malefic.frc.extension//to3d/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/to3d.html
 $dokka.location:xyz.malefic.frc.extension//updateStdDev/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/update-std-dev.html
 $dokka.location:xyz.malefic.frc.extension//updateStdDev3d/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/update-std-dev3d.html
 $dokka.location:xyz.malefic.frc.extension/Kommand.ParallelBuilder///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.extension/-kommand/-parallel-builder/index.html
@@ -63,10 +65,10 @@ $dokka.location:xyz.malefic.frc.pingu/CommandPingu///PointingToDeclaration/-kot
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu/CommandPingu/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-command-pingu/-command-pingu.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu/bind/#kotlin.String#edu.wpi.first.wpilibj2.command.Command/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-command-pingu/bind.html
 $dokka.location:xyz.malefic.frc.pingu/ControllerButtonBinding///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-controller-button-binding/index.html
-$dokka.location:xyz.malefic.frc.pingu/CoralScore///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-coral-score/index.html
 $dokka.location:xyz.malefic.frc.pingu/DeviceAlert///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-device-alert/index.html
 $dokka.location:xyz.malefic.frc.pingu/Log///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-log/index.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-log-pingu/index.html
+$dokka.location:xyz.malefic.frc.pingu/LogPingu/TEST_MODE/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-log-pingu/-t-e-s-t_-m-o-d-e.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/log/#kotlin.String#kotlin.Any/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-log-pingu/log.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#java.lang.Runnable/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.Array[kotlin.Pair[kotlin.String,kotlin.Any]]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-log-pingu/logs.html
@@ -93,12 +95,6 @@ $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/i/#/PointingToDeclaration/-k
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/p/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-network-pingu/p.html
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/s/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-network-pingu/s.html
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/v/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-network-pingu/v.html
-$dokka.location:xyz.malefic.frc.pingu/PathPingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-path-pingu/index.html
-$dokka.location:xyz.malefic.frc.pingu/PathPingu/addCoralScoringPositions/#kotlin.Array[kotlin.collections.List[kotlin.Triple[edu.wpi.first.math.geometry.Translation2d,edu.wpi.first.math.geometry.Pose2d,edu.wpi.first.math.geometry.Pose2d]]]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-path-pingu/add-coral-scoring-positions.html
-$dokka.location:xyz.malefic.frc.pingu/PathPingu/addCoralScoringPositionsNotL4/#kotlin.Array[kotlin.collections.List[kotlin.Triple[edu.wpi.first.math.geometry.Translation2d,edu.wpi.first.math.geometry.Pose2d,edu.wpi.first.math.geometry.Pose2d]]]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-path-pingu/add-coral-scoring-positions-not-l4.html
-$dokka.location:xyz.malefic.frc.pingu/PathPingu/clearCoralScoringPositions/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-path-pingu/clear-coral-scoring-positions.html
-$dokka.location:xyz.malefic.frc.pingu/PathPingu/findClosestScoringPosition/#edu.wpi.first.math.geometry.Pose2d#[Error type: Unresolved type for Direction]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-path-pingu/find-closest-scoring-position.html
-$dokka.location:xyz.malefic.frc.pingu/PathPingu/findClosestScoringPositionNotL4/#edu.wpi.first.math.geometry.Pose2d#[Error type: Unresolved type for Direction]/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-path-pingu/find-closest-scoring-position-not-l4.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/Pingu/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double?#kotlin.Double?#kotlin.Double?/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/-pingu.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/d/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/d.html
@@ -106,7 +102,6 @@ $dokka.location:xyz.malefic.frc.pingu/Pingu/g/#/PointingToDeclaration/-kotlin-l
 $dokka.location:xyz.malefic.frc.pingu/Pingu/i/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/i.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/p/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/p.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/pidController/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/pid-controller.html
-$dokka.location:xyz.malefic.frc.pingu/Pingu/profiledPIDController/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/profiled-p-i-d-controller.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/s/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/s.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/setD/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/set-d.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/setG/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/set-g.html
@@ -116,6 +111,23 @@ $dokka.location:xyz.malefic.frc.pingu/Pingu/setPID/#edu.wpi.first.math.controlle
 $dokka.location:xyz.malefic.frc.pingu/Pingu/setS/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/set-s.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/setV/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/set-v.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu/v/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-pingu/v.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/index.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/ProfiledPingu/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double?#kotlin.Double?#kotlin.Double?#edu.wpi.first.math.trajectory.TrapezoidProfile.Constraints/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/-profiled-pingu.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/d/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/d.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/g/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/g.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/i/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/i.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/p/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/p.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/profile/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/profile.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/profiledPIDController/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/profiled-p-i-d-controller.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/s/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/s.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setD/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-d.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setG/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-g.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setI/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-i.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setP/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-p.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setPID/#edu.wpi.first.math.controller.ProfiledPIDController/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-p-i-d.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setS/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-s.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/setV/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/set-v.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/v/#/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-profiled-pingu/v.html
 $dokka.location:xyz.malefic.frc.pingu/VoltagePingu///PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-voltage-pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu/VoltagePingu/setOutput/#kotlin.Double/PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.pingu/-voltage-pingu/set-output.html
 $dokka.location:xyz.malefic.frc.sub////PointingToDeclaration/-kotlin-library-template/xyz.malefic.frc.sub/index.html
