@@ -2,7 +2,6 @@ package xyz.malefic.frc.pingu
 
 import edu.wpi.first.util.WPISerializable
 import edu.wpi.first.util.struct.StructSerializable
-import frc.robot.utils.RobotParameters.SwerveParameters.Thresholds.TEST_MODE
 import org.littletonrobotics.junction.Logger.recordMetadata
 import org.littletonrobotics.junction.Logger.recordOutput
 
@@ -17,6 +16,13 @@ typealias Log = Pair<String, Any>
  */
 object LogPingu {
     private val capturedLogs = mutableListOf<Log>()
+
+    /**
+     * Indicates whether the system is in test mode.
+     * When `true`, logging functions will record outputs.
+     */
+    @Suppress("ktlint:standard:property-naming")
+    var TEST_MODE: Boolean = true
 
     /**
      * Logs a key-value pair.
@@ -166,7 +172,7 @@ object LogPingu {
     }
 
     /**
-     * Logs a meta data value with a specified key if the system is in test mode.
+     * Logs a metadata value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
      * @param value The string value to log.

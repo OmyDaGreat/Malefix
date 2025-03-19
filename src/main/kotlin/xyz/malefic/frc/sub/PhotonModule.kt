@@ -24,7 +24,8 @@ import kotlin.math.sqrt
  * estimator and position information.
  *
  * @property cameraName The name of the camera.
- * @property cameraPos The position of the camera.hbhbh
+ * @property cameraPos The position of the camera.
+ * @property fieldLayout The field layout for the camera.
  */
 class PhotonModule(
     val cameraName: String,
@@ -75,7 +76,7 @@ class PhotonModule(
      * Retrieves all unread results from the PhotonCamera.
      */
     val allUnreadResults: MutableList<PhotonPipelineResult>
-        get() = camera.getAllUnreadResults()
+        get() = camera.allUnreadResults
 
     /**
      * Updates the estimated standard deviations based on the provided estimated pose and targets.

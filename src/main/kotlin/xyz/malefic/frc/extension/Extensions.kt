@@ -2,13 +2,14 @@ package xyz.malefic.frc.extension
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
 import edu.wpi.first.math.geometry.Pose2d
+import edu.wpi.first.math.geometry.Rotation2d
+import edu.wpi.first.math.geometry.Rotation3d
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
 import xyz.malefic.frc.pingu.NetworkPingu
 import xyz.malefic.frc.pingu.Pingu
 import xyz.malefic.frc.sub.PhotonModule
 import java.util.Optional
-import kotlin.collections.mapNotNull
 
 /**
  * Extension function for a list of PhotonModule objects to get the best PhotonPipelineResult.
@@ -106,6 +107,7 @@ fun TalonFXConfiguration.setPingu(pingu: Pingu) =
  * @receiver TalonFXConfiguration The TalonFX configuration to set the values for.
  * @param pingu NetworkPingu The NetworkPingu object containing the PIDF values.
  */
+@SuppressWarnings("kotlin:S6518")
 fun TalonFXConfiguration.setPingu(pingu: NetworkPingu) =
     pingu.apply {
         Slot0.kP = p.get()
@@ -115,3 +117,21 @@ fun TalonFXConfiguration.setPingu(pingu: NetworkPingu) =
         s ?. run { Slot0.kS = s!!.get() }
         g ?. run { Slot0.kG = g!!.get() }
     }
+
+/**
+ * Extension function to convert a Rotation2d to a Rotation3d.
+ *
+ * @receiver Rotation2d The 2D rotation to convert.
+ * @param yaw Double The yaw value for the 3D rotation.
+ * @return Rotation3d The resulting 3D rotation.
+ */
+fun Rotation2d.to3d(yaw: Double) = Rotation3d(cos, sin, yaw)
+
+/**
+ * Operator function to add a yaw value to a Rotation2d, resulting in a Rotation3d.
+ *
+ * @receiver Rotation2d The 2D rotation to add the yaw to.
+ * @param yaw Double The yaw value to add.
+ * @return Rotation3d The resulting 3D rotation.
+ */
+operator fun Rotation2d.plus(yaw: Double) = Rotation3d(cos, sin, yaw)

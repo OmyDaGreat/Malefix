@@ -1,10 +1,11 @@
 package xyz.malefic.frc.pingu
 
-import edu.wpi.first.math.controller.PIDController
+import edu.wpi.first.math.controller.ProfiledPIDController
+import edu.wpi.first.math.trajectory.TrapezoidProfile
 import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 
 /**
- * Data class representing a Pingu with PID controller parameters.
+ * Data class representing a ProfiledPingu with PID controller parameters and profile constraints.
  *
  * @property p Proportional gain.
  * @property i Integral gain.
@@ -12,30 +13,32 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property v Optional velocity feedforward term.
  * @property s Optional static feedforward term.
  * @property g Optional gravity feedforward term.
+ * @property profile Constraints for the trapezoidal profile.
  */
-data class Pingu(
+data class ProfiledPingu(
     var p: Double,
     var i: Double,
     var d: Double,
     var v: Double? = null,
     var s: Double? = null,
     var g: Double? = null,
+    val profile: TrapezoidProfile.Constraints,
 ) {
     /**
-     * Gets the PIDController instance with the current PID parameters.
+     * Gets the ProfiledPIDController instance with the current PID parameters and profile constraints.
      */
-    val pidController
-        get() = PIDController(p, i, d)
+    val profiledPIDController
+        get() = ProfiledPIDController(p, i, d, profile)
 
     /**
-     * Sets the PID parameters from the given PIDController instance.
+     * Sets the PID parameters from the given ProfiledPIDController instance.
      *
-     * @param pidController The PIDController instance to copy parameters from.
+     * @param profiledPIDController The ProfiledPIDController instance to copy parameters from.
      */
-    fun setPID(pidController: PIDController) {
-        p = pidController.p
-        i = pidController.i
-        d = pidController.d
+    fun setPID(profiledPIDController: ProfiledPIDController) {
+        p = profiledPIDController.p
+        i = profiledPIDController.i
+        d = profiledPIDController.d
     }
 
     /**

@@ -1,5 +1,3 @@
-# Conventional Commit Configuration
-
 types:
   - feat: A new feature
   - fix: A bug fix
@@ -15,16 +13,17 @@ types:
   - update: Update a dependency or package
 
 scopes:
-  - emu
-  - extension
-  - path
-  - pingu
-  - sub
-  - project
+  all:
+    - emu
+    - extension
+    - path
+    - pingu
+    - sub
+    - project
 
 options:
   allowCustomScopes: true
-  footerPrefix: ISSUES CLOSED:
+  issuesPrefix: "ISSUES CLOSED:"
   allowBreakingChanges:
     - feat
     - fix

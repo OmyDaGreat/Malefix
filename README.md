@@ -10,15 +10,16 @@ Includes Kotlinter set up with a basic `.editorconfig` for Jetpack Compose
 
 Logging from `co.touchlab:kermit` for ease of use
 
-## Customizable Commitizen
+## Kommit
 
-Built-in support for a branch of commitizen, [cz-cust](https://github.com/leoforfree/cz-customizable), allowing for formatted commits
+Built-in support for [Kommit](https://github.com/OmyDaGreat/Kommit), a command-line tool that structures git commits for you
 
 ## Version Catalog
 
 Basic `libs.versions.toml` file in the gradle directory
 
 ## Central Portal Publishing
+
 Courtesy of [lalakii's plugin](https://github.com/lalakii/central-portal-plus)
 
 For publishing to use your token, add the `user_token.xml` file in the root directory
