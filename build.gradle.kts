@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.bundles.wpilib)
     implementation(libs.bundles.advantagekit)
     implementation(libs.bundles.vendor)
+    testImplementation(kotlin("test"))
 }
 
 tasks.apply {

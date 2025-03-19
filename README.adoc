@@ -1,0 +1,47 @@
+= Malefix - FRC for Kotlin
+
+Malefix is a Kotlin library designed for use in FRC (FIRST Robotics Competition) projects. It provides a variety of utilities and extensions to simplify the development of robot code. The library includes modules for handling PID controllers, logging, command binding, and more.
+
+== Modules
+
+=== `xyz.malefic.frc.extension`
+
+This module contains extension functions for various classes used in FRC. These extensions provide additional functionality, such as converting between different rotation representations, setting PID values, and working with PhotonVision results.
+
+=== `xyz.malefic.frc.pingu`
+
+The `pingu` package includes several utility classes and objects for handling PID controllers, logging, and command binding.
+
+* `Pingu`: A data class representing a PID controller with optional feedforward terms.
+* `NetworkPingu`: A class that extends `PIDController` with network logging capabilities.
+* `ProfiledPingu`: A data class for a profiled PID controller with trapezoidal profile constraints.
+* `MagicPingu`: A data class representing a controller with velocity, acceleration, and jerk.
+* `VoltagePingu`: An object for handling voltage output requests.
+* `AlertPingu`: A singleton object for monitoring CTRE Phoenix 6 devices and raising alerts for disconnections.
+* `CommandPingu`: A utility class for binding commands with names.
+* `Bingu`: A utility object for binding Xbox controller buttons to commands.
+* `LogPingu`: A utility object for logging various types of data.
+
+=== `xyz.malefic.frc.sub`
+
+This module includes classes related to PhotonVision, a vision processing library used in FRC.
+
+* `PhotonModule`: Represents a PhotonVision camera setup with pose estimation capabilities.
+
+=== `xyz.malefic.frc.emu`
+
+The `emu` package contains classes for handling game controller inputs.
+
+* `Button`: An enum class representing the buttons on a joystick or game controller.
+
+== Build and Deployment
+
+The project uses Gradle for build automation. The `.github/workflows/deploy-docs.yml` file defines a GitHub Actions workflow for building and deploying the project documentation to GitHub Pages.
+
+== Commit Guidelines
+
+The `.kommit.yaml` file defines the commit message conventions for the project, including types, scopes, and options for allowing custom scopes and breaking changes.
+
+== Documentation
+
+For more detailed documentation, visit the project website at https://omydagreat.github.io/Malefix/.
