@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.1.21"
-kotlinter = "5.0.2"
+kotlinter = "5.1.0"
 kermit = "2.0.5"
 central = "1.2.8"
 dokka = "2.0.0"
