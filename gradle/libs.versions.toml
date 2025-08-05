@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.1.21"
+kotlin = "2.2.0"
 kotlinter = "5.2.0"
 kermit = "2.0.5"
 central = "1.2.8"
