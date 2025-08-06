@@ -41,28 +41,6 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.apply {
-    register("formatAndLintKotlin") {
-        group = "formatting"
-        description = "Fix Kotlin code style deviations with kotlinter"
-        dependsOn("formatKotlin")
-        dependsOn("lintKotlin")
-    }
-    build {
-        dependsOn(named("formatAndLintKotlin"))
-        dependsOn(dokkaGenerate)
-    }
-    publish {
-        dependsOn(named("formatAndLintKotlin"))
-    }
-    test {
-        useJUnitPlatform()
-    }
-    check {
-        dependsOn("installKotlinterPrePushHook")
-    }
-}
-
 dokka {
     dokkaPublications.html {
         outputDirectory.set(layout.buildDirectory.dir("dokka"))
@@ -115,5 +93,33 @@ mavenPublishing {
             connection = "scm:git:git://github.com/$user/$repo.git"
             developerConnection = "scm:git:ssh://github.com/$user/$repo.git"
         }
+    }
+}
+
+tasks.apply {
+    register("formatAndLintKotlin") {
+        group = "formatting"
+        description = "Fix Kotlin code style deviations with kotlinter"
+        dependsOn("formatKotlin")
+        dependsOn("lintKotlin")
+    }
+    build {
+        dependsOn(named("formatAndLintKotlin"))
+        dependsOn(dokkaGenerate)
+    }
+    publish {
+        dependsOn(named("formatAndLintKotlin"))
+    }
+    test {
+        useJUnitPlatform()
+    }
+    check {
+        dependsOn("installKotlinterPrePushHook")
+    }
+}
+
+afterEvaluate {
+    tasks.named("generateMetadataFileForMavenPublication") {
+        dependsOn(tasks.named("dokkaJavadocJar"))
     }
 }
