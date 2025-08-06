@@ -20,7 +20,7 @@ on:
 jobs:
   publish:
     name: Release Build and Publish
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v4
