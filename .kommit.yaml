@@ -5,7 +5,7 @@ types:
   - fix: A bug fix
   - docs: Documentation only changes
   - refactor: A code change that neither fixes a bug nor adds a feature
-  - ci: A change that affects workflows and automatically run testing
+  - cd: A change that affects workflows and automatic production
   - chore: Other changes that don't modify src or test files
 
 scopes:
