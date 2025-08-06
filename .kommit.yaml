@@ -14,7 +14,7 @@ scopes:
     - ui
     - api
     - docs
-  ci:
+  cd:
     - release
     - docs
 

@@ -35,6 +35,14 @@ jobs:
           distribution: 'temurin'
           java-version: 21
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "9.0.0"
+
+      - name: Make gradlew Executable
+        run: chmod +x gradlew
+
       - name: Bump version in gradle.properties
         id: bump_version
         run: |
