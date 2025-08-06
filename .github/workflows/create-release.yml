@@ -1,60 +1,101 @@
-name: Create Release on Version Commit
+name: Publish
 
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version number for the release'
-        required: true
-        default: ''
-
-permissions:
-  contents: write
+      bump:
+        description: 'Version bump type'
+        required: false
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      custom_version:
+        description: 'Custom version (overrides bump)'
+        required: false
+        type: string
 
 jobs:
-  create_release:
-    runs-on: ubuntu-latest
-
+  publish:
+    name: Release Build and Publish
+    runs-on: macOS-latest
     steps:
-      - name: Checkout code
+      - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Set up Git
-        run: |
-          git config --global --add safe.directory $GITHUB_WORKSPACE
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 21
 
-      - name: Get previous release tag
-        id: get_previous_tag
+      - name: Bump version in gradle.properties
+        id: bump_version
         run: |
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          echo "previous_tag=$PREVIOUS_TAG" >> $GITHUB_ENV
-        shell: bash
+          file="gradle.properties"
+          if [ -n "${{ github.event.inputs.custom_version }}" ]; then
+            new_version="${{ github.event.inputs.custom_version }}"
+          else
+            version_line=$(grep "^version=" "$file")
+            version=${version_line#version=}
+            IFS='.' read -r major minor patch <<< "$version"
+            case "${{ github.event.inputs.bump }}" in
+              major)
+                major=$((major+1)); minor=0; patch=0;;
+              minor)
+                minor=$((minor+1)); patch=0;;
+              patch|*)
+                patch=$((patch+1));;
+            esac
+            new_version="$major.$minor.$patch"
+          fi
+          sed -i "s/^version=.*/version=$new_version/" "$file"
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
-      - name: Generate changelog
+      - name: Commit and push version bump
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore(release): Bump version to ${{ steps.bump_version.outputs.new_version }}"
+          file_pattern: gradle.properties
+
+      - name: Generate changelog since last tag
         id: changelog
         run: |
-          if [ "$PREVIOUS_TAG" != "" ]; then
-            git log $PREVIOUS_TAG..HEAD --oneline > changelog.txt
+          last_tag=$(git describe --tags --abbrev=0 || echo "")
+          if [ -z "$last_tag" ]; then
+            changelog=$(git log --pretty=format:"* %s" )
           else
-            git log --oneline > changelog.txt
+            changelog=$(git log "$last_tag"..HEAD --pretty=format:"* %s")
           fi
-          echo "changelog=$(cat changelog.txt)" >> $GITHUB_ENV
-        shell: bash
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$changelog" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          body: |
-            Changes since last release:
-            ```
-            ${{ env.changelog }}
-            ```
-          tag_name: "v${{ github.event.inputs.version }}"
-          name: "Release v${{ github.event.inputs.version }}"
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
-          generate_release_notes: true
-          make_latest: true
+          tag_name: v${{ steps.bump_version.outputs.new_version }}
+          name: v${{ steps.bump_version.outputs.new_version }}
+          body: ${{ steps.changelog.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Maven Central credentials from token block
+        id: extract-creds
+        run: |
+          echo "${{ secrets.SONATYPE_TOKEN_XML }}" > server.xml
+          USERNAME=$(xmllint --xpath "string(//username)" server.xml)
+          PASSWORD=$(xmllint --xpath "string(//password)" server.xml)
+          echo "ORG_GRADLE_PROJECT_mavenCentralUsername=$USERNAME" >> $GITHUB_ENV
+          echo "ORG_GRADLE_PROJECT_mavenCentralPassword=$PASSWORD" >> $GITHUB_ENV
+
+      - name: Publish to MavenCentral
+        run: ./gradlew publishToMavenCentral --no-configuration-cache
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE_KEY }}

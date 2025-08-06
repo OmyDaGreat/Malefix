@@ -1,1 +1,1 @@
-rootProject.name = "KotlinLibraryTemplate"
+rootProject.name = "Malefix"

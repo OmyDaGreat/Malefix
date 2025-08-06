@@ -10,12 +10,11 @@ val desc = "A Kotlin util library for FRC!"
 val localMavenRepo = uri(layout.buildDirectory.dir("repo").get())
 
 plugins {
+    alias(libs.plugins.vanniktech.mavenPublish)
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlinter)
     alias(libs.plugins.central)
     alias(libs.plugins.dokka)
-    `maven-publish`
-    signing
 }
 
 group = g
@@ -46,8 +45,8 @@ tasks.apply {
     register("formatAndLintKotlin") {
         group = "formatting"
         description = "Fix Kotlin code style deviations with kotlinter"
-        dependsOn(formatKotlin)
-        dependsOn(lintKotlin)
+        dependsOn("formatKotlin")
+        dependsOn("lintKotlin")
     }
     build {
         dependsOn(named("formatAndLintKotlin"))
@@ -68,6 +67,9 @@ dokka {
     dokkaPublications.html {
         outputDirectory.set(layout.buildDirectory.dir("dokka"))
     }
+    pluginsConfiguration.html {
+        footerMessage.set("&copy; 2025 Om Gupta &lt;ogupta4242@gmail.com&gt;")
+    }
 }
 
 java {
@@ -83,53 +85,35 @@ kotlin {
     }
 }
 
-signing {
-    useGpgCmd()
-    sign(publishing.publications)
-}
+mavenPublishing {
+    publishToMavenCentral()
 
-centralPortalPlus {
-    url = localMavenRepo
-    tokenXml = uri(layout.projectDirectory.file("user_token.xml"))
-    publishingType = PublishingType.AUTOMATIC
-}
+    signAllPublications()
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = g
-            artifactId = artifact
-            version = v
+    coordinates(g, artifact, v)
 
-            from(components["java"])
-
-            pom {
-                name.set(repo)
-                description.set(desc)
-                url.set("https://github.com/$user/$repo")
-                developers {
-                    developer {
-                        name.set("Om Gupta")
-                        email.set("ogupta4242@gmail.com")
-                    }
-                }
-                licenses {
-                    license {
-                        name.set("MIT License")
-                        url.set("https://opensource.org/licenses/MIT")
-                    }
-                }
-                scm {
-                    connection.set("scm:git:git://github.com/$user/$repo.git")
-                    developerConnection.set("scm:git:ssh://github.com/$user/$repo.git")
-                    url.set("https://github.com/$user/$repo")
-                }
+    pom {
+        name = repo
+        description = desc
+        inceptionYear = "2025"
+        url = "https://github.com/$user/$repo"
+        licenses {
+            license {
+                name = "MIT License"
+                url = "https://mit.malefic.xyz"
             }
         }
-        repositories {
-            maven {
-                url = localMavenRepo
+        developers {
+            developer {
+                name = "Om Gupta"
+                email = "ogupta4242@gmail.com"
+                url = "malefic.xyz"
             }
+        }
+        scm {
+            url = "https://github.com/$user/$repo"
+            connection = "scm:git:git://github.com/$user/$repo.git"
+            developerConnection = "scm:git:ssh://github.com/$user/$repo.git"
         }
     }
 }
