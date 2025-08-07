@@ -47,3 +47,8 @@ The `.kommit.yaml` file defines the commit message conventions for the project, 
 For more detailed documentation, visit the project website at https://omydagreat.github.io/Malefix/.
 
 == How to Add
+
+The `libs.versions.toml` file stores the libraries and versions within a project. +
+
+    . Add `malefix = "1.0.0"` under the versions.
+    . Add `malefix = { group = "xyz.malefic.frc", name = "malefix", version.ref = "malefix" }` under the libraries.
