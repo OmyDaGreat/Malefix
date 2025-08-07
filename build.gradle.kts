@@ -1,5 +1,3 @@
-import cn.lalaki.pub.BaseCentralPortalPlusExtension.PublishingType
-
 val user = "OmyDaGreat"
 val repo = "Malefix"
 val g = "xyz.malefic.frc"
@@ -7,14 +5,12 @@ val artifact = "malefix"
 val v = "1.0.0"
 val desc = "A Kotlin util library for FRC!"
 
-val localMavenRepo = uri(layout.buildDirectory.dir("repo").get())
-
 plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
-    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlinter)
     alias(libs.plugins.central)
     alias(libs.plugins.dokka)
+    kotlin("jvm")
 }
 
 group = g
@@ -35,9 +31,10 @@ repositories {
 
 dependencies {
     implementation(libs.kermit)
-    implementation(libs.bundles.wpilib)
-    implementation(libs.bundles.advantagekit)
     implementation(libs.bundles.vendor)
+    implementation(libs.bundles.wpilib)
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(libs.bundles.advantagekit)
     testImplementation(kotlin("test"))
 }
 
@@ -51,15 +48,11 @@ dokka {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
     withSourcesJar()
 }
 
 kotlin {
-    jvmToolchain {
-        this.languageVersion.set(JavaLanguageVersion.of(17))
-    }
+    jvmToolchain(8)
 }
 
 mavenPublishing {

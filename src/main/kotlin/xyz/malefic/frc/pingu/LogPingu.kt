@@ -39,6 +39,26 @@ object LogPingu {
     }
 
     /**
+     * Logs a key-value pair.
+     *
+     * @receiver The key associated with the value to log.
+     * @param value The value to log.
+     */
+    infix fun String.to(value: Any) {
+        capturedLogs.add(Log(this, value))
+    }
+
+    /**
+     * Logs a key-value pair.
+     *
+     * @receiver The key associated with the value to log.
+     * @param value The value to log.
+     */
+    infix fun String.plus(value: Any) {
+        capturedLogs.add(Log(this, value))
+    }
+
+    /**
      * Logs multiple values within the provided block context.
      *
      * This function captures logs generated within the block and logs them all at once
