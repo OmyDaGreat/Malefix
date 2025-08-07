@@ -45,3 +45,5 @@ The `.kommit.yaml` file defines the commit message conventions for the project, 
 == Documentation
 
 For more detailed documentation, visit the project website at https://omydagreat.github.io/Malefix/.
+
+== How to Add
