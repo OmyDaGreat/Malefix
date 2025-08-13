@@ -4,6 +4,10 @@ $dokka.location:xyz.malefic.frc.emu////PointingToDeclaration/-malefix/xyz.malef
 $dokka.location:xyz.malefic.frc.emu/Button.A///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-a/index.html
 $dokka.location:xyz.malefic.frc.emu/Button.B///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-b/index.html
 $dokka.location:xyz.malefic.frc.emu/Button.BACK///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-b-a-c-k/index.html
+$dokka.location:xyz.malefic.frc.emu/Button.DPAD_DOWN///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-d-p-a-d_-d-o-w-n/index.html
+$dokka.location:xyz.malefic.frc.emu/Button.DPAD_LEFT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-d-p-a-d_-l-e-f-t/index.html
+$dokka.location:xyz.malefic.frc.emu/Button.DPAD_RIGHT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-d-p-a-d_-r-i-g-h-t/index.html
+$dokka.location:xyz.malefic.frc.emu/Button.DPAD_UP///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-d-p-a-d_-u-p/index.html
 $dokka.location:xyz.malefic.frc.emu/Button.LEFT_BUMPER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-l-e-f-t_-b-u-m-p-e-r/index.html
 $dokka.location:xyz.malefic.frc.emu/Button.LEFT_STICK///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-l-e-f-t_-s-t-i-c-k/index.html
 $dokka.location:xyz.malefic.frc.emu/Button.LEFT_TRIGGER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-l-e-f-t_-t-r-i-g-g-e-r/index.html
@@ -15,6 +19,7 @@ $dokka.location:xyz.malefic.frc.emu/Button.X///PointingToDeclaration/{"org.jetbr
 $dokka.location:xyz.malefic.frc.emu/Button.Y///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-button/-y/index.html
 $dokka.location:xyz.malefic.frc.emu/Button///PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-button/index.html
 $dokka.location:xyz.malefic.frc.emu/Button/checkPressed/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-button/check-pressed.html
+$dokka.location:xyz.malefic.frc.emu/Button/checkReleased/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-button/check-released.html
 $dokka.location:xyz.malefic.frc.emu/Button/entries/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-button/entries.html
 $dokka.location:xyz.malefic.frc.emu/Button/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-button/value-of.html
 $dokka.location:xyz.malefic.frc.emu/Button/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-button/values.html
@@ -90,8 +95,8 @@ $dokka.location:xyz.malefic.frc.pingu/AlertPingu/add/#com.ctre.phoenix6.hardware
 $dokka.location:xyz.malefic.frc.pingu/AlertPingu/add/#com.ctre.phoenix6.hardware.TalonFX#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-alert-pingu/add.html
 $dokka.location:xyz.malefic.frc.pingu/AlertPingu/periodic/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-alert-pingu/periodic.html
 $dokka.location:xyz.malefic.frc.pingu/Bingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-bingu/index.html
-$dokka.location:xyz.malefic.frc.pingu/Bingu/bind/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-bingu/bind.html
-$dokka.location:xyz.malefic.frc.pingu/Bingu/bindings/edu.wpi.first.wpilibj.XboxController#kotlin.Array[kotlin.Pair[xyz.malefic.frc.emu.Button,kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]]]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-bingu/bindings.html
+$dokka.location:xyz.malefic.frc.pingu/Bingu/bind/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-bingu/bind.html
+$dokka.location:xyz.malefic.frc.pingu/Bingu/bindings/edu.wpi.first.wpilibj.XboxController#kotlin.Array[kotlin.Triple[xyz.malefic.frc.emu.Button,kotlin.Function0[edu.wpi.first.wpilibj2.command.Command],kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]]]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-bingu/bindings.html
 $dokka.location:xyz.malefic.frc.pingu/Bingu/periodic/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-bingu/periodic.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBinding///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-binding/index.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/index.html
