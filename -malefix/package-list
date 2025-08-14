@@ -107,9 +107,16 @@ $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/press/#xyz.malefic.f
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/press/#xyz.malefic.frc.emu.Button#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/press.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/release/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/release.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/release/#xyz.malefic.frc.emu.Button#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/release.html
+$dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/unpress/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/unpress.html
+$dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/unpress/#xyz.malefic.frc.emu.Button#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/unpress.html
+$dokka.location:xyz.malefic.frc.pingu/CommandPingu.Companion///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/-companion/index.html
+$dokka.location:xyz.malefic.frc.pingu/CommandPingu.Companion/registerCommands/#kotlin.Function1[xyz.malefic.frc.pingu.CommandPinguDsl,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/-companion/register-commands.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu/CommandPingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/-command-pingu.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu/bind/#kotlin.String#edu.wpi.first.wpilibj2.command.Command/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/bind.html
+$dokka.location:xyz.malefic.frc.pingu/CommandPinguDsl///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu-dsl/index.html
+$dokka.location:xyz.malefic.frc.pingu/CommandPinguDsl/CommandPinguDsl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu-dsl/-command-pingu-dsl.html
+$dokka.location:xyz.malefic.frc.pingu/CommandPinguDsl/bind/#kotlin.String#edu.wpi.first.wpilibj2.command.Command/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu-dsl/bind.html
 $dokka.location:xyz.malefic.frc.pingu/ControllerButtonBinding///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-controller-button-binding/index.html
 $dokka.location:xyz.malefic.frc.pingu/DeviceAlert///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-device-alert/index.html
 $dokka.location:xyz.malefic.frc.pingu/Log///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log/index.html
