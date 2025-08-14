@@ -2,7 +2,7 @@ val user = "OmyDaGreat"
 val repo = "Malefix"
 val g = "xyz.malefic.frc"
 val artifact = "malefix"
-val v = "1.0.0"
+val v: String by project
 val desc = "A Kotlin util library for FRC!"
 
 plugins {
