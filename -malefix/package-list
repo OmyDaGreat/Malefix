@@ -103,11 +103,8 @@ $dokka.location:xyz.malefic.frc.pingu/Bingu/periodic/#/PointingToDeclaration/-m
 $dokka.location:xyz.malefic.frc.pingu/ButtonBinding///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-binding/index.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/index.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/ButtonBindingsBuilder/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/-button-bindings-builder.html
-$dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/press/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/press.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/press/#xyz.malefic.frc.emu.Button#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/press.html
-$dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/release/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/release.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/release/#xyz.malefic.frc.emu.Button#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/release.html
-$dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/unpress/#xyz.malefic.frc.emu.Button#kotlin.Function0[edu.wpi.first.wpilibj2.command.Command]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/unpress.html
 $dokka.location:xyz.malefic.frc.pingu/ButtonBindingsBuilder/unpress/#xyz.malefic.frc.emu.Button#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-button-bindings-builder/unpress.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu.Companion///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/-companion/index.html
 $dokka.location:xyz.malefic.frc.pingu/CommandPingu.Companion/registerCommands/#kotlin.Function1[xyz.malefic.frc.pingu.CommandPinguDsl,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-command-pingu/-companion/register-commands.html
