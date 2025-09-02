@@ -4,6 +4,7 @@ import edu.wpi.first.util.WPISerializable
 import edu.wpi.first.util.struct.StructSerializable
 import org.littletonrobotics.junction.Logger.recordMetadata
 import org.littletonrobotics.junction.Logger.recordOutput
+import xyz.malefic.frc.pingu.LogPingu.logs
 
 /**
  * Type alias for a pair consisting of a log message and any associated data.
@@ -16,6 +17,19 @@ typealias Log = Pair<String, Any>
  */
 object LogPingu {
     private val capturedLogs = mutableListOf<Log>()
+
+    /**
+     * Represents files to ignore during logging.
+     * Can also include directories.
+     * Files and folders are not required to have a file path,
+     * will ignore all files and folders with the same name.
+     * Ignored files will use project root as base path
+     * Case sensitive
+     */
+    val IGNORED_FILES =
+        listOf<String>(
+            "",
+        )
 
     /**
      * Indicates whether the system is in test mode.
@@ -36,6 +50,26 @@ object LogPingu {
         value: Any,
     ) {
         capturedLogs.add(Log(string, value))
+    }
+
+    /**
+     * Logs a key-value pair.
+     *
+     * @receiver The key associated with the value to log.
+     * @param value The value to log.
+     */
+    infix fun String.to(value: Any) {
+        capturedLogs.add(Log(this, value))
+    }
+
+    /**
+     * Logs a key-value pair.
+     *
+     * @receiver The key associated with the value to log.
+     * @param value The value to log.
+     */
+    operator fun String.plus(value: Any) {
+        capturedLogs.add(Log(this, value))
     }
 
     /**
@@ -76,82 +110,30 @@ object LogPingu {
         }
 
     /**
-     * Logs a double value with a specified key if the system is in test mode.
-     *
-     * @param key The key associated with the value to log.
-     * @param value The double value to log.
-     */
-    @JvmStatic
-    fun logs(
-        key: String?,
-        value: Double,
-    ) {
-        if (TEST_MODE) {
-            recordOutput(key, value)
-        }
-    }
-
-    /**
-     * Logs an integer value with a specified key if the system is in test mode.
-     *
-     * @param key The key associated with the value to log.
-     * @param value The integer value to log.
-     */
-    @JvmStatic
-    fun logs(
-        key: String?,
-        value: Int,
-    ) {
-        if (TEST_MODE) {
-            recordOutput(key, value)
-        }
-    }
-
-    /**
      * Logs a boolean value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
      * @param value The boolean value to log.
      */
     @JvmStatic
-    fun logs(
+    inline fun <reified A, reified B> A.logs(
         key: String?,
-        value: Boolean,
+        value: B,
     ) {
-        if (TEST_MODE) {
-            recordOutput(key, value)
+        A::class.java.protectionDomain.codeSource.location.path?.let { path ->
+            if (IGNORED_FILES.any { it.contains(path.split("/").last()) }) return
+            if (IGNORED_FILES.any { it.contains(path) }) return
         }
-    }
 
-    /**
-     * Logs a String value with a specified key if the system is in test mode.
-     *
-     * @param key The key associated with the value to log.
-     * @param value The String value to log.
-     */
-    @JvmStatic
-    fun logs(
-        key: String?,
-        value: String?,
-    ) {
         if (TEST_MODE) {
-            recordOutput(key, value)
-        }
-    }
-
-    /**
-     * Logs a WPISerializable value with a specified key if the system is in test mode.
-     *
-     * @param key The key associated with the value to log.
-     * @param value The WPISerializable value to log.
-     */
-    @JvmStatic
-    fun <T : WPISerializable?> logs(
-        key: String?,
-        value: T,
-    ) {
-        if (TEST_MODE) {
-            recordOutput(key, value)
+            when (value) {
+                is Double -> recordOutput(key, value)
+                is Int -> recordOutput(key, value)
+                is Boolean -> recordOutput(key, value)
+                is String -> recordOutput(key, value)
+                is WPISerializable -> recordOutput(key, value)
+                else -> println("Unsupported log type for key $key")
+            }
         }
     }
 

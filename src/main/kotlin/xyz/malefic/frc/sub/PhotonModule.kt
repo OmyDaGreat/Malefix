@@ -92,7 +92,7 @@ class PhotonModule(
         singleTargetVector: Matrix<N3, N1> = DEFAULT_SINGLE_TARGET_STD_DEVS_2D,
         multiTargetVector: Matrix<N3, N1> = DEFAULT_MULTI_TARGET_STD_DEVS_2D,
     ) {
-        if (estimatedPose.isEmpty) {
+        if (!estimatedPose.isPresent) {
             currentStdDevs = singleTargetVector
             return
         }
@@ -125,7 +125,7 @@ class PhotonModule(
         singleTargetVector: Matrix<N4, N1> = DEFAULT_SINGLE_TARGET_STD_DEVS_3D,
         multiTargetVector: Matrix<N4, N1> = DEFAULT_MULTI_TARGET_STD_DEVS_3D,
     ) {
-        if (estimatedPose.isEmpty) {
+        if (!estimatedPose.isPresent) {
             currentStdDevs3d = singleTargetVector
             return
         }
@@ -179,7 +179,7 @@ class PhotonModule(
 
         for (target in targets) {
             val tagPoseOptional = poseEstimator.fieldTags.getTagPose(target.fiducialId)
-            if (tagPoseOptional.isEmpty) continue
+            if (!tagPoseOptional.isPresent) continue
 
             numTags++
             val tagPose = tagPoseOptional.get()
