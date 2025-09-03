@@ -17,6 +17,7 @@ scopes:
   cd:
     - release
     - docs
+    - build
 
 options:
   allowBreakingChanges:

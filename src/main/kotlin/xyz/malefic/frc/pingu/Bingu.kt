@@ -168,6 +168,74 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is pressed.
      *
+     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * only the press command is updated; the release command remains unchanged.
+     *
+     * @param button The button to bind.
+     * @param command The command supplier for the press event.
+     *
+     * Example:
+     * ```kotlin
+     * press(Button.A) { MyCommand() }
+     * ```
+     */
+    fun press(
+        button: Button,
+        command: Command,
+    ) {
+        val (_, released) = bindings[button] ?: ({ InstantCommand() } to { InstantCommand() })
+        bindings[button] = { command } to released
+    }
+
+    /**
+     * Sets the command supplier to be executed when the specified button is released.
+     *
+     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * only the release command is updated; the press command remains unchanged.
+     *
+     * @param button The button to bind.
+     * @param command The command supplier for the release event.
+     *
+     * Example:
+     * ```kotlin
+     * release(Button.A) { MyReleaseCommand() }
+     * ```
+     */
+    fun release(
+        button: Button,
+        command: Command,
+    ) {
+        val (pressed, _) = bindings[button] ?: ({ InstantCommand() } to { InstantCommand() })
+        bindings[button] = pressed to { command }
+    }
+
+    /**
+     * Sets the command supplier to be executed when the specified button is released.
+     *
+     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * only the release command is updated; the press command remains unchanged.
+     *
+     * @param button The button to bind.
+     * @param command The command supplier for the release event.
+     *
+     * Example:
+     * ```kotlin
+     * unpress(Button.A) { MyReleaseCommand() }
+     * ```
+     * Overload just for Jayden Sun
+     */
+    @Suppress("kotlin:S4144")
+    fun unpress(
+        button: Button,
+        command: Command,
+    ) {
+        val (pressed, _) = bindings[button] ?: ({ InstantCommand() } to { InstantCommand() })
+        bindings[button] = pressed to { command }
+    }
+
+    /**
+     * Sets the command supplier to be executed when the specified button is pressed.
+     *
      * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an InstantCommand.
      * Useful for simple actions that do not require a full Command implementation.
      *

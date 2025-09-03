@@ -1,3 +1,5 @@
+// Adapted from https://gist.github.com/mjansen4857/a8024b55eb427184dbd10ae8923bd57d
+
 package xyz.malefic.frc.path
 
 import com.pathplanner.lib.path.GoalEndState
@@ -16,7 +18,6 @@ import org.littletonrobotics.junction.inputs.LoggableInputs
  * A class that implements the Pathfinder interface using the LocalADStar algorithm. This class is
  * responsible for calculating paths for a robot to follow on a field, taking into account dynamic
  * obstacles and other constraints.
- *
  *
  * Usage in FRC: This class is used in FRC (FIRST Robotics Competition) to navigate the robot
  * autonomously on the field. It calculates the optimal path from a start position to a goal

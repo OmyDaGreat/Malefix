@@ -4,7 +4,6 @@ import edu.wpi.first.util.WPISerializable
 import edu.wpi.first.util.struct.StructSerializable
 import org.littletonrobotics.junction.Logger.recordMetadata
 import org.littletonrobotics.junction.Logger.recordOutput
-import xyz.malefic.frc.pingu.LogPingu.logs
 
 /**
  * Type alias for a pair consisting of a log message and any associated data.
@@ -26,10 +25,7 @@ object LogPingu {
      * Ignored files will use project root as base path
      * Case sensitive
      */
-    val IGNORED_FILES =
-        listOf<String>(
-            "",
-        )
+    val IGNORED_FILES = mutableSetOf<String>("")
 
     /**
      * Indicates whether the system is in test mode.
@@ -37,6 +33,14 @@ object LogPingu {
      */
     @Suppress("ktlint:standard:property-naming")
     var TEST_MODE: Boolean = true
+
+    /**
+     * Adds a file or directory name to the set of ignored files for logging.
+     *
+     * @param name The name of the file or directory to ignore.
+     *             Case sensitive. Uses project root as base path.
+     */
+    fun addIgnoredFile(name: String) = IGNORED_FILES.add(name)
 
     /**
      * Logs a key-value pair.
@@ -97,17 +101,7 @@ object LogPingu {
      */
     @JvmStatic
     @SafeVarargs
-    fun logs(vararg logs: Log) =
-        logs.forEach { (key, value) ->
-            when (value) {
-                is Double -> logs(key, value)
-                is Int -> logs(key, value)
-                is Boolean -> logs(key, value)
-                is String -> logs(key, value)
-                is WPISerializable -> logs(key, value)
-                else -> println("Unsupported log type for key $key")
-            }
-        }
+    fun logs(vararg logs: Log) = logs.forEach { (key, value) -> logs(key, value) }
 
     /**
      * Logs a boolean value with a specified key if the system is in test mode.
@@ -120,10 +114,7 @@ object LogPingu {
         key: String?,
         value: B,
     ) {
-        A::class.java.protectionDomain.codeSource.location.path?.let { path ->
-            if (IGNORED_FILES.any { it.contains(path.split("/").last()) }) return
-            if (IGNORED_FILES.any { it.contains(path) }) return
-        }
+        if (IGNORED_FILES.any { A::class.java.name.contains(it, true) }) return
 
         if (TEST_MODE) {
             when (value) {

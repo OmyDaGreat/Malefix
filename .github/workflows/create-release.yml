@@ -73,6 +73,25 @@ jobs:
           commit_message: "chore(release): Bump version to ${{ steps.bump_version.outputs.new_version }}"
           file_pattern: gradle.properties
 
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - name: Extract Maven Central credentials from token block
+        id: extract-creds
+        run: |
+          echo "${{ secrets.SONATYPE_TOKEN_XML }}" > server.xml
+          USERNAME=$(xmllint --xpath "string(//username)" server.xml)
+          PASSWORD=$(xmllint --xpath "string(//password)" server.xml)
+          echo "ORG_GRADLE_PROJECT_mavenCentralUsername=$USERNAME" >> $GITHUB_ENV
+          echo "ORG_GRADLE_PROJECT_mavenCentralPassword=$PASSWORD" >> $GITHUB_ENV
+
+      - name: Publish to MavenCentral
+        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
+        env:
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE_KEY }}
+
       - name: Generate changelog since last tag
         id: changelog
         run: |
@@ -94,22 +113,3 @@ jobs:
           body: ${{ steps.changelog.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Install xmllint
-        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
-
-      - name: Extract Maven Central credentials from token block
-        id: extract-creds
-        run: |
-          echo "${{ secrets.SONATYPE_TOKEN_XML }}" > server.xml
-          USERNAME=$(xmllint --xpath "string(//username)" server.xml)
-          PASSWORD=$(xmllint --xpath "string(//password)" server.xml)
-          echo "ORG_GRADLE_PROJECT_mavenCentralUsername=$USERNAME" >> $GITHUB_ENV
-          echo "ORG_GRADLE_PROJECT_mavenCentralPassword=$PASSWORD" >> $GITHUB_ENV
-
-      - name: Publish to MavenCentral
-        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
-        env:
-          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.GPG_KEY_ID }}
-          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
-          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE_KEY }}

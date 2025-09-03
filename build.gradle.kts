@@ -8,7 +8,6 @@ val desc = "A Kotlin util library for FRC!"
 plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
     alias(libs.plugins.kotlinter)
-    alias(libs.plugins.central)
     alias(libs.plugins.dokka)
     kotlin("jvm")
 }
