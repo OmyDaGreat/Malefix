@@ -96,13 +96,22 @@ jobs:
 
       - name: Get Changes between Tags
         id: changelog
-        uses: simbo/changes-between-tags-action@v1
+        run: |
+          last_tag=$(git describe --tags --abbrev=0 || echo "")
+          if [ -z "$last_tag" ]; then
+            changelog=$(git log --pretty=format:"* %s" )
+          else
+            changelog=$(git log "$last_tag"..HEAD --pretty=format:"* %s")
+          fi
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$changelog" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.bump_version.outputs.new_version }}
           name: v${{ steps.bump_version.outputs.new_version }}
-          body: ${{ steps.changelog.outputs.changes }}
+          body: ${{ steps.changelog.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
