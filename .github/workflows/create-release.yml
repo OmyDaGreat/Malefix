@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up JDK 21
         uses: actions/setup-java@v5
@@ -92,24 +94,15 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE_KEY }}
 
-      - name: Generate changelog since last tag
+      - name: Get Changes between Tags
         id: changelog
-        run: |
-          last_tag=$(git describe --tags --abbrev=0 || echo "")
-          if [ -z "$last_tag" ]; then
-            changelog=$(git log --pretty=format:"* %s" )
-          else
-            changelog=$(git log "$last_tag"..HEAD --pretty=format:"* %s")
-          fi
-          echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          echo "$changelog" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+        uses: simbo/changes-between-tags-action@v1
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.bump_version.outputs.new_version }}
           name: v${{ steps.bump_version.outputs.new_version }}
-          body: ${{ steps.changelog.outputs.changelog }}
+          body: ${{ steps.changelog.outputs.changes }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
