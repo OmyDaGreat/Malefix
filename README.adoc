@@ -33,6 +33,9 @@ This module includes classes related to PhotonVision, a vision processing librar
 The `emu` package contains classes for handling game controller inputs.
 
 * `Button`: An enum class representing the buttons on a joystick or game controller.
+* `Dir4`: An enum class representing the four cardinal directions.
+* `Dir8`: An enum class representing the eight directions, including those between `Dir4`.
+* `DirRotate`: An enum class representing rotational directions.
 
 == Build and Deployment
 
