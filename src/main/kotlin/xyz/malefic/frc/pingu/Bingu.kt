@@ -47,6 +47,15 @@ object Bingu : SubsystemBase() {
     private val buttonMaps: MutableList<ControllerButtonBinding> = mutableListOf()
 
     /**
+     * Stores the previous pressed state of each button for each controller.
+     *
+     * The key is a Pair of XboxController and Button, and the value is a Boolean indicating
+     * whether the button was pressed in the previous periodic cycle.
+     * Used to detect button press and release events.
+     */
+    private val previousButtonStates: MutableMap<Pair<XboxController, Button>, Boolean> = mutableMapOf()
+
+    /**
      * Extension function for XboxController to bind multiple button-command pairs (deprecated).
      *
      * This method is retained for legacy code. Prefer the DSL-based `bindings` extension for new code.
@@ -128,12 +137,18 @@ object Bingu : SubsystemBase() {
     override fun periodic() {
         buttonMaps.forEach { (controller, triple) ->
             val (button, press, release) = triple
-            if (triple.first.checkPressed(controller)) {
+            val key = controller to button
+            val isPressed = button.checkPressed(controller)
+            val wasPressed = previousButtonStates[key] ?: false
+
+            if (isPressed && !wasPressed) {
                 press().schedule()
             }
-            if (button.checkReleased(controller)) {
+            if (!isPressed && wasPressed) {
                 release().schedule()
             }
+
+            previousButtonStates[key] = isPressed
         }
     }
 }

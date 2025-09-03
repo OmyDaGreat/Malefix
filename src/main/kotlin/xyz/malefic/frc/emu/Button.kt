@@ -33,13 +33,13 @@ enum class Button(
 
     RIGHT_TRIGGER({ it.rightTriggerAxis > 0.5 }, { it.rightTriggerAxis <= 0.5 }),
 
-    DPAD_UP({ it.pov == 0 }, { it.pov != 0 }),
+    DPAD_UP({ (it.pov in 315..360) || (it.pov in 0..45) }, { !((it.pov in 315..360) || (it.pov in 0..45)) }),
 
-    DPAD_RIGHT({ it.pov == 90 }, { it.pov != 90 }),
+    DPAD_RIGHT({ it.pov in 45..135 }, { it.pov !in 45..135 }),
 
-    DPAD_DOWN({ it.pov == 180 }, { it.pov != 180 }),
+    DPAD_DOWN({ it.pov in 135..225 }, { it.pov !in 135..225 }),
 
-    DPAD_LEFT({ it.pov == 270 }, { it.pov != 270 }),
+    DPAD_LEFT({ it.pov in 225..315 }, { it.pov !in 225..315 }),
 
     DPAD_NONE({ it.pov == -1 }, { it.pov != -1 }),
 }
