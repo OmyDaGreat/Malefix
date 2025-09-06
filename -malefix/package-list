@@ -127,7 +127,12 @@ $dokka.location:xyz.malefic.frc.pingu/LogPingu/addIgnoredFile/#kotlin.String/Poi
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/log/#kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/log.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#java.lang.Runnable/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.Array[kotlin.Pair[kotlin.String,kotlin.Any]]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.String?#TypeParam(bounds=[edu.wpi.first.util.WPISerializable?])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.String?#kotlin.Array[TypeParam(bounds=[edu.wpi.first.util.struct.StructSerializable?])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.String?#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.String?#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.String?#kotlin.Int/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/#kotlin.String?#kotlin.String?/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/logs/TypeParam(bounds=[kotlin.Any?])#kotlin.String?#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/metaLogs/#kotlin.String?#kotlin.String?/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/meta-logs.html
 $dokka.location:xyz.malefic.frc.pingu/LogPingu/plus/kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-log-pingu/plus.html
