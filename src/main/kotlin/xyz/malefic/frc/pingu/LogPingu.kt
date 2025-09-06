@@ -129,6 +129,86 @@ object LogPingu {
     }
 
     /**
+     * Logs a double value with a specified key if the system is in test mode.
+     *
+     * @param key The key associated with the value to log.
+     * @param value The double value to log.
+     */
+    @JvmStatic
+    fun logs(
+        key: String?,
+        value: Double,
+    ) {
+        if (TEST_MODE) {
+            recordOutput(key, value)
+        }
+    }
+
+    /**
+     * Logs an integer value with a specified key if the system is in test mode.
+     *
+     * @param key The key associated with the value to log.
+     * @param value The integer value to log.
+     */
+    @JvmStatic
+    fun logs(
+        key: String?,
+        value: Int,
+    ) {
+        if (TEST_MODE) {
+            recordOutput(key, value)
+        }
+    }
+
+    /**
+     * Logs a boolean value with a specified key if the system is in test mode.
+     *
+     * @param key The key associated with the value to log.
+     * @param value The boolean value to log.
+     */
+    @JvmStatic
+    fun logs(
+        key: String?,
+        value: Boolean,
+    ) {
+        if (TEST_MODE) {
+            recordOutput(key, value)
+        }
+    }
+
+    /**
+     * Logs a String value with a specified key if the system is in test mode.
+     *
+     * @param key The key associated with the value to log.
+     * @param value The String value to log.
+     */
+    @JvmStatic
+    fun logs(
+        key: String?,
+        value: String?,
+    ) {
+        if (TEST_MODE) {
+            recordOutput(key, value)
+        }
+    }
+
+    /**
+     * Logs a WPISerializable value with a specified key if the system is in test mode.
+     *
+     * @param key The key associated with the value to log.
+     * @param value The WPISerializable value to log.
+     */
+    @JvmStatic
+    fun <T : WPISerializable?> logs(
+        key: String?,
+        value: T,
+    ) {
+        if (TEST_MODE) {
+            recordOutput(key, value)
+        }
+    }
+
+    /**
      * Logs a StructSerializable value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
