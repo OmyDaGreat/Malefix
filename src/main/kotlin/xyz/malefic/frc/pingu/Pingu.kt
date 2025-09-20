@@ -17,9 +17,9 @@ data class Pingu(
     var p: Double,
     var i: Double,
     var d: Double,
-    var v: Double? = null,
-    var s: Double? = null,
-    var g: Double? = null,
+    var v: Double = 0.0,
+    var s: Double = 0.0,
+    var g: Double = 0.0,
 ) {
     /**
      * Gets the PIDController instance with the current PID parameters.

@@ -25,7 +25,7 @@ fun TalonFX.configureWithDefaults(
     pingu: Pingu,
     inverted: InvertedValue = InvertedValue.Clockwise_Positive,
     neutralMode: NeutralModeValue = NeutralModeValue.Brake,
-    currentLimits: Pair<Double?, Double?>? = Pair(40.0, 40.0),
+    currentLimits: Pair<Double?, Double?>? = Pair(40.79, 40.79),
     limitThresholds: Pair<Double?, Double?>? = null,
     dutyCycleNeutralDeadband: Double = 0.001,
     closedLoopRamp: Double = 0.0,
@@ -45,9 +45,9 @@ fun TalonFX.configureWithDefaults(
         config.Slot0.kP = it.p
         config.Slot0.kI = it.i
         config.Slot0.kD = it.d
-        config.Slot0.kV = it.v ?: 0.0
-        config.Slot0.kS = it.s ?: 0.0
-        config.Slot0.kG = it.g ?: 0.0
+        config.Slot0.kV = it.v
+        config.Slot0.kS = it.s
+        config.Slot0.kG = it.g
     }
 
     // Current Limits
