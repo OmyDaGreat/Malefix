@@ -6,7 +6,7 @@ Malefix is a Kotlin library designed for use in FRC (FIRST Robotics Competition)
 
 === `xyz.malefic.frc.extension`
 
-This module contains extension functions for various classes used in FRC. These extensions provide additional functionality, such as converting between different rotation representations, setting PID values, and working with PhotonVision results.
+This module contains extension functions for various classes used in FRC. These extensions provide additional functionality, such as converting between different rotation representations, configuring motors with sensible defaults, setting PID values, and working with PhotonVision results.
 
 === `xyz.malefic.frc.pingu`
 
