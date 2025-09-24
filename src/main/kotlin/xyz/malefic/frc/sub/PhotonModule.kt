@@ -75,7 +75,7 @@ class PhotonModule(
     /**
      * Retrieves all unread results from the PhotonCamera.
      */
-    val allUnreadResults: MutableList<PhotonPipelineResult>
+    val allUnreadResults: MutableList<PhotonPipelineResult?>
         get() = camera.allUnreadResults
 
     /**
