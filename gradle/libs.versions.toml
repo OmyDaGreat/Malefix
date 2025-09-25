@@ -7,7 +7,7 @@ pathplanner = "2025.2.7"
 advantagekit = "4.1.2"
 ctre-phoenix = "25.4.0"
 revlib = "2025.0.3"
-photonlib = "v2025.3.1"
+photonlib = "v2025.3.2"
 vanniktech = "0.34.0"
 
 [libraries]
