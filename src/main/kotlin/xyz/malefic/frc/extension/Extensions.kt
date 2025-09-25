@@ -96,9 +96,9 @@ fun TalonFXConfiguration.setPingu(pingu: Pingu) =
         Slot0.kP = p
         Slot0.kI = i
         Slot0.kD = d
-        v ?. run { Slot0.kV = v!! }
-        s ?. run { Slot0.kS = s!! }
-        g ?. run { Slot0.kG = g!! }
+        Slot0.kV = v
+        Slot0.kS = s
+        Slot0.kG = g
     }
 
 /**
@@ -113,9 +113,9 @@ fun TalonFXConfiguration.setPingu(pingu: NetworkPingu) =
         Slot0.kP = p.get()
         Slot0.kI = i.get()
         Slot0.kD = d.get()
-        v ?. run { Slot0.kV = v!!.get() }
-        s ?. run { Slot0.kS = s!!.get() }
-        g ?. run { Slot0.kG = g!!.get() }
+        Slot0.kV = v.get()
+        Slot0.kS = s.get()
+        Slot0.kG = g.get()
     }
 
 /**

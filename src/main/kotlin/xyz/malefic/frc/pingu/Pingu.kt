@@ -9,8 +9,8 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property p Proportional gain.
  * @property i Integral gain.
  * @property d Derivative gain.
- * @property v Optional velocity feedforward term.
- * @property s Optional static feedforward term.
+ * @property v Velocity feedforward term.
+ * @property s Static feedforward term.
  * @property g Gravity feedforward term.
  */
 data class Pingu(

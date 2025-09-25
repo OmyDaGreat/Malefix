@@ -14,13 +14,11 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property g The gravity gain as a LoggedNetworkNumber.
  * @throws NullPointerException if v, s, or g are not set and are then accessed.
  */
-class NetworkPingu
-    @JvmOverloads
-    constructor(
-        var p: LoggedNetworkNumber,
-        var i: LoggedNetworkNumber,
-        var d: LoggedNetworkNumber,
-        var v: LoggedNetworkNumber? = null,
-        var s: LoggedNetworkNumber? = null,
-        var g: LoggedNetworkNumber? = null,
-    ) : PIDController(p.get(), i.get(), d.get())
+class NetworkPingu(
+    var p: LoggedNetworkNumber,
+    var i: LoggedNetworkNumber,
+    var d: LoggedNetworkNumber,
+    var v: LoggedNetworkNumber,
+    var s: LoggedNetworkNumber,
+    var g: LoggedNetworkNumber,
+) : PIDController(p.get(), i.get(), d.get())

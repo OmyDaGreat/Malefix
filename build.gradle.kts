@@ -30,8 +30,12 @@ repositories {
 
 dependencies {
     implementation(libs.kermit)
-    implementation(libs.bundles.vendor)
+//    implementation(libs.bundles.vendor)
+    implementation(libs.pathplanner)
     implementation(libs.bundles.wpilib)
+    implementation(libs.photonlib)
+    implementation(libs.ctre.phoenix)
+    implementation(libs.photontargeting)
     implementation(kotlin("stdlib-jdk8"))
     implementation(libs.bundles.advantagekit)
     testImplementation(kotlin("test"))
