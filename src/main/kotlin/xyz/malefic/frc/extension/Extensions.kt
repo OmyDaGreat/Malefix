@@ -1,15 +1,21 @@
 package xyz.malefic.frc.extension
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
+import edu.wpi.first.apriltag.AprilTagFieldLayout
+import edu.wpi.first.apriltag.AprilTagFields
 import edu.wpi.first.math.geometry.Pose2d
 import edu.wpi.first.math.geometry.Rotation2d
 import edu.wpi.first.math.geometry.Rotation3d
+import edu.wpi.first.math.util.Units.inchesToMeters
+import edu.wpi.first.math.util.Units.metersToInches
+import edu.wpi.first.wpilibj.XboxController
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
 import xyz.malefic.frc.pingu.NetworkPingu
 import xyz.malefic.frc.pingu.Pingu
 import xyz.malefic.frc.sub.PhotonModule
 import java.util.Optional
+import kotlin.math.abs
 
 /**
  * Extension function for a list of PhotonModule objects to get the best PhotonPipelineResult.
@@ -50,10 +56,10 @@ fun List<Pair<PhotonModule, PhotonPipelineResult>>.hasTargets(): Boolean = this.
  * with the PhotonPipelineResult. If an estimated robot pose is present, it adds it to the list of poses.
  *
  * @receiver Pair<PhotonModule, PhotonPipelineResult> The pair of PhotonModule and PhotonPipelineResult.
- * @param prevEstimatedRobotPose Pose2d? The previous estimated robot pose to set as reference.
+ * @param prevEstimatedRobotPose Pose2d The previous estimated robot pose to set as reference.
  * @return List<EstimatedRobotPose> The list of estimated robot poses.
  */
-fun Pair<PhotonModule, PhotonPipelineResult>.getEstimatedPose(prevEstimatedRobotPose: Pose2d?): EstimatedRobotPose? {
+fun Pair<PhotonModule, PhotonPipelineResult>.getEstimatedPose(prevEstimatedRobotPose: Pose2d): EstimatedRobotPose? {
     first.poseEstimator.apply {
         setReferencePose(prevEstimatedRobotPose)
         return update(second).orElse(null)
@@ -87,10 +93,10 @@ fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev3d(estimatedRobotPose: 
 }
 
 /**
- * Extension function to set the Pingu values of a TalonFXConfiguration using a Pingu object.
+ * Extension function to set the Pingu values of a [TalonFXConfiguration] using a [Pingu] object.
  *
- * @receiver TalonFXConfiguration The TalonFX configuration to set the values for.
- * @param pingu Pingu The Pingu object containing the PIDF values.
+ * @receiver [TalonFXConfiguration] The [TalonFX] configuration to set the values for.
+ * @param pingu [Pingu] The [Pingu] object containing the PID values.
  */
 fun TalonFXConfiguration.setPingu(pingu: Pingu) =
     pingu.apply {
@@ -103,10 +109,10 @@ fun TalonFXConfiguration.setPingu(pingu: Pingu) =
     }
 
 /**
- * Extension function to set the Pingu values of a TalonFXConfiguration using a NetworkPingu object.
+ * Extension function to set the [Pingu] values of a [TalonFXConfiguration] using a [NetworkPingu] object.
  *
- * @receiver TalonFXConfiguration The TalonFX configuration to set the values for.
- * @param networkPingu NetworkPingu The NetworkPingu object containing the PIDF values.
+ * @receiver [TalonFXConfiguration] The [TalonFX] configuration to set the values for.
+ * @param networkPingu [NetworkPingu] The [NetworkPingu] object containing the PID values.
  */
 @Deprecated("Use the version that takes a Pingu instead", ReplaceWith("setPingu(networkPingu.pingu)"))
 @Suppress("kotlin:S6518")
@@ -125,7 +131,18 @@ fun TalonFXConfiguration.setPingu(networkPingu: NetworkPingu) =
  *
  * @receiver [Rotation2d] The 2D rotation to convert.
  * @param yaw Double The yaw value for the 3D rotation.
- * @return [Rotation3d] The resulting 3D rotation.
+ * @return [Rotation3d] The resulting 3D rotation.fun XboxController.leftStickPosition(
+ xDeadzone: Double,
+ yDeadzone: Double,
+): Pair<Double, Double> {
+ var x = leftX
+ if (abs(x) < xDeadzone) x = 0.0
+
+ var y = leftY
+ if (abs(y) < yDeadzone) y = 0.0
+
+ return Pair(x, y)
+}
  */
 fun Rotation2d.to3d(yaw: Double) = Rotation3d(cos, sin, yaw)
 
@@ -137,3 +154,55 @@ fun Rotation2d.to3d(yaw: Double) = Rotation3d(cos, sin, yaw)
  * @return [Rotation3d] The resulting 3D rotation.
  */
 operator fun Rotation2d.plus(yaw: Double) = Rotation3d(cos, sin, yaw)
+
+/**
+ * Extension property to get a new [Pose2d] rotated by 180 degrees from the current pose.
+ *
+ * @receiver [Pose2d] The original pose.
+ * @return [Pose2d] The pose rotated by 180 degrees.
+ */
+val Pose2d.rotated180: Pose2d
+    get() = Pose2d(this.translation, this.rotation.plus(Rotation2d.k180deg))
+
+/**
+ * Extension property to convert a value in inches to meters.
+ *
+ * @receiver [Double] The value in inches.
+ * @return [Double] The value converted to meters.
+ */
+val Double.inchesToMeters: Double
+    get() = inchesToMeters(this)
+
+/**
+ * Extension property to convert a value in meters to inches.
+ *
+ * @receiver [Double] The value in meters.
+ * @return [Double] The value converted to inches.
+ */
+val Double.metersToInches: Double
+    get() = metersToInches(this)
+
+/**
+ * Extension property to load the [AprilTagFieldLayout] for the given [AprilTagFields] enum value.
+ *
+ * @receiver [AprilTagFields] The enum value representing a specific AprilTag field.
+ * @return [AprilTagFieldLayout] The loaded field layout for the specified field.
+ */
+val AprilTagFields.layout: AprilTagFieldLayout
+    get() = AprilTagFieldLayout.loadField(this)
+
+/**
+ * Gets the position of the left stick based on the input from the controller.
+ *
+ * @receiver The controller.
+ * @return The coordinate representing the position of the left stick. The first element is the x-coordinate, and
+ * the second element is the y-coordinate.
+ */
+fun XboxController.leftStickPosition(
+    xDeadzone: Double,
+    yDeadzone: Double,
+): Pair<Double, Double> {
+    val x = if (abs(leftX) < xDeadzone) 0.0 else leftX
+    val y = if (abs(leftY) < yDeadzone) 0.0 else leftY
+    return Pair(x, y)
+}
