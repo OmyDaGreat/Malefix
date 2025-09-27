@@ -18,7 +18,7 @@ class NetworkPingu(
     var p: LoggedNetworkNumber,
     var i: LoggedNetworkNumber,
     var d: LoggedNetworkNumber,
-    var v: LoggedNetworkNumber,
-    var s: LoggedNetworkNumber,
-    var g: LoggedNetworkNumber,
+    var v: LoggedNetworkNumber? = null,
+    var s: LoggedNetworkNumber? = null,
+    var g: LoggedNetworkNumber? = null,
 ) : PIDController(p.get(), i.get(), d.get())
