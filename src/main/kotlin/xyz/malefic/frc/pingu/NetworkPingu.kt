@@ -21,4 +21,6 @@ class NetworkPingu(
     var v: LoggedNetworkNumber? = null,
     var s: LoggedNetworkNumber? = null,
     var g: LoggedNetworkNumber? = null,
-) : PIDController(p.get(), i.get(), d.get())
+) : PIDController(p.get(), i.get(), d.get()) {
+    val pingu: Pingu = Pingu(p.get(), i.get(), d.get(), v?.get() ?: 0.0, s?.get() ?: 0.0, g?.get() ?: 0.0)
+}

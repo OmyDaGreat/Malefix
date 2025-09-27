@@ -22,14 +22,15 @@ import java.util.Optional
  * @receiver List<PhotonModule> The list of PhotonModule objects to search through.
  * @return List<Pair<PhotonModule, PhotonPipelineResult>> The list of PhotonModule and PhotonPipelineResult pairs ordered by pose ambiguity.
  */
-fun List<PhotonModule>.getDecentResultPairs(): List<Pair<PhotonModule, PhotonPipelineResult>> =
+fun List<PhotonModule>.getDecentResultPairs(
+    condition: (PhotonPipelineResult) -> Boolean = { it.hasTargets() },
+): List<Pair<PhotonModule, PhotonPipelineResult>> =
     this
         .mapNotNull { module ->
             module.allUnreadResults
                 .getOrNull(0)
-                ?.takeIf {
-                    it.hasTargets() // && module.currentStdDevs.normF() < 0.9
-                }?.let { module to it }
+                ?.takeIf { condition(it) }
+                ?.let { module to it }
         }.sortedBy { it.second.bestTarget.poseAmbiguity }
 
 /**
@@ -105,33 +106,34 @@ fun TalonFXConfiguration.setPingu(pingu: Pingu) =
  * Extension function to set the Pingu values of a TalonFXConfiguration using a NetworkPingu object.
  *
  * @receiver TalonFXConfiguration The TalonFX configuration to set the values for.
- * @param pingu NetworkPingu The NetworkPingu object containing the PIDF values.
+ * @param networkPingu NetworkPingu The NetworkPingu object containing the PIDF values.
  */
-@SuppressWarnings("kotlin:S6518")
-fun TalonFXConfiguration.setPingu(pingu: NetworkPingu) =
-    pingu.apply {
+@Deprecated("Use the version that takes a Pingu instead", ReplaceWith("setPingu(networkPingu.pingu)"))
+@Suppress("kotlin:S6518")
+fun TalonFXConfiguration.setPingu(networkPingu: NetworkPingu) =
+    networkPingu.apply {
         Slot0.kP = p.get()
         Slot0.kI = i.get()
         Slot0.kD = d.get()
-        Slot0.kV = v.get()
-        Slot0.kS = s.get()
-        Slot0.kG = g.get()
+        v?.run { Slot0.kV = v!!.get() }
+        s?.run { Slot0.kS = s!!.get() }
+        g?.run { Slot0.kG = g!!.get() }
     }
 
 /**
- * Extension function to convert a Rotation2d to a Rotation3d.
+ * Extension function to convert a [Rotation2d] to a [Rotation3d].
  *
- * @receiver Rotation2d The 2D rotation to convert.
+ * @receiver [Rotation2d] The 2D rotation to convert.
  * @param yaw Double The yaw value for the 3D rotation.
- * @return Rotation3d The resulting 3D rotation.
+ * @return [Rotation3d] The resulting 3D rotation.
  */
 fun Rotation2d.to3d(yaw: Double) = Rotation3d(cos, sin, yaw)
 
 /**
- * Operator function to add a yaw value to a Rotation2d, resulting in a Rotation3d.
+ * Operator function to add a yaw value to a [Rotation2d], resulting in a [Rotation3d].
  *
- * @receiver Rotation2d The 2D rotation to add the yaw to.
+ * @receiver [Rotation2d] The 2D rotation to add the yaw to.
  * @param yaw Double The yaw value to add.
- * @return Rotation3d The resulting 3D rotation.
+ * @return [Rotation3d] The resulting 3D rotation.
  */
 operator fun Rotation2d.plus(yaw: Double) = Rotation3d(cos, sin, yaw)
