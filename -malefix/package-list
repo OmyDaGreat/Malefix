@@ -59,7 +59,7 @@ $dokka.location:xyz.malefic.frc.emu/DirRotate/valueOf/#kotlin.String/PointingToD
 $dokka.location:xyz.malefic.frc.emu/DirRotate/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-rotate/values.html
 $dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-malefix/xyz.malefic.frc.extension/index.html
 $dokka.location:xyz.malefic.frc.extension//configureWithDefaults/com.ctre.phoenix6.hardware.TalonFX#xyz.malefic.frc.pingu.Pingu#com.ctre.phoenix6.signals.InvertedValue#com.ctre.phoenix6.signals.NeutralModeValue#kotlin.Pair[kotlin.Double?,kotlin.Double?]?#kotlin.Pair[kotlin.Double?,kotlin.Double?]?#kotlin.Double#kotlin.Double#kotlin.Double#xyz.malefic.frc.pingu.MagicPingu?#kotlin.Function1[com.ctre.phoenix6.configs.TalonFXConfiguration,kotlin.Unit]?/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/configure-with-defaults.html
-$dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.sub.PhotonModule]#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-decent-result-pairs.html
+$dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.sub.PhotonModule]#kotlin.Function1[org.photonvision.targeting.PhotonPipelineResult,kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-decent-result-pairs.html
 $dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#edu.wpi.first.math.geometry.Pose2d?/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-estimated-pose.html
 $dokka.location:xyz.malefic.frc.extension//hasTargets/kotlin.collections.List[kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]]#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/has-targets.html
 $dokka.location:xyz.malefic.frc.extension//plus/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/plus.html
@@ -152,6 +152,7 @@ $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/d/#/PointingToDeclaration/-m
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/g/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-network-pingu/g.html
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/i/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-network-pingu/i.html
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/p/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-network-pingu/p.html
+$dokka.location:xyz.malefic.frc.pingu/NetworkPingu/pingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-network-pingu/pingu.html
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/s/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-network-pingu/s.html
 $dokka.location:xyz.malefic.frc.pingu/NetworkPingu/v/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-network-pingu/v.html
 $dokka.location:xyz.malefic.frc.pingu/Pingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-pingu/index.html
