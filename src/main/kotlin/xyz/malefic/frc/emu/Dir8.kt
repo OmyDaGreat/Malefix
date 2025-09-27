@@ -64,7 +64,7 @@ enum class Dir8 {
      * @return The corresponding Dir4 value.
      */
     fun toDir4(dirRotate: DirRotate) =
-        Dir4.entries[
+        DirZY.entries[
             when (this) {
                 UP -> 0
                 UP_RIGHT -> if (dirRotate == CLOCKWISE) 0 else 1

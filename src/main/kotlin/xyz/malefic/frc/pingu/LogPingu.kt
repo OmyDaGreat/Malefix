@@ -25,7 +25,7 @@ object LogPingu {
      * Ignored files will use project root as base path
      * Case sensitive
      */
-    val IGNORED_FILES = mutableSetOf<String>("")
+    val IGNORED_FILES = mutableSetOf<String>()
 
     /**
      * Indicates whether the system is in test mode.

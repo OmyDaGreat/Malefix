@@ -3,7 +3,7 @@ package xyz.malefic.frc.emu
 /**
  * Enum representing the four cardinal directions.
  */
-enum class Dir4 {
+enum class DirZY {
     UP,
     RIGHT,
     DOWN,

@@ -43,4 +43,3 @@ vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "
 [bundles]
 wpilib = ["wpilib-apriltag", "wpilib-hal", "wpilib-wpilibj", "wpilib-wpiutil", "wpilib-wpiunits", "wpilib-wpimath", "wpilib-ntcore-jni", "wpilib-ntcore", "wpilib-commands"]
 advantagekit = ["advantagekit-java", "advantagekit-wpilibio"]
-vendor = ["ctre-phoenix", "revlib", "photonlib", "photontargeting", "pathplanner"]

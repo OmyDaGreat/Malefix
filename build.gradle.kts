@@ -30,7 +30,6 @@ repositories {
 
 dependencies {
     implementation(libs.kermit)
-    // implementation(libs.bundles.vendor)
     implementation(libs.pathplanner)
     implementation(libs.bundles.wpilib)
     implementation(libs.photonlib)
