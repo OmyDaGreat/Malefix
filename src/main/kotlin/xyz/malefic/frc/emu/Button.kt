@@ -11,7 +11,6 @@ enum class Button(
 ) {
     A({ it.aButtonPressed }, { it.aButtonReleased }),
 
-
     B({ it.bButtonPressed }, { it.bButtonReleased }),
 
     X({ it.xButtonPressed }, { it.xButtonReleased }),

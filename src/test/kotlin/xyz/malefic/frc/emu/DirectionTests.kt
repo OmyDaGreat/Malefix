@@ -8,24 +8,24 @@ import kotlin.test.assertEquals
 class DirectionTests {
     @Test
     fun testDir4Opposite() {
-        assertEquals(DirZY.DOWN, DirZY.UP.opposite())
-        assertEquals(DirZY.LEFT, DirZY.RIGHT.opposite())
-        assertEquals(DirZY.UP, DirZY.DOWN.opposite())
-        assertEquals(DirZY.RIGHT, DirZY.LEFT.opposite())
+        assertEquals(DirYZ.DOWN, DirYZ.UP.opposite())
+        assertEquals(DirYZ.LEFT, DirYZ.RIGHT.opposite())
+        assertEquals(DirYZ.UP, DirYZ.DOWN.opposite())
+        assertEquals(DirYZ.RIGHT, DirYZ.LEFT.opposite())
     }
 
     @Test
     fun testDir4Rotate() {
-        assertEquals(DirZY.RIGHT, DirZY.UP.rotate(CLOCKWISE))
-        assertEquals(DirZY.LEFT, DirZY.UP.rotate(COUNTERCLOCKWISE))
+        assertEquals(DirYZ.RIGHT, DirYZ.UP.rotate(CLOCKWISE))
+        assertEquals(DirYZ.LEFT, DirYZ.UP.rotate(COUNTERCLOCKWISE))
     }
 
     @Test
     fun testDir4ToDir8() {
-        assertEquals(Dir8.UP, DirZY.UP.toDir8())
-        assertEquals(Dir8.RIGHT, DirZY.RIGHT.toDir8())
-        assertEquals(Dir8.DOWN, DirZY.DOWN.toDir8())
-        assertEquals(Dir8.LEFT, DirZY.LEFT.toDir8())
+        assertEquals(Dir8.UP, DirYZ.UP.toDir8())
+        assertEquals(Dir8.RIGHT, DirYZ.RIGHT.toDir8())
+        assertEquals(Dir8.DOWN, DirYZ.DOWN.toDir8())
+        assertEquals(Dir8.LEFT, DirYZ.LEFT.toDir8())
     }
 
     @Test
@@ -42,10 +42,10 @@ class DirectionTests {
 
     @Test
     fun testDir8ToDir4() {
-        assertEquals(DirZY.UP, Dir8.UP.toDir4(CLOCKWISE))
-        assertEquals(DirZY.RIGHT, Dir8.DOWN_RIGHT.toDir4(CLOCKWISE))
-        assertEquals(DirZY.DOWN, Dir8.DOWN.toDir4(CLOCKWISE))
-        assertEquals(DirZY.LEFT, Dir8.UP_LEFT.toDir4(CLOCKWISE))
+        assertEquals(DirYZ.UP, Dir8.UP.toDir4(CLOCKWISE))
+        assertEquals(DirYZ.RIGHT, Dir8.DOWN_RIGHT.toDir4(CLOCKWISE))
+        assertEquals(DirYZ.DOWN, Dir8.DOWN.toDir4(CLOCKWISE))
+        assertEquals(DirYZ.LEFT, Dir8.UP_LEFT.toDir4(CLOCKWISE))
     }
 
     @Test
