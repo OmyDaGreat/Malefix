@@ -162,6 +162,7 @@ $dokka.location:xyz.malefic.frc.pingu/MagicPingu/setVelocity/#org.littletonrobot
 $dokka.location:xyz.malefic.frc.pingu/MagicPingu/velocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-magic-pingu/velocity.html
 $dokka.location:xyz.malefic.frc.pingu/Mongu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-mongu/index.html
 $dokka.location:xyz.malefic.frc.pingu/Mongu/Mongu/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-mongu/-mongu.html
+$dokka.location:xyz.malefic.frc.pingu/Mongu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-mongu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu/Mongu/configure/#kotlin.Function1[xyz.malefic.frc.pingu.MotorConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-mongu/configure.html
 $dokka.location:xyz.malefic.frc.pingu/Mongu/motor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-mongu/motor.html
 $dokka.location:xyz.malefic.frc.pingu/MotorConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-motor-config/index.html
