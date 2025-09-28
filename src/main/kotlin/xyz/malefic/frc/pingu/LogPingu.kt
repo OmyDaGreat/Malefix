@@ -123,7 +123,7 @@ object LogPingu {
                 is Boolean -> recordOutput(key, value)
                 is String -> recordOutput(key, value)
                 is WPISerializable -> recordOutput(key, value)
-                else -> println("Unsupported log type for key $key")
+                else -> recordOutput(key, "String: $value")
             }
         }
     }

@@ -35,6 +35,7 @@ dependencies {
     implementation(libs.photonlib)
     implementation(libs.ctre.phoenix)
     implementation(libs.photontargeting)
+    implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
     implementation(libs.bundles.advantagekit)
     testImplementation(kotlin("test"))
