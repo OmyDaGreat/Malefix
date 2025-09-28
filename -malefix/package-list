@@ -36,7 +36,7 @@ $dokka.location:xyz.malefic.frc.emu/Dir8///PointingToDeclaration/-malefix/xyz.m
 $dokka.location:xyz.malefic.frc.emu/Dir8/entries/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/entries.html
 $dokka.location:xyz.malefic.frc.emu/Dir8/opposite/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/opposite.html
 $dokka.location:xyz.malefic.frc.emu/Dir8/rotate/#xyz.malefic.frc.emu.DirRotate/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/rotate.html
-$dokka.location:xyz.malefic.frc.emu/Dir8/toDir4/#xyz.malefic.frc.emu.DirRotate/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/to-dir4.html
+$dokka.location:xyz.malefic.frc.emu/Dir8/toDirYZ/#xyz.malefic.frc.emu.DirRotate/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/to-dir-y-z.html
 $dokka.location:xyz.malefic.frc.emu/Dir8/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/value-of.html
 $dokka.location:xyz.malefic.frc.emu/Dir8/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir8/values.html
 $dokka.location:xyz.malefic.frc.emu/DirRotate.CLOCKWISE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-dir-rotate/-c-l-o-c-k-w-i-s-e/index.html
@@ -54,6 +54,7 @@ $dokka.location:xyz.malefic.frc.emu/DirXY///PointingToDeclaration/-malefix/xyz.
 $dokka.location:xyz.malefic.frc.emu/DirXY/entries/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-x-y/entries.html
 $dokka.location:xyz.malefic.frc.emu/DirXY/opposite/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-x-y/opposite.html
 $dokka.location:xyz.malefic.frc.emu/DirXY/rotate/#xyz.malefic.frc.emu.DirRotate/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-x-y/rotate.html
+$dokka.location:xyz.malefic.frc.emu/DirXY/toDirYZ/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-x-y/to-dir-y-z.html
 $dokka.location:xyz.malefic.frc.emu/DirXY/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-x-y/value-of.html
 $dokka.location:xyz.malefic.frc.emu/DirXY/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-x-y/values.html
 $dokka.location:xyz.malefic.frc.emu/DirYZ.DOWN///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.emu/-dir-y-z/-d-o-w-n/index.html
@@ -65,6 +66,7 @@ $dokka.location:xyz.malefic.frc.emu/DirYZ/entries/#/PointingToDeclaration/-male
 $dokka.location:xyz.malefic.frc.emu/DirYZ/opposite/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/opposite.html
 $dokka.location:xyz.malefic.frc.emu/DirYZ/rotate/#xyz.malefic.frc.emu.DirRotate/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/rotate.html
 $dokka.location:xyz.malefic.frc.emu/DirYZ/toDir8/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/to-dir8.html
+$dokka.location:xyz.malefic.frc.emu/DirYZ/toDirXY/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/to-dir-x-y.html
 $dokka.location:xyz.malefic.frc.emu/DirYZ/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/value-of.html
 $dokka.location:xyz.malefic.frc.emu/DirYZ/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/values.html
 $dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-malefix/xyz.malefic.frc.extension/index.html
@@ -202,6 +204,7 @@ $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/d/#/PointingToDeclaration/-
 $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/g/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/g.html
 $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/i/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/i.html
 $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/p/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/p.html
+$dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/pingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/pingu.html
 $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/profile/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/profile.html
 $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/profiledPIDController/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/profiled-p-i-d-controller.html
 $dokka.location:xyz.malefic.frc.pingu/ProfiledPingu/s/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu/-profiled-pingu/s.html
