@@ -11,7 +11,7 @@ enum class DirRotate {
     /**
      * Returns the opposite rotation direction.
      *
-     * @return The opposite DirRotate value.
+     * @return The opposite [DirRotate] value.
      */
     fun opposite() = entries[(ordinal + 1) % entries.size]
 }

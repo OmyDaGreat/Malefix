@@ -24,8 +24,8 @@ import xyz.malefic.frc.extension.Kommand.cmd
  *    }
  *    ```
  *
- * Internally, Bingu tracks all bindings and schedules commands in its periodic loop. Each button can have a press, release, and hold command.
- * If a button is not explicitly bound, it defaults to an InstantCommand (does nothing).
+ * Internally, [Bingu] tracks all bindings and schedules commands in its periodic loop. Each button can have a press, release, and hold command.
+ * If a button is not explicitly bound, it defaults to an [InstantCommand] (does nothing).
  *
  * See the documentation for each function for more details and examples.
  */
@@ -33,7 +33,7 @@ object Bingu : SubsystemBase() {
     /**
      * Internal list storing all controller-button-command bindings.
      *
-     * Each entry is a ControllerButtonBinding, which pairs an XboxController with a ButtonBinding (button, press command, release command, hold command).
+     * Each entry is a [ControllerButtonBinding], which pairs an [XboxController] with a [ButtonBinding] (button, press command, release command, hold command).
      * This list is used by the periodic loop to check button states and schedule commands.
      *
      * You should not modify this list directly; use the provided binding functions.
@@ -43,19 +43,19 @@ object Bingu : SubsystemBase() {
     /**
      * Stores the previous pressed state of each button for each controller.
      *
-     * The key is a Pair of XboxController and Button, and the value is a Boolean indicating
+     * The key is a [Pair] of [XboxController] and [Button], and the value is a [Boolean] indicating
      * whether the button was pressed in the previous periodic cycle.
      * Used to detect button press and release events.
      */
     private val previousButtonStates: MutableMap<Pair<XboxController, Button>, Boolean> = mutableMapOf()
 
     /**
-     * Extension function for XboxController to bind multiple button-command pairs using a DSL builder.
+     * Extension function for [XboxController] to bind multiple button-command pairs using a DSL builder.
      *
      * This is the recommended way to configure button bindings. The builder allows you to specify press and release
      * commands for each button in a clear, declarative style.
      *
-     * @param builder Lambda with receiver for configuring button bindings. Use ButtonBindingsBuilder to specify press, release, and hold commands for each button.
+     * @param builder Lambda with receiver for configuring button bindings. Use [ButtonBindingsBuilder] to specify press, release, and hold commands for each button.
      *
      * Example:
      * ```kotlin
@@ -105,15 +105,15 @@ object Bingu : SubsystemBase() {
 /**
  * Type alias for a controller-button binding.
  *
- * Represents a pairing of an XboxController and a ButtonBinding (button, press command, release command, hold command).
- * Used internally by Bingu to track all configured bindings.
+ * Represents a pairing of an [XboxController] and a [ButtonBinding] (button, press command, release command, hold command).
+ * Used internally by [Bingu] to track all configured bindings.
  */
 typealias ControllerButtonBinding = Pair<XboxController, ButtonBinding>
 
 /**
  * Type alias for a button binding.
  *
- * Represents a Quadruple of Button, press command supplier, release command supplier, and hold command supplier.
+ * Represents a [Quadruple] of [Button], press command supplier, release command supplier, and hold command supplier.
  * Used to specify the actions to take when a button is pressed, released, or held.
  *
  * Example:
@@ -132,7 +132,7 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is pressed.
      *
-     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * This overload accepts a supplier of a [Command]. If the button was previously bound,
      * only the press command is updated; the release command remains unchanged.
      *
      * @param button The button to bind.
@@ -154,7 +154,7 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is released.
      *
-     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * This overload accepts a supplier of a [Command]. If the button was previously bound,
      * only the release command is updated; the press command remains unchanged.
      *
      * @param button The button to bind.
@@ -176,7 +176,7 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is released.
      *
-     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * This overload accepts a supplier of a [Command]. If the button was previously bound,
      * only the release command is updated; the press command remains unchanged.
      *
      * @param button The button to bind.
@@ -200,7 +200,7 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is held.
      *
-     * This overload accepts a supplier of a Command. If the button was previously bound,
+     * This overload accepts a supplier of a [Command]. If the button was previously bound,
      * only the hold command is updated; the press and release commands remain unchanged.
      *
      * @param button The button to bind.
@@ -222,8 +222,8 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is pressed.
      *
-     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an InstantCommand.
-     * Useful for simple actions that do not require a full Command implementation.
+     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an [InstantCommand].
+     * Useful for simple actions that do not require a full [Command] implementation.
      *
      * @param button The button to bind.
      * @param command The lambda to execute for the press event.
@@ -244,8 +244,8 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is released.
      *
-     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an InstantCommand.
-     * Useful for simple actions that do not require a full Command implementation.
+     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an [InstantCommand].
+     * Useful for simple actions that do not require a full [Command] implementation.
      *
      * @param button The button to bind.
      * @param command The lambda to execute for the release event.
@@ -266,8 +266,8 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is released.
      *
-     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an InstantCommand.
-     * Useful for simple actions that do not require a full Command implementation.
+     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an [InstantCommand].
+     * Useful for simple actions that do not require a full [Command] implementation.
      *
      * @param button The button to bind.
      * @param command The lambda to execute for the release event.
@@ -290,8 +290,8 @@ class ButtonBindingsBuilder {
     /**
      * Sets the command supplier to be executed when the specified button is held.
      *
-     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an InstantCommand.
-     * Useful for simple actions that do not require a full Command implementation.
+     * This overload accepts a lambda of type `() -> Unit`, which is wrapped in an [InstantCommand].
+     * Useful for simple actions that do not require a full [Command] implementation.
      *
      * @param button The button to bind.
      * @param command The lambda to execute for the hold event.
@@ -312,7 +312,7 @@ class ButtonBindingsBuilder {
     /**
      * Builds and returns a list of button bindings.
      *
-     * @return List of ButtonBinding objects representing the configured bindings.
+     * @return List of [ButtonBinding] objects representing the configured bindings.
      */
     internal fun build(): List<ButtonBinding> =
         bindings.map { (button, commands) ->

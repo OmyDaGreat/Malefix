@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
 /**
  * A generic motor wrapper class that allows configuration of different motor types.
  *
+ * Make sure to configure the motor after instantiation to apply desired settings.
+ *
  * @param T The type of motor being wrapped.
  * @property motor The motor instance being wrapped.
  */
@@ -61,11 +63,11 @@ fun interface MotorConfig<T : Any> {
 }
 
 /**
- * Configuration class for TalonFX motors.
+ * Configuration class for [TalonFX] motors.
  */
 class TalonFXConfig : MotorConfig<TalonFX> {
     /**
-     * Optional TalonFX configuration object.
+     * Optional [TalonFX] configuration object.
      */
     var talonConfig: TalonFXConfiguration? = null
 
@@ -85,7 +87,7 @@ class TalonFXConfig : MotorConfig<TalonFX> {
     var dutyCycleNeutralDeadband: Double = 0.04
 
     /**
-     * PIDF configuration object.
+     * PID configuration object.
      */
     var pingu: Pingu? = null
 
@@ -115,9 +117,9 @@ class TalonFXConfig : MotorConfig<TalonFX> {
     var extraConfig: (TalonFXConfiguration.() -> Unit)? = null
 
     /**
-     * Applies the configuration to the given TalonFX motor.
+     * Applies the configuration to the given [TalonFX] motor.
      *
-     * @param motor The TalonFX motor to configure.
+     * @param motor The [TalonFX] motor to configure.
      */
     override fun applyTo(motor: TalonFX) {
         val config = talonConfig ?: TalonFXConfiguration()
@@ -177,7 +179,7 @@ class TalonFXConfig : MotorConfig<TalonFX> {
 }
 
 /**
- * Configuration class for PWMTalonSRX motors.
+ * Configuration class for [PWMTalonSRX] motors.
  */
 class PWMTalonSRXConfig : MotorConfig<PWMTalonSRX> {
     /**
@@ -187,7 +189,7 @@ class PWMTalonSRXConfig : MotorConfig<PWMTalonSRX> {
     var inverted = false
 
     /**
-     * Applies the configuration to the given PWMTalonSRX motor.
+     * Applies the configuration to the given [PWMTalonSRX] motor.
      *
      * @param motor The PWMTalonSRX motor to configure.
      */
