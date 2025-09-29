@@ -43,7 +43,7 @@ class CommandPingu {
 }
 
 /**
- * DSL receiver for CommandPingu.registerCommands.
+ * DSL receiver for [CommandPingu.registerCommands].
  */
 class CommandPinguDsl {
     fun bind(

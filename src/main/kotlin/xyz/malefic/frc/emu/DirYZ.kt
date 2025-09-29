@@ -11,16 +11,16 @@ enum class DirYZ {
     ;
 
     /**
-     * Function to get the opposite direction for Dir4.
+     * Function to get the opposite direction for [DirYZ].
      *
-     * @return The opposite direction of the current Dir4 value.
+     * @return The opposite direction of the current [DirYZ] value.
      */
     fun opposite() = entries[(this.ordinal + 2) % entries.size]
 
     /**
-     * Function to convert Dir4 to Dir8.
+     * Function to convert [DirYZ] to [Dir8].
      *
-     * @return The corresponding Dir8 value for the current Dir4 value.
+     * @return The corresponding [Dir8] value for the current [DirYZ] value.
      */
     fun toDir8() =
         when (this) {
@@ -31,9 +31,22 @@ enum class DirYZ {
         }
 
     /**
+     * Converts the current [DirYZ] direction to its corresponding [DirXY] value.
+     *
+     * @return The [DirXY] value that matches the current [DirYZ] direction.
+     */
+    fun toDirXY() =
+        when (this) {
+            UP -> DirXY.FORWARD
+            RIGHT -> DirXY.RIGHT
+            DOWN -> DirXY.BACKWARD
+            LEFT -> DirXY.LEFT
+        }
+
+    /**
      * Rotates the current direction based on the given rotation direction.
      *
-     * @param dirRotate The direction to rotate (CLOCKWISE or COUNTERCLOCKWISE).
+     * @param dirRotate The direction to rotate ([DirRotate.CLOCKWISE] or [DirRotate.COUNTERCLOCKWISE]).
      * @return The new direction after rotation.
      */
     fun rotate(dirRotate: DirRotate) =

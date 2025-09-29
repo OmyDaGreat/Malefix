@@ -41,9 +41,9 @@ fun List<PhotonModule>.getDecentResultPairs(
         }.sortedBy { it.second.bestTarget.poseAmbiguity }
 
 /**
- * Extension function for a list of Pair<PhotonModule, PhotonPipelineResult> objects to check if any have targets.
+ * Extension function for a list of Pair<[PhotonModule], [PhotonPipelineResult]> objects to check if any have targets.
  *
- * This function iterates through each pair in the list and checks if the PhotonPipelineResult has targets.
+ * This function iterates through each pair in the list and checks if the [PhotonPipelineResult] has targets.
  *
  * @receiver List<Pair<PhotonModule, PhotonPipelineResult>> The list of pairs to check.
  * @return Boolean True if any pair has targets, false otherwise.

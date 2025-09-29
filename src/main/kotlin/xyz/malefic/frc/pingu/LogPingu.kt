@@ -11,8 +11,11 @@ import org.littletonrobotics.junction.Logger.recordOutput
 typealias Log = Pair<String, Any>
 
 /**
- * Utility class for logging. Provides methods to update PID
- * values, retrieve double values, create pairs, and perform test logging.
+ * Singleton object for logging key-value pairs and metadata within the project.
+ *
+ * Provides utility functions to log various data types, manage ignored files,
+ * and batch log entries. Integrates with WPILib and AdvantageKit
+ * for output and metadata recording, primarily for test mode operations.
  */
 object LogPingu {
     private val capturedLogs = mutableListOf<Log>()
@@ -23,7 +26,7 @@ object LogPingu {
      * Files and folders are not required to have a file path,
      * will ignore all files and folders with the same name.
      * Ignored files will use project root as base path
-     * Case sensitive
+     * Case-sensitive
      */
     val IGNORED_FILES = mutableSetOf<String>()
 
@@ -37,8 +40,7 @@ object LogPingu {
     /**
      * Adds a file or directory name to the set of ignored files for logging.
      *
-     * @param name The name of the file or directory to ignore.
-     *             Case sensitive. Uses project root as base path.
+     * @param name The name of the file or directory to ignore. Case-sensitive. Uses project root as base path.
      */
     fun addIgnoredFile(name: String) = IGNORED_FILES.add(name)
 
@@ -77,13 +79,13 @@ object LogPingu {
     }
 
     /**
-     * Logs multiple values within the provided block context.
+     * Executes a block of code, capturing all logs generated within the block.
      *
-     * This function captures logs generated within the block and logs them all at once
-     * after the block has been executed. It uses a custom `LogContext` to temporarily
-     * override the log method to capture logs instead of immediately logging them.
+     * This method clears the current list of captured logs, runs the provided block,
+     * and then logs all captured key-value pairs at once. Useful for grouping related
+     * log entries together for batch processing.
      *
-     * @param block The block of code within which logs will be captured.
+     * @param block The block of code whose logs should be captured and processed.
      */
     @JvmStatic
     fun logs(block: Runnable) {
@@ -104,10 +106,15 @@ object LogPingu {
     fun logs(vararg logs: Log) = logs.forEach { (key, value) -> logs(key, value) }
 
     /**
-     * Logs a boolean value with a specified key if the system is in test mode.
+     * Logs a value of generic type [B] with a specified key if the system is in test mode,
+     * unless the class name of [A] matches any entry in [IGNORED_FILES].
      *
      * @param key The key associated with the value to log.
-     * @param value The boolean value to log.
+     * @param value The value to log, of generic type [B].
+     *
+     * If the value is of type Double, Int, Boolean, String, or WPISerializable, it is logged directly.
+     * Otherwise, the value is converted to a String before logging.
+     * Logging is skipped if the class name of [A] contains any ignored file name.
      */
     @JvmStatic
     inline fun <reified A, reified B> A.logs(
@@ -123,16 +130,16 @@ object LogPingu {
                 is Boolean -> recordOutput(key, value)
                 is String -> recordOutput(key, value)
                 is WPISerializable -> recordOutput(key, value)
-                else -> println("Unsupported log type for key $key")
+                else -> recordOutput(key, "String: $value")
             }
         }
     }
 
     /**
-     * Logs a double value with a specified key if the system is in test mode.
+     * Logs a [Double] value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
-     * @param value The double value to log.
+     * @param value The [Double] value to log.
      */
     @JvmStatic
     fun logs(
@@ -145,10 +152,10 @@ object LogPingu {
     }
 
     /**
-     * Logs an integer value with a specified key if the system is in test mode.
+     * Logs an [Int] value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
-     * @param value The integer value to log.
+     * @param value The [Int] value to log.
      */
     @JvmStatic
     fun logs(
@@ -161,10 +168,10 @@ object LogPingu {
     }
 
     /**
-     * Logs a boolean value with a specified key if the system is in test mode.
+     * Logs a [Boolean] value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
-     * @param value The boolean value to log.
+     * @param value The [Boolean] value to log.
      */
     @JvmStatic
     fun logs(
@@ -177,10 +184,10 @@ object LogPingu {
     }
 
     /**
-     * Logs a String value with a specified key if the system is in test mode.
+     * Logs a [String] value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
-     * @param value The String value to log.
+     * @param value The [String] value to log.
      */
     @JvmStatic
     fun logs(
@@ -193,10 +200,10 @@ object LogPingu {
     }
 
     /**
-     * Logs a WPISerializable value with a specified key if the system is in test mode.
+     * Logs a [WPISerializable] value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
-     * @param value The WPISerializable value to log.
+     * @param value The [WPISerializable] value to log.
      */
     @JvmStatic
     fun <T : WPISerializable?> logs(
@@ -209,10 +216,10 @@ object LogPingu {
     }
 
     /**
-     * Logs a StructSerializable value with a specified key if the system is in test mode.
+     * Logs a [StructSerializable] value with a specified key if the system is in test mode.
      *
      * @param key The key associated with the value to log.
-     * @param value The SwerveModuleState value to log.
+     * @param value The [StructSerializable] value to log.
      */
     @JvmStatic
     fun <T : StructSerializable?> logs(

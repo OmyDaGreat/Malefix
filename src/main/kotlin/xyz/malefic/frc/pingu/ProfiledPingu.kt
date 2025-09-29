@@ -5,7 +5,7 @@ import edu.wpi.first.math.trajectory.TrapezoidProfile
 import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 
 /**
- * Data class representing a ProfiledPingu with PID controller parameters and profile constraints.
+ * Data class representing a [ProfiledPingu] with PID controller parameters and profile constraints.
  *
  * @property p Proportional gain.
  * @property i Integral gain.
@@ -25,13 +25,19 @@ data class ProfiledPingu(
     val profile: TrapezoidProfile.Constraints,
 ) {
     /**
-     * Gets the ProfiledPIDController instance with the current PID parameters and profile constraints.
+     * Gets the [ProfiledPIDController] instance with the current PID parameters and profile constraints.
      */
     val profiledPIDController
         get() = ProfiledPIDController(p, i, d, profile)
 
     /**
-     * Sets the PID parameters from the given ProfiledPIDController instance.
+     * Gets a [Pingu] instance with the current PID and feedforward parameters.
+     */
+    val pingu
+        get() = Pingu(p, i, d, v, s, g)
+
+    /**
+     * Sets the PID parameters from the given [ProfiledPIDController] instance.
      *
      * @param profiledPIDController The ProfiledPIDController instance to copy parameters from.
      */
@@ -42,54 +48,54 @@ data class ProfiledPingu(
     }
 
     /**
-     * Sets the proportional gain from a LoggedNetworkNumber.
+     * Sets the proportional gain from a [LoggedNetworkNumber].
      *
-     * @param p The LoggedNetworkNumber instance to get the value from.
+     * @param p The [LoggedNetworkNumber] instance to get the value from.
      */
     fun setP(p: LoggedNetworkNumber) {
         this.p = p.get()
     }
 
     /**
-     * Sets the integral gain from a LoggedNetworkNumber.
+     * Sets the integral gain from a [LoggedNetworkNumber].
      *
-     * @param i The LoggedNetworkNumber instance to get the value from.
+     * @param i The [LoggedNetworkNumber] instance to get the value from.
      */
     fun setI(i: LoggedNetworkNumber) {
         this.i = i.get()
     }
 
     /**
-     * Sets the derivative gain from a LoggedNetworkNumber.
+     * Sets the derivative gain from a [LoggedNetworkNumber].
      *
-     * @param d The LoggedNetworkNumber instance to get the value from.
+     * @param d The [LoggedNetworkNumber] instance to get the value from.
      */
     fun setD(d: LoggedNetworkNumber) {
         this.d = d.get()
     }
 
     /**
-     * Sets the velocity feedforward term from a LoggedNetworkNumber.
+     * Sets the velocity feedforward term from a [LoggedNetworkNumber].
      *
-     * @param v The LoggedNetworkNumber instance to get the value from.
+     * @param v The [LoggedNetworkNumber] instance to get the value from.
      */
     fun setV(v: LoggedNetworkNumber) {
         this.v = v.get()
     }
 
     /**
-     * Sets the static feedforward term from a LoggedNetworkNumber.
+     * Sets the static feedforward term from a [LoggedNetworkNumber].
      *
-     * @param s The LoggedNetworkNumber instance to get the value from.
+     * @param s The [LoggedNetworkNumber] instance to get the value from.
      */
     fun setS(s: LoggedNetworkNumber) {
         this.s = s.get()
     }
 
     /**
-     * Sets the gravity feedforward term from a LoggedNetworkNumber.
+     * Sets the gravity feedforward term from a [LoggedNetworkNumber].
      *
-     * @param g The LoggedNetworkNumber instance to get the value from.
+     * @param g The [LoggedNetworkNumber] instance to get the value from.
      */
     fun setG(g: LoggedNetworkNumber) {
         this.g = g.get()

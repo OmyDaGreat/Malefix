@@ -20,8 +20,7 @@ import kotlin.Double.Companion.MAX_VALUE
 import kotlin.math.sqrt
 
 /**
- * The PhotonModule class represents a single Photonvision camera setup with its associated pose
- * estimator and position information.
+ * The [PhotonModule] class represents a single PhotonVision camera setup with its associated pose estimator and position information.
  *
  * @property cameraName The name of the camera.
  * @property cameraPos The position of the camera.
@@ -33,7 +32,6 @@ class PhotonModule(
     fieldLayout: AprilTagFieldLayout,
 ) {
     companion object {
-        // Constants for standard deviation calculations
         private val DEFAULT_SINGLE_TARGET_STD_DEVS_2D = VecBuilder.fill(0.08, 0.08, 0.05)
         private val DEFAULT_MULTI_TARGET_STD_DEVS_2D = VecBuilder.fill(0.05, 0.05, 0.03)
         private val DEFAULT_SINGLE_TARGET_STD_DEVS_3D = VecBuilder.fill(0.08, 0.08, 0.08, 0.05)
@@ -44,12 +42,12 @@ class PhotonModule(
     }
 
     /**
-     * The PhotonCamera instance for this module.
+     * The [PhotonCamera] instance for this module.
      */
     val camera = PhotonCamera(cameraName)
 
     /**
-     * The PhotonPoseEstimator instance for estimating the robot's pose.
+     * The [PhotonPoseEstimator] instance for estimating the robot's pose.
      */
     val poseEstimator =
         PhotonPoseEstimator(
@@ -73,7 +71,7 @@ class PhotonModule(
         private set
 
     /**
-     * Retrieves all unread results from the PhotonCamera.
+     * Retrieves all unread results from the [PhotonCamera].
      */
     val allUnreadResults: MutableList<PhotonPipelineResult>
         get() = camera.allUnreadResults

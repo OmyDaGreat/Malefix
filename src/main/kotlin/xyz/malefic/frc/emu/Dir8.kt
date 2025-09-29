@@ -18,9 +18,9 @@ enum class Dir8 {
     ;
 
     /**
-     * Function to get the opposite direction for Dir8.
+     * Function to get the opposite direction for [Dir8].
      *
-     * @return The opposite direction of the current Dir8 value.
+     * @return The opposite direction of the current [Dir8] value.
      */
     fun opposite() = entries[(this.ordinal + 4) % entries.size]
 
@@ -39,13 +39,13 @@ enum class Dir8 {
         ]
 
     /**
-     * Converts the current Dir8 value to the corresponding Dir4 value based on the given rotation direction.
+     * Converts the current [Dir8] value to the corresponding [DirYZ] value based on the given rotation direction.
      *
-     * The `toDir4` function maps each `Dir8` value to a base `Dir4` value and adjusts the mapping based on the specified rotation direction.
+     * The [toDirYZ] function maps each [Dir8] value to a base [DirYZ] value and adjusts the mapping based on the specified rotation direction.
      *
      * ### How it works:
-     * 1. **Determine the base Dir4 value**: The function maps each `Dir8` value to a base `Dir4` value.
-     * 2. **Adjust based on rotation direction**: Depending on whether the rotation is clockwise or counterclockwise, the function adjusts the mapping to include the next or previous `Dir8` value.
+     * 1. **Determine the base [DirYZ] value**: The function maps each [Dir8] value to a base [DirYZ] value.
+     * 2. **Adjust based on rotation direction**: Depending on whether the rotation is clockwise or counterclockwise, the function adjusts the mapping to include the next or previous [Dir8] value.
      *
      * ### Examples:
      * - **Clockwise Rotation**:
@@ -61,9 +61,9 @@ enum class Dir8 {
      *   - `LEFT` and `DOWN_LEFT` both map to `LEFT`.
      *
      * @param dirRotate The direction to rotate (CLOCKWISE or COUNTERCLOCKWISE).
-     * @return The corresponding Dir4 value.
+     * @return The corresponding [DirYZ] value.
      */
-    fun toDir4(dirRotate: DirRotate) =
+    fun toDirYZ(dirRotate: DirRotate) =
         DirYZ.entries[
             when (this) {
                 UP -> 0

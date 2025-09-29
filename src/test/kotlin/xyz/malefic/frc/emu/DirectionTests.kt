@@ -42,10 +42,10 @@ class DirectionTests {
 
     @Test
     fun testDir8ToDir4() {
-        assertEquals(DirYZ.UP, Dir8.UP.toDir4(CLOCKWISE))
-        assertEquals(DirYZ.RIGHT, Dir8.DOWN_RIGHT.toDir4(CLOCKWISE))
-        assertEquals(DirYZ.DOWN, Dir8.DOWN.toDir4(CLOCKWISE))
-        assertEquals(DirYZ.LEFT, Dir8.UP_LEFT.toDir4(CLOCKWISE))
+        assertEquals(DirYZ.UP, Dir8.UP.toDirYZ(CLOCKWISE))
+        assertEquals(DirYZ.RIGHT, Dir8.DOWN_RIGHT.toDirYZ(CLOCKWISE))
+        assertEquals(DirYZ.DOWN, Dir8.DOWN.toDirYZ(CLOCKWISE))
+        assertEquals(DirYZ.LEFT, Dir8.UP_LEFT.toDirYZ(CLOCKWISE))
     }
 
     @Test
