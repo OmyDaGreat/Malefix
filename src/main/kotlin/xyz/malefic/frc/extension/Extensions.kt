@@ -10,10 +10,8 @@ import edu.wpi.first.math.geometry.Rotation3d
 import edu.wpi.first.math.util.Units.inchesToMeters
 import edu.wpi.first.math.util.Units.metersToInches
 import edu.wpi.first.wpilibj.XboxController
-import edu.wpi.first.wpilibj.motorcontrol.Talon
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
-import xyz.malefic.frc.pingu.NetworkPingu
 import xyz.malefic.frc.pingu.Pingu
 import xyz.malefic.frc.sub.PhotonModule
 import java.util.Optional
@@ -111,24 +109,6 @@ fun TalonFXConfiguration.setPingu(pingu: Pingu) =
     }
 
 /**
- * Extension function to set the [Pingu] values of a [TalonFXConfiguration] using a [NetworkPingu] object.
- *
- * @receiver [TalonFXConfiguration] The [TalonFX] configuration to set the values for.
- * @param networkPingu [NetworkPingu] The [NetworkPingu] object containing the PID values.
- */
-@Deprecated("Use the version that takes a Pingu instead", ReplaceWith("setPingu(networkPingu.pingu)"))
-@Suppress("kotlin:S6518")
-fun TalonFXConfiguration.setPingu(networkPingu: NetworkPingu) =
-    networkPingu.apply {
-        Slot0.kP = p.get()
-        Slot0.kI = i.get()
-        Slot0.kD = d.get()
-        v?.run { Slot0.kV = v!!.get() }
-        s?.run { Slot0.kS = s!!.get() }
-        g?.run { Slot0.kG = g!!.get() }
-    }
-
-/**
  * Extension function to get the [Pingu] values from a [TalonFXConfiguration].
  *
  * @return [Pingu] The [Pingu] object containing the PID values.
@@ -210,5 +190,21 @@ fun XboxController.leftStickPosition(
 ): Pair<Double, Double> {
     val x = if (abs(leftX) < xDeadzone) 0.0 else leftX
     val y = if (abs(leftY) < yDeadzone) 0.0 else leftY
+    return Pair(x, y)
+}
+
+/**
+ * Gets the position of the right stick based on the input from the controller.
+ *
+ * @receiver [XboxController] The controller.
+ * @return [Pair]<Double, Double> The coordinate representing the position of the right stick. The first element is the x-coordinate, and
+ * the second element is the y-coordinate.
+ */
+fun XboxController.rightStickPosition(
+    xDeadzone: Double,
+    yDeadzone: Double,
+): Pair<Double, Double> {
+    val x = if (abs(rightX) < xDeadzone) 0.0 else rightX
+    val y = if (abs(rightY) < yDeadzone) 0.0 else rightY
     return Pair(x, y)
 }
