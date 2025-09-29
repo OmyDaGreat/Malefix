@@ -80,8 +80,8 @@ $dokka.location:xyz.malefic.frc.extension//layout/edu.wpi.first.apriltag.AprilTa
 $dokka.location:xyz.malefic.frc.extension//leftStickPosition/edu.wpi.first.wpilibj.XboxController#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/left-stick-position.html
 $dokka.location:xyz.malefic.frc.extension//metersToInches/kotlin.Double#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/meters-to-inches.html
 $dokka.location:xyz.malefic.frc.extension//plus/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/plus.html
+$dokka.location:xyz.malefic.frc.extension//rightStickPosition/edu.wpi.first.wpilibj.XboxController#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/right-stick-position.html
 $dokka.location:xyz.malefic.frc.extension//rotated180/edu.wpi.first.math.geometry.Pose2d#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/rotated180.html
-$dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.NetworkPingu/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/set-pingu.html
 $dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.Pingu/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/set-pingu.html
 $dokka.location:xyz.malefic.frc.extension//to3d/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/to3d.html
 $dokka.location:xyz.malefic.frc.extension//updateStdDev/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/update-std-dev.html
