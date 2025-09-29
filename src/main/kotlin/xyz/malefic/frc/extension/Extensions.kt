@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.XboxController
 import edu.wpi.first.wpilibj.motorcontrol.Talon
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
+import xyz.malefic.frc.pingu.NetworkPingu
 import xyz.malefic.frc.pingu.Pingu
 import xyz.malefic.frc.sub.PhotonModule
 import java.util.Optional
@@ -110,7 +111,6 @@ fun TalonFXConfiguration.setPingu(pingu: Pingu) =
     }
 
 /**
-<<<<<<< HEAD
  * Extension function to set the [Pingu] values of a [TalonFXConfiguration] using a [NetworkPingu] object.
  *
  * @receiver [TalonFXConfiguration] The [TalonFX] configuration to set the values for.
@@ -144,8 +144,6 @@ fun TalonFXConfiguration.getPingu(): Pingu =
     )
 
 /**
-=======
->>>>>>> 98143ad0a71f650cc88751ee3bc8bac32fc4e28f
  * Extension function to convert a [Rotation2d] to a [Rotation3d].
  *
  * @receiver [Rotation2d] The 2D rotation to convert.
