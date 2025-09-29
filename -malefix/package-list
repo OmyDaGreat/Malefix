@@ -73,6 +73,7 @@ $dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-malefix/xyz
 $dokka.location:xyz.malefic.frc.extension//configureWithDefaults/com.ctre.phoenix6.hardware.CANcoder#com.ctre.phoenix6.signals.SensorDirectionValue#kotlin.Double#kotlin.Double#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]?/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/configure-with-defaults.html
 $dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.sub.PhotonModule]#kotlin.Function1[org.photonvision.targeting.PhotonPipelineResult,kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-decent-result-pairs.html
 $dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#edu.wpi.first.math.geometry.Pose2d/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-estimated-pose.html
+$dokka.location:xyz.malefic.frc.extension//getPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-pingu.html
 $dokka.location:xyz.malefic.frc.extension//hasTargets/kotlin.collections.List[kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]]#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/has-targets.html
 $dokka.location:xyz.malefic.frc.extension//inchesToMeters/kotlin.Double#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/inches-to-meters.html
 $dokka.location:xyz.malefic.frc.extension//layout/edu.wpi.first.apriltag.AprilTagFields#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/layout.html
@@ -80,6 +81,7 @@ $dokka.location:xyz.malefic.frc.extension//leftStickPosition/edu.wpi.first.wpili
 $dokka.location:xyz.malefic.frc.extension//metersToInches/kotlin.Double#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/meters-to-inches.html
 $dokka.location:xyz.malefic.frc.extension//plus/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/plus.html
 $dokka.location:xyz.malefic.frc.extension//rotated180/edu.wpi.first.math.geometry.Pose2d#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/rotated180.html
+$dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.NetworkPingu/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/set-pingu.html
 $dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.Pingu/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/set-pingu.html
 $dokka.location:xyz.malefic.frc.extension//to3d/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/to3d.html
 $dokka.location:xyz.malefic.frc.extension//updateStdDev/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/update-std-dev.html
