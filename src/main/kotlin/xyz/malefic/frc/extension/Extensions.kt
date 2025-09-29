@@ -9,6 +9,7 @@ import edu.wpi.first.math.geometry.Rotation3d
 import edu.wpi.first.math.util.Units.inchesToMeters
 import edu.wpi.first.math.util.Units.metersToInches
 import edu.wpi.first.wpilibj.XboxController
+import edu.wpi.first.wpilibj.motorcontrol.Talon
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
 import xyz.malefic.frc.pingu.NetworkPingu
@@ -125,6 +126,21 @@ fun TalonFXConfiguration.setPingu(networkPingu: NetworkPingu) =
         s?.run { Slot0.kS = s!!.get() }
         g?.run { Slot0.kG = g!!.get() }
     }
+
+/**
+ * Extension function to get the [Pingu] values from a [TalonFXConfiguration].
+ *
+ * @return [Pingu] The [Pingu] object containing the PID values.
+ */
+fun TalonFXConfiguration.getPingu(): Pingu =
+    Pingu(
+        p = Slot0.kP,
+        i = Slot0.kI,
+        d = Slot0.kD,
+        v = Slot0.kV,
+        s = Slot0.kS,
+        g = Slot0.kG,
+    )
 
 /**
  * Extension function to convert a [Rotation2d] to a [Rotation3d].
