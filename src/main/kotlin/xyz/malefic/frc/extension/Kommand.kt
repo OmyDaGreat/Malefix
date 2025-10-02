@@ -10,12 +10,13 @@ import edu.wpi.first.wpilibj2.command.WaitCommand
 import edu.wpi.first.wpilibj2.command.WaitUntilCommand
 
 /**
- * Utility object for creating various WPILib commands.
+ * Utility object for creating various WPILib [Command]s.
  */
 object Kommand {
     /**
      * Creates an [InstantCommand] that executes the given function.
      *
+     * @param reqs The [Subsystem]s required by the command.
      * @param function The function to execute.
      * @return An [InstantCommand] that executes the given function.
      */
@@ -49,59 +50,23 @@ object Kommand {
      * @return An [InstantCommand] that cancels all running commands.
      */
     @JvmStatic
-    fun cancel() = cmd { CommandScheduler.getInstance().cancelAll() }
+    fun cancelAll() = InstantCommand({ CommandScheduler.getInstance().cancelAll() })
 
     /**
-     * A builder class for creating a [SequentialCommandGroup].
-     */
-    class SequentialBuilder {
-        private val commands = mutableListOf<Command>()
-
-        /**
-         * Adds a command to the sequence.
-         */
-        operator fun Command.unaryPlus() {
-            commands.add(this)
-        }
-
-        /**
-         * Builds and returns a [SequentialCommandGroup] with the added commands.
-         */
-        fun build(): SequentialCommandGroup = SequentialCommandGroup(*commands.toTypedArray())
-    }
-
-    /**
-     * Creates a [SequentialCommandGroup] using the provided block to add commands.
+     * Creates a [ParallelCommandGroup] from the given [Command]s.
      *
-     * @param block The block to add commands to the sequence.
-     * @return A [SequentialCommandGroup] with the added commands.
+     * @param commands The [Command]s to run in parallel.
+     * @return A [ParallelCommandGroup] that runs the given [Command]s in parallel.
      */
-    fun sequential(block: SequentialBuilder.() -> Unit): SequentialCommandGroup = SequentialBuilder().apply(block).build()
+    @JvmStatic
+    fun parallel(vararg commands: Command) = ParallelCommandGroup(*commands)
 
     /**
-     * A builder class for creating a [ParallelCommandGroup].
-     */
-    class ParallelBuilder {
-        private val commands = mutableListOf<Command>()
-
-        /**
-         * Adds a command to the sequence.
-         */
-        operator fun Command.unaryPlus() {
-            commands.add(this)
-        }
-
-        /**
-         * Builds and returns a [ParallelCommandGroup] with the added commands.
-         */
-        fun build(): ParallelCommandGroup = ParallelCommandGroup(*commands.toTypedArray())
-    }
-
-    /**
-     * Creates a [ParallelCommandGroup] that runs the given commands in parallel.
+     * Creates a [SequentialCommandGroup] from the given [Command]s.
      *
-     * @param block The commands to run in a dsl format.
-     * @return A [ParallelCommandGroup] that runs the given commands in parallel.
+     * @param commands The [Command]s to run sequentially.
+     * @return A [SequentialCommandGroup] that runs the given [Command]s in sequence.
      */
-    fun parallel(block: ParallelBuilder.() -> Unit): ParallelCommandGroup = ParallelBuilder().apply(block).build()
+    @JvmStatic
+    fun sequential(vararg commands: Command) = SequentialCommandGroup(*commands)
 }

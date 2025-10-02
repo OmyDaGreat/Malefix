@@ -5,6 +5,8 @@ import xyz.malefic.frc.emu.DirRotate.COUNTERCLOCKWISE
 
 /**
  * Enum representing the eight cardinal and intercardinal directions.
+ *
+ * Provides conversion and rotation utilities to [DirYZ], [DirRotate], and related types.
  */
 enum class Dir8 {
     UP,
@@ -18,17 +20,17 @@ enum class Dir8 {
     ;
 
     /**
-     * Function to get the opposite direction for [Dir8].
+     * Returns the opposite direction of the current [Dir8] value.
      *
-     * @return The opposite direction of the current [Dir8] value.
+     * @return The opposite [Dir8] direction.
      */
     fun opposite() = entries[(this.ordinal + 4) % entries.size]
 
     /**
-     * Rotates the current direction based on the given rotation direction.
+     * Rotates the current direction based on the given [DirRotate] direction.
      *
-     * @param dirRotate The direction to rotate (CLOCKWISE or COUNTERCLOCKWISE).
-     * @return The new direction after rotation.
+     * @param dirRotate The direction to rotate ([DirRotate.CLOCKWISE] or [DirRotate.COUNTERCLOCKWISE]).
+     * @return The new [Dir8] direction after rotation.
      */
     fun rotate(dirRotate: DirRotate) =
         entries[
@@ -39,28 +41,10 @@ enum class Dir8 {
         ]
 
     /**
-     * Converts the current [Dir8] value to the corresponding [DirYZ] value based on the given rotation direction.
+     * Converts the current [Dir8] value to the corresponding [DirYZ] value based on the given [DirRotate] direction.
      *
      * The [toDirYZ] function maps each [Dir8] value to a base [DirYZ] value and adjusts the mapping based on the specified rotation direction.
      *
-     * ### How it works:
-     * 1. **Determine the base [DirYZ] value**: The function maps each [Dir8] value to a base [DirYZ] value.
-     * 2. **Adjust based on rotation direction**: Depending on whether the rotation is clockwise or counterclockwise, the function adjusts the mapping to include the next or previous [Dir8] value.
-     *
-     * ### Examples:
-     * - **Clockwise Rotation**:
-     *   - `UP` and `UP_RIGHT` both map to `UP`.
-     *   - `RIGHT` and `DOWN_RIGHT` both map to `RIGHT`.
-     *   - `DOWN` and `DOWN_LEFT` both map to `DOWN`.
-     *   - `LEFT` and `UP_LEFT` both map to `LEFT`.
-     *
-     * - **Counterclockwise Rotation**:
-     *   - `UP` and `UP_LEFT` both map to `UP`.
-     *   - `RIGHT` and `UP_RIGHT` both map to `RIGHT`.
-     *   - `DOWN` and `DOWN_RIGHT` both map to `DOWN`.
-     *   - `LEFT` and `DOWN_LEFT` both map to `LEFT`.
-     *
-     * @param dirRotate The direction to rotate (CLOCKWISE or COUNTERCLOCKWISE).
      * @return The corresponding [DirYZ] value.
      */
     fun toDirYZ(dirRotate: DirRotate) =

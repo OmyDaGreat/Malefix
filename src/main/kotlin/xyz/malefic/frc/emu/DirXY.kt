@@ -1,7 +1,9 @@
 package xyz.malefic.frc.emu
 
 /**
- * Enum representing the four cardinal directions.
+ * Enum representing the four cardinal directions in the XY plane.
+ *
+ * Provides conversion and rotation utilities to [DirYZ] and [DirRotate].
  */
 enum class DirXY {
     FORWARD,
@@ -11,9 +13,9 @@ enum class DirXY {
     ;
 
     /**
-     * Function to get the opposite direction for [DirXY].
+     * Returns the opposite direction of the current [DirXY] value.
      *
-     * @return The opposite direction of the current [DirXY] value.
+     * @return The opposite [DirXY] direction.
      */
     fun opposite() = entries[(this.ordinal + 2) % entries.size]
 
@@ -31,10 +33,10 @@ enum class DirXY {
         }
 
     /**
-     * Rotates the current direction based on the given rotation direction.
+     * Rotates the current direction based on the given [DirRotate] direction.
      *
      * @param dirRotate The direction to rotate ([DirRotate.CLOCKWISE] or [DirRotate.COUNTERCLOCKWISE]).
-     * @return The new direction after rotation.
+     * @return The new [DirXY] direction after rotation.
      */
     fun rotate(dirRotate: DirRotate) =
         entries[

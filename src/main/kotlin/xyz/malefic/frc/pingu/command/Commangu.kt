@@ -4,20 +4,20 @@ import com.pathplanner.lib.auto.NamedCommands.registerCommand
 import edu.wpi.first.wpilibj2.command.Command
 
 /**
- * A utility class for binding commands with names.
+ * A utility object for binding [Command]s with names.
  */
 object Commangu {
     /**
-     * Binds a command to a name and registers it.
+     * Binds a [Command] to a name and registers it.
      *
      * Usage:
-     * ```
-     * CommandPingu.bind("name", command).bind("anotherName", anotherCommand)
+     * ```kotlin
+     * Commangu.bind("name", command).bind("anotherName", anotherCommand)
      * ```
      *
-     * @param name The name to bind the command to.
-     * @param command The command to be registered.
-     * @return The current instance of `CommandPingu` for method chaining.
+     * @param name The name to bind the [Command] to.
+     * @param command The [Command] to be registered.
+     * @return The current instance of [Commangu] for method chaining.
      */
     fun bind(
         name: String,
@@ -27,13 +27,16 @@ object Commangu {
     }
 
     /**
-     * DSL for registering multiple commands in a block.
+     * DSL for registering multiple [Command]s in a block.
+     *
      * Usage:
-     * ```
-     * CommandPingu.registerCommands {
+     * ```kotlin
+     * Commangu.registerCommands {
      *     bind("name", command)
      * }
      * ```
+     *
+     * @param block Lambda with receiver for [CommanguDsl] to register commands.
      */
     fun registerCommands(block: CommanguDsl.() -> Unit) {
         CommanguDsl().apply(block)

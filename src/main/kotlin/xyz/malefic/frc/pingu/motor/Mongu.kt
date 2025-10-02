@@ -25,7 +25,7 @@ class Mongu<T : Any>(
 ) {
     /**
      * Holds the last configuration applied to this motor.
-     * This property is updated whenever the `configure` method is called.
+     * This property is updated whenever the [configure] method is called.
      * It allows retrieval of the configuration settings for inspection or reuse.
      */
     lateinit var configuration: MonguConfig<T>

@@ -7,6 +7,8 @@ import org.littletonrobotics.junction.Logger.recordOutput
 
 /**
  * Type alias for a pair consisting of a log message and any associated data.
+ *
+ * Used by [LogPingu] for storing log entries.
  */
 typealias Log = Pair<String, Any>
 
@@ -16,6 +18,9 @@ typealias Log = Pair<String, Any>
  * Provides utility functions to log various data types, manage ignored files,
  * and batch log entries. Integrates with WPILib and AdvantageKit
  * for output and metadata recording, primarily for test mode operations.
+ *
+ * @property IGNORED_FILES Set of file or directory names to ignore during logging.
+ * @property TEST_MODE Indicates whether the system is in test mode.
  */
 object LogPingu {
     private val capturedLogs = mutableListOf<Log>()
@@ -48,7 +53,7 @@ object LogPingu {
      * Logs a key-value pair.
      *
      * @param string The key associated with the value to log.
-     * @param value The value to log.
+     * @param value The value to log. Can be any type.
      */
     @JvmStatic
     fun log(

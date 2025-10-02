@@ -3,7 +3,7 @@ package xyz.malefic.frc.pingu.control
 import com.ctre.phoenix6.controls.VoltageOut
 
 /**
- * A class that represents a [VoltageOut] request with a pingu.
+ * A class that represents a [VoltageOut] request with a [VoltagePingu].
  */
 object VoltagePingu {
     private var voltageOut = VoltageOut(0.0)
@@ -11,7 +11,7 @@ object VoltagePingu {
     /**
      * Sets the output of the [VoltagePingu].
      *
-     * @param output The new output.
+     * @param output The new output voltage.
      * @return The [VoltageOut] object representing the output.
      */
     @JvmStatic

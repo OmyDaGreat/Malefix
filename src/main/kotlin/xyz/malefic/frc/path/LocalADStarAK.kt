@@ -15,7 +15,7 @@ import org.littletonrobotics.junction.Logger
 import org.littletonrobotics.junction.inputs.LoggableInputs
 
 /**
- * A class that implements the Pathfinder interface using the LocalADStar algorithm. This class is
+ * A class that implements the [Pathfinder] interface using the [LocalADStar] algorithm. This class is
  * responsible for calculating paths for a robot to follow on a field, taking into account dynamic
  * obstacles and other constraints.
  *
@@ -45,11 +45,11 @@ class LocalADStarAK : Pathfinder {
 
     /**
      * Get the most recently calculated path. This method retrieves the current path based on the
-     * provided constraints and goal end state.
+     * provided [PathConstraints] and [GoalEndState].
      *
-     * @param constraints The path constraints to use when creating the path.
-     * @param goalEndState The goal end state to use when creating the path.
-     * @return The PathPlannerPath created from the points calculated by the pathfinder.
+     * @param constraints The [PathConstraints] to use when creating the path.
+     * @param goalEndState The [GoalEndState] to use when creating the path.
+     * @return The [PathPlannerPath] created from the points calculated by the pathfinder.
      */
     override fun getCurrentPath(
         constraints: PathConstraints,
@@ -72,7 +72,7 @@ class LocalADStarAK : Pathfinder {
      * Set the start position to pathfind from. This method sets the initial position for the
      * pathfinding algorithm.
      *
-     * @param startPosition Start position on the field. If this is within an obstacle it will be
+     * @param startPosition Start position on the field as a [Translation2d]. If this is within an obstacle it will be
      * moved to the nearest non-obstacle node.
      */
     override fun setStartPosition(startPosition: Translation2d?) {
@@ -85,7 +85,7 @@ class LocalADStarAK : Pathfinder {
      * Set the goal position to pathfind to. This method sets the target position for the pathfinding
      * algorithm.
      *
-     * @param goalPosition Goal position on the field. If this is within an obstacle it will be moved
+     * @param goalPosition Goal position on the field as a [Translation2d]. If this is within an obstacle it will be moved
      * to the nearest non-obstacle node.
      */
     override fun setGoalPosition(goalPosition: Translation2d?) {
@@ -98,9 +98,9 @@ class LocalADStarAK : Pathfinder {
      * Set the dynamic obstacles that should be avoided while pathfinding. This method updates the
      * list of obstacles that the pathfinding algorithm should avoid.
      *
-     * @param obs A List of Translation2d pairs representing obstacles. Each Translation2d represents
+     * @param obs A [MutableList] of [Pair]s of [Translation2d] representing obstacles. Each [Translation2d] represents
      * opposite corners of a bounding box.
-     * @param currentRobotPos The current position of the robot. This is needed to change the start
+     * @param currentRobotPos The current position of the robot as a [Translation2d]. This is needed to change the start
      * position of the path to properly avoid obstacles.
      */
     override fun setDynamicObstacles(
@@ -113,8 +113,8 @@ class LocalADStarAK : Pathfinder {
     }
 
     /**
-     * A class that handles the input/output operations for the LocalADStar pathfinding algorithm.
-     * Implements the LoggableInputs interface to allow logging of pathfinding data. This class is
+     * A class that handles the input/output operations for the [LocalADStar] pathfinding algorithm.
+     * Implements the [LoggableInputs] interface to allow logging of pathfinding data. This class is
      * responsible for managing the state of the pathfinding algorithm, including whether a new path
      * is available and the current path points.
      */
@@ -124,9 +124,9 @@ class LocalADStarAK : Pathfinder {
         var currentPathPoints: MutableList<PathPoint> = mutableListOf<PathPoint>()
 
         /**
-         * Logs the current state of the pathfinding algorithm to the provided LogTable.
+         * Logs the current state of the pathfinding algorithm to the provided [LogTable].
          *
-         * @param table The LogTable to log the data to.
+         * @param table The [LogTable] to log the data to.
          */
         override fun toLog(table: LogTable) {
             table.put("IsNewPathAvailable", isNewPathAvailable)
@@ -143,9 +143,9 @@ class LocalADStarAK : Pathfinder {
         }
 
         /**
-         * Restores the state of the pathfinding algorithm from the provided LogTable.
+         * Restores the state of the pathfinding algorithm from the provided [LogTable].
          *
-         * @param table The LogTable to restore the data from.
+         * @param table The [LogTable] to restore the data from.
          */
         override fun fromLog(table: LogTable) {
             isNewPathAvailable = table["IsNewPathAvailable"].getBoolean(false)

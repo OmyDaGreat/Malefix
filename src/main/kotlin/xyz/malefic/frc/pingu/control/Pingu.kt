@@ -12,6 +12,7 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property v Velocity feedforward term.
  * @property s Static feedforward term.
  * @property g Gravity feedforward term.
+ * @property pidController The [PIDController] instance with the current PID parameters.
  */
 data class Pingu(
     var p: Double,
@@ -30,7 +31,7 @@ data class Pingu(
     /**
      * Sets the PID parameters from the given [PIDController] instance.
      *
-     * @param pidController The PIDController instance to copy parameters from.
+     * @param pidController The [PIDController] instance to copy parameters from.
      */
     fun setPID(pidController: PIDController) {
         p = pidController.p

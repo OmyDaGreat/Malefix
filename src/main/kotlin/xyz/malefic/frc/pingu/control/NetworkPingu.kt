@@ -12,7 +12,8 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property v The velocity gain as a [LoggedNetworkNumber].
  * @property s The static gain as a [LoggedNetworkNumber].
  * @property g The gravity gain as a [LoggedNetworkNumber].
- * @throws NullPointerException if v, s, or g are not set and are then accessed.
+ * @property pingu The underlying [Pingu] instance using the current gains.
+ * @throws NullPointerException if [v], [s], or [g] are not set and are then accessed.
  */
 class NetworkPingu(
     var p: LoggedNetworkNumber,
@@ -22,5 +23,8 @@ class NetworkPingu(
     var s: LoggedNetworkNumber? = null,
     var g: LoggedNetworkNumber? = null,
 ) : PIDController(p.get(), i.get(), d.get()) {
+    /**
+     * The underlying [Pingu] instance using the current gains.
+     */
     val pingu: Pingu = Pingu(p.get(), i.get(), d.get(), v?.get() ?: 0.0, s?.get() ?: 0.0, g?.get() ?: 0.0)
 }

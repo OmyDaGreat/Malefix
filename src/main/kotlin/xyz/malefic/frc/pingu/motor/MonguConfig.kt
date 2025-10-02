@@ -5,9 +5,12 @@ package xyz.malefic.frc.pingu.motor
  *
  * This interface defines both configuration application and control mappings for a motor type.
  * Each control mechanism is represented as a nullable lambda function that takes an instance
- * of type `T` and a `Double` value as parameters.
+ * of type [T] and a [Double] value as parameters.
  *
  * @param T The type of the motor or device being controlled.
+ * @property pwmControl Lambda for controlling the motor using PWM.
+ * @property voltageControl Lambda for controlling the motor using voltage.
+ * @property positionControl Lambda for controlling the motor's position.
  */
 interface MonguConfig<T : Any> {
     /**
@@ -21,8 +24,8 @@ interface MonguConfig<T : Any> {
      * Lambda function for controlling the motor using PWM (Pulse Width Modulation).
      *
      * This function takes two parameters:
-     * - An instance of type `T` representing the motor or device.
-     * - A `Double` value representing the PWM signal.
+     * - An instance of type [T] representing the motor or device.
+     * - A [Double] value representing the PWM signal.
      *
      * If `null`, PWM control is not supported.
      */
@@ -32,8 +35,8 @@ interface MonguConfig<T : Any> {
      * Lambda function for controlling the motor using voltage.
      *
      * This function takes two parameters:
-     * - An instance of type `T` representing the motor or device.
-     * - A `Double` value representing the voltage to be applied.
+     * - An instance of type [T] representing the motor or device.
+     * - A [Double] value representing the voltage to be applied.
      *
      * If `null`, voltage control is not supported.
      */
@@ -43,8 +46,8 @@ interface MonguConfig<T : Any> {
      * Lambda function for controlling the motor's position.
      *
      * This function takes two parameters:
-     * - An instance of type `T` representing the motor or device.
-     * - A `Double` value representing the target position.
+     * - An instance of type [T] representing the motor or device.
+     * - A [Double] value representing the target position.
      *
      * If `null`, position control is not supported.
      */

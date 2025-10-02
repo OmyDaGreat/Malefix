@@ -5,7 +5,7 @@ import edu.wpi.first.math.trajectory.TrapezoidProfile
 import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 
 /**
- * Data class representing a [ProfiledPingu] with PID controller parameters and profile constraints.
+ * Data class representing a [ProfiledPingu] with PID controller parameters and [TrapezoidProfile.Constraints] for motion profiling.
  *
  * @property p Proportional gain.
  * @property i Integral gain.
@@ -13,7 +13,9 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property v Optional velocity feedforward term.
  * @property s Optional static feedforward term.
  * @property g Optional gravity feedforward term.
- * @property profile Constraints for the trapezoidal profile.
+ * @property profile Constraints for the [TrapezoidProfile].
+ * @property profiledPIDController The [ProfiledPIDController] instance with the current PID parameters and profile constraints.
+ * @property pingu The [Pingu] instance with the current PID and feedforward parameters.
  */
 data class ProfiledPingu(
     var p: Double,
@@ -39,7 +41,7 @@ data class ProfiledPingu(
     /**
      * Sets the PID parameters from the given [ProfiledPIDController] instance.
      *
-     * @param profiledPIDController The ProfiledPIDController instance to copy parameters from.
+     * @param profiledPIDController The [ProfiledPIDController] instance to copy parameters from.
      */
     fun setPID(profiledPIDController: ProfiledPIDController) {
         p = profiledPIDController.p

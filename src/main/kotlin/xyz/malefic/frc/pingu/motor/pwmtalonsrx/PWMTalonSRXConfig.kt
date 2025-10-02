@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
 import xyz.malefic.frc.pingu.motor.MonguConfig
 
 /**
- * Configuration class for [edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX] motors.
+ * Configuration class for [PWMTalonSRX] motors.
  */
 class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
     /**
@@ -19,6 +19,9 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
         motor.inverted = inverted
     }
 
+    /**
+     * Lambda for PWM control ([PWMTalonSRX], [Double]) -> Unit.
+     */
     override val pwmControl: ((PWMTalonSRX, Double) -> Unit) = { motor, value -> motor.set(value) }
     override val voltageControl: ((PWMTalonSRX, Double) -> Unit)? = null
     override val positionControl: ((PWMTalonSRX, Double) -> Unit)? = null

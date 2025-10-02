@@ -9,21 +9,23 @@ import xyz.malefic.frc.pingu.control.Pingu
 import xyz.malefic.frc.pingu.motor.MonguConfig
 
 /**
- * Configuration class for [com.ctre.phoenix6.hardware.TalonFX] motors.
+ * Configuration class for [TalonFX] motors.
+ *
+ * Provides properties for configuring [TalonFX] including inversion, neutral mode, PID, current limits, and soft limits.
  */
 class TalonFXConfig : MonguConfig<TalonFX> {
     /**
-     * Optional custom TalonFXConfiguration to use as a base.
+     * Optional custom [TalonFXConfiguration] to use as a base.
      */
     var talonConfig: TalonFXConfiguration? = null
 
     /**
-     * Motor inversion setting.
+     * Motor inversion setting ([InvertedValue]).
      */
     var inverted: InvertedValue = InvertedValue.Clockwise_Positive
 
     /**
-     * Neutral mode (Coast or Brake).
+     * Neutral mode ([NeutralModeValue]).
      */
     var neutralMode: NeutralModeValue = NeutralModeValue.Coast
 
@@ -33,7 +35,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
     var dutyCycleNeutralDeadband: Double = 0.04
 
     /**
-     * Optional PID configuration.
+     * Optional PID configuration ([Pingu]).
      */
     var pingu: Pingu? = null
 

@@ -8,7 +8,7 @@ import xyz.malefic.frc.emu.Button
 import xyz.malefic.frc.extension.Kommand.cmd
 
 /**
- * Bingu provides a centralized, declarative system for binding Xbox controller buttons to WPILib commands.
+ * [Bingu] provides a centralized, declarative system for binding [XboxController] buttons to WPILib [Command]s.
  *
  * This object is designed to simplify the process of mapping controller inputs to robot actions, supporting both
  * simple and complex command scheduling. It contains a modern DSL-based binding for clarity, flexibility, and maintainability.
@@ -24,7 +24,7 @@ import xyz.malefic.frc.extension.Kommand.cmd
  *    }
  *    ```
  *
- * Internally, [Bingu] tracks all bindings and schedules commands in its periodic loop. Each button can have a press, release, and hold command.
+ * Internally, [Bingu] tracks all bindings and schedules commands in its [periodic] loop. Each button can have a press, release, and hold command.
  * If a button is not explicitly bound, it defaults to an [InstantCommand] (does nothing).
  *
  * See the documentation for each function for more details and examples.
@@ -34,7 +34,7 @@ object Bingu : SubsystemBase() {
      * Internal list storing all controller-button-command bindings.
      *
      * Each entry is a [ControllerButtonBinding], which pairs an [XboxController] with a [ButtonBinding] (button, press command, release command, hold command).
-     * This list is used by the periodic loop to check button states and schedule commands.
+     * This list is used by the [periodic] loop to check button states and schedule commands.
      *
      * You should not modify this list directly; use the provided binding functions.
      */
@@ -130,13 +130,13 @@ class ButtonBindingsBuilder {
     private val bindings = mutableMapOf<Button, Triple<() -> Command, () -> Command, () -> Command>>()
 
     /**
-     * Sets the command supplier to be executed when the specified button is pressed.
+     * Sets the command supplier to be executed when the specified [Button] is pressed.
      *
      * This overload accepts a supplier of a [Command]. If the button was previously bound,
      * only the press command is updated; the release command remains unchanged.
      *
-     * @param button The button to bind.
-     * @param command The command supplier for the press event.
+     * @param button The [Button] to bind.
+     * @param command The [Command] supplier for the press event.
      *
      * Example:
      * ```kotlin

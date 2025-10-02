@@ -25,8 +25,8 @@ import kotlin.math.abs
  * with the current best ambiguity. If the current target's ambiguity is lower, it updates
  * the best result.
  *
- * @receiver List<[PhotonModule]> The list of [PhotonModule] objects to search through.
- * @return List<Pair<[PhotonModule], [PhotonPipelineResult]>> The list of [PhotonModule] and [PhotonPipelineResult] pairs ordered by pose ambiguity.
+ * @receiver List of [PhotonModule] objects to search through.
+ * @return List of [Pair] of [PhotonModule] and [PhotonPipelineResult] ordered by pose ambiguity.
  */
 fun List<PhotonModule>.getDecentResultPairs(
     condition: (PhotonPipelineResult) -> Boolean = { it.hasTargets() },
@@ -40,12 +40,12 @@ fun List<PhotonModule>.getDecentResultPairs(
         }.sortedBy { it.second.bestTarget.poseAmbiguity }
 
 /**
- * Extension function for a list of Pair<[PhotonModule], [PhotonPipelineResult]> objects to check if any have targets.
+ * Extension function for a list of [Pair] of [PhotonModule] and [PhotonPipelineResult] to check if any have targets.
  *
  * This function iterates through each pair in the list and checks if the [PhotonPipelineResult] has targets.
  *
- * @receiver List<Pair<[PhotonModule], [PhotonPipelineResult]>> The list of pairs to check.
- * @return Boolean True if any pair has targets, false otherwise.
+ * @receiver List of [Pair] of [PhotonModule] and [PhotonPipelineResult] to check.
+ * @return [Boolean] True if any pair has targets, false otherwise.
  */
 fun List<Pair<PhotonModule, PhotonPipelineResult>>.hasTargets(): Boolean = this.any { it.second.hasTargets() }
 
@@ -55,7 +55,7 @@ fun List<Pair<PhotonModule, PhotonPipelineResult>>.hasTargets(): Boolean = this.
  * This function sets the reference pose for the pose estimator of the [PhotonModule] and updates it
  * with the [PhotonPipelineResult]. If an [EstimatedRobotPose] is present, it adds it to the list of poses.
  *
- * @receiver Pair<[PhotonModule], [PhotonPipelineResult]> The pair of [PhotonModule] and [PhotonPipelineResult].
+ * @receiver Pair of [PhotonModule] and [PhotonPipelineResult] The pair of [PhotonModule] and [PhotonPipelineResult].
  * @param prevEstimatedRobotPose [Pose2d] The previous estimated robot pose to set as reference.
  * @return [EstimatedRobotPose]? The estimated robot pose, or null if not present.
  */
@@ -72,7 +72,7 @@ fun Pair<PhotonModule, PhotonPipelineResult>.getEstimatedPose(prevEstimatedRobot
  * This function updates the estimated standard deviations of the robot pose using the provided [EstimatedRobotPose]
  * and the targets from the [PhotonPipelineResult].
  *
- * @receiver Pair<[PhotonModule], [PhotonPipelineResult]> The pair of [PhotonModule] and [PhotonPipelineResult].
+ * @receiver Pair of [PhotonModule] and [PhotonPipelineResult] The pair of [PhotonModule] and [PhotonPipelineResult].
  * @param estimatedRobotPose [Optional]<[EstimatedRobotPose]> The estimated robot pose to use for updating the standard deviations.
  */
 fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev(estimatedRobotPose: Optional<EstimatedRobotPose>) {
@@ -85,7 +85,7 @@ fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev(estimatedRobotPose: Op
  * This function updates the estimated 3d standard deviations of the robot pose using the provided [EstimatedRobotPose]
  * and the targets from the [PhotonPipelineResult].
  *
- * @receiver Pair<[PhotonModule], [PhotonPipelineResult]> The pair of [PhotonModule] and [PhotonPipelineResult].
+ * @receiver Pair of [PhotonModule] and [PhotonPipelineResult] The pair of [PhotonModule] and [PhotonPipelineResult].
  * @param estimatedRobotPose [Optional]<[EstimatedRobotPose]> The estimated robot pose to use for updating the standard deviations.
  */
 fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev3d(estimatedRobotPose: Optional<EstimatedRobotPose>) {

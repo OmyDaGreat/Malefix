@@ -4,6 +4,11 @@ import edu.wpi.first.wpilibj.XboxController
 
 /**
  * Enum class representing the buttons on a joystick or game controller.
+ *
+ * Each [Button] provides lambdas to check if it is pressed or released on an [XboxController].
+ *
+ * @property checkPressed Lambda to check if the button is pressed on the [XboxController].
+ * @property checkReleased Lambda to check if the button is released on the [XboxController].
  */
 enum class Button(
     val checkPressed: (XboxController) -> Boolean,

@@ -1,7 +1,9 @@
 package xyz.malefic.frc.emu
 
 /**
- * Enum representing the four cardinal directions.
+ * Enum representing the four cardinal directions in the YZ plane.
+ *
+ * Provides conversion and rotation utilities to [Dir8], [DirXY], and [DirRotate].
  */
 enum class DirYZ {
     UP,
@@ -11,16 +13,16 @@ enum class DirYZ {
     ;
 
     /**
-     * Function to get the opposite direction for [DirYZ].
+     * Returns the opposite direction of the current [DirYZ] value.
      *
-     * @return The opposite direction of the current [DirYZ] value.
+     * @return The opposite [DirYZ] direction.
      */
     fun opposite() = entries[(this.ordinal + 2) % entries.size]
 
     /**
-     * Function to convert [DirYZ] to [Dir8].
+     * Converts this [DirYZ] to the corresponding [Dir8] direction.
      *
-     * @return The corresponding [Dir8] value for the current [DirYZ] value.
+     * @return The corresponding [Dir8] value.
      */
     fun toDir8() =
         when (this) {
@@ -31,9 +33,9 @@ enum class DirYZ {
         }
 
     /**
-     * Converts the current [DirYZ] direction to its corresponding [DirXY] value.
+     * Converts this [DirYZ] direction to its corresponding [DirXY] value.
      *
-     * @return The [DirXY] value that matches the current [DirYZ] direction.
+     * @return The [DirXY] value that matches this [DirYZ] direction.
      */
     fun toDirXY() =
         when (this) {
@@ -44,10 +46,10 @@ enum class DirYZ {
         }
 
     /**
-     * Rotates the current direction based on the given rotation direction.
+     * Rotates the current direction based on the given [DirRotate] direction.
      *
      * @param dirRotate The direction to rotate ([DirRotate.CLOCKWISE] or [DirRotate.COUNTERCLOCKWISE]).
-     * @return The new direction after rotation.
+     * @return The new [DirYZ] direction after rotation.
      */
     fun rotate(dirRotate: DirRotate) =
         entries[

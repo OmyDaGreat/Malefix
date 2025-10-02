@@ -20,11 +20,16 @@ import kotlin.Double.Companion.MAX_VALUE
 import kotlin.math.sqrt
 
 /**
- * The [PhotonModule] class represents a single PhotonVision camera setup with its associated pose estimator and position information.
+ * The [PhotonModule] class represents a single PhotonVision camera setup with its associated [PhotonPoseEstimator] and position information.
  *
  * @property cameraName The name of the camera.
- * @property cameraPos The position of the camera.
- * @property fieldLayout The field layout for the camera.
+ * @property cameraPos The position of the camera as a [Transform3d].
+ * @property fieldLayout The [AprilTagFieldLayout] for the camera.
+ * @property camera The [PhotonCamera] instance for this module.
+ * @property poseEstimator The [PhotonPoseEstimator] instance for estimating the robot's pose.
+ * @property currentStdDevs The current standard deviations for 2D pose estimation as a [Matrix].
+ * @property currentStdDevs3d The current standard deviations for 3D pose estimation as a [Matrix].
+ * @property allUnreadResults All unread [PhotonPipelineResult]s from the [PhotonCamera].
  */
 class PhotonModule(
     val cameraName: String,
@@ -59,25 +64,25 @@ class PhotonModule(
         }
 
     /**
-     * The current standard deviations for 2D pose estimation.
+     * The current standard deviations for 2D pose estimation as a [Matrix].
      */
     var currentStdDevs: Matrix<N3, N1>? = null
         private set
 
     /**
-     * The current standard deviations for 3D pose estimation.
+     * The current standard deviations for 3D pose estimation as a [Matrix].
      */
     var currentStdDevs3d: Matrix<N4, N1>? = null
         private set
 
     /**
-     * Retrieves all unread results from the [PhotonCamera].
+     * Retrieves all unread [PhotonPipelineResult]s from the [PhotonCamera].
      */
     val allUnreadResults: MutableList<PhotonPipelineResult>
         get() = camera.allUnreadResults
 
     /**
-     * Updates the estimated standard deviations based on the provided estimated pose and targets.
+     * Updates the estimated standard deviations based on the provided [EstimatedRobotPose] and [PhotonTrackedTarget]s.
      *
      * @param estimatedPose The estimated robot pose to use for updating the standard deviations.
      * @param targets The list of tracked targets to use for updating the standard deviations.
@@ -110,7 +115,7 @@ class PhotonModule(
     }
 
     /**
-     * Updates the estimated 3D standard deviations.
+     * Updates the estimated 3D standard deviations based on the provided [EstimatedRobotPose] and [PhotonTrackedTarget]s.
      *
      * @param estimatedPose The estimated robot pose to use for updating the standard deviations.
      * @param targets The list of tracked targets to use for updating the standard deviations.
@@ -146,7 +151,7 @@ class PhotonModule(
     }
 
     /**
-     * Helper class to store tag information
+     * Helper class to store tag information.
      *
      * @property numTags The number of tags.
      * @property avgDistance The average distance of the tags.
@@ -157,12 +162,12 @@ class PhotonModule(
     )
 
     /**
-     * Calculate the number of visible tags and their average distance
+     * Calculate the number of visible tags and their average distance.
      *
-     * @param estimatedPose The estimated robot pose to use for updating the standard deviations.
-     * @param targets The list of tracked targets to use for updating the standard deviations.
+     * @param estimatedPose The [EstimatedRobotPose] to use for updating the standard deviations.
+     * @param targets The list of [PhotonTrackedTarget]s to use for updating the standard deviations.
      * @param distanceCalculator The function to calculate the distance between the tag and the estimated translation.
-     * @return TagInfo The number of tags and their average distance.
+     * @return [TagInfo] The number of tags and their average distance.
      */
     private fun calculateTagInfo(
         estimatedPose: Optional<EstimatedRobotPose>,
@@ -190,13 +195,13 @@ class PhotonModule(
     }
 
     /**
-     * Calculate standard deviations based on tag information
+     * Calculate standard deviations based on tag information.
      *
      * @param numTags The number of tags.
      * @param avgDistance The average distance of the tags.
      * @param singleTargetVector The standard deviations for a single target.
      * @param multiTargetVector The standard deviations for multiple targets.
-     * @return T The calculated standard deviations.
+     * @return [T] The calculated standard deviations.
      */
     private fun <T : Matrix<*, N1>> calculateStdDevs(
         numTags: Int,
