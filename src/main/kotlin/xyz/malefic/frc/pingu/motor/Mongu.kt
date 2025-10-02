@@ -16,6 +16,7 @@ import xyz.malefic.frc.pingu.motor.talonfx.TalonFXConfig
  *
  * @param T The type of motor being wrapped.
  * @property motor The motor instance being wrapped.
+ * @param block A lambda that applies configuration settings to the motor.
  */
 class Mongu<T : Any>(
     val motor: T,
