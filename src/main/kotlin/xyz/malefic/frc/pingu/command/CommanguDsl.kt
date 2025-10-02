@@ -4,9 +4,9 @@ import com.pathplanner.lib.auto.NamedCommands
 import edu.wpi.first.wpilibj2.command.Command
 
 /**
- * DSL receiver for [CommandPingu.registerCommands].
+ * DSL receiver for [Commangu.registerCommands].
  */
-class CommandPinguDsl {
+class CommanguDsl {
     fun bind(
         name: String,
         command: Command,

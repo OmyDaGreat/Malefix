@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.Command
 /**
  * A utility class for binding commands with names.
  */
-object CommandPingu {
+object Commangu {
     /**
      * Binds a command to a name and registers it.
      *
@@ -35,7 +35,7 @@ object CommandPingu {
      * }
      * ```
      */
-    fun registerCommands(block: CommandPinguDsl.() -> Unit) {
-        CommandPinguDsl().apply(block)
+    fun registerCommands(block: CommanguDsl.() -> Unit) {
+        CommanguDsl().apply(block)
     }
 }
