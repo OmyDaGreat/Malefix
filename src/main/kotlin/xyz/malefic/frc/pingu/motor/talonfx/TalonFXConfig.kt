@@ -1,29 +1,17 @@
-package xyz.malefic.frc.pingu.motor
+package xyz.malefic.frc.pingu.motor.talonfx
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
-import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
 import xyz.malefic.frc.pingu.control.MagicPingu
 import xyz.malefic.frc.pingu.control.Pingu
+import xyz.malefic.frc.pingu.motor.MonguConfig
 
 /**
- * Functional interface for motor configuration.
+ * Configuration class for [com.ctre.phoenix6.hardware.TalonFX] motors.
  */
-fun interface MotorConfig<T : Any> {
-    /**
-     * Applies the configuration to the given motor.
-     *
-     * @param motor The motor instance to configure.
-     */
-    fun applyTo(motor: T)
-}
-
-/**
- * Configuration class for [TalonFX] motors.
- */
-class TalonFXConfig : MotorConfig<TalonFX> {
+class TalonFXConfig : MonguConfig<TalonFX> {
     /**
      * Optional custom TalonFXConfiguration to use as a base.
      */
@@ -132,21 +120,8 @@ class TalonFXConfig : MotorConfig<TalonFX> {
         extraConfig?.invoke(config)
         motor.configurator.apply(config)
     }
-}
 
-/**
- * Configuration class for [PWMTalonSRX] motors.
- */
-class PWMTalonSRXConfig : MotorConfig<PWMTalonSRX> {
-    /**
-     * Indicates whether the motor direction is inverted.
-     */
-    var inverted = false
-
-    /**
-     * Applies the configuration to the given [PWMTalonSRX] motor.
-     */
-    override fun applyTo(motor: PWMTalonSRX) {
-        motor.inverted = inverted
-    }
+    override val pwmControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.set(value) }
+    override val voltageControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setVoltage(value) }
+    override val positionControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setPosition(value) }
 }
