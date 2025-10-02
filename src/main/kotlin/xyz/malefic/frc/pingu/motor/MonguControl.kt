@@ -5,4 +5,6 @@ package xyz.malefic.frc.pingu.motor
  *
  * @param T The type of the control mechanism.
  */
-interface MonguControl<out T>
+interface MonguControl<out T> {
+    var value: Double
+}

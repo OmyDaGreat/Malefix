@@ -16,7 +16,7 @@ class MonguControlPosition : MonguControl<Position> {
     /**
      * The position value to be applied.
      */
-    var value: Double = 0.0
+    override var value: Double = 0.0
 }
 
 /**

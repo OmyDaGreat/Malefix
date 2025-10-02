@@ -16,7 +16,7 @@ class MonguControlPWM : MonguControl<PWM> {
     /**
      * The PWM value to be applied.
      */
-    var value: Double = 0.0
+    override var value: Double = 0.0
 }
 
 /**

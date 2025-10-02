@@ -16,7 +16,7 @@ class MonguControlVoltage : MonguControl<Voltage> {
     /**
      * The voltage value to be applied.
      */
-    var value: Double = 0.0
+    override var value: Double = 0.0
 }
 
 /**

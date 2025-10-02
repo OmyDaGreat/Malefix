@@ -2,9 +2,6 @@ package xyz.malefic.frc.pingu.motor
 
 import com.ctre.phoenix6.hardware.TalonFX
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
-import xyz.malefic.frc.pingu.motor.control.MonguControlPWM
-import xyz.malefic.frc.pingu.motor.control.MonguControlPosition
-import xyz.malefic.frc.pingu.motor.control.MonguControlVoltage
 import xyz.malefic.frc.pingu.motor.control.PWM
 import xyz.malefic.frc.pingu.motor.control.Position
 import xyz.malefic.frc.pingu.motor.control.Voltage
@@ -107,10 +104,7 @@ class Mongu<T : Any>(
 
         controlFunction?.invoke(
             motor,
-            (value as? MonguControlPWM)?.value
-                ?: (value as? MonguControlVoltage)?.value
-                ?: (value as? MonguControlPosition)?.value
-                ?: throw IllegalArgumentException("Invalid control value"),
+            value.value,
         )
             ?: throw UnsupportedOperationException(
                 "Control type ${A::class.simpleName} is not supported for motor type ${motor::class.simpleName}",
