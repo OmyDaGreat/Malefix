@@ -70,7 +70,6 @@ $dokka.location:xyz.malefic.frc.emu/DirYZ/toDirXY/#/PointingToDeclaration/-male
 $dokka.location:xyz.malefic.frc.emu/DirYZ/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/value-of.html
 $dokka.location:xyz.malefic.frc.emu/DirYZ/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/values.html
 $dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-malefix/xyz.malefic.frc.extension/index.html
-$dokka.location:xyz.malefic.frc.extension//configureWithDefaults/com.ctre.phoenix6.hardware.CANcoder#com.ctre.phoenix6.signals.SensorDirectionValue#kotlin.Double#kotlin.Double#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]?/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/configure-with-defaults.html
 $dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.sub.PhotonModule]#kotlin.Function1[org.photonvision.targeting.PhotonPipelineResult,kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-decent-result-pairs.html
 $dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#edu.wpi.first.math.geometry.Pose2d/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-estimated-pose.html
 $dokka.location:xyz.malefic.frc.extension//getPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-pingu.html
@@ -200,10 +199,10 @@ $dokka.location:xyz.malefic.frc.pingu.control/VoltagePingu///PointingToDeclarati
 $dokka.location:xyz.malefic.frc.pingu.control/VoltagePingu/setOutput/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.control/-voltage-pingu/set-output.html
 $dokka.location:xyz.malefic.frc.pingu.encoder////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/index.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/index.html
-$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/Engu/#com.ctre.phoenix6.hardware.CANcoder/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/-engu.html
-$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/cancoder/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/cancoder.html
+$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/Engu/#kotlin.Int#com.ctre.phoenix6.CANBus/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/-engu.html
+$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/Engu/#kotlin.Int#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/-engu.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configuration.html
-$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configure/#com.ctre.phoenix6.signals.SensorDirectionValue#kotlin.Double#kotlin.Double#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]?/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configure.html
+$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configure/#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configure.html
 $dokka.location:xyz.malefic.frc.pingu.log////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/index.html
 $dokka.location:xyz.malefic.frc.pingu.log/Log///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log/index.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/index.html
