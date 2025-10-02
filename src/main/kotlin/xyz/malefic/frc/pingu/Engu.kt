@@ -11,7 +11,7 @@ import com.ctre.phoenix6.signals.SensorDirectionValue
  *
  * @property cancoder The [CANcoder] instance being wrapped.
  */
-class Cangu(
+class Engu(
     val cancoder: CANcoder,
 ) {
     /**
