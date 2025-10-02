@@ -52,4 +52,11 @@ interface MonguConfig<T : Any> {
      * If `null`, position control is not supported.
      */
     val positionControl: ((T, Double) -> Unit)?
+
+    /**
+     * Lambda function to stop the motor.
+     *
+     * This function should perform any necessary actions to safely stop the motor.
+     */
+    val stop: (T) -> Unit
 }

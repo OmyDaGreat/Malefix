@@ -110,4 +110,15 @@ class Mongu<T : Any>(
                 "Control type ${A::class.simpleName} is not supported for motor type ${motor::class.simpleName}",
             )
     }
+
+    /**
+     * Stops the motor by invoking the configured stop function.
+     *
+     * This method should be called to immediately halt motor movement,
+     * typically by setting output to zero or disabling the motor output,
+     * depending on the underlying motor type and configuration.
+     */
+    fun stopMotor() {
+        configuration.stop(motor)
+    }
 }

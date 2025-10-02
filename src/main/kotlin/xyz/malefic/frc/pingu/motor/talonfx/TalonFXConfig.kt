@@ -123,7 +123,26 @@ class TalonFXConfig : MonguConfig<TalonFX> {
         motor.configurator.apply(config)
     }
 
+    /**
+     * Lambda for PWM control.
+     * Sets the output of the [TalonFX] motor to the specified value.
+     */
     override val pwmControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.set(value) }
+
+    /**
+     * Lambda for voltage control.
+     * Sets the voltage of the [TalonFX] motor to the specified value.
+     */
     override val voltageControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setVoltage(value) }
+
+    /**
+     * Lambda for position control.
+     * Sets the position of the [TalonFX] motor to the specified value.
+     */
     override val positionControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setPosition(value) }
+
+    /**
+     * Lambda to stop the [TalonFX] motor.
+     */
+    override val stop: (TalonFX) -> Unit = { motor -> motor.stopMotor() }
 }
