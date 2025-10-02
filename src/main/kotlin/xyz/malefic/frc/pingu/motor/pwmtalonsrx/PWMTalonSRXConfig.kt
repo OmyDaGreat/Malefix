@@ -13,10 +13,17 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
     var inverted = false
 
     /**
+     * Enables or disables deadband elimination for the motor.
+     * When true, small input values are ignored to reduce motor jitter.
+     */
+    var deadbandElimination = false
+
+    /**
      * Applies the configuration to the given [PWMTalonSRX] motor.
      */
     override fun applyTo(motor: PWMTalonSRX) {
         motor.inverted = inverted
+        motor.enableDeadbandElimination(deadbandElimination)
     }
 
     /**

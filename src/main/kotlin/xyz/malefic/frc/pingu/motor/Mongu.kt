@@ -35,6 +35,14 @@ class Mongu<T : Any>(
     /**
      * Configures the motor using a DSL-style configuration block.
      *
+     * ```kotlin
+     * mongu.configure {
+     *    this as PWMTalonSRX  // Cast to specific config type
+     *    inverted = true
+     *    deadbandElimination = false
+     * }
+     * ```
+     *
      * @param block A lambda that applies configuration settings to the motor.
      * @throws IllegalArgumentException If the motor type is unsupported.
      */
