@@ -271,6 +271,7 @@ $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/positionControl/#/Pointi
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/pwm-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguControl///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-control/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/MonguControl/value/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-control/value.html
 $dokka.location:xyz.malefic.frc.sub////PointingToDeclaration/-malefix/xyz.malefic.frc.sub/index.html
 $dokka.location:xyz.malefic.frc.sub/PhotonModule.Companion///PointingToDeclaration/-malefix/xyz.malefic.frc.sub/-photon-module/-companion/index.html
 $dokka.location:xyz.malefic.frc.sub/PhotonModule///PointingToDeclaration/-malefix/xyz.malefic.frc.sub/-photon-module/index.html
