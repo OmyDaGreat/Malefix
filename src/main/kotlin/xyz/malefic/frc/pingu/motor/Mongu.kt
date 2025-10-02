@@ -2,6 +2,12 @@ package xyz.malefic.frc.pingu.motor
 
 import com.ctre.phoenix6.hardware.TalonFX
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
+import xyz.malefic.frc.pingu.motor.control.MonguControlPWM
+import xyz.malefic.frc.pingu.motor.control.MonguControlPosition
+import xyz.malefic.frc.pingu.motor.control.MonguControlVoltage
+import xyz.malefic.frc.pingu.motor.control.PWM
+import xyz.malefic.frc.pingu.motor.control.Position
+import xyz.malefic.frc.pingu.motor.control.Voltage
 import xyz.malefic.frc.pingu.motor.pwmtalonsrx.PWMTalonSRXConfig
 import xyz.malefic.frc.pingu.motor.talonfx.TalonFXConfig
 
