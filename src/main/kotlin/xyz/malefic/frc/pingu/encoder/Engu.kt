@@ -1,19 +1,20 @@
 package xyz.malefic.frc.pingu.encoder
 
+import com.ctre.phoenix6.CANBus
 import com.ctre.phoenix6.configs.CANcoderConfiguration
 import com.ctre.phoenix6.hardware.CANcoder
-import com.ctre.phoenix6.signals.SensorDirectionValue
 
 /**
- * A generic [com.ctre.phoenix6.hardware.CANcoder] wrapper class that allows configuration of [com.ctre.phoenix6.hardware.CANcoder] sensors.
+ * A generic [CANcoder] wrapper class that allows configuration of [CANcoder] sensors.
  *
  * Make sure to configure the sensor after instantiation to apply desired settings.
- *
- * @property cancoder The [com.ctre.phoenix6.hardware.CANcoder] instance being wrapped.
  */
 class Engu(
-    val cancoder: CANcoder,
-) {
+    id: Int,
+    device: String = "",
+) : CANcoder(id, device) {
+    constructor(id: Int, canBus: CANBus) : this(id, canBus.name)
+
     /**
      * Holds the last configuration applied to this [CANcoder].
      * This property is updated whenever the [configure] method is called.
@@ -26,25 +27,22 @@ class Engu(
     }
 
     /**
-     * Configures the [CANcoder] using explicit parameters.
+     * Configures the [CANcoder] using a DSL-style configuration block.
      *
-     * @param sensorDirection Direction the sensor should consider positive
-     * @param magnetOffset Offset to apply to the magnet sensor reading
-     * @param discontinuityPoint Point at which the sensor reading resets to low point
-     * @param extraConfig Optional lambda for further [CANcoderConfiguration] customization.
+     * Example:
+     * ```
+     * engu.configure {
+     *     MagnetSensor.SensorDirection = SensorDirectionValue.Clockwise_Positive
+     *     MagnetSensor.MagnetOffset = 0.5
+     *     // ...other configuration...
+     * }
+     * ```
+     *
+     * @param block Lambda with receiver for [CANcoderConfiguration] to customize settings.
      */
-    fun configure(
-        sensorDirection: SensorDirectionValue = SensorDirectionValue.CounterClockwise_Positive,
-        magnetOffset: Double = 0.0,
-        discontinuityPoint: Double = 1.0,
-        extraConfig: (CANcoderConfiguration.() -> Unit)? = null,
-    ) {
-        val config = CANcoderConfiguration()
-        config.MagnetSensor.SensorDirection = sensorDirection
-        config.MagnetSensor.MagnetOffset = magnetOffset
-        config.MagnetSensor.AbsoluteSensorDiscontinuityPoint = discontinuityPoint
-        extraConfig?.invoke(config)
-        cancoder.configurator.apply(config)
+    fun configure(block: CANcoderConfiguration.() -> Unit = {}) {
+        val config = CANcoderConfiguration().apply(block)
+        configurator.apply(config)
         configuration = config
     }
 }
