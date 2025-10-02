@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.control
 
 import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 

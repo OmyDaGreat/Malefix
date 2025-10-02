@@ -12,7 +12,7 @@ import edu.wpi.first.math.util.Units.metersToInches
 import edu.wpi.first.wpilibj.XboxController
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
-import xyz.malefic.frc.pingu.Pingu
+import xyz.malefic.frc.pingu.control.Pingu
 import xyz.malefic.frc.sub.PhotonModule
 import java.util.Optional
 import kotlin.math.abs

@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.control
 
 import edu.wpi.first.math.controller.ProfiledPIDController
 import edu.wpi.first.math.trajectory.TrapezoidProfile

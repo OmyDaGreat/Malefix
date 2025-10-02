@@ -1,15 +1,15 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.encoder
 
 import com.ctre.phoenix6.configs.CANcoderConfiguration
 import com.ctre.phoenix6.hardware.CANcoder
 import com.ctre.phoenix6.signals.SensorDirectionValue
 
 /**
- * A generic [CANcoder] wrapper class that allows configuration of [CANcoder] sensors.
+ * A generic [com.ctre.phoenix6.hardware.CANcoder] wrapper class that allows configuration of [com.ctre.phoenix6.hardware.CANcoder] sensors.
  *
  * Make sure to configure the sensor after instantiation to apply desired settings.
  *
- * @property cancoder The [CANcoder] instance being wrapped.
+ * @property cancoder The [com.ctre.phoenix6.hardware.CANcoder] instance being wrapped.
  */
 class Engu(
     val cancoder: CANcoder,

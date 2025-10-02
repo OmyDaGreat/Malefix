@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.control
 
 import edu.wpi.first.math.controller.PIDController
 import org.littletonrobotics.junction.networktables.LoggedNetworkNumber

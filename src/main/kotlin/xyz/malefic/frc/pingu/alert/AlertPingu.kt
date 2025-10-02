@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.alert
 
 import com.ctre.phoenix6.hardware.CANcoder
 import com.ctre.phoenix6.hardware.TalonFX

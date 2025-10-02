@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.binding
 
 import edu.wpi.first.wpilibj.XboxController
 import edu.wpi.first.wpilibj2.command.Command

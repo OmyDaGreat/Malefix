@@ -1,63 +1,21 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.motor
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
+import xyz.malefic.frc.pingu.control.MagicPingu
+import xyz.malefic.frc.pingu.control.Pingu
 
 /**
- * A generic motor wrapper class that allows configuration of different motor types.
- *
- * Make sure to configure the motor after instantiation to apply desired settings.
- *
- * @param T The type of motor being wrapped.
- * @property motor The motor instance being wrapped.
- */
-class Mongu<T : Any>(
-    val motor: T,
-) {
-    /**
-     * Holds the last configuration applied to this motor.
-     * This property is updated whenever the `configure` method is called.
-     * It allows retrieval of the configuration settings for inspection or reuse.
-     */
-    lateinit var configuration: MotorConfig<T>
-
-    init {
-        require(motor is TalonFX || motor is PWMTalonSRX) { "Unsupported motor type" }
-        configure()
-    }
-
-    /**
-     * Configures the motor using a DSL-style configuration block.
-     *
-     * @param block A lambda that applies configuration settings to the motor.
-     * @throws IllegalArgumentException If the motor type is unsupported.
-     */
-    @Suppress("UNCHECKED_CAST")
-    fun configure(block: MotorConfig<out T>.() -> Unit = {}) {
-        val config =
-            when (motor) {
-                is TalonFX -> TalonFXConfig().apply(block as MotorConfig<TalonFX>.() -> Unit)
-                is PWMTalonSRX -> PWMTalonSRXConfig().apply(block as MotorConfig<PWMTalonSRX>.() -> Unit)
-                else -> throw IllegalArgumentException("Unsupported motor type")
-            } as MotorConfig<T>
-        config.applyTo(motor)
-        configuration = config
-    }
-}
-
-/**
- * A functional interface for motor configuration.
- *
- * @param T The type of motor being configured.
+ * Functional interface for motor configuration.
  */
 fun interface MotorConfig<T : Any> {
     /**
      * Applies the configuration to the given motor.
      *
-     * @param motor The motor to configure.
+     * @param motor The motor instance to configure.
      */
     fun applyTo(motor: T)
 }
@@ -67,7 +25,7 @@ fun interface MotorConfig<T : Any> {
  */
 class TalonFXConfig : MotorConfig<TalonFX> {
     /**
-     * Optional [TalonFX] configuration object.
+     * Optional custom TalonFXConfiguration to use as a base.
      */
     var talonConfig: TalonFXConfiguration? = null
 
@@ -77,49 +35,47 @@ class TalonFXConfig : MotorConfig<TalonFX> {
     var inverted: InvertedValue = InvertedValue.Clockwise_Positive
 
     /**
-     * Neutral mode setting.
+     * Neutral mode (Coast or Brake).
      */
     var neutralMode: NeutralModeValue = NeutralModeValue.Coast
 
     /**
-     * Deadband for duty cycle.
+     * Deadband for duty cycle output.
      */
     var dutyCycleNeutralDeadband: Double = 0.04
 
     /**
-     * PID configuration object.
+     * Optional PID configuration.
      */
     var pingu: Pingu? = null
 
     /**
-     * Supply and stator current limits.
+     * Pair of supply and stator current limits (nullable).
      */
     var currentLimits: Pair<Double?, Double?>? = null
 
     /**
-     * Forward and reverse soft limits.
+     * Pair of forward and reverse soft limits (nullable).
      */
     var softLimits: Pair<Double?, Double?>? = null
 
     /**
-     * Open and closed loop ramp rates.
+     * Pair of open-loop and closed-loop ramp rates.
      */
     var loopRamp: Pair<Double, Double> = 0.0 to 0.0
 
     /**
-     * Motion magic configuration.
+     * Optional Motion Magic configuration.
      */
     var motionMagicPingu: MagicPingu? = null
 
     /**
-     * Additional custom configuration.
+     * Optional lambda for additional TalonFXConfiguration customization.
      */
     var extraConfig: (TalonFXConfiguration.() -> Unit)? = null
 
     /**
      * Applies the configuration to the given [TalonFX] motor.
-     *
-     * @param motor The [TalonFX] motor to configure.
      */
     override fun applyTo(motor: TalonFX) {
         val config = talonConfig ?: TalonFXConfiguration()
@@ -183,15 +139,12 @@ class TalonFXConfig : MotorConfig<TalonFX> {
  */
 class PWMTalonSRXConfig : MotorConfig<PWMTalonSRX> {
     /**
-     * Motor inversion setting.
-     * If true, the motor direction is inverted.
+     * Indicates whether the motor direction is inverted.
      */
     var inverted = false
 
     /**
      * Applies the configuration to the given [PWMTalonSRX] motor.
-     *
-     * @param motor The PWMTalonSRX motor to configure.
      */
     override fun applyTo(motor: PWMTalonSRX) {
         motor.inverted = inverted

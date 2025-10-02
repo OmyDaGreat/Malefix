@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.control
 
 import com.ctre.phoenix6.controls.VoltageOut
 

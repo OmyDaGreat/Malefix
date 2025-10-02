@@ -1,4 +1,4 @@
-package xyz.malefic.frc.pingu
+package xyz.malefic.frc.pingu.log
 
 import edu.wpi.first.util.WPISerializable
 import edu.wpi.first.util.struct.StructSerializable
