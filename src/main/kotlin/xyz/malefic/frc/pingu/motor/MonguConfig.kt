@@ -1,8 +1,5 @@
 package xyz.malefic.frc.pingu.motor
 
-import com.ctre.phoenix6.controls.PositionVoltage
-import com.ctre.phoenix6.controls.VoltageOut
-
 /**
  * Interface for motor configuration that includes control mappings.
  *
@@ -44,28 +41,6 @@ interface MonguConfig<T : Any> {
      * If `null`, voltage control is not supported.
      */
     val voltageControl: ((T, Double) -> Unit)?
-
-    /**
-     * Lambda function for controlling the motor using a [VoltageOut] object.
-     *
-     * This function takes two parameters:
-     * - An instance of type [T] representing the motor or device.
-     * - A [VoltageOut] object representing the voltage output settings.
-     *
-     * If `null`, [VoltageOut] control is not supported.
-     */
-    val voltageOutControl: ((T, VoltageOut) -> Unit)?
-
-    /**
-     * Lambda function for controlling the motor using a [PositionVoltage] object.
-     *
-     * This function takes two parameters:
-     * - An instance of type [T] representing the motor or device.
-     * - A [PositionVoltage] object representing the voltage output settings.
-     *
-     * If `null`, [PositionVoltage] control is not supported.
-     */
-    val positionVoltageControl: ((T, PositionVoltage) -> Unit)?
 
     /**
      * Lambda function for controlling the motor's position.

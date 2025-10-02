@@ -1,7 +1,5 @@
 package xyz.malefic.frc.pingu.motor
 
-import com.ctre.phoenix6.controls.PositionVoltage
-import com.ctre.phoenix6.controls.VoltageOut
 import com.ctre.phoenix6.hardware.TalonFX
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
 import xyz.malefic.frc.pingu.motor.control.PWM
@@ -120,32 +118,6 @@ class Mongu<T : Any>(
             ?: throw UnsupportedOperationException(
                 "Control type ${A::class.simpleName} is not supported for motor type ${motor::class.simpleName}",
             )
-    }
-
-    /**
-     * Sets the motor output using a [VoltageOut] control object.
-     *
-     * This method is intended for advanced use cases where direct access to the
-     * CTRE Phoenix [VoltageOut] control is required (e.g., for [TalonFX] motors).
-     * If the current configuration does not support [VoltageOut] control, this method does nothing.
-     *
-     * @param value The [VoltageOut] control object to apply to the motor.
-     */
-    fun setControl(value: VoltageOut) {
-        configuration.voltageOutControl?.let { it(motor, value) }
-    }
-
-    /**
-     * Sets the motor output using a [PositionVoltage] control object.
-     *
-     * This method is intended for advanced use cases where direct access to the
-     * CTRE Phoenix [PositionVoltage] control is required (e.g., for [TalonFX] motors).
-     * If the current configuration does not support [PositionVoltage] control, this method does nothing.
-     *
-     * @param value The [PositionVoltage] control object to apply to the motor.
-     */
-    fun setControl(value: PositionVoltage) {
-        configuration.positionVoltageControl?.let { it(motor, value) }
     }
 
     /**

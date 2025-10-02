@@ -1,7 +1,5 @@
 package xyz.malefic.frc.pingu.motor.pwmtalonsrx
 
-import com.ctre.phoenix6.controls.PositionVoltage
-import com.ctre.phoenix6.controls.VoltageOut
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
 import xyz.malefic.frc.pingu.motor.MonguConfig
 
@@ -39,18 +37,6 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
      * Not supported for [PWMTalonSRX], so this is null.
      */
     override val voltageControl: ((PWMTalonSRX, Double) -> Unit)? = null
-
-    /**
-     * Lambda for [VoltageOut] control.
-     * Sets the voltage of the [PWMTalonSRX] motor to the specified value.
-     */
-    override val voltageOutControl: (PWMTalonSRX, VoltageOut) -> Unit = { motor, value -> motor.set(value.Output) }
-
-    /**
-     * Lambda for [PositionVoltage] control.
-     * Not supported for [PWMTalonSRX], so this is null.
-     */
-    override val positionVoltageControl: ((PWMTalonSRX, PositionVoltage) -> Unit)? = null
 
     /**
      * Lambda for position control.
