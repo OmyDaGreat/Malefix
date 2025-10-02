@@ -9,8 +9,6 @@ class Position
 
 /**
  * Class [MonguControlPosition] implements [MonguControl] for the [Position] type.
- *
- * It contains a [value] property to store the position value.
  */
 class MonguControlPosition : MonguControl<Position> {
     /**

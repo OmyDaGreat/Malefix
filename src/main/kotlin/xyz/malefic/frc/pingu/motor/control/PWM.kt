@@ -9,8 +9,6 @@ class PWM
 
 /**
  * Class [MonguControlPWM] implements [MonguControl] for the [PWM] type.
- *
- * It contains a [value] property to store the PWM value.
  */
 class MonguControlPWM : MonguControl<PWM> {
     /**

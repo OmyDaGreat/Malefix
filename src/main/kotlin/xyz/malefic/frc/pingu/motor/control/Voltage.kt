@@ -9,8 +9,6 @@ class Voltage
 
 /**
  * Class [MonguControlVoltage] implements [MonguControl] for the [Voltage] type.
- *
- * It contains a [value] property to store the voltage value.
  */
 class MonguControlVoltage : MonguControl<Voltage> {
     /**
