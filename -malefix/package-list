@@ -112,6 +112,7 @@ $dokka.location:xyz.malefic.frc.pingu.alert////PointingToDeclaration/-malefix/x
 $dokka.location:xyz.malefic.frc.pingu.alert/AlertPingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.alert/-alert-pingu/index.html
 $dokka.location:xyz.malefic.frc.pingu.alert/AlertPingu/add/#com.ctre.phoenix6.hardware.CANcoder/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.alert/-alert-pingu/add.html
 $dokka.location:xyz.malefic.frc.pingu.alert/AlertPingu/add/#com.ctre.phoenix6.hardware.TalonFX#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.alert/-alert-pingu/add.html
+$dokka.location:xyz.malefic.frc.pingu.alert/AlertPingu/add/#xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.alert/-alert-pingu/add.html
 $dokka.location:xyz.malefic.frc.pingu.alert/AlertPingu/periodic/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.alert/-alert-pingu/periodic.html
 $dokka.location:xyz.malefic.frc.pingu.alert/DeviceAlert///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.alert/-device-alert/index.html
 $dokka.location:xyz.malefic.frc.pingu.binding////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.binding/index.html
