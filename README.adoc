@@ -6,36 +6,54 @@ Malefix is a Kotlin library designed for use in FRC (FIRST Robotics Competition)
 
 === `xyz.malefic.frc.extension`
 
-This module contains extension functions for various classes used in FRC. These extensions provide additional functionality, such as converting between different rotation representations, configuring motors with sensible defaults, setting PID values, and working with PhotonVision results.
+This module contains extension functions and utilities for various FRC classes. It includes:
+
+* Extension functions for rotation, pose, and unit conversions.
+* Motor configuration utilities with sensible defaults.
+* PID value helpers.
+* PhotonVision result helpers.
+* `Kommand`: Utilities for command-based programming.
 
 === `xyz.malefic.frc.pingu`
 
-The `pingu` package includes several utility classes and objects for handling PID controllers, logging, and command binding.
+The `pingu` package provides a comprehensive set of utilities for control, logging, command binding, and motor/encoder management:
 
-* `Pingu`: A data class representing a PID controller with optional feedforward terms.
-* `NetworkPingu`: A class that extends `PIDController` with network logging capabilities.
-* `ProfiledPingu`: A data class for a profiled PID controller with trapezoidal profile constraints.
-* `MagicPingu`: A data class representing a controller with velocity, acceleration, and jerk.
-* `VoltagePingu`: An object for handling voltage output requests.
-* `AlertPingu`: A singleton object for monitoring CTRE Phoenix 6 devices and raising alerts for disconnections.
-* `CommandPingu`: A utility class for binding commands with names.
-* `Bingu`: A utility object for binding Xbox controller buttons to commands.
-* `LogPingu`: A utility object for logging various types of data.
+* `Pingu`: Data class for PID controllers with optional feedforward.
+* `NetworkPingu`: Extends PIDController with network logging.
+* `ProfiledPingu`: Data class for profiled PID controllers.
+* `MagicPingu`: Controller with velocity, acceleration, and jerk.
+* `VoltagePingu`: Handles voltage output requests.
+* `AlertPingu`: Monitors CTRE Phoenix 6 devices and raises alerts.
+* `Bingu`: Binds Xbox controller buttons to commands.
+* `LogPingu`: Logging utilities.
+* `Engu`: Encoder utilities.
+* `Mongu`, `MonguConfig`, `MonguControl`: Motor configuration and control utilities.
+* `Position`, `PWM`, `Voltage`: Motor control strategies.
+* `PWMTalonSRXConfig`, `TalonFXConfig`: Motor controller configs.
+* `Commangu`, `CommanguDsl`: Command binding utilities.
 
 === `xyz.malefic.frc.sub`
 
-This module includes classes related to PhotonVision, a vision processing library used in FRC.
+This module includes classes related to PhotonVision, a vision processing library used in FRC:
 
-* `PhotonModule`: Represents a PhotonVision camera setup with pose estimation capabilities.
+* `PhotonModule`: Represents a PhotonVision camera setup with pose estimation.
 
 === `xyz.malefic.frc.emu`
 
-The `emu` package contains classes for handling game controller inputs.
+The `emu` package contains classes for handling game controller inputs:
 
-* `Button`: An enum class representing the buttons on a joystick or game controller.
-* `Dir4`: An enum class representing the four cardinal directions.
-* `Dir8`: An enum class representing the eight directions, including those between `Dir4`.
-* `DirRotate`: An enum class representing rotational directions.
+* `Button`: Enum for joystick/game controller buttons.
+* `Dir4`: Enum for four cardinal directions. (If not present, see `DirXY`/`DirYZ`.)
+* `Dir8`: Enum for eight directions, including diagonals.
+* `DirRotate`: Enum for rotational directions.
+* `DirXY`: Enum for X/Y axis directions.
+* `DirYZ`: Enum for Y/Z axis directions.
+
+=== `xyz.malefic.frc.path`
+
+This module contains pathfinding and trajectory utilities:
+
+* `LocalADStarAK`: Local pathfinding algorithm implementation.
 
 == Build and Deployment
 

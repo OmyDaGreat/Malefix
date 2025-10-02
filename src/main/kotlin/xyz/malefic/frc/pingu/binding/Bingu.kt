@@ -14,7 +14,7 @@ import xyz.malefic.frc.extension.Kommand.cmd
  * simple and complex command scheduling. It contains a modern DSL-based binding for clarity, flexibility, and maintainability.
  *
  * Usage:
- * * DSL-based `bindings` extension:
+ * * DSL-based [bindings] extension:
  *    ```kotlin
  *    controller.bindings {
  *      press(Button.A, MyCommand())
