@@ -248,6 +248,7 @@ $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/applyT
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/inverted/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/inverted.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/positionControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/position-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/pwm-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/stop.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/index.html
@@ -264,6 +265,7 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/pingu/#/Pointi
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/positionControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/position-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/pwm-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/softLimits/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/soft-limits.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/stop.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/talonConfig/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/talon-config.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/index.html
@@ -273,10 +275,12 @@ $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configuration/#/PointingToDecl
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.MonguConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/motor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/set/#xyz.malefic.frc.pingu.motor.MonguControl[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/set.html
+$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/applyTo/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/apply-to.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/positionControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/position-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/pwm-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/stop.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguControl///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-control/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguControl/value/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-control/value.html
