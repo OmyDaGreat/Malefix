@@ -1,6 +1,7 @@
 package xyz.malefic.frc.pingu.motor.talonfx
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
+import com.ctre.phoenix6.controls.VoltageOut
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
@@ -134,6 +135,12 @@ class TalonFXConfig : MonguConfig<TalonFX> {
      * Sets the voltage of the [TalonFX] motor to the specified value.
      */
     override val voltageControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setVoltage(value) }
+
+    /**
+     * Lambda for VoltageOut control.
+     * Sets the voltage of the [TalonFX] motor to the specified value.
+     */
+    override val voltageOutControl: (TalonFX, VoltageOut) -> Unit = { motor, value -> motor.setControl(value) }
 
     /**
      * Lambda for position control.
