@@ -1,7 +1,9 @@
 package xyz.malefic.frc.pingu.motor
 
 import com.ctre.phoenix6.hardware.TalonFX
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
+import xyz.malefic.frc.pingu.motor.cansparkmax.PWMSparkMaxConfig
 import xyz.malefic.frc.pingu.motor.control.PWM
 import xyz.malefic.frc.pingu.motor.control.Position
 import xyz.malefic.frc.pingu.motor.control.Voltage
@@ -53,6 +55,7 @@ class Mongu<T : Any>(
             when (motor) {
                 is TalonFX -> TalonFXConfig().apply(block as MonguConfig<TalonFX>.() -> Unit)
                 is PWMTalonSRX -> PWMTalonSRXConfig().apply(block as MonguConfig<PWMTalonSRX>.() -> Unit)
+                is PWMSparkMax -> PWMSparkMaxConfig().apply(block as MonguConfig<PWMSparkMax>.() -> Unit)
                 else -> throw IllegalArgumentException("Unsupported motor type")
             } as MonguConfig<T>
         config.applyTo(motor)

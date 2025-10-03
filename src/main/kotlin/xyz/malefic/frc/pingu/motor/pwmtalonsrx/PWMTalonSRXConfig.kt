@@ -36,7 +36,7 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
      * Lambda for voltage control.
      * Not supported for [PWMTalonSRX], so this is null.
      */
-    override val voltageControl: ((PWMTalonSRX, Double) -> Unit)? = null
+    override val voltageControl: (PWMTalonSRX, Double) -> Unit = { motor, voltage -> motor.voltage = voltage }
 
     /**
      * Lambda for position control.
