@@ -223,6 +223,16 @@ $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/TypeParam(bounds=[kotlin
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/metaLogs/#kotlin.String?#kotlin.String?/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/meta-logs.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/plus/kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/plus.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/to/kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/to.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/PWMSparkMaxConfig/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/-p-w-m-spark-max-config.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/applyTo/#edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/apply-to.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/deadbandElimination/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/deadband-elimination.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/inverted/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/inverted.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/positionControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/position-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/pwm-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/stop.html
+$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.control////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.control//position/kotlin.Number#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/position.html
 $dokka.location:xyz.malefic.frc.pingu.motor.control//pwm/kotlin.Number#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/pwm.html
@@ -309,6 +319,7 @@ xyz.malefic.frc.pingu.control
 xyz.malefic.frc.pingu.encoder
 xyz.malefic.frc.pingu.log
 xyz.malefic.frc.pingu.motor
+xyz.malefic.frc.pingu.motor.cansparkmax
 xyz.malefic.frc.pingu.motor.control
 xyz.malefic.frc.pingu.motor.pwmtalonsrx
 xyz.malefic.frc.pingu.motor.talonfx
