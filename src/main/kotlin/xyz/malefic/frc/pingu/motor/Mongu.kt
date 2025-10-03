@@ -31,7 +31,7 @@ class Mongu<T : Any>(
     lateinit var configuration: MonguConfig<T>
 
     init {
-        require(motor is TalonFX || motor is PWMTalonSRX) { "Unsupported motor type" }
+        require(motor is TalonFX || motor is PWMTalonSRX || motor is PWMSparkMax) { "Unsupported motor type" }
         configure(block)
     }
 
@@ -52,12 +52,23 @@ class Mongu<T : Any>(
     @Suppress("UNCHECKED_CAST")
     fun configure(block: MonguConfig<out T>.() -> Unit = {}) {
         val config =
-            when (motor) {
-                is TalonFX -> TalonFXConfig().apply(block as MonguConfig<TalonFX>.() -> Unit)
-                is PWMTalonSRX -> PWMTalonSRXConfig().apply(block as MonguConfig<PWMTalonSRX>.() -> Unit)
-                is PWMSparkMax -> PWMSparkMaxConfig().apply(block as MonguConfig<PWMSparkMax>.() -> Unit)
-                else -> throw IllegalArgumentException("Unsupported motor type")
-            } as MonguConfig<T>
+            if (!::configuration.isInitialized) {
+                when (motor) {
+                    is TalonFX -> TalonFXConfig().apply(block as MonguConfig<TalonFX>.() -> Unit)
+                    is PWMTalonSRX -> PWMTalonSRXConfig().apply(block as MonguConfig<PWMTalonSRX>.() -> Unit)
+                    is PWMSparkMax -> PWMSparkMaxConfig().apply(block as MonguConfig<PWMSparkMax>.() -> Unit)
+                    else -> throw IllegalArgumentException("Unsupported motor type")
+                } as MonguConfig<T>
+            } else {
+                configuration.apply(
+                    when (motor) {
+                        is TalonFX -> block as MonguConfig<T>.() -> Unit
+                        is PWMTalonSRX -> block as MonguConfig<T>.() -> Unit
+                        is PWMSparkMax -> block as MonguConfig<T>.() -> Unit
+                        else -> throw IllegalArgumentException("Unsupported motor type")
+                    },
+                )
+            }
         config.applyTo(motor)
         configuration = config
     }
