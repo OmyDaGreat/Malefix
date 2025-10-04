@@ -296,6 +296,7 @@ $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/Mongu/#TypeParam(bounds=[kotli
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.MonguConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/motor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/motor.html
+$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/not/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/not.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/set/#xyz.malefic.frc.pingu.motor.MonguControl[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/set.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/index.html
