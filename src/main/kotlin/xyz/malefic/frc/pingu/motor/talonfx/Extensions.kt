@@ -97,3 +97,21 @@ val MonguFX.motorStallCurrent
  */
 val MonguFX.isConnected
     get() = motor.isConnected
+
+/**
+ * Retrieves the supply voltage of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The supply voltage as a [Double].
+ */
+val MonguFX.supplyVoltage
+    get() = motor.supplyVoltage.valueAsDouble
+
+/**
+ * Retrieves the motor voltage of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The motor voltage as a [Double].
+ */
+val MonguFX.motorVoltage
+    get() = motor.motorVoltage.valueAsDouble
