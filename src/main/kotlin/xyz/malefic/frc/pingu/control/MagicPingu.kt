@@ -10,9 +10,9 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property jerk The jerk of the [MagicPingu].
  */
 data class MagicPingu(
-    var velocity: Double,
-    var acceleration: Double,
-    var jerk: Double,
+    var velocity: Double = 0.0,
+    var acceleration: Double = 0.0,
+    var jerk: Double = 0.0,
 ) {
     /**
      * Sets the velocity of the [MagicPingu].

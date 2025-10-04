@@ -15,9 +15,9 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
  * @property pidController The [PIDController] instance with the current PID parameters.
  */
 data class Pingu(
-    var p: Double,
-    var i: Double,
-    var d: Double,
+    var p: Double = 0.0,
+    var i: Double = 0.0,
+    var d: Double = 0.0,
     var v: Double = 0.0,
     var s: Double = 0.0,
     var g: Double = 0.0,

@@ -37,7 +37,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
     /**
      * Optional PID configuration ([Pingu]).
      */
-    var pingu: Pingu? = null
+    var pingu = Pingu(0.0, 0.0, 0.0)
 
     /**
      * Pair of supply and stator current limits (nullable).
@@ -57,7 +57,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
     /**
      * Optional Motion Magic configuration.
      */
-    var motionMagicPingu: MagicPingu? = null
+    var motionMagicPingu = MagicPingu()
 
     /**
      * Optional lambda for additional TalonFXConfiguration customization.
@@ -76,7 +76,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
             DutyCycleNeutralDeadband = dutyCycleNeutralDeadband
         }
 
-        pingu?.let {
+        pingu.let {
             config.Slot0.apply {
                 kP = it.p
                 kI = it.i
@@ -111,7 +111,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
         config.OpenLoopRamps.DutyCycleOpenLoopRampPeriod = loopRamp.first
         config.ClosedLoopRamps.DutyCycleClosedLoopRampPeriod = loopRamp.second
 
-        motionMagicPingu?.let {
+        motionMagicPingu.let {
             config.MotionMagic.apply {
                 MotionMagicCruiseVelocity = it.velocity
                 MotionMagicAcceleration = it.acceleration
