@@ -115,3 +115,21 @@ val MonguFX.supplyVoltage
  */
 val MonguFX.motorVoltage
     get() = motor.motorVoltage.valueAsDouble
+
+/**
+ * Retrieves the rotor velocity of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The rotor velocity as a [Double].
+ */
+val MonguFX.rotorVelocity
+    get() = motor.rotorVelocity.valueAsDouble
+
+/**
+ * Retrieves the rotor position of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The rotor position as a [Double].
+ */
+val MonguFX.rotorPosition
+    get() = motor.rotorPosition.valueAsDouble
