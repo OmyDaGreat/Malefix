@@ -263,6 +263,12 @@ $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/pwmCon
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/stop.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//acceleration/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/acceleration.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//pingu/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/pingu.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//position/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/position.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//setControl/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#com.ctre.phoenix6.controls.ControlRequest/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/set-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//velocity/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/velocity.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-mongu-f-x/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/TalonFXConfig/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/-talon-f-x-config.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/applyTo/#com.ctre.phoenix6.hardware.TalonFX/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/apply-to.html
