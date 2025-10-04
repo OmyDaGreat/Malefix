@@ -141,7 +141,12 @@ class Mongu<T : Any>(
      * typically by setting output to zero or disabling the motor output,
      * depending on the underlying motor type and configuration.
      */
-    fun stopMotor() {
-        configuration.stop(motor)
-    }
+    fun stopMotor() = configuration.stop(motor)
+
+    /**
+     * Operator overload for logical NOT (`!`) to stop the motor.
+     *
+     * Allows using `!mongu` as shorthand for `mongu.stopMotor()`.
+     */
+    operator fun not() = stopMotor()
 }
