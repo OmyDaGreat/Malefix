@@ -1,8 +1,10 @@
 package xyz.malefic.frc.pingu.motor
 
+import com.ctre.phoenix6.configs.CANcoderConfiguration
 import com.ctre.phoenix6.hardware.TalonFX
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
+import xyz.malefic.frc.pingu.encoder.Engu
 import xyz.malefic.frc.pingu.motor.cansparkmax.PWMSparkMaxConfig
 import xyz.malefic.frc.pingu.motor.control.PWM
 import xyz.malefic.frc.pingu.motor.control.Position
@@ -17,11 +19,13 @@ import xyz.malefic.frc.pingu.motor.talonfx.TalonFXConfig
  *
  * @param T The type of motor being wrapped.
  * @property motor The motor instance being wrapped.
- * @param block A lambda that applies configuration settings to the motor.
+ * @param monguConfig A lambda that applies configuration settings to the motor.
  */
 class Mongu<T : Any>(
     val motor: T,
-    block: MonguConfig<out T>.() -> Unit = {},
+    val engu: Engu? = null,
+    enguConfig: CANcoderConfiguration.() -> Unit = {},
+    monguConfig: MonguConfig<out T>.() -> Unit = {},
 ) {
     /**
      * Holds the last configuration applied to this motor.
@@ -32,7 +36,8 @@ class Mongu<T : Any>(
 
     init {
         require(motor is TalonFX || motor is PWMTalonSRX || motor is PWMSparkMax) { "Unsupported motor type" }
-        configure(block)
+        configure(monguConfig)
+        engu?.apply { configure(enguConfig) }
     }
 
     /**
