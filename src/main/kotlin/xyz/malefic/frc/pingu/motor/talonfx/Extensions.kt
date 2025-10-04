@@ -6,7 +6,7 @@ import com.ctre.phoenix6.hardware.TalonFX
 import xyz.malefic.frc.pingu.motor.Mongu
 
 /** Type alias for a [Mongu] motor controller specifically using [TalonFX] hardware. */
-typealias MonguFX = Mongu<TalonFX>
+private typealias MonguFX = Mongu<TalonFX>
 
 /**
  * Sets the [ControlRequest] for the underlying [TalonFX] motor.
@@ -52,3 +52,12 @@ val MonguFX.acceleration
  */
 val MonguFX.pingu
     get() = (configuration as TalonFXConfig).pingu
+
+/**
+ * Retrieves the device ID of the underlying [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The device ID as an [Int].
+ */
+val MonguFX.deviceID
+    get() = motor.deviceID
