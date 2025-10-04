@@ -61,3 +61,39 @@ val MonguFX.pingu
  */
 val MonguFX.deviceID
     get() = motor.deviceID
+
+/**
+ * Retrieves the stator current of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The stator current as a [Double].
+ */
+val MonguFX.statorCurrent
+    get() = motor.statorCurrent.valueAsDouble
+
+/**
+ * Retrieves the supply current of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The supply current as a [Double].
+ */
+val MonguFX.supplyCurrent
+    get() = motor.supplyCurrent.valueAsDouble
+
+/**
+ * Retrieves the stall current of the [TalonFX] motor.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return The stall current as a [Double].
+ */
+val MonguFX.motorStallCurrent
+    get() = motor.motorStallCurrent.valueAsDouble
+
+/**
+ * Indicates whether the [TalonFX] motor is currently connected.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @return `true` if the motor is connected, `false` otherwise.
+ */
+val MonguFX.isConnected
+    get() = motor.isConnected
