@@ -31,6 +31,8 @@ class Engu(
     /**
      * Configures the [CANcoder] using a DSL-style configuration block.
      *
+     * If no prior configuration block was provided, it applies on top of the default configuration. Otherwise, it applies the custom settings defined in the block on top of the previous configuration.
+     *
      * Example:
      * ```kotlin
      * engu.configure {
@@ -43,7 +45,7 @@ class Engu(
      * @param block Lambda with receiver for [CANcoderConfiguration] to customize settings.
      */
     fun configure(block: CANcoderConfiguration.() -> Unit = {}) {
-        val config = CANcoderConfiguration().apply(block)
+        val config = (if (::configuration.isInitialized) configuration else CANcoderConfiguration()).apply(block)
         configurator.apply(config)
         configuration = config
     }
