@@ -290,10 +290,12 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/extraConfig/#/
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/inverted/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/inverted.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/loopRamp/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/loop-ramp.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/motionMagicPingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/motion-magic-pingu.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/name/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/name.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/neutralMode/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/neutral-mode.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/pingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/pingu.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/positionControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/position-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/pwm-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/setAlarm/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/set-alarm.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/softLimits/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/soft-limits.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/stop.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/talonConfig/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/talon-config.html
