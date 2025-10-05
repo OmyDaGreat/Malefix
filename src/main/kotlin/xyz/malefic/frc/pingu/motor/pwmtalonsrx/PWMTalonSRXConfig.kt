@@ -45,6 +45,12 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
     override val positionControl: ((PWMTalonSRX, Double) -> Unit)? = null
 
     /**
+     * Lambda for velocity control.
+     * Not supported for [PWMTalonSRX], so this is null.
+     */
+    override val velocityControl: ((PWMTalonSRX, Double) -> Unit)? = null
+
+    /**
      * Lambda to stop the [PWMTalonSRX] motor.
      */
     override val stop: (PWMTalonSRX) -> Unit = { motor -> motor.stopMotor() }

@@ -8,6 +8,7 @@ import xyz.malefic.frc.pingu.encoder.Engu
 import xyz.malefic.frc.pingu.motor.cansparkmax.PWMSparkMaxConfig
 import xyz.malefic.frc.pingu.motor.control.PWM
 import xyz.malefic.frc.pingu.motor.control.Position
+import xyz.malefic.frc.pingu.motor.control.Velocity
 import xyz.malefic.frc.pingu.motor.control.Voltage
 import xyz.malefic.frc.pingu.motor.pwmtalonsrx.PWMTalonSRXConfig
 import xyz.malefic.frc.pingu.motor.talonfx.TalonFXConfig
@@ -77,7 +78,7 @@ class Mongu<T : Any>(
      * Moves the motor using the specified control type.
      *
      * This function determines the appropriate control function based on the reified type parameter [A],
-     * and applies the provided [value] to the motor. Supported control types include [PWM], [Voltage], and [Position].
+     * and applies the provided [value] to the motor. Supported control types include [PWM], [Voltage], [Position], and [Voltage].
      *
      * ## Usage Examples:
      *
@@ -99,19 +100,24 @@ class Mongu<T : Any>(
      *
      * ### Position Control (in rotations or encoder units)
      * ```kotlin
-     * val motor = Mongu(TalonFX(1)) {
-     *     pingu = Pingu(p = 0.1, i = 0.0, d = 0.01)  // PID required for position control
-     * }
+     * val motor = Mongu(TalonFX(1))
      * motor.move(10.0.position)   // move to position 10
      * motor.move(-5.5.position)   // move to position -5.5
      * ```
      *
-     * ## Motor Support Matrix:
-     * - **TalonFX**: Supports PWM, Voltage, and Position control
-     * - **PWMTalonSRX**: Supports PWM control only (voltage and position will throw UnsupportedOperationException)
-     * - **PWMSparkMax**: Supports PWM control only (voltage and position will throw UnsupportedOperationException)
+     * ### Velocity Control (in rotations per second)
+     * ```kotlin
+     * val motor = Mongu(TalonFX(1))
+     * motor.move(150.0.velocity)   // move at 150 RPS
+     * motor.move(-75.0.velocity)   // move at -75 RPS
+     * ```
      *
-     * @param A The type of control to apply (e.g., PWM, Voltage, Position).
+     * ## Motor Support Matrix:
+     * - **TalonFX**: Supports PWM, Voltage, Position, and Velocity control
+     * - **PWMTalonSRX**: Supports PWM control only
+     * - **PWMSparkMax**: Supports PWM control only
+     *
+     * @param A The type of control to apply (e.g., PWM, Voltage, Position, Voltage).
      * @param value The control value to set, wrapped in a [MonguControl] of the corresponding type.
      *
      * @throws IllegalArgumentException If the control type is unsupported or the value is invalid.
@@ -123,6 +129,7 @@ class Mongu<T : Any>(
                 PWM::class -> configuration.pwmControl
                 Voltage::class -> configuration.voltageControl
                 Position::class -> configuration.positionControl
+                Velocity::class -> configuration.velocityControl
                 else -> throw IllegalArgumentException("Unsupported control type: ${A::class}")
             }
 

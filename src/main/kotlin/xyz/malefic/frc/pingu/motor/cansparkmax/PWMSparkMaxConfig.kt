@@ -42,6 +42,12 @@ class PWMSparkMaxConfig : MonguConfig<PWMSparkMax> {
     override val positionControl: ((PWMSparkMax, Double) -> Unit)? = null
 
     /**
+     * Lambda for velocity control.
+     * Not supported for [PWMSparkMax], so this is null.
+     */
+    override val velocityControl: ((PWMSparkMax, Double) -> Unit)? = null
+
+    /**
      * Lambda to stop the [PWMSparkMax] motor.
      */
     override val stop: (PWMSparkMax) -> Unit = { motor -> motor.stopMotor() }

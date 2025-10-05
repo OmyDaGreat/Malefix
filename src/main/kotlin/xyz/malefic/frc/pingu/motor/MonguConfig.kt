@@ -54,6 +54,17 @@ interface MonguConfig<T : Any> {
     val positionControl: ((T, Double) -> Unit)?
 
     /**
+     * Lambda function for controlling the motor using a velocity value.
+     *
+     * This function takes two parameters:
+     * - An instance of type [T] representing the motor or device.
+     * - A [Double] value representing the target velocity.
+     *
+     * If `null`, velocity control is not supported.
+     */
+    val velocityControl: ((T, Double) -> Unit)?
+
+    /**
      * Lambda function to stop the motor.
      *
      * This function should perform any necessary actions to safely stop the motor.

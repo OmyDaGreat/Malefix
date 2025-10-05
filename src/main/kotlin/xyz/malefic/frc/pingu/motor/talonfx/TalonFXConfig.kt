@@ -2,6 +2,7 @@ package xyz.malefic.frc.pingu.motor.talonfx
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
 import com.ctre.phoenix6.controls.PositionVoltage
+import com.ctre.phoenix6.controls.VelocityVoltage
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
@@ -39,7 +40,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
     /**
      * Optional PID configuration ([Pingu]).
      */
-    var pingu = Pingu(0.0, 0.0, 0.0)
+    var pingu = Pingu()
 
     /**
      * Pair of supply and stator current limits (nullable).
@@ -78,6 +79,12 @@ class TalonFXConfig : MonguConfig<TalonFX> {
      * Used to avoid repeated allocations when setting position.
      */
     val positionVoltage = PositionVoltage(0.0)
+
+    /**
+     * Pre-allocated [VelocityVoltage] control object for velocity control mode.
+     * Used to avoid repeated allocations when setting velocity.
+     */
+    val velocityVoltage = VelocityVoltage(0.0)
 
     /**
      * Optional lambda for additional [TalonFXConfiguration] customization.
@@ -133,6 +140,11 @@ class TalonFXConfig : MonguConfig<TalonFX> {
                 ReverseSoftLimitThreshold = reverse ?: 0.0
                 ReverseSoftLimitEnable = reverse != null
             }
+        } ?: run {
+            config.SoftwareLimitSwitch.apply {
+                ForwardSoftLimitEnable = false
+                ReverseSoftLimitEnable = false
+            }
         }
 
         config.OpenLoopRamps.DutyCycleOpenLoopRampPeriod = loopRamp.first
@@ -178,6 +190,12 @@ class TalonFXConfig : MonguConfig<TalonFX> {
      * Sets the position of the [TalonFX] motor to the specified value.
      */
     override val positionControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setControl(positionVoltage.withPosition(value)) }
+
+    /**
+     * Lambda for velocity control.
+     * Sets the velocity of the [TalonFX] motor to the specified value.
+     */
+    override val velocityControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setControl(velocityVoltage.withVelocity(value)) }
 
     /**
      * Lambda to stop the [TalonFX] motor.
