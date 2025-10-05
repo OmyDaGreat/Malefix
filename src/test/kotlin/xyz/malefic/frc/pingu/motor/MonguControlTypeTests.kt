@@ -1,6 +1,5 @@
 package xyz.malefic.frc.pingu.motor
 
-import xyz.malefic.frc.pingu.motor.control.ControlType
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

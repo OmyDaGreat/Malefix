@@ -22,7 +22,6 @@ The `pingu` package provides a comprehensive set of utilities for control, loggi
 * `NetworkPingu`: Extends PIDController with network logging.
 * `ProfiledPingu`: Data class for profiled PID controllers.
 * `MagicPingu`: Controller with velocity, acceleration, and jerk.
-* `VoltagePingu`: Handles voltage output requests.
 * `AlertPingu`: Monitors CTRE Phoenix 6 devices and raises alerts.
 * `Bingu`: Binds Xbox controller buttons to commands.
 * `LogPingu`: Logging utilities.
