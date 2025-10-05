@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>move</title>
+    <title>MonguControlVelocity</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
     <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
@@ -104,12 +104,55 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="Malefix::xyz.malefic.frc.pingu.motor/Mongu/move/#xyz.malefic.frc.pingu.motor.MonguControl[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration//-251573632">
-  <div class="breadcrumbs"><a href="../../../index.html">Malefix</a><span class="delimiter">/</span><a href="../index.html">xyz.malefic.frc.pingu.motor</a><span class="delimiter">/</span><a href="index.html">Mongu</a><span class="delimiter">/</span><span class="current">move</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Malefix::xyz.malefic.frc.pingu.motor.control/MonguControlVelocity///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Malefix</a><span class="delimiter">/</span><a href="../index.html">xyz.malefic.frc.pingu.motor.control</a><span class="delimiter">/</span><span class="current">MonguControlVelocity</span></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>move</span></span></h1>
+    <h1 class="cover"><span>Mongu</span><wbr></wbr><span>Control</span><wbr></wbr><span><span>Velocity</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">MonguControlVelocity</a> : <a href="../../xyz.malefic.frc.pingu.motor/-mongu-control/index.html">MonguControl</a><span class="token operator">&lt;</span><a href="../-velocity/index.html">Velocity</a><span class="token operator">&gt; </span></div><p class="paragraph">Class <a href="index.html">MonguControlVelocity</a> implements <a href="../../xyz.malefic.frc.pingu.motor/-mongu-control/index.html">MonguControl</a> for the <a href="../-velocity/index.html">Velocity</a> type.</p></div></div>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="move.html">A</a><span class="token operator">&gt; </span><a href="move.html"><span class="token function">move</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../-mongu-control/index.html">MonguControl</a><span class="token operator">&lt;</span><a href="move.html">A</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Moves the motor using the specified control type.</p><p class="paragraph">This function determines the appropriate control function based on the reified type parameter <a href="move.html">A</a>, and applies the provided <a href="move.html">value</a> to the motor. Supported control types include <a href="../../xyz.malefic.frc.pingu.motor.control/-p-w-m/index.html">PWM</a>, <a href="../../xyz.malefic.frc.pingu.motor.control/-voltage/index.html">Voltage</a>, <a href="../../xyz.malefic.frc.pingu.motor.control/-position/index.html">Position</a>, and <a href="../../xyz.malefic.frc.pingu.motor.control/-voltage/index.html">Voltage</a>.</p><h2 class="">Usage Examples:</h2><h3 class="">PWM Control (Duty Cycle: -1.0 to 1.0)</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val motor = Mongu(TalonFX(1))<br>motor.move(0.5.pwm)     // 50% forward<br>motor.move(-0.3.pwm)    // 30% reverse<br>motor.move(0.0.pwm)     // stop</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Voltage Control (in Volts)</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val motor = Mongu(TalonFX(1))<br>motor.move(12.0.voltage)  // 12V forward<br>motor.move(-6.0.voltage)  // 6V reverse<br>motor.move(0.0.voltage)   // stop</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Position Control (in rotations or encoder units)</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val motor = Mongu(TalonFX(1))<br>motor.move(10.0.position)   // move to position 10<br>motor.move(-5.5.position)   // move to position -5.5</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Velocity Control (in rotations per second)</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val motor = Mongu(TalonFX(1))<br>motor.move(150.0.velocity)   // move at 150 RPS<br>motor.move(-75.0.velocity)   // move at -75 RPS</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Motor Support Matrix:</h2><ul><li><p class="paragraph"><strong>TalonFX</strong>: Supports PWM, Voltage, Position, and Velocity control</p></li><li><p class="paragraph"><strong>PWMTalonSRX</strong>: Supports PWM control only</p></li><li><p class="paragraph"><strong>PWMSparkMax</strong>: Supports PWM control only</p></li></ul><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>A</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of control to apply (e.g., PWM, Voltage, Position, Voltage).</p></div></div></div></div><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>value</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The control value to set, wrapped in a <a href="../-mongu-control/index.html">MonguControl</a> of the corresponding type.</p></div></div></div></div></div><h4 class="">Throws</h4><div class="table"><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html"><span>Illegal</span><wbr></wbr><span>Argument</span><wbr></wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">If the control type is unsupported or the value is invalid.</p></div></div></div></div><div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html"><span>Unsupported</span><wbr></wbr><span>Operation</span><wbr></wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">If the control type is not supported for the current motor type.</p></div></div></div></div></div></div></div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-2011608725%2FConstructors%2F-251573632" anchor-label="MonguControlVelocity" id="-2011608725%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mongu-control-velocity.html"><span>Mongu</span><wbr></wbr><span>Control</span><wbr></wbr><span><span>Velocity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2011608725%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-963613090%2FProperties%2F-251573632" anchor-label="value" id="-963613090%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="value.html"><span><span>value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-963613090%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="value.html">value</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">The velocity value to be applied.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
