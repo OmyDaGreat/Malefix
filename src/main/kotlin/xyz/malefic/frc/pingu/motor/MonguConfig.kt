@@ -3,14 +3,11 @@ package xyz.malefic.frc.pingu.motor
 /**
  * Interface for motor configuration that includes control mappings.
  *
- * This interface defines both configuration application and control mappings for a motor type.
- * Each control mechanism is represented as a nullable lambda function that takes an instance
- * of type [T] and a [Double] value as parameters.
+ * This interface defines configuration application and provides access to motor controls.
+ * Control logic is delegated to a [MotorControls] instance for better separation of concerns.
  *
  * @param T The type of the motor or device being controlled.
- * @property pwmControl Lambda for controlling the motor using PWM.
- * @property voltageControl Lambda for controlling the motor using voltage.
- * @property positionControl Lambda for controlling the motor's position.
+ * @property controls The [MotorControls] instance containing all control lambdas for this motor type.
  */
 interface MonguConfig<T : Any> {
     /**
@@ -21,53 +18,57 @@ interface MonguConfig<T : Any> {
     fun applyTo(motor: T)
 
     /**
+     * The motor controls instance containing all control lambdas.
+     */
+    val controls: MotorControls<T>
+
+    /**
      * Lambda function for controlling the motor using PWM (Pulse Width Modulation).
      *
-     * This function takes two parameters:
-     * - An instance of type [T] representing the motor or device.
-     * - A [Double] value representing the PWM signal.
+     * Delegates to [controls.pwmControl].
      *
-     * If `null`, PWM control is not supported.
+     * @see MotorControls.pwmControl
      */
     val pwmControl: ((T, Double) -> Unit)?
+        get() = controls.pwmControl
 
     /**
      * Lambda function for controlling the motor using voltage.
      *
-     * This function takes two parameters:
-     * - An instance of type [T] representing the motor or device.
-     * - A [Double] value representing the voltage to be applied.
+     * Delegates to [controls.voltageControl].
      *
-     * If `null`, voltage control is not supported.
+     * @see MotorControls.voltageControl
      */
     val voltageControl: ((T, Double) -> Unit)?
+        get() = controls.voltageControl
 
     /**
      * Lambda function for controlling the motor using a position value.
      *
-     * This function takes two parameters:
-     * - An instance of type [T] representing the motor or device.
-     * - A [Double] value representing the target position.
+     * Delegates to [controls.positionControl].
      *
-     * If `null`, position control is not supported.
+     * @see MotorControls.positionControl
      */
     val positionControl: ((T, Double) -> Unit)?
+        get() = controls.positionControl
 
     /**
      * Lambda function for controlling the motor using a velocity value.
      *
-     * This function takes two parameters:
-     * - An instance of type [T] representing the motor or device.
-     * - A [Double] value representing the target velocity.
+     * Delegates to [controls.velocityControl].
      *
-     * If `null`, velocity control is not supported.
+     * @see MotorControls.velocityControl
      */
     val velocityControl: ((T, Double) -> Unit)?
+        get() = controls.velocityControl
 
     /**
      * Lambda function to stop the motor.
      *
-     * This function should perform any necessary actions to safely stop the motor.
+     * Delegates to [controls.stop].
+     *
+     * @see MotorControls.stop
      */
     val stop: (T) -> Unit
+        get() = controls.stop
 }

@@ -75,21 +75,14 @@ class TalonFXConfig : MonguConfig<TalonFX> {
         get() = field && name != null
 
     /**
-     * Pre-allocated [PositionVoltage] control object for position control mode.
-     * Used to avoid repeated allocations when setting position.
-     */
-    val positionVoltage = PositionVoltage(0.0)
-
-    /**
-     * Pre-allocated [VelocityVoltage] control object for velocity control mode.
-     * Used to avoid repeated allocations when setting velocity.
-     */
-    val velocityVoltage = VelocityVoltage(0.0)
-
-    /**
      * Optional lambda for additional [TalonFXConfiguration] customization.
      */
     var extraConfig: (TalonFXConfiguration.() -> Unit)? = null
+
+    /**
+     * The motor controls instance containing all control lambdas for [TalonFX].
+     */
+    override val controls: TalonFXControls = TalonFXControls()
 
     /**
      * Tracks whether the configuration is being applied for the first time.
@@ -172,33 +165,4 @@ class TalonFXConfig : MonguConfig<TalonFX> {
             }
         }
     }
-
-    /**
-     * Lambda for PWM control.
-     * Sets the output of the [TalonFX] motor to the specified value.
-     */
-    override val pwmControl: (TalonFX, Double) -> Unit = { motor, value -> motor.set(value) }
-
-    /**
-     * Lambda for voltage control.
-     * Sets the voltage of the [TalonFX] motor to the specified value.
-     */
-    override val voltageControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setVoltage(value) }
-
-    /**
-     * Lambda for position control.
-     * Sets the position of the [TalonFX] motor to the specified value.
-     */
-    override val positionControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setControl(positionVoltage.withPosition(value)) }
-
-    /**
-     * Lambda for velocity control.
-     * Sets the velocity of the [TalonFX] motor to the specified value.
-     */
-    override val velocityControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setControl(velocityVoltage.withVelocity(value)) }
-
-    /**
-     * Lambda to stop the [TalonFX] motor.
-     */
-    override val stop: (TalonFX) -> Unit = { motor -> motor.stopMotor() }
 }
