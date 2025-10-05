@@ -4,6 +4,7 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
+import xyz.malefic.frc.pingu.alert.AlertPingu
 import xyz.malefic.frc.pingu.control.MagicPingu
 import xyz.malefic.frc.pingu.control.Pingu
 import xyz.malefic.frc.pingu.motor.MonguConfig
@@ -60,7 +61,19 @@ class TalonFXConfig : MonguConfig<TalonFX> {
     var motionMagicPingu = MagicPingu()
 
     /**
-     * Optional lambda for additional TalonFXConfiguration customization.
+     * Optional name for the motor (for alarm/logging/debugging).
+     */
+    var name: String? = null
+
+    /**
+     * Whether to set an alarm for this motor.
+     * Returns true only if alarms are enabled and a name is set.
+     */
+    var setAlarm: Boolean = true
+        get() = field && name != null
+
+    /**
+     * Optional lambda for additional [TalonFXConfiguration] customization.
      */
     var extraConfig: (TalonFXConfiguration.() -> Unit)? = null
 
@@ -121,6 +134,13 @@ class TalonFXConfig : MonguConfig<TalonFX> {
 
         extraConfig?.invoke(config)
         motor.configurator.apply(config)
+
+        if (setAlarm) {
+            AlertPingu.add(
+                motor,
+                name!!,
+            )
+        }
     }
 
     /**
