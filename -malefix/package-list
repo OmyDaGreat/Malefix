@@ -196,8 +196,6 @@ $dokka.location:xyz.malefic.frc.pingu.control/ProfiledPingu/setPID/#edu.wpi.firs
 $dokka.location:xyz.malefic.frc.pingu.control/ProfiledPingu/setS/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.control/-profiled-pingu/set-s.html
 $dokka.location:xyz.malefic.frc.pingu.control/ProfiledPingu/setV/#org.littletonrobotics.junction.networktables.LoggedNetworkNumber/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.control/-profiled-pingu/set-v.html
 $dokka.location:xyz.malefic.frc.pingu.control/ProfiledPingu/v/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.control/-profiled-pingu/v.html
-$dokka.location:xyz.malefic.frc.pingu.control/VoltagePingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.control/-voltage-pingu/index.html
-$dokka.location:xyz.malefic.frc.pingu.control/VoltagePingu/setOutput/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.control/-voltage-pingu/set-output.html
 $dokka.location:xyz.malefic.frc.pingu.encoder////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/index.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/index.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/Engu/#kotlin.Int#com.ctre.phoenix6.CANBus/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/-engu.html
@@ -236,39 +234,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/pwmCon
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/stop.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/velocityControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/velocity-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/voltage-control.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control//position/kotlin.Number#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/position.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control//pwm/kotlin.Number#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/pwm.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control//velocity/kotlin.Number#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/velocity.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control//voltage/kotlin.Number#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/voltage.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType.POSITION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/-p-o-s-i-t-i-o-n/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType.PWM///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/-p-w-m/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType.VELOCITY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/-v-e-l-o-c-i-t-y/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType.VOLTAGE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/-v-o-l-t-a-g-e/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType/entries/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/entries.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/value-of.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/ControlType/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-control-type/values.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlPWM///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-p-w-m/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlPWM/MonguControlPWM/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-p-w-m/-mongu-control-p-w-m.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlPWM/value/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-p-w-m/value.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlPosition///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-position/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlPosition/MonguControlPosition/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-position/-mongu-control-position.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlPosition/value/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-position/value.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlVelocity///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-velocity/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlVelocity/MonguControlVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-velocity/-mongu-control-velocity.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlVelocity/value/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-velocity/value.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlVoltage///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-voltage/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlVoltage/MonguControlVoltage/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-voltage/-mongu-control-voltage.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/MonguControlVoltage/value/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-mongu-control-voltage/value.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/PWM///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-p-w-m/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/PWM/PWM/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-p-w-m/-p-w-m.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/Position///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-position/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/Position/Position/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-position/-position.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/Velocity///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-velocity/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/Velocity/Velocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-velocity/-velocity.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/Voltage///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-voltage/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.control/Voltage/Voltage/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.control/-voltage/-voltage.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx//channel/xyz.malefic.frc.pingu.motor.Mongu[edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/channel.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx//pwm/xyz.malefic.frc.pingu.motor.Mongu[edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/pwm.html
@@ -321,12 +286,20 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/velocityContro
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/velocityVoltage/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/velocity-voltage.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/voltageControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/voltage-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.POSITION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-p-o-s-i-t-i-o-n/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.PWM///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-p-w-m/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.VELOCITY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-v-e-l-o-c-i-t-y/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.VOLTAGE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-v-o-l-t-a-g-e/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType/entries/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/entries.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/value-of.html
+$dokka.location:xyz.malefic.frc.pingu.motor/ControlType/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/values.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/Mongu/#TypeParam(bounds=[kotlin.Any])#xyz.malefic.frc.pingu.encoder.Engu?#xyz.malefic.frc.pingu.motor.control.ControlType#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]#kotlin.Function1[xyz.malefic.frc.pingu.motor.MonguConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/-mongu.html
+$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/Mongu/#TypeParam(bounds=[kotlin.Any])#xyz.malefic.frc.pingu.encoder.Engu?#xyz.malefic.frc.pingu.motor.ControlType#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]#kotlin.Function1[xyz.malefic.frc.pingu.motor.MonguConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/-mongu.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.MonguConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configure.html
+$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/control/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/control.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/engu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/engu.html
-$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/lockedControlType/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/locked-control-type.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/motor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/move/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/move.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/not/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/not.html
@@ -344,16 +317,16 @@ $dokka.location:xyz.malefic.frc.pingu.motor/MotorCompatibility.Companion///Point
 $dokka.location:xyz.malefic.frc.pingu.motor/MotorCompatibility.Companion/forMotor/#kotlin.reflect.KClass[TypeParam(bounds=[kotlin.Any])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-motor-compatibility/-companion/for-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MotorCompatibility///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-motor-compatibility/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MotorCompatibility/supportedTypes/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-motor-compatibility/supported-types.html
-$dokka.location:xyz.malefic.frc.pingu.motor/MotorCompatibility/supports/#xyz.malefic.frc.pingu.motor.control.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-motor-compatibility/supports.html
+$dokka.location:xyz.malefic.frc.pingu.motor/MotorCompatibility/supports/#xyz.malefic.frc.pingu.motor.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-motor-compatibility/supports.html
 $dokka.location:xyz.malefic.frc.pingu.motor/PWMSparkMaxCompatibility///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-spark-max-compatibility/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/PWMSparkMaxCompatibility/supportedTypes/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-spark-max-compatibility/supported-types.html
-$dokka.location:xyz.malefic.frc.pingu.motor/PWMSparkMaxCompatibility/supports/#xyz.malefic.frc.pingu.motor.control.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-spark-max-compatibility/supports.html
+$dokka.location:xyz.malefic.frc.pingu.motor/PWMSparkMaxCompatibility/supports/#xyz.malefic.frc.pingu.motor.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-spark-max-compatibility/supports.html
 $dokka.location:xyz.malefic.frc.pingu.motor/PWMTalonSRXCompatibility///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-talon-s-r-x-compatibility/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/PWMTalonSRXCompatibility/supportedTypes/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-talon-s-r-x-compatibility/supported-types.html
-$dokka.location:xyz.malefic.frc.pingu.motor/PWMTalonSRXCompatibility/supports/#xyz.malefic.frc.pingu.motor.control.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-talon-s-r-x-compatibility/supports.html
+$dokka.location:xyz.malefic.frc.pingu.motor/PWMTalonSRXCompatibility/supports/#xyz.malefic.frc.pingu.motor.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-p-w-m-talon-s-r-x-compatibility/supports.html
 $dokka.location:xyz.malefic.frc.pingu.motor/TalonFXCompatibility///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-talon-f-x-compatibility/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/TalonFXCompatibility/supportedTypes/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-talon-f-x-compatibility/supported-types.html
-$dokka.location:xyz.malefic.frc.pingu.motor/TalonFXCompatibility/supports/#xyz.malefic.frc.pingu.motor.control.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-talon-f-x-compatibility/supports.html
+$dokka.location:xyz.malefic.frc.pingu.motor/TalonFXCompatibility/supports/#xyz.malefic.frc.pingu.motor.ControlType/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-talon-f-x-compatibility/supports.html
 $dokka.location:xyz.malefic.frc.sub////PointingToDeclaration/-malefix/xyz.malefic.frc.sub/index.html
 $dokka.location:xyz.malefic.frc.sub/PhotonModule.Companion///PointingToDeclaration/-malefix/xyz.malefic.frc.sub/-photon-module/-companion/index.html
 $dokka.location:xyz.malefic.frc.sub/PhotonModule///PointingToDeclaration/-malefix/xyz.malefic.frc.sub/-photon-module/index.html
@@ -378,7 +351,6 @@ xyz.malefic.frc.pingu.encoder
 xyz.malefic.frc.pingu.log
 xyz.malefic.frc.pingu.motor
 xyz.malefic.frc.pingu.motor.cansparkmax
-xyz.malefic.frc.pingu.motor.control
 xyz.malefic.frc.pingu.motor.pwmtalonsrx
 xyz.malefic.frc.pingu.motor.talonfx
 xyz.malefic.frc.sub
