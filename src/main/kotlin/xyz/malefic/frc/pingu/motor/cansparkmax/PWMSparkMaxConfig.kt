@@ -24,31 +24,7 @@ class PWMSparkMaxConfig : MonguConfig<PWMSparkMax> {
     }
 
     /**
-     * Lambda for PWM control.
-     * Sets the output of the [PWMSparkMax] motor to the specified value.
+     * The motor controls instance containing all control lambdas for [PWMSparkMax].
      */
-    override val pwmControl: (PWMSparkMax, Double) -> Unit = { motor, value -> motor.set(value) }
-
-    /**
-     * Lambda for voltage control.
-     * Sets the voltage output of the [PWMSparkMax] motor to the specified value.
-     */
-    override val voltageControl: (PWMSparkMax, Double) -> Unit = { motor, voltage -> motor.voltage = voltage }
-
-    /**
-     * Lambda for position control.
-     * Not supported for [PWMSparkMax], so this is null.
-     */
-    override val positionControl: ((PWMSparkMax, Double) -> Unit)? = null
-
-    /**
-     * Lambda for velocity control.
-     * Not supported for [PWMSparkMax], so this is null.
-     */
-    override val velocityControl: ((PWMSparkMax, Double) -> Unit)? = null
-
-    /**
-     * Lambda to stop the [PWMSparkMax] motor.
-     */
-    override val stop: (PWMSparkMax) -> Unit = { motor -> motor.stopMotor() }
+    override val controls: PWMSparkMaxControls = PWMSparkMaxControls()
 }

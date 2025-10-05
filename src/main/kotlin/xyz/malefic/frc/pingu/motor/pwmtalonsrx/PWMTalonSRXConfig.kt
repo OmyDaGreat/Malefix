@@ -27,31 +27,7 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
     }
 
     /**
-     * Lambda for PWM control.
-     * Sets the output of the [PWMTalonSRX] motor to the specified value.
+     * The motor controls instance containing all control lambdas for [PWMTalonSRX].
      */
-    override val pwmControl: ((PWMTalonSRX, Double) -> Unit) = { motor, value -> motor.set(value) }
-
-    /**
-     * Lambda for voltage control.
-     * Not supported for [PWMTalonSRX], so this is null.
-     */
-    override val voltageControl: (PWMTalonSRX, Double) -> Unit = { motor, voltage -> motor.voltage = voltage }
-
-    /**
-     * Lambda for position control.
-     * Not supported for [PWMTalonSRX], so this is null.
-     */
-    override val positionControl: ((PWMTalonSRX, Double) -> Unit)? = null
-
-    /**
-     * Lambda for velocity control.
-     * Not supported for [PWMTalonSRX], so this is null.
-     */
-    override val velocityControl: ((PWMTalonSRX, Double) -> Unit)? = null
-
-    /**
-     * Lambda to stop the [PWMTalonSRX] motor.
-     */
-    override val stop: (PWMTalonSRX) -> Unit = { motor -> motor.stopMotor() }
+    override val controls: PWMTalonSRXControls = PWMTalonSRXControls()
 }
