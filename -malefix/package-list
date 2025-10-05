@@ -274,6 +274,7 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//motorStallCurrent/xyz.malef
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//motorVoltage/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/motor-voltage.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//pingu/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/pingu.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//position/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/position.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//resetPosition/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/reset-position.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//rotorPosition/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/rotor-position.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//rotorVelocity/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/rotor-velocity.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//setControl/xyz.malefic.frc.pingu.motor.Mongu[com.ctre.phoenix6.hardware.TalonFX]#com.ctre.phoenix6.controls.ControlRequest/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/set-control.html
@@ -294,6 +295,7 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/name/#/Pointin
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/neutralMode/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/neutral-mode.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/pingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/pingu.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/positionControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/position-control.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/positionVoltage/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/position-voltage.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/pwmControl/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/pwm-control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/setAlarm/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/set-alarm.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/softLimits/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/soft-limits.html
@@ -307,8 +309,8 @@ $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configuration/#/PointingToDecl
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.MonguConfig[TypeParam(bounds=[kotlin.Any])],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/engu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/engu.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/motor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/motor.html
+$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/move/#xyz.malefic.frc.pingu.motor.MonguControl[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/move.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/not/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/not.html
-$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/set/#xyz.malefic.frc.pingu.motor.MonguControl[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/set.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/applyTo/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/apply-to.html
