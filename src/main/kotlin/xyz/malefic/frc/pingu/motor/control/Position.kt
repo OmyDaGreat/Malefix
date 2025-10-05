@@ -23,5 +23,9 @@ class MonguControlPosition : MonguControl<Position> {
  * This property creates a new [MonguControlPosition] object and assigns the [Number] value
  * to its [MonguControlPosition.value] property.
  */
+@Deprecated(
+    message = "Control types are now locked at Mongu initialization. Use move(Double) instead.",
+    level = DeprecationLevel.WARNING,
+)
 val Number.position: MonguControlPosition
     get() = MonguControlPosition().apply { value = this@position.toDouble() }

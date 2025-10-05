@@ -23,5 +23,9 @@ class MonguControlVoltage : MonguControl<Voltage> {
  * This property creates a new [MonguControlVoltage] object and assigns the [Number] value
  * to its [MonguControlVoltage.value] property.
  */
+@Deprecated(
+    message = "Control types are now locked at Mongu initialization. Use move(Double) instead.",
+    level = DeprecationLevel.WARNING,
+)
 val Number.voltage: MonguControlVoltage
     get() = MonguControlVoltage().apply { value = this@voltage.toDouble() }

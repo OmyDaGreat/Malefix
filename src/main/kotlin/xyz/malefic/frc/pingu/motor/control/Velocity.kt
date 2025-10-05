@@ -23,5 +23,9 @@ class MonguControlVelocity : MonguControl<Velocity> {
  * This property creates a new [MonguControlVelocity] object and assigns the [Number] value
  * to its [MonguControlVelocity.value] property.
  */
+@Deprecated(
+    message = "Control types are now locked at Mongu initialization. Use move(Double) instead.",
+    level = DeprecationLevel.WARNING,
+)
 val Number.velocity: MonguControlVelocity
     get() = MonguControlVelocity().apply { value = this@velocity.toDouble() }

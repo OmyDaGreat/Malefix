@@ -23,5 +23,9 @@ class MonguControlPWM : MonguControl<PWM> {
  * This property creates a new [MonguControlPWM] object and assigns the [Number] value
  * to its [MonguControlPWM.value] property.
  */
+@Deprecated(
+    message = "Control types are now locked at Mongu initialization. Use move(Double) instead.",
+    level = DeprecationLevel.WARNING,
+)
 val Number.pwm: MonguControlPWM
     get() = MonguControlPWM().apply { value = this@pwm.toDouble() }
