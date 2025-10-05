@@ -5,6 +5,7 @@ import com.ctre.phoenix6.controls.VoltageOut
 /**
  * A class that represents a [VoltageOut] request with a [VoltagePingu].
  */
+@Deprecated("Use setVoltage function from TalonFX or similar motor classes instead", ReplaceWith("setVoltage"))
 object VoltagePingu {
     private var voltageOut = VoltageOut(0.0)
 

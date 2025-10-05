@@ -133,3 +133,12 @@ val MonguFX.rotorVelocity
  */
 val MonguFX.rotorPosition
     get() = motor.rotorPosition.valueAsDouble
+
+/**
+ * Resets the position of the [TalonFX] motor to the specified value.
+ *
+ * @receiver The [MonguFX] instance representing the motor controller.
+ * @param position The position to set the motor to. Defaults to 0.0.
+ * @return The [StatusCode] indicating the result of the operation.
+ */
+fun MonguFX.resetPosition(position: Double = 0.0): StatusCode = motor.setPosition(position)

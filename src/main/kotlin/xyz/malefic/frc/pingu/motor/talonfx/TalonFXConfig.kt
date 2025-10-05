@@ -1,6 +1,7 @@
 package xyz.malefic.frc.pingu.motor.talonfx
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
+import com.ctre.phoenix6.controls.PositionVoltage
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
@@ -73,9 +74,22 @@ class TalonFXConfig : MonguConfig<TalonFX> {
         get() = field && name != null
 
     /**
+     * Pre-allocated [PositionVoltage] control object for position control mode.
+     * Used to avoid repeated allocations when setting position.
+     */
+    val positionVoltage = PositionVoltage(0.0)
+
+    /**
      * Optional lambda for additional [TalonFXConfiguration] customization.
      */
     var extraConfig: (TalonFXConfiguration.() -> Unit)? = null
+
+    /**
+     * Tracks whether the configuration is being applied for the first time.
+     * Used to ensure certain initialization steps (like setting initial position or alarms)
+     * are only performed once.
+     */
+    private var isFirstApply = true
 
     /**
      * Applies the configuration to the given [TalonFX] motor.
@@ -135,11 +149,15 @@ class TalonFXConfig : MonguConfig<TalonFX> {
         extraConfig?.invoke(config)
         motor.configurator.apply(config)
 
-        if (setAlarm) {
-            AlertPingu.add(
-                motor,
-                name!!,
-            )
+        if (isFirstApply) {
+            motor.setPosition(0.0)
+
+            if (setAlarm) {
+                AlertPingu.add(
+                    motor,
+                    name!!,
+                )
+            }
         }
     }
 
@@ -147,19 +165,19 @@ class TalonFXConfig : MonguConfig<TalonFX> {
      * Lambda for PWM control.
      * Sets the output of the [TalonFX] motor to the specified value.
      */
-    override val pwmControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.set(value) }
+    override val pwmControl: (TalonFX, Double) -> Unit = { motor, value -> motor.set(value) }
 
     /**
      * Lambda for voltage control.
      * Sets the voltage of the [TalonFX] motor to the specified value.
      */
-    override val voltageControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setVoltage(value) }
+    override val voltageControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setVoltage(value) }
 
     /**
      * Lambda for position control.
      * Sets the position of the [TalonFX] motor to the specified value.
      */
-    override val positionControl: ((TalonFX, Double) -> Unit) = { motor, value -> motor.setPosition(value) }
+    override val positionControl: (TalonFX, Double) -> Unit = { motor, value -> motor.setControl(positionVoltage.withPosition(value)) }
 
     /**
      * Lambda to stop the [TalonFX] motor.

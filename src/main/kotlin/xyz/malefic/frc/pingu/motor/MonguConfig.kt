@@ -43,7 +43,7 @@ interface MonguConfig<T : Any> {
     val voltageControl: ((T, Double) -> Unit)?
 
     /**
-     * Lambda function for controlling the motor's position.
+     * Lambda function for controlling the motor using a position value.
      *
      * This function takes two parameters:
      * - An instance of type [T] representing the motor or device.
