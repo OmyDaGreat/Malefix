@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX
 import xyz.malefic.frc.pingu.encoder.Engu
 import xyz.malefic.frc.pingu.motor.cansparkmax.PWMSparkMaxConfig
+import xyz.malefic.frc.pingu.motor.control.ControlType
 import xyz.malefic.frc.pingu.motor.control.PWM
 import xyz.malefic.frc.pingu.motor.control.Position
 import xyz.malefic.frc.pingu.motor.control.Velocity
@@ -16,17 +17,34 @@ import xyz.malefic.frc.pingu.motor.talonfx.TalonFXConfig
 /**
  * A generic motor wrapper class that allows configuration of different motor types.
  *
- * Make sure to configure the motor after instantiation to apply desired settings.
+ * The control type is locked at initialization and cannot be changed during runtime.
+ * This ensures type safety and prevents accidental control type switching.
+ *
+ * ## Usage Examples:
+ * ```kotlin
+ * // Create a motor with PWM control
+ * val motor = Mongu(TalonFX(1), lockedControlType = ControlType.PWM)
+ * motor.move(0.5)  // 50% forward
+ *
+ * // Create a motor with position control
+ * val posMotor = Mongu(TalonFX(2), lockedControlType = ControlType.POSITION) {
+ *     this as TalonFXConfig
+ *     pingu.p = 0.1
+ * }
+ * posMotor.move(10.0)  // move to position 10
+ * ```
  *
  * @param T The type of motor being wrapped.
  * @property motor The motor instance being wrapped.
  * @property engu An optional encoder associated with the motor.
+ * @property lockedControlType The control type that this motor is locked to.
  * @param monguConfig A lambda that applies configuration settings to the motor.
  * @param enguConfig A lambda that applies configuration settings to the encoder.
  */
 class Mongu<T : Any>(
     val motor: T,
     @Suppress("CanBeParameter", "RedundantSuppression") val engu: Engu? = null,
+    val lockedControlType: ControlType,
     enguConfig: CANcoderConfiguration.() -> Unit = {},
     monguConfig: MonguConfig<out T>.() -> Unit = {},
 ) {
@@ -37,8 +55,22 @@ class Mongu<T : Any>(
      */
     lateinit var configuration: MonguConfig<T>
 
+    /**
+     * The compatibility checker for this motor type.
+     */
+    private val compatibility: MotorCompatibility = MotorCompatibility.forMotor(motor::class)
+
     init {
-        require(motor is TalonFX || motor is PWMTalonSRX || motor is PWMSparkMax) { "Unsupported motor type" }
+        require(motor is TalonFX || motor is PWMTalonSRX || motor is PWMSparkMax) {
+            "Unsupported motor type: ${motor::class.simpleName}"
+        }
+
+        // Validate that the locked control type is compatible with the motor
+        require(compatibility.supports(lockedControlType)) {
+            "Control type $lockedControlType is not supported by motor type ${motor::class.simpleName}. " +
+                "Supported types: ${compatibility.supportedTypes()}"
+        }
+
         configure(monguConfig)
         engu?.apply { configure(enguConfig) }
     }
@@ -75,41 +107,45 @@ class Mongu<T : Any>(
     }
 
     /**
-     * Moves the motor using the specified control type.
+     * Moves the motor using the locked control type.
      *
-     * This function determines the appropriate control function based on the reified type parameter [A],
-     * and applies the provided [value] to the motor. Supported control types include [PWM], [Voltage], [Position], and [Voltage].
+     * The control type was specified during initialization and cannot be changed.
+     * The meaning of the value depends on the locked control type:
+     * - **PWM**: Duty cycle from -1.0 to 1.0
+     * - **VOLTAGE**: Voltage in Volts
+     * - **POSITION**: Target position in rotations
+     * - **VELOCITY**: Target velocity in rotations per second
      *
      * ## Usage Examples:
      *
      * ### PWM Control (Duty Cycle: -1.0 to 1.0)
      * ```kotlin
-     * val motor = Mongu(TalonFX(1))
-     * motor.move(0.5.pwm)     // 50% forward
-     * motor.move(-0.3.pwm)    // 30% reverse
-     * motor.move(0.0.pwm)     // stop
+     * val motor = Mongu(TalonFX(1), lockedControlType = ControlType.PWM)
+     * motor.move(0.5)     // 50% forward
+     * motor.move(-0.3)    // 30% reverse
+     * motor.move(0.0)     // stop
      * ```
      *
      * ### Voltage Control (in Volts)
      * ```kotlin
-     * val motor = Mongu(TalonFX(1))
-     * motor.move(12.0.voltage)  // 12V forward
-     * motor.move(-6.0.voltage)  // 6V reverse
-     * motor.move(0.0.voltage)   // stop
+     * val motor = Mongu(TalonFX(1), lockedControlType = ControlType.VOLTAGE)
+     * motor.move(12.0)  // 12V forward
+     * motor.move(-6.0)  // 6V reverse
+     * motor.move(0.0)   // stop
      * ```
      *
      * ### Position Control (in rotations or encoder units)
      * ```kotlin
-     * val motor = Mongu(TalonFX(1))
-     * motor.move(10.0.position)   // move to position 10
-     * motor.move(-5.5.position)   // move to position -5.5
+     * val motor = Mongu(TalonFX(1), lockedControlType = ControlType.POSITION)
+     * motor.move(10.0)   // move to position 10
+     * motor.move(-5.5)   // move to position -5.5
      * ```
      *
      * ### Velocity Control (in rotations per second)
      * ```kotlin
-     * val motor = Mongu(TalonFX(1))
-     * motor.move(150.0.velocity)   // move at 150 RPS
-     * motor.move(-75.0.velocity)   // move at -75 RPS
+     * val motor = Mongu(TalonFX(1), lockedControlType = ControlType.VELOCITY)
+     * motor.move(150.0)   // move at 150 RPS
+     * motor.move(-75.0)   // move at -75 RPS
      * ```
      *
      * ## Motor Support Matrix:
@@ -117,28 +153,22 @@ class Mongu<T : Any>(
      * - **PWMTalonSRX**: Supports PWM control only
      * - **PWMSparkMax**: Supports PWM control only
      *
-     * @param A The type of control to apply (e.g., PWM, Voltage, Position, Voltage).
-     * @param value The control value to set, wrapped in a [MonguControl] of the corresponding type.
+     * @param value The control value (meaning depends on locked control type).
      *
-     * @throws IllegalArgumentException If the control type is unsupported or the value is invalid.
      * @throws UnsupportedOperationException If the control type is not supported for the current motor type.
      */
-    inline fun <reified A> move(value: MonguControl<A>) {
+    fun move(value: Double) {
         val controlFunction: ((T, Double) -> Unit)? =
-            when (A::class) {
-                PWM::class -> configuration.pwmControl
-                Voltage::class -> configuration.voltageControl
-                Position::class -> configuration.positionControl
-                Velocity::class -> configuration.velocityControl
-                else -> throw IllegalArgumentException("Unsupported control type: ${A::class}")
+            when (lockedControlType) {
+                ControlType.PWM -> configuration.pwmControl
+                ControlType.VOLTAGE -> configuration.voltageControl
+                ControlType.POSITION -> configuration.positionControl
+                ControlType.VELOCITY -> configuration.velocityControl
             }
 
-        controlFunction?.invoke(
-            motor,
-            value.value,
-        )
+        controlFunction?.invoke(motor, value)
             ?: throw UnsupportedOperationException(
-                "Control type ${A::class.simpleName} is not supported for motor type ${motor::class.simpleName}",
+                "Control type $lockedControlType is not supported for motor type ${motor::class.simpleName}",
             )
     }
 
