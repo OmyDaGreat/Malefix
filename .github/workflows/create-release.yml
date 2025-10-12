@@ -70,7 +70,7 @@ jobs:
           echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
       - name: Commit and push version bump
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore(release): Bump version to ${{ steps.bump_version.outputs.new_version }}"
           file_pattern: gradle.properties
