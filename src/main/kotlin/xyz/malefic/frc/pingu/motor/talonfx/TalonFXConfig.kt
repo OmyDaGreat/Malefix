@@ -163,6 +163,7 @@ class TalonFXConfig : MonguConfig<TalonFX> {
                     name!!,
                 )
             }
+            isFirstApply = false
         }
     }
 }

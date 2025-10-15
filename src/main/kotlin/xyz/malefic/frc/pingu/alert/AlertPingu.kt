@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.Alert
 import edu.wpi.first.wpilibj.Alert.AlertType.kError
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import edu.wpi.first.wpilibj2.command.SubsystemBase
-import xyz.malefic.frc.pingu.motor.Mongu
 
 /**
  * Type alias for a pair consisting of a device and its corresponding alert.
@@ -54,18 +53,6 @@ object AlertPingu : SubsystemBase() {
         val alert = Alert("Disconnected $motorName motor ${motor.deviceID}", kError)
         devicePairs.add(Pair(motor, alert))
     }
-
-    /**
-     * Registers a [Mongu] wrapper containing a [TalonFX] motor for connection monitoring.
-     *
-     * @param motor [Mongu] wrapper of a [TalonFX] motor to monitor
-     * @param motorName Descriptive name for identifying the motor in Driver Station alerts
-     */
-    @JvmStatic
-    fun add(
-        motor: Mongu<TalonFX>,
-        motorName: String,
-    ) = add(motor.motor, motorName)
 
     /**
      * Registers a [CANcoder] for connection monitoring.
