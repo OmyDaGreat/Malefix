@@ -95,7 +95,7 @@ $dokka.location:xyz.malefic.frc.extension/Kommand.SequentialBuilder/build/#/Poin
 $dokka.location:xyz.malefic.frc.extension/Kommand.SequentialBuilder/unaryPlus/edu.wpi.first.wpilibj2.command.Command#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/-sequential-builder/unary-plus.html
 $dokka.location:xyz.malefic.frc.extension/Kommand///PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/index.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/cancel/#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/cancel.html
-$dokka.location:xyz.malefic.frc.extension/Kommand/cmd/#kotlin.Array[edu.wpi.first.wpilibj2.command.Subsystem]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/cmd.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/cmd/#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/cmd.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/parallel/#kotlin.Function1[xyz.malefic.frc.extension.Kommand.ParallelBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/parallel.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/sequential/#kotlin.Function1[xyz.malefic.frc.extension.Kommand.SequentialBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/sequential.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/waitFor/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/wait-for.html
@@ -210,9 +210,9 @@ $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/TEST_MODE/#/PointingToDeclara
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/addIgnoredFile/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/add-ignored-file.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/log/#kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/log.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#java.lang.Runnable/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
-$dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.Array[kotlin.Pair[kotlin.String,kotlin.Any]]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.Pair[kotlin.String,kotlin.Any]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.String?#TypeParam(bounds=[edu.wpi.first.util.WPISerializable?])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
-$dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.String?#kotlin.Array[TypeParam(bounds=[edu.wpi.first.util.struct.StructSerializable?])]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
+$dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.String?#TypeParam(bounds=[edu.wpi.first.util.struct.StructSerializable?])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.String?#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.String?#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
 $dokka.location:xyz.malefic.frc.pingu.log/LogPingu/logs/#kotlin.String?#kotlin.Int/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/logs.html
