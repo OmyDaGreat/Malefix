@@ -26,9 +26,12 @@ The `pingu` package provides a comprehensive set of utilities for control, loggi
 * `Bingu`: Binds Xbox controller buttons to commands.
 * `LogPingu`: Logging utilities.
 * `Engu`: Encoder utilities.
-* `Mongu`, `MonguConfig`, `MonguControl`: Motor configuration and control utilities.
-* `Position`, `PWM`, `Voltage`: Motor control strategies.
-* `PWMTalonSRXConfig`, `TalonFXConfig`: Motor controller configs.
+* `Mongu`: Common interface implemented by motor classes for unified control.
+* `TonguFX`: TalonFX motor class that extends TalonFX and implements Mongu interface with direct control access.
+* `SparkuMax`: PWMSparkMax motor class that extends PWMSparkMax and implements Mongu interface.
+* `TalonuSRX`: PWMTalonSRX motor class that extends PWMTalonSRX and implements Mongu interface.
+* `MonguConfig`: Configuration interface for motors.
+* `PWMTalonSRXConfig`, `PWMSparkMaxConfig`, `TalonFXConfig`: Motor controller configs.
 * `Commangu`, `CommanguDsl`: Command binding utilities.
 
 === `xyz.malefic.frc.sub`
