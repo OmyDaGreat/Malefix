@@ -190,34 +190,31 @@ controlMotor(talonSRX, 0.5)
 
 ## Migration from Old Mongu Wrapper
 
-### Old Way (Wrapper)
+### Old Way (Wrapper - DEPRECATED)
 ```kotlin
-import xyz.malefic.frc.pingu.motor.Mongu
-import com.ctre.phoenix6.hardware.TalonFX
-import xyz.malefic.frc.pingu.motor.ControlType
+// This approach no longer works - Mongu is now an interface, not a wrapper class
+// The old Mongu wrapper class that took a motor instance has been removed
 
-// Old wrapper approach
-val motor = Mongu(TalonFX(1), control = ControlType.PWM) {
-    this as TalonFXConfig
-    pingu.p = 0.1
-}
-motor.move(0.5)
-
-// Access underlying motor
-val deviceId = motor.motor.deviceID
+// Old wrapper approach (DEPRECATED - DO NOT USE)
+// val motor = Mongu(TalonFX(1), control = ControlType.PWM) {
+//     this as TalonFXConfig
+//     pingu.p = 0.1
+// }
+// motor.move(0.5)
+// val deviceId = motor.motor.deviceID
 ```
 
 ### New Way (Interface)
 ```kotlin
 import xyz.malefic.frc.pingu.motor.talonfx.TonguFX
 
-// New interface approach
+// New interface approach - TonguFX IS a TalonFX
 val motor = TonguFX(1) {
     pingu.p = 0.1
 }
 motor.move(0.5)
 
-// Direct access to motor properties (no .motor needed)
+// Direct access to motor properties (no .motor needed - motor IS the TalonFX)
 val deviceId = motor.deviceID
 ```
 
