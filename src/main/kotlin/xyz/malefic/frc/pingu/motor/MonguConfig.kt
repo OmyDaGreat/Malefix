@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package xyz.malefic.frc.pingu.motor
 
 /**
@@ -25,8 +27,6 @@ interface MonguConfig<T : Any> {
     /**
      * Lambda function for controlling the motor using PWM (Pulse Width Modulation).
      *
-     * Delegates to [controls.pwmControl].
-     *
      * @see MotorControls.pwmControl
      */
     val pwmControl: ((T, Double) -> Unit)?
@@ -34,8 +34,6 @@ interface MonguConfig<T : Any> {
 
     /**
      * Lambda function for controlling the motor using voltage.
-     *
-     * Delegates to [controls.voltageControl].
      *
      * @see MotorControls.voltageControl
      */
@@ -45,8 +43,6 @@ interface MonguConfig<T : Any> {
     /**
      * Lambda function for controlling the motor using a position value.
      *
-     * Delegates to [controls.positionControl].
-     *
      * @see MotorControls.positionControl
      */
     val positionControl: ((T, Double) -> Unit)?
@@ -55,8 +51,6 @@ interface MonguConfig<T : Any> {
     /**
      * Lambda function for controlling the motor using a velocity value.
      *
-     * Delegates to [controls.velocityControl].
-     *
      * @see MotorControls.velocityControl
      */
     val velocityControl: ((T, Double) -> Unit)?
@@ -64,8 +58,6 @@ interface MonguConfig<T : Any> {
 
     /**
      * Lambda function to stop the motor.
-     *
-     * Delegates to [controls.stop].
      *
      * @see MotorControls.stop
      */
