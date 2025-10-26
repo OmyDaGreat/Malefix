@@ -14,25 +14,25 @@ enum class Button(
     val checkPressed: (XboxController) -> Boolean,
     val checkReleased: (XboxController) -> Boolean,
 ) {
-    A({ it.aButtonPressed }, { it.aButtonReleased }),
+    A({ it.aButton }, { !it.aButton }),
 
-    B({ it.bButtonPressed }, { it.bButtonReleased }),
+    B({ it.bButton }, { !it.bButton }),
 
-    X({ it.xButtonPressed }, { it.xButtonReleased }),
+    X({ it.xButton }, { !it.xButton }),
 
-    Y({ it.yButtonPressed }, { it.yButtonReleased }),
+    Y({ it.yButton }, { !it.yButton }),
 
-    START({ it.startButtonPressed }, { it.startButtonReleased }),
+    START({ it.startButton }, { !it.startButton }),
 
-    LEFT_BUMPER({ it.leftBumperButtonPressed }, { it.leftBumperButtonReleased }),
+    LEFT_BUMPER({ it.leftBumperButton }, { !it.leftBumperButton }),
 
-    RIGHT_BUMPER({ it.rightBumperButtonPressed }, { it.rightBumperButtonReleased }),
+    RIGHT_BUMPER({ it.rightBumperButton }, { !it.rightBumperButton }),
 
-    BACK({ it.backButtonPressed }, { it.backButtonReleased }),
+    BACK({ it.backButton }, { !it.backButton }),
 
-    LEFT_STICK({ it.leftStickButtonPressed }, { it.leftStickButtonReleased }),
+    LEFT_STICK({ it.leftStickButton }, { !it.leftStickButton }),
 
-    RIGHT_STICK({ it.rightStickButtonPressed }, { it.rightStickButtonReleased }),
+    RIGHT_STICK({ it.rightStickButton }, { !it.rightStickButton }),
 
     LEFT_TRIGGER({ it.leftTriggerAxis > 0.5 }, { it.leftTriggerAxis <= 0.5 }),
 
