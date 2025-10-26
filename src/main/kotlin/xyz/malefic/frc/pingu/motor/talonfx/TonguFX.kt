@@ -1,54 +1,53 @@
 package xyz.malefic.frc.pingu.motor.talonfx
 
-import com.ctre.phoenix6.controls.PositionVoltage
-import com.ctre.phoenix6.controls.VelocityVoltage
+import com.ctre.phoenix6.controls.ControlRequest
 import com.ctre.phoenix6.hardware.TalonFX
 import xyz.malefic.frc.pingu.motor.Mongu
 
 /**
- * TalonFX motor implementation that extends [TalonFX] and implements the [Mongu] interface.
+ * Wrapper around [TalonFX] that implements [Mongu] configuration and control using a [ControlRequest].
  *
- * This class provides direct access to TalonFX-specific functionality while implementing
- * the common Mongu interface. It provides direct access to control classes for position,
- * PWM, and velocity control.
+ * Type parameter `T` represents the specific subtype of [ControlRequest] used to send control commands.
  *
- * ## Usage Examples:
+ * Usage:
  * ```kotlin
- * // Create a TalonFX motor
- * val motor = TonguFX(1)
- * motor.configure {
- *     pingu.p = 0.1
- *     inverted = InvertedValue.Clockwise_Positive
- * }
- * motor.move(0.5)  // PWM control by default
+ * // Provide a control request and a function that produces a new request with the desired output.
+ * val velocityVoltage = VelocityVoltage()
+ * val motor = TonguFX(1, velocityVoltage, { out -> this.withVelocity(out) })
  *
- * // Direct access to control classes
- * motor.setControl(motor.positionControl.withPosition(10.0))
- * motor.setControl(motor.velocityControl.withVelocity(100.0))
+ * // Configure via DSL, then control the motor.
+ * motor.configure {
+ *   pingu.p = 0.1
+ *   inverted = InvertedValue.Clockwise_Positive
+ * }
+ * motor.movePWM(0.5)      // simple PWM control
+ * motor.control(25)       // send a ControlRequest with output 25
+ * motor.stopMotor()       // stops using configured stop behavior
  * ```
  *
- * @param deviceId The CAN ID of the TalonFX motor.
- * @param canbus The CAN bus name (defaults to empty string for default bus).
- * @param monguConfig A lambda that applies initial configuration settings to the motor.
+ * Notes:
+ * - `withOutput` must return a new or modified instance of `T` that encodes the requested output.
+ *   Implementations should avoid mutating a shared template in-place unless it is safe for concurrent use.
+ * - The provided `controlRequest` acts as a template; the concrete request sent is created by invoking
+ *   `controlRequest.withOutput(value)`.
+ * - Initialization resets position to `0.0` and applies the optional `monguConfig` block.
+ * - `configure` applies changes to the in-memory `TalonFXConfig` and immediately applies them to the hardware.
+ *
+ * @constructor Creates a TonguFX motor controller.
+ * @param deviceId The CAN device id for the TalonFX.
+ * @param controlRequest A template control request instance used as the base for control operations.
+ * @param withOutput An extension function on the control request type that returns a new request with the given output value.
+ * @param canbus Optional CAN bus name; defaults to an empty string which selects the default bus.
+ * @param monguConfig Optional DSL block to configure the motor's [TalonFXConfig] during initialization.
  */
-class TonguFX(
+class TonguFX<T : ControlRequest>(
     deviceId: Int,
+    val controlRequest: T,
+    val withOutput: T.(Double) -> T,
     canbus: String = "",
     monguConfig: TalonFXConfig.() -> Unit = {},
 ) : TalonFX(deviceId, canbus),
     Mongu<TalonFXConfig> {
-    /**
-     * Pre-allocated [PositionVoltage] control object for position control mode.
-     * Use this to directly set position control with additional parameters.
-     */
-    val positionControl: PositionVoltage = PositionVoltage(0.0)
-
-    /**
-     * Pre-allocated [VelocityVoltage] control object for velocity control mode.
-     * Use this to directly set velocity control with additional parameters.
-     */
-    val velocityControl: VelocityVoltage = VelocityVoltage(0.0)
-
     /**
      * The configuration for this TalonFX motor.
      */
@@ -85,8 +84,17 @@ class TonguFX(
      *
      * @param value The duty cycle from -1.0 to 1.0.
      */
-    override fun move(value: Double) {
+    override fun movePWM(value: Double) {
         set(value)
+    }
+
+    /**
+     * Sets the motor control using a [ControlRequest].
+     *
+     * @param double The output value to set in the control request.
+     */
+    fun control(double: Double) {
+        this(controlRequest.withOutput(double))
     }
 
     /**

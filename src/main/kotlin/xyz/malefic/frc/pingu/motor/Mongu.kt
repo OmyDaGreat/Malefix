@@ -56,7 +56,7 @@ interface Mongu<T : MonguConfig<*>> {
      *
      * @param value The control value (meaning depends on motor type and configuration).
      */
-    fun move(value: Double)
+    fun movePWM(value: Double)
 
     /**
      * Stops the motor by invoking the configured stop function.

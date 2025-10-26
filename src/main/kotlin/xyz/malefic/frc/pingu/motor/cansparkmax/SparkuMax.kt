@@ -62,7 +62,7 @@ class SparkuMax(
      *
      * @param value The duty cycle from -1.0 to 1.0.
      */
-    override fun move(value: Double) {
+    override fun movePWM(value: Double) {
         set(value)
     }
 
