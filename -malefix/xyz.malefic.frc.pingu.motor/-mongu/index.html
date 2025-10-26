@@ -108,63 +108,14 @@
   <div class="breadcrumbs"><a href="../../../index.html">Malefix</a><span class="delimiter">/</span><a href="../index.html">xyz.malefic.frc.pingu.motor</a><span class="delimiter">/</span><span class="current">Mongu</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Mongu</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Mongu</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>motor<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>engu<span class="token operator">: </span><a href="../../xyz.malefic.frc.pingu.encoder/-engu/index.html">Engu</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>control<span class="token operator">: </span><a href="../-control-type/index.html">ControlType</a><span class="token punctuation">, </span></span><span class="parameter ">enguConfig<span class="token operator">: </span><span data-unresolved-link="com.ctre.phoenix6.configs/CANcoderConfiguration///PointingToDeclaration/">CANcoderConfiguration</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}<span class="token punctuation">, </span></span><span class="parameter ">monguConfig<span class="token operator">: </span><a href="../-mongu-config/index.html">MonguConfig</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span></div><p class="paragraph">A generic motor wrapper class that allows configuration of different motor types.</p><p class="paragraph">The control type is locked at initialization and cannot be changed during runtime. This ensures type safety and prevents accidental control type switching.</p><h2 class="">Usage Examples:</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Create a motor with PWM control<br>val motor = Mongu(TalonFX(1), control = ControlType.PWM)<br>motor.move(0.5)  // 50% forward<br><br>// Create a motor with position control<br>val posMotor = Mongu(TalonFX(2), control = ControlType.POSITION) {<br>    this as TalonFXConfig<br>    pingu.p = 0.1<br>}<br>posMotor.move(10.0)  // move to position 10</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of motor being wrapped.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>mongu</span><wbr></wbr><span><span>Config</span></span></u></div></span></div><div><div class="title"><p class="paragraph">A lambda that applies configuration settings to the motor.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>engu</span><wbr></wbr><span><span>Config</span></span></u></div></span></div><div><div class="title"><p class="paragraph">A lambda that applies configuration settings to the encoder.</p></div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Mongu</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator"> : </span><a href="../-mongu-config/index.html">MonguConfig</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><p class="paragraph">Interface for motor control that defines common methods all motors must have.</p><p class="paragraph">This interface provides a common abstraction for motor control, allowing different motor types to be used interchangeably while providing type-safe access to their specific features through implementations.</p><h2 class="">Usage Examples:</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Create a TalonFX motor with direct access to control classes<br>val motor = TonguFX(1)<br>motor.configure {<br>    pingu.p = 0.1<br>    inverted = InvertedValue.Clockwise_Positive<br>}<br>motor.move(0.5)  // Move using configured control<br><br>// Direct access to control classes<br>motor.setControl(motor.positionControl.withPosition(10.0))</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of motor configuration used.</p></div></div></div></div></div><h4 class="tableheader">Inheritors</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../xyz.malefic.frc.pingu.motor.cansparkmax/-sparku-max/index.html">SparkuMax</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/index.html">TonguSRX</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/index.html">TonguFX</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <div data-togglable="CONSTRUCTOR">
-        <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-558396935%2FConstructors%2F-251573632" anchor-label="Mongu" id="-558396935%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-mongu.html"><span><span>Mongu</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-558396935%2FConstructors%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">motor<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">engu<span class="token operator">: </span><a href="../../xyz.malefic.frc.pingu.encoder/-engu/index.html">Engu</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">control<span class="token operator">: </span><a href="../-control-type/index.html">ControlType</a><span class="token punctuation">, </span></span><span class="parameter ">enguConfig<span class="token operator">: </span><span data-unresolved-link="com.ctre.phoenix6.configs/CANcoderConfiguration///PointingToDeclaration/">CANcoderConfiguration</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}<span class="token punctuation">, </span></span><span class="parameter ">monguConfig<span class="token operator">: </span><a href="../-mongu-config/index.html">MonguConfig</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="-1482238175%2FProperties%2F-251573632" anchor-label="acceleration" id="-1482238175%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/acceleration.html"><span><span>acceleration</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1482238175%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/acceleration.html">acceleration</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the current acceleration of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="769890684%2FProperties%2F-251573632" anchor-label="channel" id="769890684%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.cansparkmax/channel.html"><span><span>channel</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="769890684%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.cansparkmax/MonguSpark///PointingToDeclaration/">MonguSpark</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.cansparkmax/channel.html">channel</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Extension property to retrieve the PWM channel for <span data-unresolved-link="xyz.malefic.frc.pingu.motor.cansparkmax/MonguSpark///PointingToDeclaration/">MonguSpark</span>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.pwmtalonsrx/MonguSRX///PointingToDeclaration/">MonguSRX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.pwmtalonsrx/channel.html">channel</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Extension property to retrieve the PWM channel for <span data-unresolved-link="xyz.malefic.frc.pingu.motor.pwmtalonsrx/MonguSRX///PointingToDeclaration/">MonguSRX</span>.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="2022445480%2FProperties%2F-251573632" anchor-label="configuration" id="2022445480%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+        <div class="table"><a data-name="2022445480%2FProperties%2F-251573632" anchor-label="configuration" id="2022445480%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -174,247 +125,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="configuration.html">configuration</a><span class="token operator">: </span><a href="../-mongu-config/index.html">MonguConfig</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Holds the last configuration applied to this motor. This property is updated whenever the <a href="configure.html">configure</a> method is called. It allows retrieval of the configuration settings for inspection or reuse.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-862519327%2FProperties%2F-251573632" anchor-label="control" id="-862519327%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="control.html"><span><span>control</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-862519327%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="control.html">control</a><span class="token operator">: </span><a href="../-control-type/index.html">ControlType</a></div><div class="brief "><p class="paragraph">The control type that this motor is locked to.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1597394094%2FProperties%2F-251573632" anchor-label="deviceID" id="-1597394094%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/device-i-d.html"><span>device</span><wbr></wbr><span><span>ID</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1597394094%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/device-i-d.html">deviceID</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Retrieves the device ID of the underlying <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1267930373%2FProperties%2F-251573632" anchor-label="engu" id="1267930373%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="engu.html"><span><span>engu</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1267930373%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="engu.html">engu</a><span class="token operator">: </span><a href="../../xyz.malefic.frc.pingu.encoder/-engu/index.html">Engu</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">An optional encoder associated with the motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1395216586%2FProperties%2F-251573632" anchor-label="isConnected" id="-1395216586%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/is-connected.html"><span>is</span><wbr></wbr><span><span>Connected</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1395216586%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/is-connected.html">isConnected</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Indicates whether the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor is currently connected.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1816290295%2FProperties%2F-251573632" anchor-label="motor" id="-1816290295%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="motor.html"><span><span>motor</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1816290295%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="motor.html">motor</a><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">The motor instance being wrapped.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="619221125%2FProperties%2F-251573632" anchor-label="motorStallCurrent" id="619221125%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/motor-stall-current.html"><span>motor</span><wbr></wbr><span>Stall</span><wbr></wbr><span><span>Current</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="619221125%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/motor-stall-current.html">motorStallCurrent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the stall current of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="195045898%2FProperties%2F-251573632" anchor-label="motorVoltage" id="195045898%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/motor-voltage.html"><span>motor</span><wbr></wbr><span><span>Voltage</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="195045898%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/motor-voltage.html">motorVoltage</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the motor voltage of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1644607302%2FProperties%2F-251573632" anchor-label="pingu" id="-1644607302%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/pingu.html"><span><span>pingu</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1644607302%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/pingu.html">pingu</a><span class="token operator">: </span><a href="../../xyz.malefic.frc.pingu.control/-pingu/index.html">Pingu</a></div><div class="brief "><p class="paragraph">Retrieves the custom <code class="lang-kotlin">pingu</code> property from the <a href="../../xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/index.html">TalonFXConfig</a> configuration.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1036595338%2FProperties%2F-251573632" anchor-label="position" id="1036595338%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/position.html"><span><span>position</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1036595338%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/position.html">position</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the current position of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1003696130%2FProperties%2F-251573632" anchor-label="pwm" id="1003696130%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.cansparkmax/pwm.html"><span><span>pwm</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1003696130%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.cansparkmax/MonguSpark///PointingToDeclaration/">MonguSpark</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.cansparkmax/pwm.html">pwm</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Extension property to calculate the PWM voltage ratio for <span data-unresolved-link="xyz.malefic.frc.pingu.motor.cansparkmax/MonguSpark///PointingToDeclaration/">MonguSpark</span>.</p></div><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.pwmtalonsrx/MonguSRX///PointingToDeclaration/">MonguSRX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.pwmtalonsrx/pwm.html">pwm</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Extension property to calculate the PWM voltage ratio for <span data-unresolved-link="xyz.malefic.frc.pingu.motor.pwmtalonsrx/MonguSRX///PointingToDeclaration/">MonguSRX</span>.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1669619270%2FProperties%2F-251573632" anchor-label="rotorPosition" id="-1669619270%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/rotor-position.html"><span>rotor</span><wbr></wbr><span><span>Position</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1669619270%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/rotor-position.html">rotorPosition</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the rotor position of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1680683630%2FProperties%2F-251573632" anchor-label="rotorVelocity" id="1680683630%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/rotor-velocity.html"><span>rotor</span><wbr></wbr><span><span>Velocity</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1680683630%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/rotor-velocity.html">rotorVelocity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the rotor velocity of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1503976057%2FProperties%2F-251573632" anchor-label="statorCurrent" id="1503976057%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/stator-current.html"><span>stator</span><wbr></wbr><span><span>Current</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1503976057%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/stator-current.html">statorCurrent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the stator current of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="113636289%2FProperties%2F-251573632" anchor-label="supplyCurrent" id="113636289%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/supply-current.html"><span>supply</span><wbr></wbr><span><span>Current</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="113636289%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/supply-current.html">supplyCurrent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the supply current of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-422950170%2FProperties%2F-251573632" anchor-label="supplyVoltage" id="-422950170%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/supply-voltage.html"><span>supply</span><wbr></wbr><span><span>Voltage</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-422950170%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/supply-voltage.html">supplyVoltage</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the supply voltage of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="91930942%2FProperties%2F-251573632" anchor-label="velocity" id="91930942%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/velocity.html"><span><span>velocity</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="91930942%2FProperties%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/velocity.html">velocity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Retrieves the current velocity of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="configuration.html">configuration</a><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">The configuration for this motor instance. This property is updated whenever the <a href="configure.html">configure</a> method is called.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -423,17 +134,17 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="1692319619%2FFunctions%2F-251573632" anchor-label="configure" id="1692319619%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+        <div class="table"><a data-name="175149056%2FFunctions%2F-251573632" anchor-label="configure" id="175149056%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="configure.html"><span><span>configure</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1692319619%2FFunctions%2F-251573632"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="175149056%2FFunctions%2F-251573632"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="configure.html"><span class="token function">configure</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><a href="../-mongu-config/index.html">MonguConfig</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Configures the motor using a DSL-style configuration block.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="configure.html"><span class="token function">configure</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">block<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Configures the motor using a DSL-style configuration block.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -448,7 +159,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="move.html"><span class="token function">move</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Moves the motor using the locked control type.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="move.html"><span class="token function">move</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Moves the motor using the default control method.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -463,37 +174,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="not.html"><span class="token function">not</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Operator overload for logical NOT (<code class="lang-kotlin">!</code>) to stop the motor.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1833773995%2FFunctions%2F-251573632" anchor-label="resetPosition" id="-1833773995%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/reset-position.html"><span>reset</span><wbr></wbr><span><span>Position</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1833773995%2FFunctions%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/reset-position.html"><span class="token function">resetPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">position<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.ctre.phoenix6/StatusCode///PointingToDeclaration/">StatusCode</span></div><div class="brief "><p class="paragraph">Resets the position of the <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor to the specified value.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-973274298%2FFunctions%2F-251573632" anchor-label="setControl" id="-973274298%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
-          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":/main" data-filterable-set=":/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="../../xyz.malefic.frc.pingu.motor.talonfx/set-control.html"><span>set</span><wbr></wbr><span><span>Control</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-973274298%2FFunctions%2F-251573632"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><span data-unresolved-link="xyz.malefic.frc.pingu.motor.talonfx/MonguFX///PointingToDeclaration/">MonguFX</span><span class="token punctuation">.</span><a href="../../xyz.malefic.frc.pingu.motor.talonfx/set-control.html"><span class="token function">setControl</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">control<span class="token operator">: </span><span data-unresolved-link="com.ctre.phoenix6.controls/ControlRequest///PointingToDeclaration/">ControlRequest</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.ctre.phoenix6/StatusCode///PointingToDeclaration/">StatusCode</span></div><div class="brief "><p class="paragraph">Sets the <span data-unresolved-link="com.ctre.phoenix6.controls/ControlRequest///PointingToDeclaration/">ControlRequest</span> for the underlying <span data-unresolved-link="com.ctre.phoenix6.hardware/TalonFX///PointingToDeclaration/">TalonFX</span> motor.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="not.html"><span class="token function">not</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Operator overload for logical NOT (<code class="lang-kotlin">!</code>) to stop the motor.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -508,7 +189,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="stop-motor.html"><span class="token function">stopMotor</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Stops the motor by invoking the configured stop function.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="stop-motor.html"><span class="token function">stopMotor</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Stops the motor by invoking the configured stop function.</p></div></div></div>
                 </div>
               </div>
             </div>
