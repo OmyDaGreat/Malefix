@@ -263,6 +263,9 @@ $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/configure/#kotl
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/move/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/move.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/index.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doubleAcceleration/xyz.malefic.frc.pingu.motor.talonfx.TonguFX#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-acceleration.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doublePosition/xyz.malefic.frc.pingu.motor.talonfx.TonguFX#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-position.html
+$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doubleVelocity/xyz.malefic.frc.pingu.motor.talonfx.TonguFX#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-velocity.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//invoke/xyz.malefic.frc.pingu.motor.talonfx.TonguFX#com.ctre.phoenix6.controls.ControlRequest/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/invoke.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//pingu/xyz.malefic.frc.pingu.motor.talonfx.TonguFX#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/pingu.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//resetPosition/xyz.malefic.frc.pingu.motor.talonfx.TonguFX#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/reset-position.html
