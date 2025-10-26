@@ -23,7 +23,7 @@ import xyz.malefic.frc.pingu.motor.Mongu
  * @param channel The PWM channel for this motor controller.
  * @param monguConfig A lambda that applies initial configuration settings to the motor.
  */
-class TalonuSRX(
+class TonguSRX(
     channel: Int,
     monguConfig: PWMTalonSRXConfig.() -> Unit = {},
 ) : PWMTalonSRX(channel),

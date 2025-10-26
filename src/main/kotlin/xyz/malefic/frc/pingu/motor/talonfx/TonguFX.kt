@@ -56,6 +56,7 @@ class TonguFX(
         private set
 
     init {
+        setPosition(0.0)
         configure(monguConfig)
     }
 
