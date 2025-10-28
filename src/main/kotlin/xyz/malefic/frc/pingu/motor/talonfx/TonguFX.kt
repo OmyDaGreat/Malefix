@@ -94,6 +94,6 @@ class TonguFX<T : ControlRequest>(
      * @param double The output value to set in the control request.
      */
     fun control(double: Double) {
-        this(controlRequest.withOutput(double))
+        this.setControl(controlRequest.withOutput(double))
     }
 }
