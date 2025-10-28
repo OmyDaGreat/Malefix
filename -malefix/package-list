@@ -240,7 +240,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/SparkuMax/SparkuMax/#kot
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/SparkuMax/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-sparku-max/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/SparkuMax/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.cansparkmax.PWMSparkMaxConfig,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-sparku-max/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/SparkuMax/movePWM/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-sparku-max/move-p-w-m.html
-$dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/SparkuMax/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-sparku-max/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx//pwm/xyz.malefic.frc.pingu.motor.pwmtalonsrx.TonguSRX#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/pwm.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/PWMTalonSRXConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-p-w-m-talon-s-r-x-config/index.html
@@ -261,7 +260,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/TonguSRX/#kotli
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.pwmtalonsrx.PWMTalonSRXConfig,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/movePWM/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/move-p-w-m.html
-$dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doubleAcceleration/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-acceleration.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doublePosition/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-position.html
@@ -301,7 +299,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/configure/#kotlin.Fu
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/control/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/control.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/controlRequest/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/control-request.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/movePWM/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/move-p-w-m.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/withOutput/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/with-output.html
 $dokka.location:xyz.malefic.frc.pingu.motor////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/ControlType.POSITION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-p-o-s-i-t-i-o-n/index.html
@@ -316,8 +313,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor/Mongu///PointingToDeclaration/-male
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configure/#kotlin.Function1[TypeParam(bounds=[xyz.malefic.frc.pingu.motor.MonguConfig[*]]),kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/movePWM/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/move-p-w-m.html
-$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/not/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/not.html
-$dokka.location:xyz.malefic.frc.pingu.motor/Mongu/stopMotor/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/stop-motor.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/applyTo/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/apply-to.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/controls/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/controls.html
