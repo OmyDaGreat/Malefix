@@ -261,12 +261,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/configuration/#
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/configure/#kotlin.Function1[xyz.malefic.frc.pingu.motor.pwmtalonsrx.PWMTalonSRXConfig,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/configure.html
 $dokka.location:xyz.malefic.frc.pingu.motor.pwmtalonsrx/TonguSRX/movePWM/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.pwmtalonsrx/-tongu-s-r-x/move-p-w-m.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doubleAcceleration/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-acceleration.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doublePosition/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-position.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//doubleVelocity/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/double-velocity.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//invoke/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#com.ctre.phoenix6.controls.ControlRequest/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/invoke.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//pingu/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/pingu.html
-$dokka.location:xyz.malefic.frc.pingu.motor.talonfx//resetPosition/<ERROR CLASS> ERROR CLASS: Wrong number of type arguments#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/reset-position.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/TalonFXConfig/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/-talon-f-x-config.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TalonFXConfig/applyTo/#com.ctre.phoenix6.hardware.TalonFX/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-talon-f-x-config/apply-to.html
