@@ -96,11 +96,4 @@ class TonguFX<T : ControlRequest>(
     fun control(double: Double) {
         this(controlRequest.withOutput(double))
     }
-
-    /**
-     * Stops the motor by invoking the configured stop function.
-     */
-    override fun stopMotor() {
-        configuration.stop(this)
-    }
 }

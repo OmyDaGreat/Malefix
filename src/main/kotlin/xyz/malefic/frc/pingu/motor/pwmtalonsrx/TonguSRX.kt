@@ -65,11 +65,4 @@ class TonguSRX(
     override fun movePWM(value: Double) {
         set(value)
     }
-
-    /**
-     * Stops the motor by invoking the configured stop function.
-     */
-    override fun stopMotor() {
-        configuration.stop(this)
-    }
 }
