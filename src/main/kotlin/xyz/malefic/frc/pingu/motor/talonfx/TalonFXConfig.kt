@@ -1,8 +1,6 @@
 package xyz.malefic.frc.pingu.motor.talonfx
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration
-import com.ctre.phoenix6.controls.PositionVoltage
-import com.ctre.phoenix6.controls.VelocityVoltage
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
@@ -78,11 +76,6 @@ class TalonFXConfig : MonguConfig<TalonFX> {
      * Optional lambda for additional [TalonFXConfiguration] customization.
      */
     var extraConfig: (TalonFXConfiguration.() -> Unit)? = null
-
-    /**
-     * The motor controls instance containing all control lambdas for [TalonFX].
-     */
-    override val controls: TalonFXControls = TalonFXControls()
 
     /**
      * Tracks whether the configuration is being applied for the first time.

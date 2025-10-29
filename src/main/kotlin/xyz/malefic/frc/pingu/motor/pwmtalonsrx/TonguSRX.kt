@@ -34,6 +34,14 @@ class TonguSRX(
     override var configuration: PWMTalonSRXConfig = PWMTalonSRXConfig()
         private set
 
+    /**
+     * Property to calculate the PWM voltage ratio for [TonguSRX].
+     *
+     * @return The ratio of the motor voltage to the battery voltage.
+     */
+    val pwm
+        get() = get()
+
     init {
         configure(monguConfig)
     }
@@ -65,4 +73,14 @@ class TonguSRX(
     override fun movePWM(value: Double) {
         set(value)
     }
+
+    /**
+     * Stops the motor when the logical not operator (`!`) is applied to this instance.
+     *
+     * Example:
+     * ```kotlin
+     * !motor  // calls stopMotor()
+     * ```
+     */
+    override fun not() = stopMotor()
 }

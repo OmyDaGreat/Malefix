@@ -25,9 +25,4 @@ class PWMTalonSRXConfig : MonguConfig<PWMTalonSRX> {
         motor.inverted = inverted
         motor.enableDeadbandElimination(deadbandElimination)
     }
-
-    /**
-     * The motor controls instance containing all control lambdas for [PWMTalonSRX].
-     */
-    override val controls: PWMTalonSRXControls = PWMTalonSRXControls()
 }

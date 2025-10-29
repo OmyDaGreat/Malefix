@@ -126,7 +126,6 @@ typealias ButtonBinding = Quadruple<Button, () -> Command, () -> Command, () -> 
 /**
  * Builder class for configuring button bindings with press and release commands.
  */
-@Suppress("unused")
 class ButtonBindingsBuilder {
     private val bindings = mutableMapOf<Button, Triple<() -> Command, () -> Command, () -> Command>>()
 
@@ -189,7 +188,6 @@ class ButtonBindingsBuilder {
      * ```
      * Overload just for Jayden Sun
      */
-    @Suppress("kotlin:S4144")
     fun unpress(
         button: Button,
         command: Command,
@@ -279,7 +277,6 @@ class ButtonBindingsBuilder {
      * ```
      * Overload just for Jayden Sun
      */
-    @Suppress("kotlin:S4144")
     fun unpress(
         button: Button,
         command: () -> Unit,

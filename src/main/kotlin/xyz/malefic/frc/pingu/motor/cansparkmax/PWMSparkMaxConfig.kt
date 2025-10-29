@@ -22,9 +22,4 @@ class PWMSparkMaxConfig : MonguConfig<PWMSparkMax> {
         motor.inverted = inverted
         motor.enableDeadbandElimination(deadbandElimination)
     }
-
-    /**
-     * The motor controls instance containing all control lambdas for [PWMSparkMax].
-     */
-    override val controls: PWMSparkMaxControls = PWMSparkMaxControls()
 }
