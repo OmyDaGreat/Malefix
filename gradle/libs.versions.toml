@@ -1,5 +1,5 @@
 [versions]
-kotlinter = "5.2.0"
+kotlinter = "5.3.0"
 kermit = "2.0.8"
 dokka = "2.1.0"
 wpilib = "2025.3.2"
