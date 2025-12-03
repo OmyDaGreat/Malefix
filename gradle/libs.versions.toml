@@ -8,7 +8,7 @@ advantagekit = "4.1.2"
 ctre-phoenix = "25.4.0"
 revlib = "2025.0.3"
 photonlib = "v2026.0.1"
-vanniktech = "0.34.0"
+vanniktech = "0.35.0"
 
 [libraries]
 kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
