@@ -20,7 +20,6 @@ wpilib-wpilibj = { group = "edu.wpi.first.wpilibj", name = "wpilibj-java", versi
 wpilib-wpiutil = { group = "edu.wpi.first.wpiutil", name = "wpiutil-java", version.ref = "wpilib" }
 wpilib-wpiunits = { group = "edu.wpi.first.wpiunits", name = "wpiunits-java", version.ref = "wpilib" }
 wpilib-wpimath = { group = "edu.wpi.first.wpimath", name = "wpimath-java", version.ref = "wpilib" }
-wpilib-ntcore-jni = { group = "edu.wpi.first.ntcore", name = "ntcore-jni", version.ref = "wpilib" }
 wpilib-ntcore = { group = "edu.wpi.first.ntcore", name = "ntcore-java", version.ref = "wpilib" }
 wpilib-commands = { group = "edu.wpi.first.wpilibNewCommands", name = "wpilibNewCommands-java", version.ref = "wpilib" }
 
@@ -41,5 +40,5 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech" }
 
 [bundles]
-wpilib = ["wpilib-apriltag", "wpilib-hal", "wpilib-wpilibj", "wpilib-wpiutil", "wpilib-wpiunits", "wpilib-wpimath", "wpilib-ntcore-jni", "wpilib-ntcore", "wpilib-commands"]
+wpilib = ["wpilib-apriltag", "wpilib-hal", "wpilib-wpilibj", "wpilib-wpiutil", "wpilib-wpiunits", "wpilib-wpimath", "wpilib-ntcore", "wpilib-commands"]
 advantagekit = ["advantagekit-java", "advantagekit-wpilibio"]
