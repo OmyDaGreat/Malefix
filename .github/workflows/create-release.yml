@@ -40,7 +40,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
-          gradle-version: "9.0.0"
+          gradle-version: "9.2.1"
 
       - name: Make gradlew Executable
         run: chmod +x gradlew
@@ -94,24 +94,11 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE_KEY }}
 
-      - name: Get Changes between Tags
-        id: changelog
-        run: |
-          last_tag=$(git describe --tags --abbrev=0 || echo "")
-          if [ -z "$last_tag" ]; then
-            changelog=$(git log --pretty=format:"* %s" )
-          else
-            changelog=$(git log "$last_tag"..HEAD --pretty=format:"* %s")
-          fi
-          echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          echo "$changelog" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.bump_version.outputs.new_version }}
           name: v${{ steps.bump_version.outputs.new_version }}
-          body: ${{ steps.changelog.outputs.changelog }}
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
