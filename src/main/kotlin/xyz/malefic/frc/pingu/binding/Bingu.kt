@@ -2,6 +2,7 @@ package xyz.malefic.frc.pingu.binding
 
 import edu.wpi.first.wpilibj.XboxController
 import edu.wpi.first.wpilibj2.command.Command
+import edu.wpi.first.wpilibj2.command.CommandScheduler
 import edu.wpi.first.wpilibj2.command.InstantCommand
 import edu.wpi.first.wpilibj2.command.SubsystemBase
 import xyz.malefic.frc.emu.Button
@@ -93,9 +94,9 @@ object Bingu : SubsystemBase() {
             val wasPressed = previousButtonStates.getOrDefault(key, false)
 
             if (isPressed != wasPressed) {
-                if (isPressed) press().schedule() else release().schedule()
+                if (isPressed) CommandScheduler.getInstance().schedule(press()) else CommandScheduler.getInstance().schedule(release())
             }
-            if (isPressed) hold().schedule()
+            if (isPressed) CommandScheduler.getInstance().schedule(hold())
 
             previousButtonStates[key] = isPressed
         }
