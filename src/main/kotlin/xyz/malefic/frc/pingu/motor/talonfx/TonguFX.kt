@@ -1,5 +1,6 @@
 package xyz.malefic.frc.pingu.motor.talonfx
 
+import com.ctre.phoenix6.CANBus
 import com.ctre.phoenix6.StatusCode
 import com.ctre.phoenix6.controls.ControlRequest
 import com.ctre.phoenix6.hardware.TalonFX
@@ -40,14 +41,14 @@ import xyz.malefic.frc.pingu.motor.Mongu
  * @param deviceId The CAN device id for the TalonFX.
  * @param controlRequest A template control request instance used as the base for control operations.
  * @param withOutput An extension function on the control request type that returns a new request with the given output value.
- * @param canbus Optional CAN bus name; defaults to an empty string which selects the default bus.
+ * @param canbus The CAN bus to use (default is `roboRIO`).
  * @param monguConfig Optional DSL block to configure the motor's [TalonFXConfig] during initialization.
  */
 class TonguFX<T : ControlRequest>(
     deviceId: Int,
     val controlRequest: T,
     val withOutput: T.(Double) -> T,
-    canbus: String = "",
+    canbus: CANBus = CANBus.roboRIO(),
     monguConfig: TalonFXConfig.() -> Unit = {},
 ) : TalonFX(deviceId, canbus),
     Mongu<TalonFXConfig> {

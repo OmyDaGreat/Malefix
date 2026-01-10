@@ -5,18 +5,17 @@ import com.ctre.phoenix6.configs.CANcoderConfiguration
 import com.ctre.phoenix6.hardware.CANcoder
 
 /**
- * A generic [CANcoder] wrapper class that allows configuration of [CANcoder] sensors.
+ * A generic [CANcoder] wrapper class that allows configuration of such sensors.
  *
  * Make sure to configure the sensor after instantiation to apply desired settings.
  *
- * @property configuration Holds the last [CANcoderConfiguration] applied to this [CANcoder].
+ * @property id The CAN device ID of the CANcoder.
+ * @property canbus The CAN bus to use (default is `roboRIO`).
  */
 class Engu(
     id: Int,
-    device: String = "",
-) : CANcoder(id, device) {
-    constructor(id: Int, canBus: CANBus) : this(id, canBus.name)
-
+    canbus: CANBus = CANBus.roboRIO(),
+) : CANcoder(id, canbus) {
     /**
      * Holds the last [CANcoderConfiguration] applied to this [CANcoder].
      * This property is updated whenever the [configure] method is called.
