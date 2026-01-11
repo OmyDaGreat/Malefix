@@ -1,9 +1,8 @@
-package xyz.malefic.frc.statemachine
+package xyz.malefic.frc.state
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
-import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
@@ -88,8 +87,6 @@ class StateMachineTest {
 
         stateMachine.transitionTo(TestState.RUNNING)
 
-        assertNotNull(fromState)
-        assertNotNull(toState)
         assertEquals(TestState.IDLE, fromState)
         assertEquals(TestState.RUNNING, toState)
     }

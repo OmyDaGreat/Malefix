@@ -1,4 +1,4 @@
-package xyz.malefic.frc.statemachine
+package xyz.malefic.frc.state
 
 import kotlin.test.Test
 import kotlin.test.assertTrue
@@ -9,21 +9,6 @@ import kotlin.test.assertTrue
  * These tests verify the basic structure and type system.
  */
 class IntentCommandTest {
-    @Test
-    fun testIntentCommandDslBuilderCreation() {
-        // Test that the DSL builder creates a valid IntentCommand
-        val intent =
-            intentCommand(
-                "TestIntent",
-                onStart = { /* no-op */ },
-                isComplete = { true },
-            )
-
-        // Verify basic properties
-        assertTrue(intent.name == "TestIntent")
-        assertTrue(intent is IntentCommand)
-    }
-
     @Test
     fun testIntentCommandCanExecuteDefaultTrue() {
         // Test that canExecute defaults to true

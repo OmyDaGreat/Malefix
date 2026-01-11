@@ -1,4 +1,4 @@
-package xyz.malefic.frc.statemachine
+package xyz.malefic.frc.state
 
 import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.Subsystem

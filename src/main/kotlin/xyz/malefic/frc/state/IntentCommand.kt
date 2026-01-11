@@ -1,4 +1,4 @@
-package xyz.malefic.frc.statemachine
+package xyz.malefic.frc.state
 
 import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.Subsystem
@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj2.command.Subsystem
  * - Clear semantic meaning (e.g., "ScoreCoralL2Intent")
  * - Automatic requirements management via CommandScheduler
  * - Composable with other commands (sequential, parallel, race, deadline)
- * - Integrates with PathPlanner, Shuffleboard, and simulation
  *
  * ## Architecture
  *
@@ -18,7 +17,7 @@ import edu.wpi.first.wpilibj2.command.Subsystem
  * ```
  * User Intent → IntentCommand → Transitions State(s) → State Machine Executes
  *      ↓              ↓                  ↓                      ↓
- *  "Score L2"   [ScoreCoralIntent]  [Set states]     [Run motors continuously]
+ *  "Score L2" [ScoreCoralIntent]    [Set states]     [Run motors continuously]
  * ```
  *
  * The command sets subsystem states, then finishes when the goal is achieved.

@@ -34,23 +34,14 @@ The `pingu` package provides a comprehensive set of utilities for control, loggi
 * `PWMTalonSRXConfig`, `PWMSparkMaxConfig`, `TalonFXConfig`: Motor controller configs.
 * `Commangu`, `CommanguDsl`: Command binding utilities.
 
-=== `xyz.malefic.frc.statemachine`
+=== `xyz.malefic.frc.state`
 
-The `statemachine` package provides a comprehensive state machine framework that integrates with WPILib's command-based programming:
+The `state` package provides a comprehensive state machine framework that integrates with WPILib's command-based programming:
 
 * `StateMachine`: Generic state machine for managing subsystem states with history tracking.
 * `IntentCommand`: Base class for intent-based commands that coordinate multiple subsystems.
 * `intentCommand()`: DSL builder for creating simple intent commands without creating classes.
 * Extension functions for state-based command operations (`setStateAndWait`, `setState`, `waitUntil`, `runWhile`).
-
-This framework helps teams create clear, maintainable robot code by:
-
-* Keeping subsystems "smart" with explicit state machines
-* Coordinating multi-subsystem operations safely
-* Integrating seamlessly with WPILib's CommandScheduler
-* Making code self-documenting and testable
-
-For detailed documentation, see link:docs/STATE_MACHINES.md[State Machines Guide].
 
 === `xyz.malefic.frc.sub`
 

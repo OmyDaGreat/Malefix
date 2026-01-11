@@ -1,4 +1,4 @@
-package xyz.malefic.frc.statemachine
+package xyz.malefic.frc.state
 
 /**
  * Generic state machine for subsystems.
