@@ -34,6 +34,15 @@ The `pingu` package provides a comprehensive set of utilities for control, loggi
 * `PWMTalonSRXConfig`, `PWMSparkMaxConfig`, `TalonFXConfig`: Motor controller configs.
 * `Commangu`, `CommanguDsl`: Command binding utilities.
 
+=== `xyz.malefic.frc.state`
+
+The `state` package provides a comprehensive state machine framework that integrates with WPILib's command-based programming:
+
+* `StateMachine`: Generic state machine for managing subsystem states with history tracking.
+* `IntentCommand`: Base class for intent-based commands that coordinate multiple subsystems.
+* `intentCommand()`: DSL builder for creating simple intent commands without creating classes.
+* Extension functions for state-based command operations (`setStateAndWait`, `setState`, `waitUntil`, `runWhile`).
+
 === `xyz.malefic.frc.sub`
 
 This module includes classes related to PhotonVision, a vision processing library used in FRC:
@@ -56,10 +65,6 @@ The `emu` package contains classes for handling game controller inputs:
 This module contains pathfinding and trajectory utilities:
 
 * `LocalADStarAK`: Local pathfinding algorithm implementation.
-
-== Build and Deployment
-
-The project uses Gradle for build automation. The `.github/workflows/deploy-docs.yml` file defines a GitHub Actions workflow for building and deploying the project documentation to GitHub Pages.
 
 == Commit Guidelines
 

@@ -1,18 +1,14 @@
 [versions]
 kotlinter = "5.3.0"
-kermit = "2.0.8"
 dokka = "2.1.0"
 wpilib = "2026.1.1"
 pathplanner = "2025.2.7"
 advantagekit = "26.0.0"
 ctre-phoenix = "26.1.0"
-revlib = "2026.0.0"
 photonlib = "v2026.0.1"
 vanniktech = "0.35.0"
 
 [libraries]
-kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
-
 # WPILib
 wpilib-apriltag = { group = "edu.wpi.first.apriltag", name = "apriltag-java", version.ref = "wpilib" }
 wpilib-hal = { group = "edu.wpi.first.hal", name = "hal-java", version.ref = "wpilib" }
@@ -29,7 +25,6 @@ advantagekit-wpilibio = { group = "org.littletonrobotics.akit", name = "akit-wpi
 
 # Vendor libraries
 ctre-phoenix = { group = "com.ctre.phoenix6", name = "wpiapi-java", version.ref = "ctre-phoenix" }
-revlib = { group = "com.revrobotics.frc", name = "REVLib-java", version.ref = "revlib" }
 photonlib = { group = "org.photonvision", name = "photonlib-java", version.ref = "photonlib" }
 photontargeting = { group = "org.photonvision", name = "photontargeting-java", version.ref = "photonlib" }
 pathplanner = { group = "com.pathplanner.lib", name = "PathplannerLib-java", version.ref = "pathplanner" }

@@ -29,14 +29,12 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.kermit)
-    implementation(libs.pathplanner)
-    implementation(libs.bundles.wpilib)
     implementation(libs.photonlib)
-    implementation(libs.ctre.phoenix)
-    implementation(libs.photontargeting)
+    implementation(libs.pathplanner)
     implementation(kotlin("reflect"))
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(libs.ctre.phoenix)
+    implementation(libs.bundles.wpilib)
+    implementation(libs.photontargeting)
     implementation(libs.bundles.advantagekit)
     testImplementation(kotlin("test"))
 }
@@ -55,7 +53,7 @@ java {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(21)
 }
 
 mavenPublishing {
