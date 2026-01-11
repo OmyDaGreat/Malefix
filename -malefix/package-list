@@ -263,14 +263,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/pingu/#/PointingToDe
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/resetPosition/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/reset-position.html
 $dokka.location:xyz.malefic.frc.pingu.motor.talonfx/TonguFX/withOutput/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.talonfx/-tongu-f-x/with-output.html
 $dokka.location:xyz.malefic.frc.pingu.motor////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.POSITION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-p-o-s-i-t-i-o-n/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.PWM///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-p-w-m/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.VELOCITY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-v-e-l-o-c-i-t-y/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType.VOLTAGE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-malefix/xyz.malefic.frc.pingu.motor/-control-type/-v-o-l-t-a-g-e/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/index.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType/entries/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/entries.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType/valueOf/#kotlin.String/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/value-of.html
-$dokka.location:xyz.malefic.frc.pingu.motor/ControlType/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-control-type/values.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/configure/#kotlin.Function1[TypeParam(bounds=[xyz.malefic.frc.pingu.motor.MonguConfig[*]]),kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/configure.html
@@ -278,6 +270,31 @@ $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/movePWM/#kotlin.Double/Pointin
 $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/not/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu/not.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/applyTo/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/apply-to.html
+$dokka.location:xyz.malefic.frc.state////PointingToDeclaration/-malefix/xyz.malefic.frc.state/index.html
+$dokka.location:xyz.malefic.frc.state//intentCommand/#kotlin.String#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Boolean]#kotlin.Function1[kotlin.Boolean,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/intent-command.html
+$dokka.location:xyz.malefic.frc.state//runWhile/edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/run-while.html
+$dokka.location:xyz.malefic.frc.state//setState/TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem])#TypeParam(bounds=[kotlin.Any?])#kotlin.Function2[TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem]),TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/set-state.html
+$dokka.location:xyz.malefic.frc.state//setStateAndWait/TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem])#TypeParam(bounds=[kotlin.Any?])#kotlin.Function2[TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem]),TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Function1[TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem]),kotlin.Boolean]#kotlin.time.Duration/PointingToDeclaration/-malefix/xyz.malefic.frc.state/set-state-and-wait.html
+$dokka.location:xyz.malefic.frc.state//waitUntil/edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.time.Duration/PointingToDeclaration/-malefix/xyz.malefic.frc.state/wait-until.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand///PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/index.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/IntentCommand/#edu.wpi.first.wpilibj2.command.Subsystem/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/-intent-command.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/canExecute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/can-execute.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/end/#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/end.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/execute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/execute.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/initialize/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/initialize.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/isFinished/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/is-finished.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/isIntentComplete/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/is-intent-complete.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/onExecute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/on-execute.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/onFinish/#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/on-finish.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/onStart/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/on-start.html
+$dokka.location:xyz.malefic.frc.state/StateMachine///PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/index.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/StateMachine/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/-state-machine.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/clearHistory/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/clear-history.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/currentState/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/current-state.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/history/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/history.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/onTransition/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/on-transition.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/previousState/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/previous-state.html
+$dokka.location:xyz.malefic.frc.state/StateMachine/transitionTo/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-state-machine/transition-to.html
 $dokka.location:xyz.malefic.frc.sub////PointingToDeclaration/-malefix/xyz.malefic.frc.sub/index.html
 $dokka.location:xyz.malefic.frc.sub/PhotonModule.Companion///PointingToDeclaration/-malefix/xyz.malefic.frc.sub/-photon-module/-companion/index.html
 $dokka.location:xyz.malefic.frc.sub/PhotonModule///PointingToDeclaration/-malefix/xyz.malefic.frc.sub/-photon-module/index.html
@@ -304,4 +321,5 @@ xyz.malefic.frc.pingu.motor
 xyz.malefic.frc.pingu.motor.cansparkmax
 xyz.malefic.frc.pingu.motor.pwmtalonsrx
 xyz.malefic.frc.pingu.motor.talonfx
+xyz.malefic.frc.state
 xyz.malefic.frc.sub
