@@ -7,9 +7,10 @@ import edu.wpi.first.wpilibj2.command.InstantCommand
 import edu.wpi.first.wpilibj2.command.SubsystemBase
 import xyz.malefic.frc.emu.Button
 import xyz.malefic.frc.extension.Kommand.cmd
+import xyz.malefic.frc.state.IntentCommand
 
 /**
- * [Bingu] provides a centralized, declarative system for binding [XboxController] buttons to WPILib [Command]s.
+ * [Bingu] provides a centralized, declarative system for binding [XboxController] buttons to WPILib [Command]s or [IntentCommand]s.
  *
  * This object is designed to simplify the process of mapping controller inputs to robot actions, supporting both
  * simple and complex command scheduling. It contains a modern DSL-based binding for clarity, flexibility, and maintainability.

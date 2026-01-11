@@ -66,10 +66,6 @@ This module contains pathfinding and trajectory utilities:
 
 * `LocalADStarAK`: Local pathfinding algorithm implementation.
 
-== Build and Deployment
-
-The project uses Gradle for build automation. The `.github/workflows/deploy-docs.yml` file defines a GitHub Actions workflow for building and deploying the project documentation to GitHub Pages.
-
 == Commit Guidelines
 
 The `.kommit.yaml` file defines the commit message conventions for the project, including types, scopes, and options for allowing custom scopes and breaking changes.
