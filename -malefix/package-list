@@ -75,12 +75,14 @@ $dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.male
 $dokka.location:xyz.malefic.frc.extension//getPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-pingu.html
 $dokka.location:xyz.malefic.frc.extension//hasTargets/kotlin.collections.List[kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]]#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/has-targets.html
 $dokka.location:xyz.malefic.frc.extension//inchesToMeters/kotlin.Double#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/inches-to-meters.html
+$dokka.location:xyz.malefic.frc.extension//invoke/edu.wpi.first.wpilibj2.command.Command#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/invoke.html
 $dokka.location:xyz.malefic.frc.extension//layout/edu.wpi.first.apriltag.AprilTagFields#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/layout.html
 $dokka.location:xyz.malefic.frc.extension//leftStickPosition/edu.wpi.first.wpilibj.XboxController#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/left-stick-position.html
 $dokka.location:xyz.malefic.frc.extension//metersToInches/kotlin.Double#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/meters-to-inches.html
 $dokka.location:xyz.malefic.frc.extension//plus/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/plus.html
 $dokka.location:xyz.malefic.frc.extension//rightStickPosition/edu.wpi.first.wpilibj.XboxController#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/right-stick-position.html
 $dokka.location:xyz.malefic.frc.extension//rotated180/edu.wpi.first.math.geometry.Pose2d#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/rotated180.html
+$dokka.location:xyz.malefic.frc.extension//scheduleIf/edu.wpi.first.wpilibj2.command.Command#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/schedule-if.html
 $dokka.location:xyz.malefic.frc.extension//setPingu/com.ctre.phoenix6.configs.TalonFXConfiguration#xyz.malefic.frc.pingu.control.Pingu/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/set-pingu.html
 $dokka.location:xyz.malefic.frc.extension//to3d/edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/to3d.html
 $dokka.location:xyz.malefic.frc.extension//updateStdDev/kotlin.Pair[xyz.malefic.frc.sub.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#java.util.Optional[org.photonvision.EstimatedRobotPose]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/update-std-dev.html
@@ -97,6 +99,7 @@ $dokka.location:xyz.malefic.frc.extension/Kommand///PointingToDeclaration/-male
 $dokka.location:xyz.malefic.frc.extension/Kommand/cancel/#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/cancel.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/cmd/#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/cmd.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/parallel/#kotlin.Function1[xyz.malefic.frc.extension.Kommand.ParallelBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/parallel.html
+$dokka.location:xyz.malefic.frc.extension/Kommand/runUntil/#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/run-until.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/sequential/#kotlin.Function1[xyz.malefic.frc.extension.Kommand.SequentialBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/sequential.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/waitFor/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/wait-for.html
 $dokka.location:xyz.malefic.frc.extension/Kommand/waitUntil/#kotlin.Function0[kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/-kommand/wait-until.html
@@ -201,8 +204,7 @@ $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/Engu/#kotlin.Int#com.ctre.pho
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configure/#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configure.html
 $dokka.location:xyz.malefic.frc.pingu.log////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/index.html
-$dokka.location:xyz.malefic.frc.pingu.log/LogPingu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/index.html
-$dokka.location:xyz.malefic.frc.pingu.log/LogPingu/log/kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/-log-pingu/log.html
+$dokka.location:xyz.malefic.frc.pingu.log//log/kotlin.String#kotlin.Any/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.log/log.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor.cansparkmax/PWMSparkMaxConfig/PWMSparkMaxConfig/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor.cansparkmax/-p-w-m-spark-max-config/-p-w-m-spark-max-config.html
@@ -272,10 +274,6 @@ $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/applyTo/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/apply-to.html
 $dokka.location:xyz.malefic.frc.state////PointingToDeclaration/-malefix/xyz.malefic.frc.state/index.html
 $dokka.location:xyz.malefic.frc.state//intentCommand/#kotlin.String#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Boolean]#kotlin.Function1[kotlin.Boolean,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/intent-command.html
-$dokka.location:xyz.malefic.frc.state//runWhile/edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/run-while.html
-$dokka.location:xyz.malefic.frc.state//setState/TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem])#TypeParam(bounds=[kotlin.Any?])#kotlin.Function2[TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem]),TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/set-state.html
-$dokka.location:xyz.malefic.frc.state//setStateAndWait/TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem])#TypeParam(bounds=[kotlin.Any?])#kotlin.Function2[TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem]),TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Function1[TypeParam(bounds=[edu.wpi.first.wpilibj2.command.Subsystem]),kotlin.Boolean]#kotlin.time.Duration/PointingToDeclaration/-malefix/xyz.malefic.frc.state/set-state-and-wait.html
-$dokka.location:xyz.malefic.frc.state//waitUntil/edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.time.Duration/PointingToDeclaration/-malefix/xyz.malefic.frc.state/wait-until.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand///PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/index.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand/IntentCommand/#edu.wpi.first.wpilibj2.command.Subsystem/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/-intent-command.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand/canExecute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/can-execute.html
