@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import edu.wpi.first.wpilibj2.command.InstantCommand
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup
+import edu.wpi.first.wpilibj2.command.ParallelRaceGroup
+import edu.wpi.first.wpilibj2.command.RunCommand
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup
 import edu.wpi.first.wpilibj2.command.Subsystem
 import edu.wpi.first.wpilibj2.command.WaitCommand
@@ -24,6 +26,19 @@ object Kommand {
         vararg reqs: Subsystem,
         function: () -> Unit,
     ) = InstantCommand(function, *reqs)
+
+    /**
+     * Creates a [RunCommand] that runs the given function.
+     *
+     * @param function The function to run.
+     * @return A [RunCommand] that runs the given function.
+     */
+    @JvmStatic
+    fun runUntil(
+        vararg reqs: Subsystem,
+        condition: () -> Boolean,
+        function: () -> Unit,
+    ): ParallelRaceGroup = RunCommand(function, *reqs).until { condition() }
 
     /**
      * Creates a [WaitCommand] to wait for a specified number of seconds.

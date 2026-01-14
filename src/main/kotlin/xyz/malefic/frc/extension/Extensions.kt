@@ -10,6 +10,8 @@ import edu.wpi.first.math.geometry.Rotation3d
 import edu.wpi.first.math.util.Units.inchesToMeters
 import edu.wpi.first.math.util.Units.metersToInches
 import edu.wpi.first.wpilibj.XboxController
+import edu.wpi.first.wpilibj2.command.Command
+import edu.wpi.first.wpilibj2.command.CommandScheduler
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
 import xyz.malefic.frc.pingu.control.Pingu
@@ -208,3 +210,22 @@ fun XboxController.rightStickPosition(
     val y = if (abs(rightY) < yDeadzone) 0.0 else rightY
     return Pair(x, y)
 }
+
+/**
+ * Schedule this command when the provided [condition] is true.
+ *
+ * @param condition If true, the command will be scheduled using the global [CommandScheduler].
+ */
+fun Command.scheduleIf(condition: Boolean) {
+    if (condition) {
+        this()
+    }
+}
+
+/**
+ * Operator invoke implementation for [Command].
+ *
+ * Schedules this command using the global [CommandScheduler]. Allows calling
+ * the command with a function-call style: `myCommand()`.
+ */
+operator fun Command.invoke() = CommandScheduler.getInstance().schedule(this)

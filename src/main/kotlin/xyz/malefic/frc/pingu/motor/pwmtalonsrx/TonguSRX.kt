@@ -12,7 +12,7 @@ import xyz.malefic.frc.pingu.motor.Mongu
  * ## Usage Examples:
  * ```kotlin
  * // Create a PWMTalonSRX motor
- * val motor = TalonuSRX(0)
+ * val motor = TonguSRX(0)
  * motor.configure {
  *     inverted = true
  *     deadbandElimination = false
