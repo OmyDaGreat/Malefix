@@ -41,7 +41,6 @@ The `state` package provides a comprehensive state machine framework that integr
 * `StateMachine`: Generic state machine for managing subsystem states with history tracking.
 * `IntentCommand`: Base class for intent-based commands that coordinate multiple subsystems.
 * `intentCommand()`: DSL builder for creating simple intent commands without creating classes.
-* Extension functions for state-based command operations (`setStateAndWait`, `setState`, `waitUntil`, `runWhile`).
 
 === `xyz.malefic.frc.sub`
 
