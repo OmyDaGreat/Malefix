@@ -156,18 +156,14 @@ class TonguFX<T : ControlRequest>(
      *
      * @param value The duty cycle from -1.0 to 1.0.
      */
-    override fun movePWM(value: Double) {
-        set(value)
-    }
+    override fun movePWM(value: Double) = set(value)
 
     /**
      * Sets the motor control using a [ControlRequest].
      *
      * @param double The output value to set in the control request.
      */
-    fun control(double: Double) {
-        this.setControl(controlRequest.withOutput(double))
-    }
+    fun control(double: Double): StatusCode = this.setControl(controlRequest.withOutput(double))
 
     /**
      * Resets the position of the [TonguFX] motor to the specified value.

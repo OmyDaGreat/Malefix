@@ -121,7 +121,7 @@ class LocalADStarAK : Pathfinder {
     private class ADStarIO : LoggableInputs {
         var adStar: LocalADStar = LocalADStar()
         var isNewPathAvailable: Boolean = false
-        var currentPathPoints: MutableList<PathPoint> = mutableListOf<PathPoint>()
+        var currentPathPoints: MutableList<PathPoint> = mutableListOf()
 
         /**
          * Logs the current state of the pathfinding algorithm to the provided [LogTable].
@@ -152,7 +152,7 @@ class LocalADStarAK : Pathfinder {
 
             val pointsLogged = table["CurrentPathPoints"].getDoubleArray(DoubleArray(0))
 
-            val pathPoints: MutableList<PathPoint> = ArrayList<PathPoint>(pointsLogged.size / 2)
+            val pathPoints: MutableList<PathPoint> = ArrayList(pointsLogged.size / 2)
             var i = 0
             while (i < pointsLogged.size) {
                 pathPoints.add(
@@ -189,7 +189,7 @@ class LocalADStarAK : Pathfinder {
             if (currentPath != null) {
                 currentPathPoints = currentPath.allPathPoints
             } else {
-                currentPathPoints = mutableListOf<PathPoint>()
+                currentPathPoints = mutableListOf()
             }
         }
     }
