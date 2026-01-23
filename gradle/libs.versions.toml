@@ -1,7 +1,7 @@
 [versions]
 kotlinter = "5.3.0"
 dokka = "2.1.0"
-wpilib = "2026.1.1"
+wpilib = "2026.2.1"
 pathplanner = "2025.2.7"
 advantagekit = "26.0.0"
 ctre-phoenix = "26.1.0"
