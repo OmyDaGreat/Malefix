@@ -6,7 +6,7 @@ pathplanner = "2025.2.7"
 advantagekit = "26.0.0"
 ctre-phoenix = "26.1.0"
 photonlib = "v2026.1.1"
-vanniktech = "0.35.0"
+vanniktech = "0.36.0"
 
 [libraries]
 # WPILib
