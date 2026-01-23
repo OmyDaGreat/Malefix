@@ -1,5 +1,5 @@
 [versions]
-kotlinter = "5.3.0"
+kotlinter = "5.4.0"
 dokka = "2.1.0"
 wpilib = "2026.2.1"
 pathplanner = "2025.2.7"
