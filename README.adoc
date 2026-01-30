@@ -13,6 +13,17 @@ This module contains extension functions and utilities for various FRC classes. 
 * PID value helpers.
 * PhotonVision result helpers.
 * `Kommand`: Utilities for command-based programming.
+* Swerve drive DSL and extension functions.
+
+=== `xyz.malefic.frc.swerve`
+
+The `swerve` package provides a complete swerve drive implementation with advanced features:
+
+* `SwerveModule`: Individual swerve module with drive and steer motors using TalonFX and CANcoder.
+* `SwerveDrive`: Complete swerve drive subsystem with pose estimation, field-oriented driving, and vision integration.
+* `TeleopSwerve`: Teleop command with input shaping, deadband, and slew rate limiting.
+* `LockSwerve`, `ResetGyro`, `DriveToAngle`, `TurnToAngle`: Utility commands for various swerve operations.
+* DSL extensions for easy configuration and command creation.
 
 === `xyz.malefic.frc.pingu`
 
@@ -25,7 +36,7 @@ The `pingu` package provides a comprehensive set of utilities for control, loggi
 * `AlertPingu`: Monitors CTRE Phoenix 6 devices and raises alerts.
 * `Bingu`: Binds Xbox controller buttons to commands.
 * `LogPingu`: Logging utilities.
-* `Engu`: Encoder utilities.
+* `Engu`: Enhanced CANcoder wrapper with swerve-optimized utilities, angle conversions, and calibration methods.
 * `Mongu`: Common interface implemented by motor classes for unified control.
 * `TonguFX`: TalonFX motor class that extends TalonFX and implements Mongu interface with direct control access.
 * `SparkuMax`: PWMSparkMax motor class that extends PWMSparkMax and implements Mongu interface.
