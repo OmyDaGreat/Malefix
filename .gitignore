@@ -39,7 +39,10 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store.qodo
+.DS_Store
 
 ### Publishing ###
 user_token.xml
+
+### Copilot ###
+Task.adoc
