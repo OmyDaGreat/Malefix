@@ -8,6 +8,8 @@ import edu.wpi.first.math.geometry.Pose3d
 import edu.wpi.first.math.geometry.Transform3d
 import edu.wpi.first.math.numbers.N1
 import edu.wpi.first.math.numbers.N3
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Angle
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.PhotonCamera
 import org.photonvision.PhotonPoseEstimator
@@ -84,18 +86,18 @@ class PhotonModule(
         return results.isNotEmpty() && results.last().hasTargets()
     }
 
-    override fun getTargetHorizontalOffset(): Double? {
+    override fun getTargetHorizontalOffset(): Angle? {
         val results = photonCamera.getAllUnreadResults()
         if (results.isEmpty()) return null
         val result = results.last()
-        return if (result.hasTargets()) result.bestTarget.yaw else null
+        return if (result.hasTargets()) Units.Degrees.of(result.bestTarget.yaw) else null
     }
 
-    override fun getTargetVerticalOffset(): Double? {
+    override fun getTargetVerticalOffset(): Angle? {
         val results = photonCamera.getAllUnreadResults()
         if (results.isEmpty()) return null
         val result = results.last()
-        return if (result.hasTargets()) result.bestTarget.pitch else null
+        return if (result.hasTargets()) Units.Degrees.of(result.bestTarget.pitch) else null
     }
 
     override fun getLatestMeasurement(referencePose: Pose2d?): VisionMeasurement? {
@@ -113,10 +115,10 @@ class PhotonModule(
 
         return VisionMeasurement(
             pose = estimatedPose.estimatedPose.toPose2d(),
-            timestampSeconds = estimatedPose.timestampSeconds,
+            timestamp = Units.Seconds.of(estimatedPose.timestampSeconds),
             targetsUsed = estimatedPose.targetsUsed.size,
             stdDevs = currentStdDevs,
-            averageTagDistance = calculateAverageDistance(estimatedPose),
+            averageTagDistance = Units.Meters.of(calculateAverageDistance(estimatedPose)),
             ambiguity = estimatedPose.targetsUsed.minOfOrNull { it.poseAmbiguity } ?: 0.0,
         )
     }
@@ -139,10 +141,10 @@ class PhotonModule(
 
             VisionMeasurement(
                 pose = estimatedPose.estimatedPose.toPose2d(),
-                timestampSeconds = estimatedPose.timestampSeconds,
+                timestamp = Units.Seconds.of(estimatedPose.timestampSeconds),
                 targetsUsed = estimatedPose.targetsUsed.size,
                 stdDevs = currentStdDevs,
-                averageTagDistance = calculateAverageDistance(estimatedPose),
+                averageTagDistance = Units.Meters.of(calculateAverageDistance(estimatedPose)),
                 ambiguity = estimatedPose.targetsUsed.minOfOrNull { it.poseAmbiguity } ?: 0.0,
             )
         }

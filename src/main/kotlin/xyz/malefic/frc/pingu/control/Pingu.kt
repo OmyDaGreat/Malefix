@@ -6,12 +6,18 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 /**
  * Data class representing a [Pingu] with PID controller parameters.
  *
- * @property p Proportional gain.
- * @property i Integral gain.
- * @property d Derivative gain.
- * @property v Velocity feedforward term.
- * @property s Static feedforward term.
- * @property g Gravity feedforward term.
+ * Note: PID gains (p, i, d) are unitless/dimensionless.
+ * Feedforward terms depend on the controlled variable:
+ * - For linear systems: [v] is in volts/(meter/second), [s] is in volts
+ * - For rotational systems: [v] is in volts/(radian/second), [s] is in volts
+ * - [g] is in volts for gravity compensation
+ *
+ * @property p Proportional gain (unitless).
+ * @property i Integral gain (unitless).
+ * @property d Derivative gain (unitless).
+ * @property v Velocity feedforward term (units depend on system - see class docs).
+ * @property s Static feedforward term (volts).
+ * @property g Gravity feedforward term (volts).
  * @property pidController The [PIDController] instance with the current PID parameters.
  */
 data class Pingu(

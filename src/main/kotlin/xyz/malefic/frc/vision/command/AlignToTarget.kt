@@ -1,6 +1,7 @@
 package xyz.malefic.frc.vision.command
 
 import edu.wpi.first.math.controller.PIDController
+import edu.wpi.first.units.Units
 import edu.wpi.first.wpilibj2.command.Command
 import xyz.malefic.frc.swerve.SwerveDrive
 import xyz.malefic.frc.vision.Camera
@@ -191,5 +192,5 @@ class AlignToTarget(
      *
      * @return Horizontal offset in degrees, or null if no target is visible.
      */
-    private fun getHorizontalOffset(): Double? = camera.getTargetHorizontalOffset()
+    private fun getHorizontalOffset(): Double? = camera.getTargetHorizontalOffset()?.`in`(Units.Degrees)
 }

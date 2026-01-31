@@ -7,13 +7,18 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 /**
  * Data class representing a [ProfiledPingu] with PID controller parameters and [TrapezoidProfile.Constraints] for motion profiling.
  *
- * @property p Proportional gain.
- * @property i Integral gain.
- * @property d Derivative gain.
- * @property v Optional velocity feedforward term.
- * @property s Optional static feedforward term.
- * @property g Optional gravity feedforward term.
- * @property profile Constraints for the [TrapezoidProfile].
+ * Note: PID gains (p, i, d) are unitless/dimensionless.
+ * Feedforward terms and profile constraints depend on the controlled variable:
+ * - For linear systems: velocities in meters/second, accelerations in meters/second²
+ * - For rotational systems: velocities in radians/second, accelerations in radians/second²
+ *
+ * @property p Proportional gain (unitless).
+ * @property i Integral gain (unitless).
+ * @property d Derivative gain (unitless).
+ * @property v Optional velocity feedforward term (units depend on system).
+ * @property s Optional static feedforward term (volts).
+ * @property g Optional gravity feedforward term (volts).
+ * @property profile Constraints for the [TrapezoidProfile] (velocity and acceleration units depend on system).
  * @property profiledPIDController The [ProfiledPIDController] instance with the current PID parameters and profile constraints.
  * @property pingu The [Pingu] instance with the current PID and feedforward parameters.
  */

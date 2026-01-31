@@ -1,5 +1,6 @@
 package xyz.malefic.frc.vision
 
+import edu.wpi.first.math.VecBuilder
 import edu.wpi.first.math.geometry.Pose2d
 import edu.wpi.first.math.geometry.Pose3d
 import edu.wpi.first.math.geometry.Rotation2d
@@ -9,6 +10,8 @@ import edu.wpi.first.math.geometry.Translation2d
 import edu.wpi.first.math.geometry.Translation3d
 import edu.wpi.first.networktables.NetworkTable
 import edu.wpi.first.networktables.NetworkTableInstance
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Angle
 
 /**
  * The [LimeModule] class represents a Limelight camera with NetworkTables integration.
@@ -126,9 +129,9 @@ class LimeModule(
     // Camera interface implementation
     override fun hasTarget(): Boolean = table.getEntry("tv").getDouble(0.0) == 1.0
 
-    override fun getTargetHorizontalOffset(): Double? = if (hasTarget()) getTx() else null
+    override fun getTargetHorizontalOffset(): Angle? = if (hasTarget()) Units.Degrees.of(getTx()) else null
 
-    override fun getTargetVerticalOffset(): Double? = if (hasTarget()) getTy() else null
+    override fun getTargetVerticalOffset(): Angle? = if (hasTarget()) Units.Degrees.of(getTy()) else null
 
     override fun getLatestMeasurement(referencePose: Pose2d?): VisionMeasurement? {
         if (!hasTarget()) return null
@@ -139,16 +142,14 @@ class LimeModule(
 
         // Limelight doesn't provide detailed target info, so use defaults
         // Could be improved with json parsing for detailed target data
-        val stdDevs =
-            edu.wpi.first.math.VecBuilder
-                .fill(0.7, 0.7, 0.5)
+        val stdDevs = VecBuilder.fill(0.7, 0.7, 0.5)
 
         return VisionMeasurement(
             pose = botPose,
-            timestampSeconds = timestamp,
+            timestamp = Units.Seconds.of(timestamp),
             targetsUsed = if (hasTarget()) 1 else 0,
             stdDevs = stdDevs,
-            averageTagDistance = 0.0, // Not directly available from Limelight
+            averageTagDistance = Units.Meters.of(0.0), // Not directly available from Limelight
             ambiguity = 0.0, // Not directly available from basic NetworkTables
         )
     }

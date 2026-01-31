@@ -6,6 +6,7 @@ import com.ctre.phoenix6.controls.ControlRequest
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
+import edu.wpi.first.units.Units
 import xyz.malefic.frc.pingu.motor.Mongu
 
 /**
@@ -144,7 +145,7 @@ class TonguFX<T : ControlRequest>(
             this.dutyCycleNeutralDeadband = 0.001
 
             // Current Limits
-            this.currentLimits = 40.79 to 40.79
+            this.currentLimits = Units.Amps.of(40.79) to Units.Amps.of(40.79)
 
             block()
         }
