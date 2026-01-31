@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PhotonModule</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Malefix
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+2.6.2        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Malefix
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Malefix::xyz.malefic.frc.vision/PhotonModule///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Malefix</a><span class="delimiter">/</span><a href="../index.html">xyz.malefic.frc.vision</a><span class="delimiter">/</span><span class="current">PhotonModule</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Photon</span><wbr></wbr><span><span>Module</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PhotonModule</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">cameraName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>cameraPos<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math.geometry/Transform3d///PointingToDeclaration/">Transform3d</span><span class="token punctuation">, </span></span><span class="parameter ">fieldLayout<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.apriltag/AprilTagFieldLayout///PointingToDeclaration/">AprilTagFieldLayout</span></span></span><span class="token punctuation">)</span> : <a href="../-camera/index.html">Camera</a></div><p class="paragraph">The <a href="index.html">PhotonModule</a> class represents a single PhotonVision camera setup with its associated <span data-unresolved-link="org.photonvision/PhotonPoseEstimator///PointingToDeclaration/">PhotonPoseEstimator</span> and position information.</p><p class="paragraph">Integrates with WPILib 2026 vision estimation APIs for improved pose accuracy. Implements the <a href="../-camera/index.html">Camera</a> interface for unified vision system integration.</p><h2 class="">Usage Example:</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val camera = PhotonModule(<br>    cameraName = &quot;frontCamera&quot;,<br>    cameraPos = Transform3d(Translation3d(0.3, 0.0, 0.2), Rotation3d(0.0, Math.toRadians(-15.0), 0.0)),<br>    fieldLayout = AprilTagFields.k2024Crescendo.loadAprilTagLayoutField()<br>)<br><br>// Get latest measurement<br>val measurement = camera.getLatestMeasurement()<br>measurement?.let {<br>    swerveDrive.addVisionMeasurement(it.pose, it.timestampSeconds, it.stdDevs)<br>}</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="836516111%2FConstructors%2F-251573632" anchor-label="PhotonModule" id="836516111%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-photon-module.html"><span>Photon</span><wbr></wbr><span><span>Module</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="836516111%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">cameraName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">cameraPos<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math.geometry/Transform3d///PointingToDeclaration/">Transform3d</span><span class="token punctuation">, </span></span><span class="parameter ">fieldLayout<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.apriltag/AprilTagFieldLayout///PointingToDeclaration/">AprilTagFieldLayout</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-123605685%2FClasslikes%2F-251573632" anchor-label="Companion" id="-123605685%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-123605685%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-489599499%2FProperties%2F-251573632" anchor-label="cameraPos" id="-489599499%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="camera-pos.html"><span>camera</span><wbr></wbr><span><span>Pos</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-489599499%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="camera-pos.html">cameraPos</a><span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math.geometry/Transform3d///PointingToDeclaration/">Transform3d</span></div><div class="brief "><p class="paragraph">The position of the camera relative to robot center as a <span data-unresolved-link="edu.wpi.first.math.geometry/Transform3d///PointingToDeclaration/">Transform3d</span>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="848167118%2FProperties%2F-251573632" anchor-label="currentStdDevs" id="848167118%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="current-std-devs.html"><span>current</span><wbr></wbr><span>Std</span><wbr></wbr><span><span>Devs</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="848167118%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="current-std-devs.html">currentStdDevs</a><span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math/Matrix///PointingToDeclaration/">Matrix</span><span class="token operator">&lt;</span><span data-unresolved-link="edu.wpi.first.math.numbers/N3///PointingToDeclaration/">N3</span><span class="token punctuation">, </span><span data-unresolved-link="edu.wpi.first.math.numbers/N1///PointingToDeclaration/">N1</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">The current standard deviations for pose estimation as a <span data-unresolved-link="edu.wpi.first.math/Matrix///PointingToDeclaration/">Matrix</span>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="155042539%2FProperties%2F-251573632" anchor-label="name" id="155042539%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="name.html"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="155042539%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The name of this camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1729934747%2FFunctions%2F-251573632" anchor-label="getAllUnreadMeasurements" id="-1729934747%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-all-unread-measurements.html"><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span>Unread</span><wbr></wbr><span><span>Measurements</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1729934747%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-all-unread-measurements.html"><span class="token function">getAllUnreadMeasurements</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../-vision-measurement/index.html">VisionMeasurement</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets all unprocessed vision measurements since the last call.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1911808472%2FFunctions%2F-251573632" anchor-label="getAllUnreadResults" id="-1911808472%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-all-unread-results.html"><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span>Unread</span><wbr></wbr><span><span>Results</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1911808472%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-all-unread-results.html"><span class="token function">getAllUnreadResults</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span data-unresolved-link="org.photonvision.targeting/PhotonPipelineResult///PointingToDeclaration/">PhotonPipelineResult</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets all unread <span data-unresolved-link="org.photonvision.targeting/PhotonPipelineResult///PointingToDeclaration/">PhotonPipelineResult</span>s from the <span data-unresolved-link="org.photonvision/PhotonCamera///PointingToDeclaration/">PhotonCamera</span>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="676755961%2FFunctions%2F-251573632" anchor-label="getLatestMeasurement" id="676755961%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-latest-measurement.html"><span>get</span><wbr></wbr><span>Latest</span><wbr></wbr><span><span>Measurement</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="676755961%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-latest-measurement.html"><span class="token function">getLatestMeasurement</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">referencePose<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math.geometry/Pose2d///PointingToDeclaration/">Pose2d</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-vision-measurement/index.html">VisionMeasurement</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Gets the latest vision measurement from the camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1056400138%2FFunctions%2F-251573632" anchor-label="getLatestResult" id="1056400138%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-latest-result.html"><span>get</span><wbr></wbr><span>Latest</span><wbr></wbr><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1056400138%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-latest-result.html"><span class="token function">getLatestResult</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.photonvision.targeting/PhotonPipelineResult///PointingToDeclaration/">PhotonPipelineResult</span></div><div class="brief "><p class="paragraph">Gets the latest <span data-unresolved-link="org.photonvision.targeting/PhotonPipelineResult///PointingToDeclaration/">PhotonPipelineResult</span> from the camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1247741114%2FFunctions%2F-251573632" anchor-label="getTargetHorizontalOffset" id="-1247741114%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-target-horizontal-offset.html"><span>get</span><wbr></wbr><span>Target</span><wbr></wbr><span>Horizontal</span><wbr></wbr><span><span>Offset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1247741114%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-target-horizontal-offset.html"><span class="token function">getTargetHorizontalOffset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Gets the horizontal offset to the currently tracked target in degrees.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="189502900%2FFunctions%2F-251573632" anchor-label="getTargetVerticalOffset" id="189502900%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-target-vertical-offset.html"><span>get</span><wbr></wbr><span>Target</span><wbr></wbr><span>Vertical</span><wbr></wbr><span><span>Offset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="189502900%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-target-vertical-offset.html"><span class="token function">getTargetVerticalOffset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Gets the vertical offset to the currently tracked target in degrees.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-60198503%2FFunctions%2F-251573632" anchor-label="hasTarget" id="-60198503%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-target.html"><span>has</span><wbr></wbr><span><span>Target</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-60198503%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="has-target.html"><span class="token function">hasTarget</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Checks if the camera currently sees any valid targets.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="764547645%2FFunctions%2F-251573632" anchor-label="updateEstimatedStdDevs" id="764547645%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-estimated-std-devs.html"><span>update</span><wbr></wbr><span>Estimated</span><wbr></wbr><span>Std</span><wbr></wbr><span><span>Devs</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="764547645%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="update-estimated-std-devs.html"><span class="token function">updateEstimatedStdDevs</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">result<span class="token operator">: </span><span data-unresolved-link="org.photonvision.targeting/PhotonPipelineResult///PointingToDeclaration/">PhotonPipelineResult</span><span class="token punctuation">, </span></span><span class="parameter ">estimatedPose<span class="token operator">: </span><span data-unresolved-link="org.photonvision/EstimatedRobotPose///PointingToDeclaration/">EstimatedRobotPose</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">singleTargetVector<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math/Matrix///PointingToDeclaration/">Matrix</span><span class="token operator">&lt;</span><span data-unresolved-link="edu.wpi.first.math.numbers/N3///PointingToDeclaration/">N3</span><span class="token punctuation">, </span><span data-unresolved-link="edu.wpi.first.math.numbers/N1///PointingToDeclaration/">N1</span><span class="token operator">&gt;</span><span class="token operator"> = </span>DEFAULT_SINGLE_TARGET_STD_DEVS<span class="token punctuation">, </span></span><span class="parameter ">multiTargetVector<span class="token operator">: </span><span data-unresolved-link="edu.wpi.first.math/Matrix///PointingToDeclaration/">Matrix</span><span class="token operator">&lt;</span><span data-unresolved-link="edu.wpi.first.math.numbers/N3///PointingToDeclaration/">N3</span><span class="token punctuation">, </span><span data-unresolved-link="edu.wpi.first.math.numbers/N1///PointingToDeclaration/">N1</span><span class="token operator">&gt;</span><span class="token operator"> = </span>DEFAULT_MULTI_TARGET_STD_DEVS</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Updates the estimated standard deviations based on the provided result.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>&copy; 2025 Om Gupta &lt;ogupta4242@gmail.com&gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
