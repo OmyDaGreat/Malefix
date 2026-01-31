@@ -79,7 +79,7 @@ $dokka.location:xyz.malefic.frc.extension//getPingu/com.ctre.phoenix6.configs.Ta
 $dokka.location:xyz.malefic.frc.extension//hasTargets/kotlin.collections.List[kotlin.Pair[xyz.malefic.frc.vision.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]]#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/has-targets.html
 $dokka.location:xyz.malefic.frc.extension//inchesToMeters/kotlin.Double#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/inches-to-meters.html
 $dokka.location:xyz.malefic.frc.extension//invoke/edu.wpi.first.wpilibj2.command.Command#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/invoke.html
-$dokka.location:xyz.malefic.frc.extension//isAtAngle/xyz.malefic.frc.pingu.encoder.Engu#edu.wpi.first.math.geometry.Rotation2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/is-at-angle.html
+$dokka.location:xyz.malefic.frc.extension//isAtAngle/xyz.malefic.frc.pingu.encoder.Engu#edu.wpi.first.math.geometry.Rotation2d#edu.wpi.first.units.measure.Angle/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/is-at-angle.html
 $dokka.location:xyz.malefic.frc.extension//layout/edu.wpi.first.apriltag.AprilTagFields#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/layout.html
 $dokka.location:xyz.malefic.frc.extension//leftStickPosition/edu.wpi.first.wpilibj.XboxController#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/left-stick-position.html
 $dokka.location:xyz.malefic.frc.extension//lockCommand/xyz.malefic.frc.swerve.SwerveDrive#/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/lock-command.html
@@ -227,6 +227,8 @@ $dokka.location:xyz.malefic.frc.pingu.control/ProfiledPingu/v/#/PointingToDeclar
 $dokka.location:xyz.malefic.frc.pingu.encoder////PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/index.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/index.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/Engu/#kotlin.Int#com.ctre.phoenix6.CANBus/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/-engu.html
+$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/angle/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/angle.html
+$dokka.location:xyz.malefic.frc.pingu.encoder/Engu/angularVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/angular-velocity.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/calibrateToCurrentPosition/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/calibrate-to-current-position.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configuration/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configuration.html
 $dokka.location:xyz.malefic.frc.pingu.encoder/Engu/configure/#kotlin.Function1[com.ctre.phoenix6.configs.CANcoderConfiguration,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.encoder/-engu/configure.html
@@ -382,16 +384,16 @@ $dokka.location:xyz.malefic.frc.swerve.command/TurnToAngle/initialize/#/Pointing
 $dokka.location:xyz.malefic.frc.swerve.command/TurnToAngle/isFinished/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve.command/-turn-to-angle/is-finished.html
 $dokka.location:xyz.malefic.frc.swerve////PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/index.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config///PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/index.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/Config/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/-config.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/Config/#edu.wpi.first.units.measure.Distance#edu.wpi.first.units.measure.Distance#edu.wpi.first.units.measure.LinearVelocity#edu.wpi.first.units.measure.AngularVelocity#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/-config.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/driveDeadband/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/drive-deadband.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/maxAngularVelocityRadPS/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/max-angular-velocity-rad-p-s.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/maxLinearVelocityMPS/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/max-linear-velocity-m-p-s.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/maxAngularVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/max-angular-velocity.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/maxLinearVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/max-linear-velocity.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/rotationDeadband/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/rotation-deadband.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/trackWidthMeters/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/track-width-meters.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/wheelBaseMeters/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/wheel-base-meters.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/trackWidth/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/track-width.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive.Config/wheelBase/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-config/wheel-base.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive///PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/index.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/SwerveDrive/#kotlin.Int#xyz.malefic.frc.swerve.SwerveModule#xyz.malefic.frc.swerve.SwerveModule#xyz.malefic.frc.swerve.SwerveModule#xyz.malefic.frc.swerve.SwerveModule#com.ctre.phoenix6.CANBus/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/-swerve-drive.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveDrive/addVisionMeasurement/#edu.wpi.first.math.geometry.Pose2d#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/add-vision-measurement.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive/addVisionMeasurement/#edu.wpi.first.math.geometry.Pose2d#edu.wpi.first.units.measure.Time/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/add-vision-measurement.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/configure/#kotlin.Function1[xyz.malefic.frc.swerve.SwerveDrive.Config,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/configure.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/drive/#edu.wpi.first.math.kinematics.ChassisSpeeds#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/drive.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/drive/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/drive.html
@@ -399,7 +401,9 @@ $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/driveCommand/#kotlin.Function
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/driveToPoseCommand/#edu.wpi.first.math.geometry.Pose2d/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/drive-to-pose-command.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getChassisSpeeds/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-chassis-speeds.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getGyroRotation/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-gyro-rotation.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getMaxAngularVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-max-angular-velocity.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getMaxAngularVelocityRadPS/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-max-angular-velocity-rad-p-s.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getMaxLinearVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-max-linear-velocity.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getMaxLinearVelocityMPS/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-max-linear-velocity-m-p-s.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getModulePositions/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-module-positions.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/getModuleStates/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/get-module-states.html
@@ -411,7 +415,7 @@ $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/setGyro/#edu.wpi.first.math.g
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/setModuleStates/#kotlin.Array[edu.wpi.first.math.kinematics.SwerveModuleState]#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/set-module-states.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveDrive/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-drive/stop.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config///PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/index.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/Config/#kotlin.Double#kotlin.Double#kotlin.Double#xyz.malefic.frc.pingu.control.Pingu#xyz.malefic.frc.pingu.control.Pingu#kotlin.Double#kotlin.Double#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/-config.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/Config/#kotlin.Double#kotlin.Double#edu.wpi.first.units.measure.Distance#xyz.malefic.frc.pingu.control.Pingu#xyz.malefic.frc.pingu.control.Pingu#edu.wpi.first.units.measure.Current#edu.wpi.first.units.measure.Current#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/-config.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/driveCurrentLimit/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/drive-current-limit.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/driveGearRatio/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/drive-gear-ratio.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/driveInverted/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/drive-inverted.html
@@ -420,7 +424,7 @@ $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/steerCurrentLimit/#/P
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/steerGearRatio/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/steer-gear-ratio.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/steerInverted/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/steer-inverted.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/steerPingu/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/steer-pingu.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/wheelDiameterMeters/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/wheel-diameter-meters.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveModule.Config/wheelDiameter/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-config/wheel-diameter.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule///PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/index.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/SwerveModule/#kotlin.Int#kotlin.Int#kotlin.Int#edu.wpi.first.math.geometry.Rotation2d/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/-swerve-module.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/angleOffset/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/angle-offset.html
@@ -429,13 +433,14 @@ $dokka.location:xyz.malefic.frc.swerve/SwerveModule/encoder/#/PointingToDeclarat
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getAngle/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-angle.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getDrivePosition/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-drive-position.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getDriveVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-drive-velocity.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveModule/getMaxLinearVelocity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-max-linear-velocity.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getMaxLinearVelocityMPS/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-max-linear-velocity-m-p-s.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getPosition/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-position.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getState/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-state.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/getSteerPosition/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/get-steer-position.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/resetToAbsolute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/reset-to-absolute.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/setDesiredState/#edu.wpi.first.math.kinematics.SwerveModuleState#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/set-desired-state.html
-$dokka.location:xyz.malefic.frc.swerve/SwerveModule/setVoltage/#kotlin.Double#edu.wpi.first.math.geometry.Rotation2d/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/set-voltage.html
+$dokka.location:xyz.malefic.frc.swerve/SwerveModule/setVoltage/#edu.wpi.first.units.measure.Voltage#edu.wpi.first.math.geometry.Rotation2d/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/set-voltage.html
 $dokka.location:xyz.malefic.frc.swerve/SwerveModule/stop/#/PointingToDeclaration/-malefix/xyz.malefic.frc.swerve/-swerve-module/stop.html
 $dokka.location:xyz.malefic.frc.vision.command////PointingToDeclaration/-malefix/xyz.malefic.frc.vision.command/index.html
 $dokka.location:xyz.malefic.frc.vision.command/AlignToTarget.Companion///PointingToDeclaration/-malefix/xyz.malefic.frc.vision.command/-align-to-target/-companion/index.html
@@ -591,19 +596,20 @@ $dokka.location:xyz.malefic.frc.vision/PhotonModuleBuilder/build/#/PointingToDec
 $dokka.location:xyz.malefic.frc.vision/PhotonModuleBuilder/fieldLayout/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module-builder/field-layout.html
 $dokka.location:xyz.malefic.frc.vision/PhotonModuleBuilder/position/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module-builder/position.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement///PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/index.html
-$dokka.location:xyz.malefic.frc.vision/VisionMeasurement/VisionMeasurement/#edu.wpi.first.math.geometry.Pose2d#kotlin.Double#kotlin.Int#edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1]#kotlin.Double#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/-vision-measurement.html
+$dokka.location:xyz.malefic.frc.vision/VisionMeasurement/VisionMeasurement/#edu.wpi.first.math.geometry.Pose2d#edu.wpi.first.units.measure.Time#kotlin.Int#edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1]#edu.wpi.first.units.measure.Distance#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/-vision-measurement.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement/ambiguity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/ambiguity.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement/averageTagDistance/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/average-tag-distance.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement/pose/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/pose.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement/stdDevs/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/std-devs.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement/targetsUsed/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/targets-used.html
+$dokka.location:xyz.malefic.frc.vision/VisionMeasurement/timestamp/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/timestamp.html
 $dokka.location:xyz.malefic.frc.vision/VisionMeasurement/timestampSeconds/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-measurement/timestamp-seconds.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem.Config///PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/index.html
-$dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/Config/#kotlin.Boolean#kotlin.Boolean#kotlin.Double#kotlin.Int#kotlin.Boolean#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/-config.html
+$dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/Config/#kotlin.Boolean#kotlin.Boolean#kotlin.Double#kotlin.Int#kotlin.Boolean#edu.wpi.first.units.measure.Distance/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/-config.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/enableLogging/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/enable-logging.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/enablePoseUpdates/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/enable-pose-updates.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/maxPoseAmbiguity/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/max-pose-ambiguity.html
-$dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/maxPoseDistanceMeters/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/max-pose-distance-meters.html
+$dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/maxPoseDistance/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/max-pose-distance.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/minTargetsForPose/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/min-targets-for-pose.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem.Config/rejectOutlierPoses/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/-config/reject-outlier-poses.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem///PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/index.html
@@ -626,7 +632,7 @@ $dokka.location:xyz.malefic.frc.vision/VisionSystem/setAllLimelightLEDs/#xyz.mal
 $dokka.location:xyz.malefic.frc.vision/VisionSystem/setAllLimelightPipelines/#kotlin.Int/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/set-all-limelight-pipelines.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem/setCurrentPoseSupplier/#kotlin.Function0[edu.wpi.first.math.geometry.Pose2d]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/set-current-pose-supplier.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystem/setEnablePoseUpdates/#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/set-enable-pose-updates.html
-$dokka.location:xyz.malefic.frc.vision/VisionSystem/setPoseEstimator/#kotlin.Function3[edu.wpi.first.math.geometry.Pose2d,kotlin.Double,edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/set-pose-estimator.html
+$dokka.location:xyz.malefic.frc.vision/VisionSystem/setPoseEstimator/#kotlin.Function3[edu.wpi.first.math.geometry.Pose2d,edu.wpi.first.units.measure.Time,edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system/set-pose-estimator.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder///PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/index.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/VisionSystemBuilder/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/-vision-system-builder.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/build/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/build.html
@@ -634,7 +640,7 @@ $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/config/#kotlin.Functi
 $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/currentPoseSupplier/#kotlin.Function0[edu.wpi.first.math.geometry.Pose2d]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/current-pose-supplier.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/limelight/#kotlin.String#kotlin.Function1[xyz.malefic.frc.vision.LimeModuleBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/limelight.html
 $dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/photon/#kotlin.String#kotlin.Function1[xyz.malefic.frc.vision.PhotonModuleBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/photon.html
-$dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/poseEstimator/#kotlin.Function3[edu.wpi.first.math.geometry.Pose2d,kotlin.Double,edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/pose-estimator.html
+$dokka.location:xyz.malefic.frc.vision/VisionSystemBuilder/poseEstimator/#kotlin.Function3[edu.wpi.first.math.geometry.Pose2d,edu.wpi.first.units.measure.Time,edu.wpi.first.math.Matrix[edu.wpi.first.math.numbers.N3,edu.wpi.first.math.numbers.N1],kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-vision-system-builder/pose-estimator.html
 xyz.malefic.frc.emu
 xyz.malefic.frc.extension
 xyz.malefic.frc.path
