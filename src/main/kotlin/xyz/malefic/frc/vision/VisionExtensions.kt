@@ -6,6 +6,7 @@ import edu.wpi.first.math.geometry.Pose2d
 import edu.wpi.first.math.geometry.Transform3d
 import edu.wpi.first.math.numbers.N1
 import edu.wpi.first.math.numbers.N3
+import edu.wpi.first.units.measure.Time
 import xyz.malefic.frc.swerve.SwerveDrive
 import xyz.malefic.frc.vision.command.AlignToTarget
 import xyz.malefic.frc.vision.command.ResetPoseFromVision
@@ -93,7 +94,7 @@ class VisionSystemBuilder {
      *
      * @param callback Function to update pose with vision measurements.
      */
-    fun poseEstimator(callback: (Pose2d, Double, Matrix<N3, N1>) -> Unit) {
+    fun poseEstimator(callback: (Pose2d, Time, Matrix<N3, N1>) -> Unit) {
         system.setPoseEstimator(callback)
     }
 

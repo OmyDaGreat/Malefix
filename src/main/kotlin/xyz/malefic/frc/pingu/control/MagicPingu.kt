@@ -5,9 +5,13 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber
 /**
  * A data class that wraps magic motion with velocity, acceleration, and jerk.
  *
- * @property velocity The velocity of the [MagicPingu].
- * @property acceleration The acceleration of the [MagicPingu].
- * @property jerk The jerk of the [MagicPingu].
+ * Units depend on the motor's controlled variable:
+ * - For rotational motion: velocity in rotations/second, acceleration in rotations/second², jerk in rotations/second³
+ * - For linear motion: velocity in meters/second, acceleration in meters/second², jerk in meters/second³
+ *
+ * @property velocity The velocity (units depend on system - see class docs).
+ * @property acceleration The acceleration (units depend on system - see class docs).
+ * @property jerk The jerk (units depend on system - see class docs).
  */
 data class MagicPingu(
     var velocity: Double = 0.0,

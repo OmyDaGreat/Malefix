@@ -4,6 +4,9 @@ import edu.wpi.first.math.Matrix
 import edu.wpi.first.math.geometry.Pose2d
 import edu.wpi.first.math.numbers.N1
 import edu.wpi.first.math.numbers.N3
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Distance
+import edu.wpi.first.units.measure.Time
 import edu.wpi.first.wpilibj2.command.SubsystemBase
 
 /**
@@ -40,10 +43,10 @@ class VisionSystem : SubsystemBase() {
      *
      * @property enablePoseUpdates Whether to automatically update pose estimates.
      * @property enableLogging Whether to log vision data to NetworkTables.
-     * @property maxPoseAmbiguity Maximum allowed pose ambiguity for single-tag measurements.
+     * @property maxPoseAmbiguity Maximum allowed pose ambiguity for single-tag measurements (unitless).
      * @property minTargetsForPose Minimum number of targets required for pose estimation.
      * @property rejectOutlierPoses Whether to reject poses that are far from the current estimate.
-     * @property maxPoseDistanceMeters Maximum allowed distance between vision pose and current pose.
+     * @property maxPoseDistance Maximum allowed distance between vision pose and current pose.
      */
     data class Config(
         var enablePoseUpdates: Boolean = true,
@@ -51,12 +54,12 @@ class VisionSystem : SubsystemBase() {
         var maxPoseAmbiguity: Double = 0.2,
         var minTargetsForPose: Int = 1,
         var rejectOutlierPoses: Boolean = true,
-        var maxPoseDistanceMeters: Double = 2.0,
+        var maxPoseDistance: Distance = Units.Meters.of(2.0),
     )
 
     private var config = Config()
     private val cameras = mutableListOf<Camera>()
-    private var poseEstimatorCallback: ((Pose2d, Double, Matrix<N3, N1>) -> Unit)? = null
+    private var poseEstimatorCallback: ((Pose2d, Time, Matrix<N3, N1>) -> Unit)? = null
     private var currentPoseSupplier: (() -> Pose2d)? = null
 
     /**
@@ -109,7 +112,7 @@ class VisionSystem : SubsystemBase() {
      *
      * @param callback Function that accepts (pose, timestamp, stdDevs).
      */
-    fun setPoseEstimator(callback: (Pose2d, Double, Matrix<N3, N1>) -> Unit) {
+    fun setPoseEstimator(callback: (Pose2d, Time, Matrix<N3, N1>) -> Unit) {
         poseEstimatorCallback = callback
     }
 
@@ -226,7 +229,7 @@ class VisionSystem : SubsystemBase() {
                 // Reject outliers if enabled
                 if (config.rejectOutlierPoses && currentPose != null) {
                     val distance = measurement.pose.translation.getDistance(currentPose.translation)
-                    if (distance > config.maxPoseDistanceMeters) {
+                    if (distance > config.maxPoseDistance.`in`(Units.Meters)) {
                         continue
                     }
                 }
@@ -234,7 +237,7 @@ class VisionSystem : SubsystemBase() {
                 // Add measurement to pose estimator
                 poseEstimatorCallback?.invoke(
                     measurement.pose,
-                    measurement.timestampSeconds,
+                    measurement.timestamp,
                     measurement.stdDevs,
                 )
             }

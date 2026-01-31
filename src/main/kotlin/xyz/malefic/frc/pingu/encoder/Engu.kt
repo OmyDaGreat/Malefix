@@ -5,6 +5,10 @@ import com.ctre.phoenix6.configs.CANcoderConfiguration
 import com.ctre.phoenix6.hardware.CANcoder
 import com.ctre.phoenix6.signals.SensorDirectionValue
 import edu.wpi.first.math.geometry.Rotation2d
+import edu.wpi.first.units.Measure
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Angle
+import edu.wpi.first.units.measure.AngularVelocity
 import kotlin.math.PI
 
 /**
@@ -112,6 +116,14 @@ class Engu(
         get() = absolutePosition.valueAsDouble * 2.0 * PI
 
     /**
+     * Gets the absolute position as a measured angle.
+     *
+     * @return Current absolute position as [Measure]<[Angle]>.
+     */
+    val angle: Angle
+        get() = Units.Rotations.of(absolutePosition.valueAsDouble)
+
+    /**
      * Gets the velocity in rotations per second.
      *
      * @return Current velocity in rotations per second.
@@ -134,6 +146,14 @@ class Engu(
      */
     val velocityRadPS: Double
         get() = velocity.valueAsDouble * 2.0 * PI
+
+    /**
+     * Gets the angular velocity as a measured value.
+     *
+     * @return Current angular velocity as [Measure]<[AngularVelocity]>.
+     */
+    val angularVelocity: AngularVelocity
+        get() = Units.RotationsPerSecond.of(velocity.valueAsDouble)
 
     /**
      * Configures the encoder for swerve module use with common settings.

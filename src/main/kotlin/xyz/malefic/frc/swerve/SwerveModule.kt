@@ -8,6 +8,11 @@ import com.ctre.phoenix6.signals.NeutralModeValue
 import edu.wpi.first.math.geometry.Rotation2d
 import edu.wpi.first.math.kinematics.SwerveModulePosition
 import edu.wpi.first.math.kinematics.SwerveModuleState
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Current
+import edu.wpi.first.units.measure.Distance
+import edu.wpi.first.units.measure.LinearVelocity
+import edu.wpi.first.units.measure.Voltage
 import xyz.malefic.frc.pingu.control.Pingu
 import xyz.malefic.frc.pingu.encoder.Engu
 import xyz.malefic.frc.pingu.motor.talonfx.TonguFX
@@ -67,22 +72,22 @@ class SwerveModule(
      *
      * @property driveGearRatio Gear ratio for the drive motor (motor rotations per wheel rotation).
      * @property steerGearRatio Gear ratio for the steer motor (motor rotations per module rotation).
-     * @property wheelDiameterMeters Diameter of the wheel in meters.
+     * @property wheelDiameter Diameter of the wheel as a measured distance.
      * @property drivePingu [Pingu] PID controller for drive motor velocity control.
      * @property steerPingu [Pingu] PID controller for steer motor position control.
-     * @property driveCurrentLimit Current limit for drive motor in amps.
-     * @property steerCurrentLimit Current limit for steer motor in amps.
+     * @property driveCurrentLimit Current limit for drive motor.
+     * @property steerCurrentLimit Current limit for steer motor.
      * @property driveInverted Whether the drive motor is inverted.
      * @property steerInverted Whether the steer motor is inverted.
      */
     data class Config(
         var driveGearRatio: Double = 6.75,
         var steerGearRatio: Double = 150.0 / 7.0,
-        var wheelDiameterMeters: Double = 0.1016,
+        var wheelDiameter: Distance = Units.Meters.of(0.1016),
         val drivePingu: Pingu = Pingu(p = 0.1),
         val steerPingu: Pingu = Pingu(p = 100.0),
-        var driveCurrentLimit: Double = 40.0,
-        var steerCurrentLimit: Double = 30.0,
+        var driveCurrentLimit: Current = Units.Amps.of(40.0),
+        var steerCurrentLimit: Current = Units.Amps.of(30.0),
         var driveInverted: Boolean = false,
         var steerInverted: Boolean = true,
     )
@@ -106,7 +111,7 @@ class SwerveModule(
     private val canCoder = Engu(canCoderId)
 
     private val wheelCircumference: Double
-        get() = config.wheelDiameterMeters * PI
+        get() = config.wheelDiameter.`in`(Units.Meters) * PI
 
     /**
      * Configures the swerve module using a DSL-style configuration block.
@@ -115,7 +120,7 @@ class SwerveModule(
      * module.configure {
      *     driveGearRatio = 6.75
      *     steerGearRatio = 21.43
-     *     wheelDiameterMeters = 0.1016
+     *     wheelDiameter = Units.Meters.of(0.1016)
      *     drivePingu.apply {
      *         p = 0.1
      *         v = 0.12
@@ -152,7 +157,7 @@ class SwerveModule(
                     NeutralMode = NeutralModeValue.Brake
                 }
                 CurrentLimits.apply {
-                    SupplyCurrentLimit = config.driveCurrentLimit
+                    SupplyCurrentLimit = config.driveCurrentLimit.`in`(Units.Amps)
                     SupplyCurrentLimitEnable = true
                 }
                 Slot0.apply {
@@ -178,7 +183,7 @@ class SwerveModule(
                     NeutralMode = NeutralModeValue.Brake
                 }
                 CurrentLimits.apply {
-                    SupplyCurrentLimit = config.steerCurrentLimit
+                    SupplyCurrentLimit = config.steerCurrentLimit.`in`(Units.Amps)
                     SupplyCurrentLimitEnable = true
                 }
                 Slot0.apply {
@@ -271,12 +276,12 @@ class SwerveModule(
      * @param angle Angle to set the steer motor to.
      */
     fun setVoltage(
-        voltage: Double,
+        voltage: Voltage,
         angle: Rotation2d,
     ) {
         val steerPositionRotations = angle.rotations * config.steerGearRatio
         steerMotor.control(steerPositionRotations)
-        driveMotor.setVoltage(voltage)
+        driveMotor.setVoltage(voltage.`in`(Units.Volts))
     }
 
     /**
@@ -288,16 +293,26 @@ class SwerveModule(
     }
 
     /**
+     * Gets the maximum linear velocity.
+     *
+     * Assumes a theoretical max RPS of 100 for the TalonFX.
+     *
+     * @return Maximum linear velocity as a measured value.
+     */
+    fun getMaxLinearVelocity(): LinearVelocity {
+        val maxMotorRPS = 100.0
+        val maxVelocityMPS = (maxMotorRPS / config.driveGearRatio) * wheelCircumference
+        return Units.MetersPerSecond.of(maxVelocityMPS)
+    }
+
+    /**
      * Gets the maximum linear velocity in meters per second.
      *
      * Assumes a theoretical max RPS of 100 for the TalonFX.
      *
      * @return Maximum linear velocity in m/s.
      */
-    fun getMaxLinearVelocityMPS(): Double {
-        val maxMotorRPS = 100.0
-        return (maxMotorRPS / config.driveGearRatio) * wheelCircumference
-    }
+    fun getMaxLinearVelocityMPS(): Double = getMaxLinearVelocity().`in`(Units.MetersPerSecond)
 
     /**
      * Gets the drive motor velocity in rotations per second.

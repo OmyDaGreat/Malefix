@@ -1,6 +1,7 @@
 package xyz.malefic.frc.vision
 
 import edu.wpi.first.math.geometry.Pose2d
+import edu.wpi.first.units.measure.Angle
 
 /**
  * Common interface for all vision cameras (PhotonVision, Limelight, etc.).
@@ -34,20 +35,20 @@ interface Camera {
     fun getLatestMeasurement(referencePose: Pose2d? = null): VisionMeasurement?
 
     /**
-     * Gets the horizontal offset to the currently tracked target in degrees.
+     * Gets the horizontal offset to the currently tracked target.
      *
      * This is used by alignment and tracking commands.
      *
-     * @return Horizontal offset in degrees (positive = target is to the right), null if no target.
+     * @return Horizontal offset (positive = target is to the right), null if no target.
      */
-    fun getTargetHorizontalOffset(): Double?
+    fun getTargetHorizontalOffset(): Angle?
 
     /**
-     * Gets the vertical offset to the currently tracked target in degrees.
+     * Gets the vertical offset to the currently tracked target.
      *
-     * @return Vertical offset in degrees (positive = target is above crosshair), null if no target.
+     * @return Vertical offset (positive = target is above crosshair), null if no target.
      */
-    fun getTargetVerticalOffset(): Double?
+    fun getTargetVerticalOffset(): Angle?
 
     /**
      * Gets all unprocessed vision measurements since the last call.

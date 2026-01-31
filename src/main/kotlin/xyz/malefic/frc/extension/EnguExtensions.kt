@@ -1,6 +1,8 @@
 package xyz.malefic.frc.extension
 
 import edu.wpi.first.math.geometry.Rotation2d
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Angle
 import xyz.malefic.frc.pingu.encoder.Engu
 
 /**
@@ -67,15 +69,15 @@ fun Engu.getAngleError(target: Rotation2d): Rotation2d = target - rotation
  * Extension to check if encoder is within tolerance of target angle.
  *
  * @param target Target angle.
- * @param toleranceDegrees Tolerance in degrees (default: 2.0).
+ * @param tolerance Tolerance as a measured angle (default: 2.0 degrees).
  * @return True if within tolerance.
  */
 fun Engu.isAtAngle(
     target: Rotation2d,
-    toleranceDegrees: Double = 2.0,
+    tolerance: Angle = Units.Degrees.of(2.0),
 ): Boolean {
     val error = getAngleError(target)
-    return kotlin.math.abs(error.degrees) < toleranceDegrees
+    return kotlin.math.abs(error.degrees) < tolerance.`in`(Units.Degrees)
 }
 
 /**

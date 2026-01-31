@@ -10,6 +10,11 @@ import edu.wpi.first.math.kinematics.ChassisSpeeds
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics
 import edu.wpi.first.math.kinematics.SwerveModulePosition
 import edu.wpi.first.math.kinematics.SwerveModuleState
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.AngularVelocity
+import edu.wpi.first.units.measure.Distance
+import edu.wpi.first.units.measure.LinearVelocity
+import edu.wpi.first.units.measure.Time
 import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.SubsystemBase
 import kotlin.math.PI
@@ -67,18 +72,18 @@ class SwerveDrive(
     /**
      * Configuration for the swerve drive.
      *
-     * @property trackWidthMeters Distance between left and right wheels in meters.
-     * @property wheelBaseMeters Distance between front and back wheels in meters.
-     * @property maxLinearVelocityMPS Maximum linear velocity in meters per second.
-     * @property maxAngularVelocityRadPS Maximum angular velocity in radians per second.
-     * @property driveDeadband Deadband for drive inputs (0.0 to 1.0).
-     * @property rotationDeadband Deadband for rotation input (0.0 to 1.0).
+     * @property trackWidth Distance between left and right wheels.
+     * @property wheelBase Distance between front and back wheels.
+     * @property maxLinearVelocity Maximum linear velocity.
+     * @property maxAngularVelocity Maximum angular velocity.
+     * @property driveDeadband Deadband for drive inputs (0.0 to 1.0, unitless).
+     * @property rotationDeadband Deadband for rotation input (0.0 to 1.0, unitless).
      */
     data class Config(
-        var trackWidthMeters: Double = 0.6,
-        var wheelBaseMeters: Double = 0.6,
-        var maxLinearVelocityMPS: Double = 4.5,
-        var maxAngularVelocityRadPS: Double = 2.0 * PI,
+        var trackWidth: Distance = Units.Meters.of(0.6),
+        var wheelBase: Distance = Units.Meters.of(0.6),
+        var maxLinearVelocity: LinearVelocity = Units.MetersPerSecond.of(4.5),
+        var maxAngularVelocity: AngularVelocity = Units.RadiansPerSecond.of(2.0 * PI),
         var driveDeadband: Double = 0.02,
         var rotationDeadband: Double = 0.02,
     )
@@ -99,10 +104,13 @@ class SwerveDrive(
     }
 
     private fun initializeKinematics() {
-        val frontLeft = Translation2d(config.wheelBaseMeters / 2.0, config.trackWidthMeters / 2.0)
-        val frontRight = Translation2d(config.wheelBaseMeters / 2.0, -config.trackWidthMeters / 2.0)
-        val backLeft = Translation2d(-config.wheelBaseMeters / 2.0, config.trackWidthMeters / 2.0)
-        val backRight = Translation2d(-config.wheelBaseMeters / 2.0, -config.trackWidthMeters / 2.0)
+        val trackWidthMeters = config.trackWidth.`in`(Units.Meters)
+        val wheelBaseMeters = config.wheelBase.`in`(Units.Meters)
+
+        val frontLeft = Translation2d(wheelBaseMeters / 2.0, trackWidthMeters / 2.0)
+        val frontRight = Translation2d(wheelBaseMeters / 2.0, -trackWidthMeters / 2.0)
+        val backLeft = Translation2d(-wheelBaseMeters / 2.0, trackWidthMeters / 2.0)
+        val backRight = Translation2d(-wheelBaseMeters / 2.0, -trackWidthMeters / 2.0)
 
         kinematics = SwerveDriveKinematics(frontLeft, frontRight, backLeft, backRight)
 
@@ -120,10 +128,10 @@ class SwerveDrive(
      *
      * ```kotlin
      * drive.configure {
-     *     trackWidthMeters = 0.6
-     *     wheelBaseMeters = 0.6
-     *     maxLinearVelocityMPS = 4.5
-     *     maxAngularVelocityRadPS = 2.0 * PI
+     *     trackWidth = Units.Meters.of(0.6)
+     *     wheelBase = Units.Meters.of(0.6)
+     *     maxLinearVelocity = Units.MetersPerSecond.of(4.5)
+     *     maxAngularVelocity = Units.RadiansPerSecond.of(2.0 * PI)
      * }
      * ```
      *
@@ -150,9 +158,9 @@ class SwerveDrive(
         fieldOriented: Boolean = true,
         isOpenLoop: Boolean = false,
     ) {
-        val xSpeedFiltered = applyDeadband(xSpeed, config.driveDeadband) * config.maxLinearVelocityMPS
-        val ySpeedFiltered = applyDeadband(ySpeed, config.driveDeadband) * config.maxLinearVelocityMPS
-        val rotSpeedFiltered = applyDeadband(rotSpeed, config.rotationDeadband) * config.maxAngularVelocityRadPS
+        val xSpeedFiltered = applyDeadband(xSpeed, config.driveDeadband) * config.maxLinearVelocity.`in`(Units.MetersPerSecond)
+        val ySpeedFiltered = applyDeadband(ySpeed, config.driveDeadband) * config.maxLinearVelocity.`in`(Units.MetersPerSecond)
+        val rotSpeedFiltered = applyDeadband(rotSpeed, config.rotationDeadband) * config.maxAngularVelocity.`in`(Units.RadiansPerSecond)
 
         val chassisSpeeds =
             if (fieldOriented) {
@@ -192,7 +200,7 @@ class SwerveDrive(
         desiredStates: Array<SwerveModuleState>,
         isOpenLoop: Boolean = false,
     ) {
-        SwerveDriveKinematics.desaturateWheelSpeeds(desiredStates, config.maxLinearVelocityMPS)
+        SwerveDriveKinematics.desaturateWheelSpeeds(desiredStates, config.maxLinearVelocity.`in`(Units.MetersPerSecond))
         frontLeftModule.setDesiredState(desiredStates[0], isOpenLoop)
         frontRightModule.setDesiredState(desiredStates[1], isOpenLoop)
         backLeftModule.setDesiredState(desiredStates[2], isOpenLoop)
@@ -260,13 +268,13 @@ class SwerveDrive(
      * Adds a vision measurement to the pose estimator.
      *
      * @param visionPose The pose measured by vision.
-     * @param timestamp The timestamp of the vision measurement in seconds.
+     * @param timestamp The timestamp of the vision measurement.
      */
     fun addVisionMeasurement(
         visionPose: Pose2d,
-        timestamp: Double,
+        timestamp: Time,
     ) {
-        poseEstimator.addVisionMeasurement(visionPose, timestamp)
+        poseEstimator.addVisionMeasurement(visionPose, timestamp.`in`(Units.Seconds))
     }
 
     /**
@@ -336,16 +344,30 @@ class SwerveDrive(
     }
 
     /**
+     * Gets the maximum linear velocity.
+     *
+     * @return Maximum linear velocity as a measured value.
+     */
+    fun getMaxLinearVelocity(): LinearVelocity = config.maxLinearVelocity
+
+    /**
      * Gets the maximum linear velocity in meters per second.
      *
-     * @return Maximum linear velocity.
+     * @return Maximum linear velocity in m/s.
      */
-    fun getMaxLinearVelocityMPS(): Double = config.maxLinearVelocityMPS
+    fun getMaxLinearVelocityMPS(): Double = config.maxLinearVelocity.`in`(Units.MetersPerSecond)
+
+    /**
+     * Gets the maximum angular velocity.
+     *
+     * @return Maximum angular velocity as a measured value.
+     */
+    fun getMaxAngularVelocity(): AngularVelocity = config.maxAngularVelocity
 
     /**
      * Gets the maximum angular velocity in radians per second.
      *
-     * @return Maximum angular velocity.
+     * @return Maximum angular velocity in rad/s.
      */
-    fun getMaxAngularVelocityRadPS(): Double = config.maxAngularVelocityRadPS
+    fun getMaxAngularVelocityRadPS(): Double = config.maxAngularVelocity.`in`(Units.RadiansPerSecond)
 }

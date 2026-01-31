@@ -4,6 +4,8 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration
 import com.ctre.phoenix6.hardware.TalonFX
 import com.ctre.phoenix6.signals.InvertedValue
 import com.ctre.phoenix6.signals.NeutralModeValue
+import edu.wpi.first.units.Units
+import edu.wpi.first.units.measure.Current
 import xyz.malefic.frc.pingu.alert.AlertPingu
 import xyz.malefic.frc.pingu.control.MagicPingu
 import xyz.malefic.frc.pingu.control.Pingu
@@ -41,17 +43,20 @@ class TalonFXConfig : MonguConfig<TalonFX> {
     var pingu = Pingu()
 
     /**
-     * Pair of supply and stator current limits (nullable).
+     * Pair of supply and stator current limits as measured values (nullable).
+     * First value is supply current limit, second is stator current limit.
      */
-    var currentLimits: Pair<Double?, Double?>? = null
+    var currentLimits: Pair<Current?, Current?>? = null
 
     /**
-     * Pair of forward and reverse soft limits (nullable).
+     * Pair of forward and reverse soft limits in rotations (nullable).
+     * First value is forward soft limit, second is reverse soft limit.
      */
     var softLimits: Pair<Double?, Double?>? = null
 
     /**
-     * Pair of open-loop and closed-loop ramp rates.
+     * Pair of open-loop and closed-loop ramp rates in seconds.
+     * First value is open-loop ramp, second is closed-loop ramp.
      */
     var loopRamp: Pair<Double, Double> = 0.0 to 0.0
 
@@ -109,9 +114,9 @@ class TalonFXConfig : MonguConfig<TalonFX> {
 
         config.CurrentLimits.apply {
             currentLimits?.let { (supply, stator) ->
-                SupplyCurrentLimit = supply ?: 0.0
+                SupplyCurrentLimit = supply?.`in`(Units.Amps) ?: 0.0
                 SupplyCurrentLimitEnable = supply != null
-                StatorCurrentLimit = stator ?: 0.0
+                StatorCurrentLimit = stator?.`in`(Units.Amps) ?: 0.0
                 StatorCurrentLimitEnable = stator != null
             } ?: run {
                 SupplyCurrentLimitEnable = false
