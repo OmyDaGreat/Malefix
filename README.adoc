@@ -6,75 +6,678 @@ Malefix is a Kotlin library designed for use in FRC (FIRST Robotics Competition)
 
 === `xyz.malefic.frc.extension`
 
-This module contains extension functions and utilities for various FRC classes. It includes:
+This module contains extension functions and utilities for various FRC classes, providing Kotlin-idiomatic wrappers around WPILib APIs:
 
-* Extension functions for rotation, pose, and unit conversions.
-* Motor configuration utilities with sensible defaults.
-* PID value helpers.
-* PhotonVision result helpers.
-* `Kommand`: Utilities for command-based programming.
-* Swerve drive DSL and extension functions.
+==== Core Features
+
+* **Rotation & Pose Extensions**: Fluent API for working with WPILib geometry types (Rotation2d, Pose2d, Transform2d).
+* **Unit Conversions**: Easy conversions between meters, inches, feet, degrees, and radians.
+* **Motor Configuration**: Sensible defaults and DSL for configuring motors (inversion, neutral mode, current limits).
+* **PID Helpers**: Utility functions for creating PIDController and PID value objects.
+* **PhotonVision Result Extensions**: Extract target data from PhotonVision results.
+* **Kommand**: Enhanced command utilities for command-based programming with Kotlin DSL.
+* **Swerve DSL**: Domain-specific language for creating swerve drive commands and configurations.
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Rotation extensions
+val angle = 90.degrees  // Create Rotation2d from degrees
+val flipped = angle.flipX()  // Flip across X-axis
+val relative = currentPose.relativeTo(targetPose)  // Get relative transform
+
+// Unit conversions
+val wheelCircumference = 4.inches * PI  // Returns Measure<Distance>
+val gearRatio = 6.75
+val position = motorRotations * wheelCircumference / gearRatio
+
+// Motor configuration with DSL
+motor.configure {
+    inverted = true
+    brakeMode = true
+    currentLimit = 40.amps
+    rampRate = 0.1.seconds
+}
+
+// PID helpers
+val controller = pidController(kP = 0.1, kI = 0.0, kD = 0.01)
+val gains = pidValues(kP = 0.1, kI = 0.0, kD = 0.01)
+
+// PhotonVision result helpers
+val bestTarget = camera.latestResult.bestTarget
+val yaw = bestTarget?.yaw ?: 0.0
+val hasTarget = camera.latestResult.hasTargets()
+
+// Kommand utilities
+val myCommand = kommand {
+    initialize { println("Starting") }
+    execute { /* command logic */ }
+    isFinished { false }
+    end { interrupted -> println("Ended: interrupted=$interrupted") }
+}
+----
 
 === `xyz.malefic.frc.swerve`
 
-The `swerve` package provides a complete swerve drive implementation with advanced features:
+The `swerve` package provides a production-ready swerve drive implementation optimized for FRC competition use with Phoenix 6 hardware:
 
-* `SwerveModule`: Individual swerve module with drive and steer motors using TalonFX and CANcoder.
-* `SwerveDrive`: Complete swerve drive subsystem with pose estimation, field-oriented driving, and vision integration.
-* `TeleopSwerve`: Teleop command with input shaping, deadband, and slew rate limiting.
-* `LockSwerve`, `ResetGyro`, `DriveToAngle`, `TurnToAngle`: Utility commands for various swerve operations.
-* DSL extensions for easy configuration and command creation.
+==== Core Components
+
+* `SwerveModule`: Individual swerve module controller with optimized TalonFX drive/steer motors and CANcoder absolute encoders.
+* `SwerveDrive`: Complete swerve drive subsystem with pose estimation, field-oriented driving, vision fusion, and auto-balancing.
+* `TeleopSwerve`: Advanced teleop command with joystick deadband, input shaping (cubic/quadratic), and slew rate limiting for smooth control.
+* `LockSwerve`: Lock wheels in X-pattern to resist pushing (defense mode).
+* `ResetGyro`: Reset gyroscope heading with optional offset angle.
+* `DriveToAngle`: Drive to a specific field-relative angle while maintaining translation.
+* `TurnToAngle`: Rotate robot to specific heading using PID control.
+
+==== Features
+
+* **Phoenix 6 Integration**: Native support for TalonFX motors and CANcoders with advanced features.
+* **Pose Estimation**: SwerveDrivePoseEstimator integration with odometry and vision fusion.
+* **Field-Oriented Drive**: Robot-relative and field-oriented control modes with smooth transitions.
+* **Vision Integration**: Automatic pose updates from AprilTag vision measurements.
+* **Input Shaping**: Configurable deadband, cubic/quadratic scaling, and slew rate limiting.
+* **Auto Pathfinding**: Integration with PathPlanner for autonomous navigation.
+* **Simulation Support**: Physics simulation for testing without hardware.
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Create swerve drive with DSL
+val swerve = SwerveDrive(
+    modules = arrayOf(
+        SwerveModule("FL", driveID = 1, steerID = 2, encoderID = 3, offset = 0.0),
+        SwerveModule("FR", driveID = 4, steerID = 5, encoderID = 6, offset = 0.0),
+        SwerveModule("BL", driveID = 7, steerID = 8, encoderID = 9, offset = 0.0),
+        SwerveModule("BR", driveID = 10, steerID = 11, encoderID = 12, offset = 0.0)
+    ),
+    gyro = Pigeon2(13),
+    maxSpeed = 4.5.metersPerSecond,
+    maxAngularSpeed = 2 * PI
+)
+
+// Teleop with input shaping
+val teleopCmd = TeleopSwerve(
+    swerve = swerve,
+    translationX = { -driver.leftY },
+    translationY = { -driver.leftX },
+    rotation = { -driver.rightX },
+    fieldOriented = true,
+    deadband = 0.1,
+    inputShape = InputShape.CUBIC,  // Smooth control near center
+    translationSlewRate = 3.0,
+    rotationSlewRate = 3.0
+)
+
+// Lock wheels for defense
+val lockCmd = LockSwerve(swerve)
+driverController.button(Button.X).whileTrue(lockCmd)
+
+// Turn to angle command
+val turnTo180 = TurnToAngle(swerve, 180.degrees, pidController(0.05, 0.0, 0.003))
+driverController.button(Button.B).onTrue(turnTo180)
+
+// Drive to target angle while allowing translation control
+val driveToTarget = DriveToAngle(
+    swerve = swerve,
+    targetAngle = { vision.getBestTarget()?.yaw?.degrees ?: 0.degrees },
+    translationX = { -driver.leftY },
+    translationY = { -driver.leftX },
+    controller = pidController(0.03, 0.0, 0.001)
+)
+
+// Reset gyro with button
+driverController.button(Button.Start).onTrue(ResetGyro(swerve))
+----
 
 === `xyz.malefic.frc.pingu`
 
-The `pingu` package provides a comprehensive set of utilities for control, logging, command binding, and motor/encoder management:
+The `pingu` package provides a comprehensive ecosystem for robot control, telemetry, and hardware management with a focus on type safety and ease of use:
 
-* `Pingu`: Data class for PID controllers with optional feedforward.
-* `NetworkPingu`: Extends PIDController with network logging.
-* `ProfiledPingu`: Data class for profiled PID controllers.
-* `MagicPingu`: Controller with velocity, acceleration, and jerk.
-* `AlertPingu`: Monitors CTRE Phoenix 6 devices and raises alerts.
-* `Bingu`: Binds Xbox controller buttons to commands.
-* `LogPingu`: Logging utilities.
-* `Engu`: Enhanced CANcoder wrapper with swerve-optimized utilities, angle conversions, and calibration methods.
-* `Mongu`: Common interface implemented by motor classes for unified control.
-* `TonguFX`: TalonFX motor class that extends TalonFX and implements Mongu interface with direct control access.
-* `SparkuMax`: PWMSparkMax motor class that extends PWMSparkMax and implements Mongu interface.
-* `TalonuSRX`: PWMTalonSRX motor class that extends PWMTalonSRX and implements Mongu interface.
-* `MonguConfig`: Configuration interface for motors.
-* `PWMTalonSRXConfig`, `PWMSparkMaxConfig`, `TalonFXConfig`: Motor controller configs.
-* `Commangu`, `CommanguDsl`: Command binding utilities.
+==== Control Systems
+
+* `Pingu`: Lightweight wrapper for WPILib PIDController with optional feedforward and built-in logging.
+* `NetworkPingu`: PIDController with automatic NetworkTables publishing for live tuning from dashboard.
+* `ProfiledPingu`: Motion profiled PID controller with trapezoidal velocity constraints for smooth motion.
+* `MagicPingu`: Advanced controller supporting velocity, acceleration, and jerk limits for complex motion profiles.
+
+==== Hardware Management
+
+* `Mongu`: Universal motor interface providing consistent API across different motor controller types.
+* `TonguFX`: TalonFX (Falcon 500) wrapper implementing Mongu with Phoenix 6 native support.
+* `SparkuMax`: REV Robotics SparkMax wrapper implementing Mongu for NEO motors.
+* `TalonuSRX`: Talon SRX wrapper implementing Mongu for CIM and 775 motors.
+* `MonguConfig`: Type-safe configuration DSL for all motor types (inversion, limits, ramp rates, PID).
+* `Engu`: Enhanced CANcoder wrapper with angle conversions, calibration, and swerve-specific optimizations.
+
+==== Device Monitoring
+
+* `AlertPingu`: Automated health monitoring for Phoenix 6 devices with fault detection and NetworkTables alerts.
+
+==== Command Binding
+
+* `Bingu`: Fluent DSL for binding Xbox controller inputs to commands with trigger conditions.
+* `Commangu`: Advanced command composition utilities for parallel, sequential, and conditional command groups.
+* `CommanguDsl`: Kotlin DSL for declarative command creation and binding.
+
+==== Logging
+
+* `LogPingu`: Structured logging utilities with automatic data logging to NetworkTables and file-based logs.
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Create motor with configuration
+val shooterMotor = TonguFX(15).apply {
+    configure(TalonFXConfig(
+        inverted = false,
+        brakeMode = true,
+        supplyCurrentLimit = 40.amps,
+        statorCurrentLimit = 60.amps,
+        peakForwardVoltage = 12.volts,
+        peakReverseVoltage = -12.volts
+    ))
+}
+
+// Network-tunable PID controller
+val armController = NetworkPingu(
+    kP = 0.05,
+    kI = 0.0,
+    kD = 0.003,
+    name = "arm_pid"
+)  // Tunable from NetworkTables
+
+// Profiled PID for smooth elevator motion
+val elevatorController = ProfiledPingu(
+    kP = 0.1,
+    kI = 0.0,
+    kD = 0.01,
+    constraints = TrapezoidProfile.Constraints(
+        maxVelocity = 1.0,
+        maxAcceleration = 2.0
+    )
+)
+
+// Enhanced encoder with calibration
+val swerveEncoder = Engu(20).apply {
+    setPositionOffset(0.245)  // Calibration offset
+    setInverted(true)
+}
+val optimizedAngle = swerveEncoder.getOptimizedAngle(targetAngle)
+
+// Device health monitoring
+val deviceMonitor = AlertPingu(
+    devices = listOf(shooterMotor, armMotor, swerveEncoder),
+    checkInterval = 1.0  // Check every second
+)
+
+// Command binding with Bingu DSL
+Bingu(driverController).apply {
+    a { shooter.spinUp() }
+    b { intake.deploy() }
+    x { climber.extend() }
+    y { arm.moveToPosition(ArmPosition.HIGH) }
+    
+    leftBumper { swerve.setMaxSpeed(0.3) }  // Slow mode
+    rightBumper { swerve.resetGyro() }
+    
+    povUp { elevator.moveToHeight(ElevatorHeight.HIGH) }
+    povDown { elevator.moveToHeight(ElevatorHeight.LOW) }
+}
+
+// Structured logging
+LogPingu.periodic {
+    log("drivetrain/pose", swerve.getPose())
+    log("arm/angle", arm.getAngle())
+    log("shooter/rpm", shooter.getRPM())
+    log("vision/hasTarget", vision.hasTarget())
+}
+----
 
 === `xyz.malefic.frc.state`
 
-The `state` package provides a comprehensive state machine framework that integrates with WPILib's command-based programming:
+The `state` package provides a powerful state machine framework for managing complex subsystem behaviors and multi-subsystem coordination:
 
-* `StateMachine`: Generic state machine for managing subsystem states with history tracking.
-* `IntentCommand`: Base class for intent-based commands that coordinate multiple subsystems.
-* `intentCommand()`: DSL builder for creating simple intent commands without creating classes.
+==== Core Components
 
-=== `xyz.malefic.frc.sub`
+* `StateMachine`: Generic state machine implementation with automatic state transitions, history tracking, and timeout support.
+* `IntentCommand`: Abstract base class for intent-based commands that coordinate multiple subsystems through high-level goals.
+* `intentCommand()`: Kotlin DSL builder for creating intent commands declaratively without boilerplate classes.
 
-This module includes classes related to PhotonVision, a vision processing library used in FRC:
+==== Features
 
-* `PhotonModule`: Represents a PhotonVision camera setup with pose estimation.
+* **Type-Safe States**: Enum-based state definitions with compile-time safety.
+* **Automatic Transitions**: Define state transitions with conditions and optional timeouts.
+* **History Tracking**: Track previous states for debugging and rollback capabilities.
+* **Subsystem Coordination**: IntentCommand pattern for coordinating multiple subsystems towards a goal.
+* **Timeout Support**: Automatic state timeouts with configurable durations.
+* **Event Callbacks**: Execute code on state entry, exit, and transitions.
+* **Command Integration**: Seamless integration with WPILib command-based architecture.
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Define states for a shooter subsystem
+enum class ShooterState {
+    IDLE, SPINNING_UP, READY, SHOOTING, COOLDOWN
+}
+
+// Create state machine
+class ShooterSubsystem : SubsystemBase() {
+    private val motor = TonguFX(10)
+    private val stateMachine = StateMachine<ShooterState>(ShooterState.IDLE)
+    
+    init {
+        // Define state transitions
+        stateMachine.addTransition(
+            from = ShooterState.IDLE,
+            to = ShooterState.SPINNING_UP,
+            condition = { requestedSpeed > 0 }
+        )
+        
+        stateMachine.addTransition(
+            from = ShooterState.SPINNING_UP,
+            to = ShooterState.READY,
+            condition = { atTargetSpeed() },
+            timeout = 2.0  // Max 2 seconds to spin up
+        )
+        
+        stateMachine.addTransition(
+            from = ShooterState.READY,
+            to = ShooterState.SHOOTING,
+            condition = { feedNoteRequested }
+        )
+        
+        stateMachine.addTransition(
+            from = ShooterState.SHOOTING,
+            to = ShooterState.COOLDOWN,
+            timeout = 0.5  // Shoot for 0.5s
+        )
+        
+        stateMachine.addTransition(
+            from = ShooterState.COOLDOWN,
+            to = ShooterState.IDLE,
+            timeout = 1.0  // Cool down for 1s
+        )
+        
+        // State entry actions
+        stateMachine.onEnter(ShooterState.SPINNING_UP) {
+            motor.setVelocity(targetRPM)
+        }
+        
+        stateMachine.onEnter(ShooterState.IDLE) {
+            motor.stop()
+        }
+    }
+    
+    override fun periodic() {
+        stateMachine.update()  // Check transitions
+    }
+    
+    fun getCurrentState() = stateMachine.currentState
+    fun getStateHistory() = stateMachine.stateHistory
+}
+
+// Intent command for scoring
+class ScoreCommand(
+    private val shooter: ShooterSubsystem,
+    private val intake: IntakeSubsystem,
+    private val arm: ArmSubsystem
+) : IntentCommand() {
+    
+    override fun initialize() {
+        // Set subsystem intents
+        arm.setTargetAngle(45.degrees)
+        shooter.setTargetRPM(4000.0)
+    }
+    
+    override fun execute() {
+        // Coordinate subsystems
+        if (shooter.isReady() && arm.atTarget()) {
+            intake.feed()
+        }
+    }
+    
+    override fun isFinished(): Boolean {
+        return shooter.getCurrentState() == ShooterState.COOLDOWN
+    }
+    
+    override fun end(interrupted: Boolean) {
+        shooter.stop()
+        intake.stop()
+    }
+}
+
+// DSL-based intent command
+val autoScoreCmd = intentCommand {
+    requirements(shooter, intake, arm)
+    
+    initialize {
+        arm.setTargetAngle(45.degrees)
+        shooter.setTargetRPM(4000.0)
+    }
+    
+    execute {
+        if (shooter.isReady() && arm.atTarget()) {
+            intake.feed()
+        }
+    }
+    
+    isFinished {
+        shooter.getCurrentState() == ShooterState.COOLDOWN
+    }
+    
+    end { interrupted ->
+        shooter.stop()
+        intake.stop()
+    }
+}
+
+// Use in command binding
+operatorController.button(Button.A).onTrue(autoScoreCmd)
+----
+
+=== `xyz.malefic.frc.vision`
+
+The `vision` package provides a comprehensive vision processing system for FRC robots with support for PhotonVision and Limelight cameras:
+
+==== Core Components
+
+* `Camera`: Common interface for all vision cameras (PhotonVision, Limelight).
+* `VisionMeasurement`: Unified data class containing pose, timestamp, targets, and standard deviations.
+* `PhotonModule`: PhotonVision camera with AprilTag pose estimation using WPILib 2026 APIs.
+* `LimeModule`: Limelight camera wrapper with NetworkTables integration and MegaTag support.
+* `VisionSystem`: Multi-camera fusion subsystem that manages multiple cameras and provides automatic pose updates.
+
+==== Vision Commands
+
+* `AlignToTarget`: PID-controlled command to rotate the robot to align with a vision target.
+* `TrackTarget`: Continuously track a target while allowing manual translation control.
+* `ResetPoseFromVision`: Reset robot odometry using vision measurements with stability checks.
+
+==== Features
+
+* **Multi-Camera Fusion**: Combine data from multiple PhotonVision and Limelight cameras.
+* **Automatic Pose Updates**: Seamlessly integrates with SwerveDrive pose estimation.
+* **Smart Filtering**: Rejects high-ambiguity and outlier poses based on configurable thresholds.
+* **Unified Interface**: All cameras implement the `Camera` interface for polymorphic usage.
+* **DSL Configuration**: Easy setup with Kotlin DSL for camera configuration and command creation.
+* **WPILib 2026 Compliant**: Uses latest PhotonVision estimation methods (no deprecated APIs).
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Create vision system with DSL
+val vision = visionSystem {
+    config {
+        enablePoseUpdates = true
+        maxPoseAmbiguity = 0.2
+        rejectOutlierPoses = true
+    }
+    
+    // Add PhotonVision camera
+    photon("frontCamera") {
+        position = Transform3d(Translation3d(0.3, 0.0, 0.2), Rotation3d())
+        fieldLayout = AprilTagFields.k2024Crescendo.loadAprilTagLayoutField()
+    }
+    
+    // Add Limelight
+    limelight("limelight") {
+        ledMode = LimeModule.LEDMode.OFF
+        pipeline = 0
+    }
+    
+    // Integrate with swerve drive
+    poseEstimator { pose, timestamp, stdDevs ->
+        swerveDrive.addVisionMeasurement(pose, timestamp, stdDevs)
+    }
+    
+    currentPoseSupplier { swerveDrive.getPose() }
+}
+
+// Use vision commands
+val camera = vision.getCamera("frontCamera")!!
+val alignCmd = swerveDrive.alignToTarget(camera)
+val trackCmd = swerveDrive.trackTarget(camera, 
+    translationSpeed = { -controller.leftY },
+    strafeSpeed = { -controller.leftX }
+)
+
+// Or use specific camera types
+val limelight = vision.getLimeModule("limelight")!!
+val alignToLime = AlignToTarget.withLimelight(swerveDrive, limelight)
+----
 
 === `xyz.malefic.frc.emu`
 
-The `emu` package contains classes for handling game controller inputs:
+The `emu` package provides type-safe enumerations for handling game controller inputs and directional controls:
 
-* `Button`: Enum for joystick/game controller buttons.
-* `Dir4`: Enum for four cardinal directions. (If not present, see `DirXY`/`DirYZ`.)
-* `Dir8`: Enum for eight directions, including diagonals.
-* `DirRotate`: Enum for rotational directions.
-* `DirXY`: Enum for X/Y axis directions.
-* `DirYZ`: Enum for Y/Z axis directions.
+==== Core Components
+
+* `Button`: Comprehensive enum for all Xbox/PS4 controller buttons (A, B, X, Y, bumpers, triggers, sticks, D-pad).
+* `Dir4`: Four cardinal directions (NORTH, SOUTH, EAST, WEST) for simple directional input.
+* `Dir8`: Eight directions including diagonals (N, NE, E, SE, S, SW, W, NW) for precise directional control.
+* `DirRotate`: Rotational directions (CLOCKWISE, COUNTERCLOCKWISE) for rotation commands.
+* `DirXY`: Horizontal and vertical axis directions (LEFT, RIGHT, UP, DOWN) for 2D plane movement.
+* `DirYZ`: Forward/backward and vertical directions (FORWARD, BACKWARD, UP, DOWN) for 3D space control.
+
+==== Features
+
+* **Type Safety**: Enum-based direction system prevents invalid direction values.
+* **Clear Intent**: Named directions are more readable than numeric constants or raw values.
+* **Pattern Matching**: Easy to use with Kotlin's `when` expressions for direction-based logic.
+* **Controller Agnostic**: Works with Xbox, PlayStation, and generic HID controllers.
+* **Command Binding**: Integrates seamlessly with command binding systems like Bingu.
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Button enum usage
+fun bindControls(controller: XboxController) {
+    controller.button(Button.A).onTrue(shootCommand)
+    controller.button(Button.B).onTrue(intakeCommand)
+    controller.button(Button.X).whileTrue(slowModeCommand)
+    controller.button(Button.Y).onTrue(resetGyroCommand)
+    
+    controller.button(Button.LEFT_BUMPER).whileTrue(precisionMode)
+    controller.button(Button.RIGHT_BUMPER).onTrue(toggleFieldOriented)
+    
+    controller.button(Button.START).onTrue(enableAutoAlign)
+    controller.button(Button.BACK).onTrue(cancelAllCommands)
+}
+
+// Dir4 for simple directional commands
+fun handleDPad(direction: Dir4) {
+    when (direction) {
+        Dir4.NORTH -> elevator.moveToHigh()
+        Dir4.SOUTH -> elevator.moveToLow()
+        Dir4.EAST -> arm.rotateRight()
+        Dir4.WEST -> arm.rotateLeft()
+    }
+}
+
+// Dir8 for diagonal movement
+fun handlePreciseMovement(direction: Dir8) {
+    val (xSpeed, ySpeed) = when (direction) {
+        Dir8.N -> Pair(0.0, 1.0)
+        Dir8.NE -> Pair(0.707, 0.707)
+        Dir8.E -> Pair(1.0, 0.0)
+        Dir8.SE -> Pair(0.707, -0.707)
+        Dir8.S -> Pair(0.0, -1.0)
+        Dir8.SW -> Pair(-0.707, -0.707)
+        Dir8.W -> Pair(-1.0, 0.0)
+        Dir8.NW -> Pair(-0.707, 0.707)
+    }
+    swerve.drive(xSpeed, ySpeed, 0.0)
+}
+
+// DirRotate for rotation commands
+fun handleRotation(direction: DirRotate) {
+    val rotationSpeed = when (direction) {
+        DirRotate.CLOCKWISE -> 0.3
+        DirRotate.COUNTERCLOCKWISE -> -0.3
+    }
+    swerve.drive(0.0, 0.0, rotationSpeed)
+}
+
+// DirXY for planar movement
+fun handlePlanarMovement(controller: XboxController) {
+    val xDir = when {
+        controller.getRawAxis(0) > 0.1 -> DirXY.RIGHT
+        controller.getRawAxis(0) < -0.1 -> DirXY.LEFT
+        else -> null
+    }
+    
+    val yDir = when {
+        controller.getRawAxis(1) > 0.1 -> DirXY.DOWN
+        controller.getRawAxis(1) < -0.1 -> DirXY.UP
+        else -> null
+    }
+    
+    // Execute commands based on directions
+    xDir?.let { handleHorizontalMovement(it) }
+    yDir?.let { handleVerticalMovement(it) }
+}
+
+// DirYZ for 3D space control (e.g., arm or elevator with extension)
+fun handleArmMovement(direction: DirYZ) {
+    when (direction) {
+        DirYZ.FORWARD -> arm.extend()
+        DirYZ.BACKWARD -> arm.retract()
+        DirYZ.UP -> arm.raise()
+        DirYZ.DOWN -> arm.lower()
+    }
+}
+
+// Combining with POV (D-pad) input
+controller.pov(0).onTrue(
+    Commands.runOnce({ handleDPad(Dir4.NORTH) })
+)
+controller.pov(90).onTrue(
+    Commands.runOnce({ handleDPad(Dir4.EAST) })
+)
+----
 
 === `xyz.malefic.frc.path`
 
-This module contains pathfinding and trajectory utilities:
+The `path` package provides advanced pathfinding and trajectory generation utilities for autonomous navigation:
 
-* `LocalADStarAK`: Local pathfinding algorithm implementation.
+==== Core Components
+
+* `LocalADStarAK`: Anytime Dynamic A* (AD*) pathfinding algorithm implementation optimized for local replanning in dynamic environments.
+
+==== Features
+
+* **Dynamic Replanning**: Efficiently updates paths when obstacles move or new obstacles are detected.
+* **Anytime Performance**: Returns best available path within time constraints, improving solution quality over time.
+* **Adaptive Search**: Balances between search optimality and computational efficiency based on available time.
+* **Local Optimization**: Focuses search on nearby path segments for fast replanning during execution.
+* **Obstacle Avoidance**: Real-time path adjustment to avoid both static and dynamic obstacles.
+* **Integration Ready**: Designed to work with WPILib's trajectory following and swerve drive systems.
+
+==== Usage Example
+
+[source,kotlin]
+----
+// Initialize pathfinder
+val pathfinder = LocalADStarAK(
+    gridResolution = 0.1,  // 10cm grid cells
+    robotRadius = 0.4,     // Robot radius in meters
+    maxSearchTime = 50.milliseconds  // Max compute time per update
+)
+
+// Define field obstacles
+pathfinder.addStaticObstacle(
+    center = Translation2d(5.0, 3.0),
+    radius = 0.5
+)
+
+// Generate initial path
+val startPose = Pose2d(1.0, 1.0, Rotation2d())
+val goalPose = Pose2d(8.0, 4.0, Rotation2d())
+
+val path = pathfinder.findPath(startPose, goalPose)
+
+// Use in autonomous command
+class FollowPathCommand(
+    private val swerve: SwerveDrive,
+    private val pathfinder: LocalADStarAK,
+    private val goal: Pose2d
+) : Command() {
+    
+    private var currentPath: List<Pose2d> = emptyList()
+    private var pathIndex = 0
+    
+    override fun initialize() {
+        currentPath = pathfinder.findPath(swerve.getPose(), goal)
+        pathIndex = 0
+    }
+    
+    override fun execute() {
+        // Check for dynamic obstacles (e.g., from vision)
+        val detectedObstacles = vision.getDetectedObstacles()
+        detectedObstacles.forEach { obstacle ->
+            pathfinder.addDynamicObstacle(obstacle.position, obstacle.radius)
+        }
+        
+        // Replan if obstacles detected
+        if (detectedObstacles.isNotEmpty()) {
+            currentPath = pathfinder.replan(
+                currentPose = swerve.getPose(),
+                goal = goal,
+                previousPath = currentPath
+            )
+            pathIndex = 0  // Reset to follow new path
+        }
+        
+        // Follow current path segment
+        if (pathIndex < currentPath.size) {
+            val targetPose = currentPath[pathIndex]
+            swerve.driveToPosition(targetPose)
+            
+            // Advance to next waypoint if close enough
+            if (swerve.getPose().translation.getDistance(targetPose.translation) < 0.2) {
+                pathIndex++
+            }
+        }
+    }
+    
+    override fun isFinished(): Boolean {
+        return pathIndex >= currentPath.size &&
+               swerve.getPose().translation.getDistance(goal.translation) < 0.1
+    }
+}
+
+// Integration with PathPlanner for hybrid navigation
+class HybridPathCommand(
+    private val swerve: SwerveDrive,
+    private val pathPlanner: PathPlannerTrajectory,
+    private val localPathfinder: LocalADStarAK
+) : Command() {
+    
+    override fun execute() {
+        // Use PathPlanner for global path
+        val globalTarget = pathPlanner.sample(Timer.getFPGATimestamp())
+        
+        // Use LocalADStar for local obstacle avoidance
+        val localPath = localPathfinder.findPath(
+            start = swerve.getPose(),
+            goal = globalTarget.poseMeters
+        )
+        
+        // Follow local path that avoids obstacles
+        val immediateTarget = localPath.firstOrNull() ?: globalTarget.poseMeters
+        swerve.driveToPosition(immediateTarget)
+    }
+}
+----
 
 == Commit Guidelines
 
