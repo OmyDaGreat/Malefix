@@ -7,6 +7,7 @@ advantagekit = "26.0.0"
 ctre-phoenix = "26.1.1"
 photonlib = "v2026.1.1"
 vanniktech = "0.36.0"
+kermit = "2.0.8"
 
 [libraries]
 # WPILib
@@ -28,6 +29,9 @@ ctre-phoenix = { group = "com.ctre.phoenix6", name = "wpiapi-java", version.ref 
 photonlib = { group = "org.photonvision", name = "photonlib-java", version.ref = "photonlib" }
 photontargeting = { group = "org.photonvision", name = "photontargeting-java", version.ref = "photonlib" }
 pathplanner = { group = "com.pathplanner.lib", name = "PathplannerLib-java", version.ref = "pathplanner" }
+
+# Kermit logging
+kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
 
 [plugins]
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }

@@ -29,6 +29,7 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.kermit)
     implementation(libs.photonlib)
     implementation(libs.pathplanner)
     implementation(kotlin("reflect"))

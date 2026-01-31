@@ -5,6 +5,7 @@ import com.ctre.phoenix6.hardware.TalonFX
 import edu.wpi.first.apriltag.AprilTagFieldLayout
 import edu.wpi.first.apriltag.AprilTagFields
 import edu.wpi.first.math.geometry.Pose2d
+import edu.wpi.first.math.geometry.Pose3d
 import edu.wpi.first.math.geometry.Rotation2d
 import edu.wpi.first.math.geometry.Rotation3d
 import edu.wpi.first.math.util.Units.inchesToMeters
@@ -15,8 +16,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.targeting.PhotonPipelineResult
 import xyz.malefic.frc.pingu.control.Pingu
-import xyz.malefic.frc.sub.PhotonModule
-import java.util.Optional
+import xyz.malefic.frc.vision.PhotonModule
 import kotlin.math.abs
 
 /**
@@ -35,7 +35,8 @@ fun List<PhotonModule>.getDecentResultPairs(
 ): List<Pair<PhotonModule, PhotonPipelineResult>> =
     this
         .mapNotNull { module ->
-            module.allUnreadResults
+            module
+                .getAllUnreadResults()
                 .getOrNull(0)
                 ?.takeIf { condition(it) }
                 ?.let { module to it }
@@ -54,18 +55,29 @@ fun List<Pair<PhotonModule, PhotonPipelineResult>>.hasTargets(): Boolean = this.
 /**
  * Extension function for a Pair of [PhotonModule] and [PhotonPipelineResult] to get estimated poses.
  *
- * This function sets the reference pose for the pose estimator of the [PhotonModule] and updates it
- * with the [PhotonPipelineResult]. If an [EstimatedRobotPose] is present, it adds it to the list of poses.
+ * This function estimates the robot pose using the closest to reference pose strategy.
  *
  * @receiver Pair of [PhotonModule] and [PhotonPipelineResult] The pair of [PhotonModule] and [PhotonPipelineResult].
  * @param prevEstimatedRobotPose [Pose2d] The previous estimated robot pose to set as reference.
  * @return [EstimatedRobotPose]? The estimated robot pose, or null if not present.
  */
 fun Pair<PhotonModule, PhotonPipelineResult>.getEstimatedPose(prevEstimatedRobotPose: Pose2d): EstimatedRobotPose? {
-    first.poseEstimator.apply {
-        setReferencePose(prevEstimatedRobotPose)
-        return update(second).orElse(null)
+    val referencePose3d = Pose3d(prevEstimatedRobotPose)
+
+    // Try closest to reference first
+    var estimatedPose = first.poseEstimator.estimateClosestToReferencePose(second, referencePose3d).orElse(null)
+
+    // Fallback to multi-tag coprocessor
+    if (estimatedPose == null) {
+        estimatedPose = first.poseEstimator.estimateCoprocMultiTagPose(second).orElse(null)
     }
+
+    // Final fallback to lowest ambiguity
+    if (estimatedPose == null) {
+        estimatedPose = first.poseEstimator.estimateLowestAmbiguityPose(second).orElse(null)
+    }
+
+    return estimatedPose
 }
 
 /**
@@ -75,23 +87,10 @@ fun Pair<PhotonModule, PhotonPipelineResult>.getEstimatedPose(prevEstimatedRobot
  * and the targets from the [PhotonPipelineResult].
  *
  * @receiver Pair of [PhotonModule] and [PhotonPipelineResult] The pair of [PhotonModule] and [PhotonPipelineResult].
- * @param estimatedRobotPose [Optional]<[EstimatedRobotPose]> The estimated robot pose to use for updating the standard deviations.
+ * @param estimatedRobotPose [EstimatedRobotPose]? The estimated robot pose to use for updating the standard deviations.
  */
-fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev(estimatedRobotPose: Optional<EstimatedRobotPose>) {
-    first.updateEstimatedStdDevs(estimatedRobotPose, second.getTargets())
-}
-
-/**
- * Extension function for a Pair of [PhotonModule] and [PhotonPipelineResult] to update the 3d standard deviations of the estimated robot pose.
- *
- * This function updates the estimated 3d standard deviations of the robot pose using the provided [EstimatedRobotPose]
- * and the targets from the [PhotonPipelineResult].
- *
- * @receiver Pair of [PhotonModule] and [PhotonPipelineResult] The pair of [PhotonModule] and [PhotonPipelineResult].
- * @param estimatedRobotPose [Optional]<[EstimatedRobotPose]> The estimated robot pose to use for updating the standard deviations.
- */
-fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev3d(estimatedRobotPose: Optional<EstimatedRobotPose>) {
-    first.updateEstimatedStdDevs3d(estimatedRobotPose, second.getTargets())
+fun Pair<PhotonModule, PhotonPipelineResult>.updateStdDev(estimatedRobotPose: EstimatedRobotPose?) {
+    first.updateEstimatedStdDevs(second, estimatedRobotPose)
 }
 
 /**
