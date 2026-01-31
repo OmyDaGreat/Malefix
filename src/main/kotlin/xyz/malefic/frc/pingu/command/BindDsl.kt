@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj2.command.Command
  *
  * Provides a [bind] function to register [Command]s by name.
  */
-class CommanguDsl {
+class BindDsl {
     /**
      * Registers a [Command] with the given name.
      *
