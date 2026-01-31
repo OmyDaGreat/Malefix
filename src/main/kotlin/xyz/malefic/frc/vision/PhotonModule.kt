@@ -10,6 +10,7 @@ import edu.wpi.first.math.numbers.N1
 import edu.wpi.first.math.numbers.N3
 import edu.wpi.first.units.Units
 import edu.wpi.first.units.measure.Angle
+import edu.wpi.first.units.measure.Distance
 import org.photonvision.EstimatedRobotPose
 import org.photonvision.PhotonCamera
 import org.photonvision.PhotonPoseEstimator
@@ -148,6 +149,40 @@ class PhotonModule(
                 ambiguity = estimatedPose.targetsUsed.minOfOrNull { it.poseAmbiguity } ?: 0.0,
             )
         }
+
+    override fun getDistanceToTag(tagId: Int?): Distance? {
+        val result = getLatestResult()
+        if (!result.hasTargets()) return null
+
+        val estimatedPose = getEstimatedGlobalPose() ?: return null
+        val robotPose = estimatedPose.estimatedPose
+
+        return if (tagId != null) {
+            // Find specific tag
+            result.targets.find { it.fiducialId == tagId } ?: return null
+            val tagPoseOptional = poseEstimator.fieldTags.getTagPose(tagId)
+            if (tagPoseOptional.isEmpty) return null
+
+            val tagPose = tagPoseOptional.get()
+            val distance = robotPose.toPose2d().translation.getDistance(tagPose.toPose2d().translation)
+            Units.Meters.of(distance)
+        } else {
+            // Find closest tag
+            var closestDistance = Double.MAX_VALUE
+            for (target in result.targets) {
+                val tagPoseOptional = poseEstimator.fieldTags.getTagPose(target.fiducialId)
+                if (tagPoseOptional.isEmpty) continue
+
+                val tagPose = tagPoseOptional.get()
+                val distance = robotPose.toPose2d().translation.getDistance(tagPose.toPose2d().translation)
+                if (distance < closestDistance) {
+                    closestDistance = distance
+                }
+            }
+
+            if (closestDistance == Double.MAX_VALUE) null else Units.Meters.of(closestDistance)
+        }
+    }
 
     /**
      * Gets the latest [PhotonPipelineResult] from the camera.

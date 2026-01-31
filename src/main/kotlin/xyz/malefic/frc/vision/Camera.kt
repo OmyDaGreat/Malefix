@@ -2,6 +2,7 @@ package xyz.malefic.frc.vision
 
 import edu.wpi.first.math.geometry.Pose2d
 import edu.wpi.first.units.measure.Angle
+import edu.wpi.first.units.measure.Distance
 
 /**
  * Common interface for all vision cameras (PhotonVision, Limelight, etc.).
@@ -59,4 +60,13 @@ interface Camera {
      * @return List of [VisionMeasurement]s, may be empty.
      */
     fun getAllUnreadMeasurements(): List<VisionMeasurement>
+
+    /**
+     * Gets the distance to a tag.
+     *
+     * @param tagId Optional AprilTag ID. If provided, returns distance to that specific tag.
+     *              If null, returns distance to the best/closest visible tag.
+     * @return Distance to the tag, or null if no matching tag is visible.
+     */
+    fun getDistanceToTag(tagId: Int? = null): Distance?
 }

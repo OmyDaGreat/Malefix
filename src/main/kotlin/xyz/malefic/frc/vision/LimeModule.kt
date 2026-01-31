@@ -161,6 +161,21 @@ class LimeModule(
         return if (measurement != null) listOf(measurement) else emptyList()
     }
 
+    override fun getDistanceToTag(tagId: Int?): edu.wpi.first.units.measure.Distance? {
+        if (!hasTarget()) return null
+
+        if (tagId != null) {
+            // Check if the visible tag matches the requested ID
+            val visibleTagId = getAprilTagId() ?: return null
+            if (visibleTagId != tagId) return null
+        }
+
+        // Use target pose in camera space to calculate distance
+        val targetPoseCameraSpace = getTargetPoseCameraSpace() ?: return null
+        val distance = targetPoseCameraSpace.translation.norm
+        return Units.Meters.of(distance)
+    }
+
     /**
      * Sets the LED operating mode.
      *
