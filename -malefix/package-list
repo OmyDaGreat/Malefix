@@ -71,7 +71,12 @@ $dokka.location:xyz.malefic.frc.emu/DirYZ/valueOf/#kotlin.String/PointingToDecla
 $dokka.location:xyz.malefic.frc.emu/DirYZ/values/#/PointingToDeclaration/-malefix/xyz.malefic.frc.emu/-dir-y-z/values.html
 $dokka.location:xyz.malefic.frc.extension////PointingToDeclaration/-malefix/xyz.malefic.frc.extension/index.html
 $dokka.location:xyz.malefic.frc.extension//configureSwerve/xyz.malefic.frc.pingu.encoder.Engu#kotlin.Function1[xyz.malefic.frc.extension.SwerveEncoderConfig,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/configure-swerve.html
+$dokka.location:xyz.malefic.frc.extension//distanceTo/edu.wpi.first.math.geometry.Pose2d#edu.wpi.first.math.geometry.Pose2d/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/distance-to.html
+$dokka.location:xyz.malefic.frc.extension//distanceTo/edu.wpi.first.math.geometry.Pose2d#edu.wpi.first.math.geometry.Translation2d/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/distance-to.html
+$dokka.location:xyz.malefic.frc.extension//distanceToClosestTag/edu.wpi.first.math.geometry.Pose2d#edu.wpi.first.apriltag.AprilTagFieldLayout/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/distance-to-closest-tag.html
+$dokka.location:xyz.malefic.frc.extension//distanceToTag/edu.wpi.first.math.geometry.Pose2d#kotlin.Int#edu.wpi.first.apriltag.AprilTagFieldLayout/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/distance-to-tag.html
 $dokka.location:xyz.malefic.frc.extension//driveToAngleCommand/xyz.malefic.frc.swerve.SwerveDrive#kotlin.Function0[kotlin.Double]#kotlin.Function0[kotlin.Double]#edu.wpi.first.math.geometry.Rotation2d#kotlin.Function1[xyz.malefic.frc.swerve.command.DriveToAngle.Config,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/drive-to-angle-command.html
+$dokka.location:xyz.malefic.frc.extension//findClosestTag/edu.wpi.first.math.geometry.Pose2d#edu.wpi.first.apriltag.AprilTagFieldLayout/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/find-closest-tag.html
 $dokka.location:xyz.malefic.frc.extension//getAngleError/xyz.malefic.frc.pingu.encoder.Engu#edu.wpi.first.math.geometry.Rotation2d/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-angle-error.html
 $dokka.location:xyz.malefic.frc.extension//getDecentResultPairs/kotlin.collections.List[xyz.malefic.frc.vision.PhotonModule]#kotlin.Function1[org.photonvision.targeting.PhotonPipelineResult,kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-decent-result-pairs.html
 $dokka.location:xyz.malefic.frc.extension//getEstimatedPose/kotlin.Pair[xyz.malefic.frc.vision.PhotonModule,org.photonvision.targeting.PhotonPipelineResult]#edu.wpi.first.math.geometry.Pose2d/PointingToDeclaration/-malefix/xyz.malefic.frc.extension/get-estimated-pose.html
@@ -505,6 +510,7 @@ $dokka.location:xyz.malefic.frc.vision//trackTarget/xyz.malefic.frc.swerve.Swerv
 $dokka.location:xyz.malefic.frc.vision//visionSystem/#kotlin.Function1[xyz.malefic.frc.vision.VisionSystemBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/vision-system.html
 $dokka.location:xyz.malefic.frc.vision/Camera///PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-camera/index.html
 $dokka.location:xyz.malefic.frc.vision/Camera/getAllUnreadMeasurements/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-camera/get-all-unread-measurements.html
+$dokka.location:xyz.malefic.frc.vision/Camera/getDistanceToTag/#kotlin.Int?/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-camera/get-distance-to-tag.html
 $dokka.location:xyz.malefic.frc.vision/Camera/getLatestMeasurement/#edu.wpi.first.math.geometry.Pose2d?/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-camera/get-latest-measurement.html
 $dokka.location:xyz.malefic.frc.vision/Camera/getTargetHorizontalOffset/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-camera/get-target-horizontal-offset.html
 $dokka.location:xyz.malefic.frc.vision/Camera/getTargetVerticalOffset/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-camera/get-target-vertical-offset.html
@@ -550,6 +556,7 @@ $dokka.location:xyz.malefic.frc.vision/LimeModule/getBotPose3d/#/PointingToDecla
 $dokka.location:xyz.malefic.frc.vision/LimeModule/getBotPoseBlue/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-bot-pose-blue.html
 $dokka.location:xyz.malefic.frc.vision/LimeModule/getBotPoseRed/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-bot-pose-red.html
 $dokka.location:xyz.malefic.frc.vision/LimeModule/getCameraPose/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-camera-pose.html
+$dokka.location:xyz.malefic.frc.vision/LimeModule/getDistanceToTag/#kotlin.Int?/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-distance-to-tag.html
 $dokka.location:xyz.malefic.frc.vision/LimeModule/getLatency/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-latency.html
 $dokka.location:xyz.malefic.frc.vision/LimeModule/getLatencyCapture/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-latency-capture.html
 $dokka.location:xyz.malefic.frc.vision/LimeModule/getLatencyPipeline/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-lime-module/get-latency-pipeline.html
@@ -583,6 +590,7 @@ $dokka.location:xyz.malefic.frc.vision/PhotonModule/cameraPos/#/PointingToDeclar
 $dokka.location:xyz.malefic.frc.vision/PhotonModule/currentStdDevs/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/current-std-devs.html
 $dokka.location:xyz.malefic.frc.vision/PhotonModule/getAllUnreadMeasurements/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/get-all-unread-measurements.html
 $dokka.location:xyz.malefic.frc.vision/PhotonModule/getAllUnreadResults/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/get-all-unread-results.html
+$dokka.location:xyz.malefic.frc.vision/PhotonModule/getDistanceToTag/#kotlin.Int?/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/get-distance-to-tag.html
 $dokka.location:xyz.malefic.frc.vision/PhotonModule/getLatestMeasurement/#edu.wpi.first.math.geometry.Pose2d?/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/get-latest-measurement.html
 $dokka.location:xyz.malefic.frc.vision/PhotonModule/getLatestResult/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/get-latest-result.html
 $dokka.location:xyz.malefic.frc.vision/PhotonModule/getTargetHorizontalOffset/#/PointingToDeclaration/-malefix/xyz.malefic.frc.vision/-photon-module/get-target-horizontal-offset.html
