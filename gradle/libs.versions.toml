@@ -5,7 +5,7 @@ wpilib = "2026.2.1"
 pathplanner = "2025.2.7"
 advantagekit = "26.0.0"
 ctre-phoenix = "26.1.1"
-photonlib = "v2026.2.1"
+photonlib = "v2026.2.2"
 vanniktech = "0.36.0"
 kermit = "2.0.8"
 
