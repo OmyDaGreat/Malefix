@@ -1,6 +1,6 @@
 [versions]
 kotlinter = "5.4.2"
-dokka = "2.1.0"
+dokka = "2.2.0"
 wpilib = "2026.2.2"
 pathplanner = "2025.2.7"
 advantagekit = "26.0.2"
