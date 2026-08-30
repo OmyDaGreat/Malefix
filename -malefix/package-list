@@ -169,10 +169,10 @@ $dokka.location:xyz.malefic.frc.pingu.command/Commangu.SequentialBuilder/unaryPl
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/index.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/bind/#kotlin.String#edu.wpi.first.wpilibj2.command.Command/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/bind.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/cancel/#/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/cancel.html
-$dokka.location:xyz.malefic.frc.pingu.command/Commangu/cmd/#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/cmd.html
+$dokka.location:xyz.malefic.frc.pingu.command/Commangu/cmd/#vararg(edu.wpi.first.wpilibj2.command.Subsystem)#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/cmd.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/parallel/#kotlin.Function1[xyz.malefic.frc.pingu.command.Commangu.ParallelBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/parallel.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/registerCommands/#kotlin.Function1[xyz.malefic.frc.pingu.command.BindDsl,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/register-commands.html
-$dokka.location:xyz.malefic.frc.pingu.command/Commangu/runUntil/#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/run-until.html
+$dokka.location:xyz.malefic.frc.pingu.command/Commangu/runUntil/#vararg(edu.wpi.first.wpilibj2.command.Subsystem)#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/run-until.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/sequential/#kotlin.Function1[xyz.malefic.frc.pingu.command.Commangu.SequentialBuilder,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/sequential.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/waitFor/#kotlin.Double/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/wait-for.html
 $dokka.location:xyz.malefic.frc.pingu.command/Commangu/waitUntil/#kotlin.Function0[kotlin.Boolean]/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.command/-commangu/wait-until.html
@@ -318,9 +318,9 @@ $dokka.location:xyz.malefic.frc.pingu.motor/Mongu/not/#/PointingToDeclaration/-
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig///PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/index.html
 $dokka.location:xyz.malefic.frc.pingu.motor/MonguConfig/applyTo/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/-malefix/xyz.malefic.frc.pingu.motor/-mongu-config/apply-to.html
 $dokka.location:xyz.malefic.frc.state////PointingToDeclaration/-malefix/xyz.malefic.frc.state/index.html
-$dokka.location:xyz.malefic.frc.state//intentCommand/#kotlin.String#edu.wpi.first.wpilibj2.command.Subsystem#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Boolean]#kotlin.Function1[kotlin.Boolean,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/intent-command.html
+$dokka.location:xyz.malefic.frc.state//intentCommand/#kotlin.String#vararg(edu.wpi.first.wpilibj2.command.Subsystem)#kotlin.Function0[kotlin.Boolean]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Boolean]#kotlin.Function1[kotlin.Boolean,kotlin.Unit]/PointingToDeclaration/-malefix/xyz.malefic.frc.state/intent-command.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand///PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/index.html
-$dokka.location:xyz.malefic.frc.state/IntentCommand/IntentCommand/#edu.wpi.first.wpilibj2.command.Subsystem/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/-intent-command.html
+$dokka.location:xyz.malefic.frc.state/IntentCommand/IntentCommand/#vararg(edu.wpi.first.wpilibj2.command.Subsystem)/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/-intent-command.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand/canExecute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/can-execute.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand/end/#kotlin.Boolean/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/end.html
 $dokka.location:xyz.malefic.frc.state/IntentCommand/execute/#/PointingToDeclaration/-malefix/xyz.malefic.frc.state/-intent-command/execute.html
