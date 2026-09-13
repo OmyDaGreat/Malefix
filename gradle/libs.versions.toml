@@ -7,7 +7,7 @@ advantagekit = "26.0.2"
 ctre-phoenix = "26.3.0"
 photonlib = "v2026.3.4"
 vanniktech = "0.37.0"
-kermit = "2.1.0"
+kermit = "2.2.0"
 
 [libraries]
 # WPILib
